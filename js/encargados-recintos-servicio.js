@@ -1,19 +1,20 @@
 'use strict';
 
-let registrar_producto = async(codigo, nombre, precio, descripcion) => {
+let registrar_encargado_recinto = async(nombre, numero, correo, fecha_nacimiento, genero) => {
 
     await axios({
 
                 method: 'post',
-                url: 'http://localhost:3000/api/registrar-producto',
+                url: 'http://localhost:3000/api/registrar-encargado-recinto',
                 responseType: 'json',
                 data: {
 
                     // Validar con route
-                    codigo: codigo,
                     nombre: nombre,
-                    precio: precio,
-                    descripcion: descripcion
+                    numero: numero,
+                    correo: correo,
+                    fecha_nacimiento: fecha_nacimiento,
+                    genero: genero
 
                 }
             }

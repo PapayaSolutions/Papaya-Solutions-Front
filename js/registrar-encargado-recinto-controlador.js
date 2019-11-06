@@ -1,40 +1,49 @@
 'use strict';
 
-const input_codigo = document.querySelector('#txt-codigo');
-const input_nombre = document.querySelector('#txt-nombre');
-const input_precio = document.querySelector('#txt-precio');
-const input_descripcion = document.querySelector('#txt-descripcion');
-const btn_guardar = document.querySelector('#btn-guardar');
+const input_nombre = document.querySelector('#txt_nombre_encargado_recinto');
+const input_numero = document.querySelector('#txt_numero_encargado');
+const input_correo = document.querySelector('#txt_correo');
+const input_fecha_nacimiento = document.querySelector('#txt_fecha_nacimiento');
+const input_genero = document.querySelector('#txt_genero')
+const btn_registrar = document.querySelector('#btn_registrar');
 
 
-// function para validar los datos
+// function para validar que hayan datos
 const validar = () => {
     let error = false;
 
-    if (input_codigo.value == '') {
+    if (input_nombre.value == '') {
         error = true;
-        input_codigo.classList.add('error');
+        //   input_codigo.classList.add('error');
     } else {
         error = false;
     };
 
-    if (input_nombre.value == '') {
+    if (input_numero.value == '') {
         error = true;
-        input_nombre.classList.add('error');
+        //   input_nombre.classList.add('error');
+
     } else {
         error = false;
     }
 
-    if (input_precio.value == '') {
+    if (input_correo.value == '') {
         error = true;
-        input_precio.classList.add('error');
+        //   input_precio.classList.add('error');
     } else {
         error = false;
     }
 
-    if (input_descripcion.value == '') {
+    if (input_fecha_nacimiento.value == '') {
         error = true;
-        input_descripcion.classList.add('error');
+        //  input_descripcion.classList.add('error');
+    } else {
+        error = false;
+    }
+
+    if (input_genero.value == '') {
+        error = true;
+        //  input_descripcion.classList.add('error');
     } else {
         error = false;
     }
@@ -44,10 +53,11 @@ const validar = () => {
 
 // function obtener_datos
 let obtener_datos = () => {
-    let codigo = input_codigo.value;
     let nombre = input_nombre.value;
-    let precio = input_precio.value;
-    let descripcion = input_descripcion.value;
+    let numero = input_numero.value;
+    let correo = input_correo.value;
+    let fecha_nacimiento = input_fecha_nacimiento.value;
+    let genero = input_genero;
 
     //Si hay error entra al if     
     if (validar()) {
@@ -60,11 +70,11 @@ let obtener_datos = () => {
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con exito',
-            text: 'Producto guardado!',
+            text: 'Encargado registrado!',
         })
     };
 };
 
 // Eventos asociados a los botones o inputs
 
-btn_guardar.addEventListener('click', obtener_datos);
+btn_registrar.addEventListener('click', obtener_datos);

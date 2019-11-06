@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <title>Registro de encargados de recintos</title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/general.css" />
+</head>
+
+<body>
+    <main>
+        <h1>Agregar encargado de recinto</h1>
+        <form>
+            <div>
+                <label for="txt-nombre-encargado-recinto">Nombre:</label>
+                <input type="text" id="txt-nombre-encargado-recinto">
+            </div>
+
+            <div>
+                <label for="txt-numero">Numero de contacto:</label>
+                <input type="number" id="txt-numero">
+            </div>
+
+            <div>
+                <label for="txt-correo">Correo:</label>
+                <input type="text" id="txt-correo">
+            </div>
+
+            <div>
+                <label for="txt-FechaNacimiento">Fecha de nacimiento:</label>
+                <input type="text" id="txt-FechaNacimiento">
+            </div>
+
+            <div>
+                <label for="txt-genero">Genero:</label>
+                <input type="text" id="txt-genero">
+            </div>
+
+
+            <button type="button" id="btn-guardar">Registrar</button>
+
+        </form>
+
+    </main>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/encargados-recintos-servicio.js"></script>
+    <script src="js/registrar-encargado-recinto-controlador.js"></script>
+
+</body>
+
+</html>

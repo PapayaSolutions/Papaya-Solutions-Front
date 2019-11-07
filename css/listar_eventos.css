@@ -95,7 +95,7 @@ nav a {
     margin-top: 30px;
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
     grid-gap: 30px;
 }
 

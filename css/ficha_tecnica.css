@@ -5,6 +5,36 @@
     #ececec gris 
     */
     
+    header {
+        text-align: center;
+        padding: 10px;
+        padding: 30px 0;
+        width: 100%;
+        background-color: ;
+        background-image: linear-gradient(to bottom right, #292c2a, #292c2a);
+        border: 1px solid #ececec;
+    }
+    
+    header nav {
+        width: 100%;
+        padding: 10px, 200px;
+    }
+    
+    header nav a {
+        color: white;
+        text-decoration: none;
+        color: #ececec;
+        font-size: 30px;
+        margin: 0 50px;
+        padding: 10px;
+        text-shadow: 5px 5px 5px #292c2a;
+    }
+    
+    header nav a:hover {
+        text-shadow: 3px 3px 3px #ececec;
+        color: #f7c331;
+    }
+    
     .anima {
         text-align: center;
         color: #f7882f;

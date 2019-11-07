@@ -1,0 +1,126 @@
+/*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a  verde muy oscuro
+    #ececec gris 
+    */
+
+main {
+    background-color: #ececec;
+}
+
+nav {
+    background-color: #f7882f;
+    color: #ececec;
+}
+
+nav a {
+    text-decoration-line: none;
+    color: #ececec;
+}
+
+#cero_section {
+    background: #f7c331;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    height: 200px;
+    min-height: 50px;
+    min-width: 200px;
+}
+
+.portada_container {
+    width: 40%;
+    min-width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
+#cero_section img {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    min-width: 150px;
+    min-height: 100px;
+}
+
+.titulo_container {
+    widows: 30%;
+    margin: auto 0;
+}
+
+.titulo_container h1 {
+    color: #ececec;
+    font-size: 40px;
+    padding: 5px;
+}
+
+.titulo_container h2 {
+    color: #292c2a;
+    font-size: 40px;
+    padding: 5px;
+}
+
+#container_nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+    padding: 5px;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#primera_section {
+    background-color: #f7882f;
+}
+
+#txt-categoria {
+    background-color: #f7882f;
+    border: 1px #ececec solid;
+    color: #ececec;
+    border-radius: 42px 42px 42px 42px;
+    -moz-border-radius: 42px 42px 42px 42px;
+    -webkit-border-radius: 42px 42px 42px 42px;
+}
+
+.move {
+    padding-left: 300px;
+}
+
+.linear a {
+    border-bottom: 1px #ececec solid;
+}
+
+#segunda_section {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    grid-gap: 30px;
+}
+
+.carta {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.img_container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.img_container img {
+    border: solid black 1px;
+    background-color: aquamarine;
+    max-width: 100%;
+    width: 100%;
+    min-width: 50px;
+    height: 180px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.carta div div {
+    position: absolute;
+    right: 0;
+    padding: 10px;
+}

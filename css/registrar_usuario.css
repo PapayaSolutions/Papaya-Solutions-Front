@@ -1,0 +1,27 @@
+/*Andrés*/
+
+
+/*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a  verde muy oscuro
+    #ececec gris 
+    */
+
+.registrar_wrapper {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    column-gap: 25px;
+    padding-top: 50px;
+}
+
+.ilustracion {
+    background: #292c2a;
+    height: 700px;
+    width: 100%;
+}
+
+.formulario_registro {
+    width: 100%;
+}

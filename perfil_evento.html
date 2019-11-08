@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/perfil_evento.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/perfil_evento.css">
     <link rel="stylesheet" href="css/footer.css">
-    <title>Perfil del Evento</title>
+    <title class="nombre_evento">Perfil del Evento</title>
 </head>
 
 <body>
@@ -20,9 +20,9 @@
         <section id="banner_grid">
 
             <div class="banner_left">
-                <h1>Nombre del Evento</h1>
-                <p>Lugar del Evento</p>
-                <p>Fecha del Evento</p>
+                <h1 class="nombre_evento">Nombre del Evento</h1>
+                <p class="recinto_evento">Lugar del Evento</p>
+                <p class="fecha_evento">Fecha del Evento</p>
                 <p>Hora del Evento</p>
                 <a href="">Editar Evento</a>
             </div>
@@ -41,10 +41,10 @@
         <div id="main_grid">
             <div class="grid_item item1">
                 <h1>Fecha:</h1>
-                <h2>dd/mmyyy</h2>
+                <h2 class="fecha_evento">dd/mmyyy</h2>
                 <h1>Hora:</h1>
                 <h2>24:00am</h2>
-                <h1>Lugar:</h1>
+                <h1 class="recinto_evento">Lugar:</h1>
                 <h2>Recinto X</h2>
                 <h1>Dirección:</h1>
                 <h2>Donde el Diablo deja la chaqueta perdida y hace mucho frío.</h2>
@@ -80,81 +80,97 @@
         </div>
     </section>
 
+    <section id="sct_coment">
+        <div id="coment_head">
+            <h1>Comentarios:</h1>
+        </div>
+        <div id="coment_body">
+            <textarea id="txt_coment"></textarea>
+        </div>
+        <button type="button" id="btn_coment">Comentar</button>
+
+    </section>
+
+
+    <footer>
+        <div id="socials_container">
+            <div class="grid_socials">
+
+                <div class="footer_grid_item socials_1">
+                    <a href=""><img src="img/fb_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_2">
+                    <a href=""><img src="img/ig_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_3">
+                    <a href=""><img src="img/tw_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_4">
+                    <a href=""><img src="img/yt_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_5">
+                    <a href=""><img src="img/in_footer.png" alt=""></a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="links_container">
+            <div class="footer_grid_item2 grid_links">
+                <div class="links1">
+                    <h1>INFORMACIÓN</h1>
+                    <a href="">Qué es Míshka</a>
+
+                </div>
+                <div class="footer_grid_item2 links2">
+                    <h1>NOTICIAS</h1>
+                    <a href="">Publicaciones</a>
+
+                </div>
+                <div class="footer_grid_item2 links3">
+                    <h1>TU CUENTA</h1>
+                    <a href="">Iniciar Sesión</a>
+                    <a href="">Registrarse</a>
+                    <a href="">Ver carrito de compras</a>
+                    <a href="">Modificar Información</a>
+                </div>
+
+                <div class="footer_grid_item2 links4">
+                    <h1>LEGAL</h1>
+                    <a href="">Términos y Condiciones</a>
+
+                </div>
+
+                <div class="footer_grid_item2 links5">
+                    <h1>CONTÁCTENOS</h1>
+                    <br>
+                    <p>Oficinas Principales:<br> Míshka Co.</p>
+                    <p>Zip-10101 <br>San José, Costa Rica</p>
+                    <br>
+                    <p>Teléfono: <br>(506) 1234-5678</p>
+                    <br>
+                    <p>Email:<br> soporte@Mishka.com</p>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <h3>
+            <p>®Míshka™</p>
+            <p>Diseño por Papaya Solutions. Todos los derechos reservados.</p>
+
+        </h3>
+
+    </footer>
+    <!– scripting JS ->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/eventos_servicios.js"></script>
+    <script src="js/controlador_perfil_evento.js"></script>
 </body>
-
-<footer>
-    <div id="socials_container">
-        <div class="grid_socials">
-
-            <div class="footer_grid_item socials_1">
-                <a href=""><img src="img/fb_footer.png" alt=""></a>
-            </div>
-            <div class="footer_grid_item socials_2">
-                <a href=""><img src="img/ig_footer.png" alt=""></a>
-            </div>
-            <div class="footer_grid_item socials_3">
-                <a href=""><img src="img/tw_footer.png" alt=""></a>
-            </div>
-            <div class="footer_grid_item socials_4">
-                <a href=""><img src="img/yt_footer.png" alt=""></a>
-            </div>
-            <div class="footer_grid_item socials_5">
-                <a href=""><img src="img/in_footer.png" alt=""></a>
-            </div>
-
-        </div>
-
-    </div>
-
-    <div id="links_container">
-        <div class="footer_grid_item2 grid_links">
-            <div class="links1">
-                <h1>INFORMACIÓN</h1>
-                <a href="">Qué es Míshka</a>
-
-            </div>
-            <div class="footer_grid_item2 links2">
-                <h1>NOTICIAS</h1>
-                <a href="">Publicaciones</a>
-
-            </div>
-            <div class="footer_grid_item2 links3">
-                <h1>TU CUENTA</h1>
-                <a href="">Iniciar Sesión</a>
-                <a href="">Registrarse</a>
-                <a href="">Ver carrito de compras</a>
-                <a href="">Modificar Información</a>
-            </div>
-
-            <div class="footer_grid_item2 links4">
-                <h1>LEGAL</h1>
-                <a href="">Términos y Condiciones</a>
-
-            </div>
-
-            <div class="footer_grid_item2 links5">
-                <h1>CONTÁCTENOS</h1>
-                <br>
-                <p>Oficinas Principales:<br> Míshka Co.</p>
-                <p>Zip-10101 <br>San José, Costa Rica</p>
-                <br>
-                <p>Teléfono: <br>(506) 1234-5678</p>
-                <br>
-                <p>Email:<br> soporte@Mishka.com</p>
-
-            </div>
-        </div>
-
-    </div>
-
-
-
-    <h3>
-        <p>®Míshka™</p>
-        <p>Diseño por Papaya Solutions. Todos los derechos reservados.</p>
-
-    </h3>
-
-</footer>
 
 </html>

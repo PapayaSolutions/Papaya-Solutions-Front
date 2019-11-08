@@ -51,20 +51,12 @@ const validar = () => {
     return error;
 };
 
-// function para generar codigo de 6 digitos alfanumerico
+// function para generar codigos
 function codigoVer(length, chars) {
     let result = '';
     for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
     return result;
 }
-
-// function para generar contrasena temporal
-function codigoVer(length, chars) {
-    let result = '';
-    for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
-    return result;
-}
-
 
 // function obtener_datos
 let obtener_datos = () => {
@@ -74,9 +66,9 @@ let obtener_datos = () => {
     let fecha_nacimiento = input_fecha_nacimiento.value;
     let genero = input_genero;
     let codigov = codigoVer(6, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-    // console.log(codigov)
+    console.log(codigov)
     let contrasena = codigoVer(20, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-    // console.log(contrasena)
+    console.log(contrasena)
 
     //Si hay error entra al if     
     if (validar()) {
@@ -92,22 +84,6 @@ let obtener_datos = () => {
             text: 'Encargado registrado!',
         })
     };
-
-    //Si hay error entra al if     
-    if (validar()) {
-        Swal.fire({
-            type: 'warning',
-            title: 'Faltan datos',
-            text: 'Verifique los campos!',
-        })
-    } else {
-        Swal.fire({
-            type: 'success',
-            title: 'Registro realizado con exito',
-            text: 'Encargado registrado!',
-        })
-    };
-
 };
 
 

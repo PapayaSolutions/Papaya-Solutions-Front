@@ -139,6 +139,17 @@ option {
     width: 100%;
     min-width: 50px;
     height: 180px;
+    border: #f7c331 solid 2px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.img_container img:hover {
+    background-color: #292c2a;
+    max-width: 100%;
+    width: 100%;
+    min-width: 50px;
+    height: 180px;
+    border: #292c2a solid 2px;
     border-radius: 10px 10px 10px 10px;
 }
 

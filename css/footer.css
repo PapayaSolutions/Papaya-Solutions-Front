@@ -38,8 +38,6 @@ footer {
 }
 
 .footer_grid_item a img:hover {
-    box-shadow: 0 0 15px #f7c331;
-    background: #f7c331;
     transform: scale(1.2);
     transition: 0.4s;
 }

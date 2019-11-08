@@ -52,6 +52,12 @@ const validar = () => {
 };
 
 // function para generar codigos
+var fecha1 = moment('2016-07-12');
+var fecha2 = moment('2016-08-01');
+
+console.log(fecha2.diff(fecha1, 'days'), ' dias de diferencia');
+
+// function para generar codigos
 function codigoVer(length, chars) {
     let result = '';
     for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];

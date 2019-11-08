@@ -66,9 +66,9 @@ let obtener_datos = () => {
     let fecha_nacimiento = input_fecha_nacimiento.value;
     let genero = input_genero;
     let codigov = codigoVer(6, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-    console.log(codigov)
+    // console.log(codigov)
     let contrasena = codigoVer(20, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-    console.log(contrasena)
+    //  console.log(contrasena)
 
     //Si hay error entra al if     
     if (validar()) {

@@ -28,6 +28,13 @@ nav a {
     min-width: 200px;
 }
 
+#cero_section input {
+    width: 300px;
+    height: 30px;
+    min-width: 50px;
+    border-radius: 5px 5px 5px 5px;
+}
+
 .portada_container {
     width: 40%;
     min-width: 150px;
@@ -36,7 +43,7 @@ nav a {
 }
 
 #cero_section img {
-    background-color: black;
+    background-color: #292c2a;
     height: 100%;
     width: 100%;
     min-width: 150px;
@@ -70,6 +77,19 @@ nav a {
     margin: 0 auto;
 }
 
+#container_nav div a:hover {
+    color: #292c2a;
+}
+
+#container_nav div select:hover {
+    color: #292c2a;
+}
+
+#txt_categoria:hover {
+    color: #292c2a;
+    background-color: #292c2a;
+}
+
 #primera_section {
     background-color: #f7882f;
 }
@@ -81,6 +101,11 @@ nav a {
     border-radius: 42px 42px 42px 42px;
     -moz-border-radius: 42px 42px 42px 42px;
     -webkit-border-radius: 42px 42px 42px 42px;
+}
+
+option {
+    color: #292c2a;
+    background-color: #f7882f;
 }
 
 .move {
@@ -100,7 +125,6 @@ nav a {
 }
 
 .carta {
-    border: 1px solid black;
     padding: 10px;
 }
 
@@ -110,8 +134,7 @@ nav a {
 }
 
 .img_container img {
-    border: solid black 1px;
-    background-color: aquamarine;
+    background-color: #292c2a;
     max-width: 100%;
     width: 100%;
     min-width: 50px;
@@ -123,4 +146,35 @@ nav a {
     position: absolute;
     right: 0;
     padding: 10px;
+    color: #ececec;
+    background-color: #f7c331;
+    border-radius: 20px 20px 20px 20px;
+    margin: 3px;
+}
+
+.carta h2 {
+    color: #f7c331;
+    border-bottom: #f7c331 2px solid;
+    padding: 3px;
+}
+
+.carta h3 {
+    color: #f7882f;
+    padding: 4px;
+    font-weight: bold;
+}
+
+.txt_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 4px;
+}
+
+.txt_container p {
+    color: #292c2a;
+}
+
+.txt_container span {
+    text-align: right;
+    color: #f7882f;
 }

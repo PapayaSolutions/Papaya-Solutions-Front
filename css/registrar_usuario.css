@@ -11,7 +11,7 @@
 .registrar_wrapper {
     width: 80%;
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 500px 1fr;
     column-gap: 25px;
     padding-top: 50px;
 }
@@ -24,4 +24,13 @@
 
 .formulario_registro {
     width: 100%;
+}
+
+.avatar_select {
+    background: #292c2a;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    height: 120px;
+    width: 120px;
 }

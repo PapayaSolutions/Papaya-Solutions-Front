@@ -8,9 +8,10 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/registrar_usuario.css">
     <link rel="stylesheet" href="css/formularios.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
 
 </head>
 
@@ -37,32 +38,35 @@
                         <div>
 
                             <div>
-                                <label for="p_nombre">Primer nombre</label>
+                                <label for="p_nombre_cliente">Primer nombre</label>
                                 <input id="p_nombre_cliente" type="text" placeholder="John">
                             </div>
                             <div>
-                                <label for="p_nombre">Primer apellido</label>
-                                <input id="p_nombre_cliente" type="text">
+                                <label for="p_apellido_cliente">Primer apellido</label>
+                                <input id="p_apellido_cliente" type="text">
+                            </div>
+                            <div>
+                                <label for="email_cliente">Correo electrónico</label>
+                                <input id="email_cliente" type="email" placeholder="me@example.com">
                             </div>
 
                         </div>
                         <div>
 
                             <div>
-                                <label for="s_apellido_cliente">Segundo nombre</label>
-                                <input id="s_apellido_cliente" type="text" placeholder="Smith">
+                                <label for="s_nombre_cliente">Segundo nombre</label>
+                                <input id="s_nombre_cliente" type="text" placeholder="Smith">
                             </div>
                             <div>
-                                <label for="p_apellido_cliente">Segundo apellido</label>
-                                <input id="p_apellido_cliente" type="text">
+                                <label for="s_apellido_cliente">Segundo apellido</label>
+                                <input id="s_apellido_cliente" type="text">
+                            </div>
+                            <div>
+                                <label for="n_identif_cliente">Número de identificación</label>
+                                <input id="n_identif_cliente" type="number">
                             </div>
 
                         </div>
-                    </div>
-
-                    <div>
-                        <label for="email_cliente">Correo electrónico</label>
-                        <input id="email_cliente" type="email" placeholder="me@example.com">
                     </div>
 
                     <div class="three_collumn_form">
@@ -74,11 +78,11 @@
                             </div>
                             <div>
                                 <label for="provincia_cliente">Provincia</label>
-                                <select>
+                                <select id="provincia_cliente">
                                         <option value="" disabled selected hidden>Seleccionar...</option>
                                         <option value="san_jose">San José</option>
                                         <option value="alajuela">Alajuela</option>
-                                        <option value="cartago">Cartago/option>
+                                        <option value="cartago">Cartago</option>
                                         <option value="heredia">Heredia</option>
                                         <option value="guanacaste">Guanacaste</option>
                                         <option value="puntarenas">Puntarenas</option>
@@ -92,8 +96,8 @@
                                 <input id="edad_cliente" type="text">
                             </div>
                             <div>
-                                <label for="provincia_cliente">Cantón</label>
-                                <select>
+                                <label for="canton_cliente">Cantón</label>
+                                <select id="canton_cliente">
                                      <option value="" disabled selected hidden>Seleccionar...</option>
                                 </select>
                             </div>
@@ -101,7 +105,7 @@
                         <div>
                             <div>
                                 <label for="genero_cliente">Género</label>
-                                <select class="custom_select">
+                                <select id="genero_cliente">
                                     <option option value="" disabled selected hidden>Seleccionar...</option>
                                         <option value="F">Femenino</option>
                                         <option value="M">Masculino</option>
@@ -110,16 +114,20 @@
                                 </select>
                             </div>
                             <div>
-                                <label for="provincia_cliente">Distrito</label>
-                                <select>
-                                    <option value="" disabled selected hidden>Seleccionar...</option>
-                                </select>
+                                <label for="distrito_cliente">Distrito</label>
+                                <select id="distrito_cliente">
+                                        <option value="" disabled selected hidden>Seleccionar...</option>
+                                    </select>
                             </div>
                         </div>
                     </div>
                     <div>
                         <label for="direccion_cliente">Dirección exacta</label>
                         <textarea id="direccion_cliente"></textarea>
+                    </div>
+                    <div class="avatar_select"></div>
+                    <div class="btn_container">
+                        <button type="button" class="btn" id="btn_registro">Registrarse</button>
                     </div>
                 </form>
             </div>
@@ -129,10 +137,78 @@
     <!-- footer -->
 
     <footer>
-        <p>©Copyright 2050 by nobody. All rights reversed.</p>
+        <div id="socials_container">
+            <div class="grid_socials">
+
+                <div class="footer_grid_item socials_1">
+                    <a href=""><img src="img/fb_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_2">
+                    <a href=""><img src="img/ig_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_3">
+                    <a href=""><img src="img/tw_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_4">
+                    <a href=""><img src="img/yt_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_5">
+                    <a href=""><img src="img/in_footer.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div id="links_container">
+            <div class="footer_grid_item2 grid_links">
+                <div>
+                    <h1>INFORMACIÓN</h1>
+                    <ul>
+                        <li><a href="">Qué es Míshka</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h1>NOTICIAS</h1>
+                    <ul>
+                        <li><a href="">Publicaciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h1>TU CUENTA</h1>
+                    <ul>
+                        <li><a href="">Iniciar Sesión</a></li>
+                        <li><a href="">Registrarse</a></li>
+                        <li><a href="">Ver carrito de compras</a></li>
+                        <li><a href="">Modificar Información</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h1>LEGAL</h1>
+                    <ul>
+                        <li><a href="">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h1>CONTÁCTANOS</h1>
+                    <ul>
+                        <li>Oficinas Principales: Míshka Co.</li>
+                        <li>Zip-10101 San José, Costa Rica</li>
+                        <li>Teléfono: (506) 1234-5678</li>
+                        <li>Email: soporte@Mishka.com</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="copyright">
+            <p>® Míshka™ &nbsp;&nbsp;&nbsp; Diseño por Papaya Solutions. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <!--script src="js/clientes-servicio.js"></script-->
+    <script src="js/controlador_registrar_usuario.js"></script>
 </body>
 
 </html>

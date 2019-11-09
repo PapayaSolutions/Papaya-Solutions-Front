@@ -98,17 +98,17 @@ const validar_edad = (fecha) => {
 
 // function obtener_datos
 let obtener_datos = () => {
+    let estado = 'Activo';
+    let tipo = 'Encargado de recinto';
     let nombre = input_nombre.value;
     let numero = input_numero.value;
     let correo = input_correo.value;
     let fecha_nacimiento = input_fecha_nacimiento.value;
-    let genero = input_genero;
+    let genero = input_genero.value;
     let codigov = codigoVer(6, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
     // console.log(codigov)
     let contrasena = codigoVer(20, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
     //  console.log(contrasena)
-
-
 
 
     //Si hay error entra al if     
@@ -126,15 +126,20 @@ let obtener_datos = () => {
             text: 'Minimo debe de tener 8 digitos!',
         })
 
-    } else if (validar_edad(fecha_nacimiento)) {
-        Swal.fire({
-            type: 'warning',
-            title: 'Verifique la edad',
-            text: 'Debe de ser mayor de edad!',
-        })
+    }
+    /*else if (validar_edad(fecha_nacimiento)) {
+           Swal.fire({
+               type: 'warning',
+               title: 'Verifique la edad',
+               text: 'Debe de ser mayor de edad!',
+           })
 
+       
 
-    } else {
+       } */
+    else {
+        console.log(genero)
+        registrar_encargado_recinto(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado)
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con exito',

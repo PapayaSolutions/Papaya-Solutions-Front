@@ -83,11 +83,21 @@ nav a {
 
 #container_nav div select:hover {
     color: #292c2a;
+    background-color: #f7c331;
 }
 
 #txt_categoria:hover {
     color: #292c2a;
-    background-color: #292c2a;
+}
+
+select:active,
+select:hover {
+    outline: none
+}
+
+select:active,
+select:hover {
+    outline-color: red
 }
 
 #primera_section {
@@ -101,11 +111,6 @@ nav a {
     border-radius: 42px 42px 42px 42px;
     -moz-border-radius: 42px 42px 42px 42px;
     -webkit-border-radius: 42px 42px 42px 42px;
-}
-
-option {
-    color: #292c2a;
-    background-color: #f7882f;
 }
 
 .move {

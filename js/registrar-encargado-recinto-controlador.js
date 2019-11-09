@@ -14,14 +14,14 @@ const validar = () => {
 
     if (input_nombre.value == '') {
         error = true;
-        //   input_codigo.classList.add('error');
+        input_codigo.classList.add('error');
     } else {
         error = false;
     };
 
     if (input_numero.value == '') {
         error = true;
-        //   input_nombre.classList.add('error');
+        input_nombre.classList.add('error');
 
     } else {
         error = false;
@@ -29,21 +29,21 @@ const validar = () => {
 
     if (input_correo.value == '') {
         error = true;
-        //   input_precio.classList.add('error');
+        input_precio.classList.add('error');
     } else {
         error = false;
     }
 
     if (input_fecha_nacimiento.value == '') {
         error = true;
-        //  input_descripcion.classList.add('error');
+        input_descripcion.classList.add('error');
     } else {
         error = false;
     }
 
     if (input_genero.value == '') {
         error = true;
-        //  input_descripcion.classList.add('error');
+        input_descripcion.classList.add('error');
     } else {
         error = false;
     }

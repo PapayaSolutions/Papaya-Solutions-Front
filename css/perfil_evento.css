@@ -61,6 +61,7 @@
     }
     
     .banner_left h1 {
+    #bnr_nombre {
         color: white;
         font-size: 45px;
         font-weight: 900;

@@ -14,14 +14,14 @@ const validar = () => {
 
     if (input_nombre.value == '') {
         error = true;
-        input_codigo.classList.add('error');
+        //  input_codigo.classList.add('error');
     } else {
         error = false;
     };
 
     if (input_numero.value == '') {
         error = true;
-        input_nombre.classList.add('error');
+        //   input_nombre.classList.add('error');
 
     } else {
         error = false;
@@ -29,21 +29,21 @@ const validar = () => {
 
     if (input_correo.value == '') {
         error = true;
-        input_precio.classList.add('error');
+        //   input_precio.classList.add('error');
     } else {
         error = false;
     }
 
     if (input_fecha_nacimiento.value == '') {
         error = true;
-        input_descripcion.classList.add('error');
+        //   input_descripcion.classList.add('error');
     } else {
         error = false;
     }
 
     if (input_genero.value == '') {
         error = true;
-        input_descripcion.classList.add('error');
+        //   input_descripcion.classList.add('error');
     } else {
         error = false;
     }
@@ -86,7 +86,11 @@ const validar_edad = (fecha) => {
     console.log('Mes fecha: ' + mes_fecha)
     console.log('Year : ' + anos)
 
-    if (dia_actual < dia_fecha || anos < 18 || mes_actual > mes_fecha) {
+    if (anos < 18) {
+        error_edad = true
+    } else if (mes_actual > mes_fecha) {
+        error_edad = true
+    } else if (dia_actual > dia_fecha) {
         error_edad = true
     } else {
         error_edad = false
@@ -127,18 +131,17 @@ let obtener_datos = () => {
         })
 
     }
-    /*else if (validar_edad(fecha_nacimiento)) {
+    /* else if (validar_edad(fecha_nacimiento)) {
            Swal.fire({
                type: 'warning',
                title: 'Verifique la edad',
                text: 'Debe de ser mayor de edad!',
            })
 
-       
 
-       } */
+
+       }*/
     else {
-        console.log(genero)
         registrar_encargado_recinto(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado)
         Swal.fire({
             type: 'success',

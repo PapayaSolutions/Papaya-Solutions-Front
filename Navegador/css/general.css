@@ -1,0 +1,20 @@
+/*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a  verde muy oscuro
+    #ececec gris 
+    */
+
+body {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #292c2a;
+    background-color: #ececec;
+    background-repeat: no-repeat;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}

@@ -1,0 +1,6 @@
+.imagen_avatar img {
+    padding: 50px;
+    display: grid;
+    grid-area: auto;
+    border-radius: 70px;
+}

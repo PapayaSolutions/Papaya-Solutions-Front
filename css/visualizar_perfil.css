@@ -1,6 +1,79 @@
-.imagen_avatar img {
-    padding: 50px;
+#perfil_container {
+    width: 40%;
+}
+
+.informacion_basica {
     display: grid;
-    grid-area: auto;
-    border-radius: 70px;
+    width: 100%;
+    grid-template-columns: 30% 70% 50%;
+    padding: 50px;
+}
+
+.informacion_basica a {
+    text-decoration: none;
+    color: #f7882f;
+    font-size: 30px;
+}
+
+.informacion_basica p {
+    font-size: 20px;
+}
+
+.informacion_basica img {
+    border-radius: 40px;
+}
+
+.datos {
+    padding: 20px;
+}
+
+hr {
+    color: #f7882f;
+    border: 2px solid #f7882f;
+}
+
+.btn_container {
+    padding-top: 15px;
+}
+
+.btn {
+    background: #f7882f;
+    font-size: 14px;
+    border-radius: 10px;
+    color: #ececec;
+    overflow: hidden;
+    height: 40px;
+}
+
+.btn:hover {
+    background: #f7c331;
+    color: #f7882f;
+}
+
+.genero1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 50px;
+}
+
+.genero1 a {
+    font-size: 30px;
+    text-decoration: none;
+    color: #f7c331;
+    display: grid;
+    padding: 55px;
+    text-align: center;
+}
+
+.genero1 div {
+    height: 150px;
+    width: 150px;
+    background: #000000;
+    border-radius: 40px;
+    margin: auto;
+}
+
+.genero1 :hover {
+    transform: scale(1.1);
+    transition: 0.4s;
 }

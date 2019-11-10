@@ -1,17 +1,16 @@
 'use strict'
-const tbody = document.querySelector('.carta');
-const input_filtro = document.querySelector('#txt_search');
-let lista_eventos;
+const tbody = document.querySelector('#tbl-personas tbody');
+const input_filtro = document.querySelector('#txt-filtro');
+let lista_personas;
 
 let llenar_tabla = async() => {
     let filtro = input_filtro.value.toLowerCase();
-    lista_eventos = await listar_eventos();
+    lista_personas = await listar_personas();
 
     tbody.innerHTML = '';
-    for (let i = 0; i < lista_eventos.length; i++) {
-        let nombre = lista_eventos[i]['nombre'].toLowerCase();
-        let correo = lista_eventos[i]['correo'].toLowerCase();
-        if (nombre.includes(search) || (correo.includes(search))) {
+    for (let i = 0; i < lista_personas.length; i++) {
+        let nombre = lista_personas[i]['nombre'].toLowerCase();
+        if (nombre.includes(filtro)) {
 
             let fila = tbody.insertRow();
 

@@ -60,6 +60,10 @@ select {
     color: #292c2a;
 }
 
+.error {
+    background: rgba(179, 27, 27, 0.219);
+}
+
 .autoExpand {
     display: block;
     box-sizing: padding-box;

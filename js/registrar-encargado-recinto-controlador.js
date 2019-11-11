@@ -47,7 +47,6 @@ const validar = () => {
     } else {
         error = false;
     }
-
     return error;
 };
 
@@ -142,15 +141,17 @@ let obtener_datos = () => {
 
        }*/
     else {
+
         registrar_encargado_recinto(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado)
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con exito',
             text: 'Encargado registrado!',
         })
+
+        document.getElementById("form_enc_rec").reset();
     };
 };
-
 
 // Eventos asociados a los botones o inputs
 

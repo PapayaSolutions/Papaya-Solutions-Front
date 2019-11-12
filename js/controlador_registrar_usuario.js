@@ -120,7 +120,8 @@ let obtener_datos = () => {
             }
         })
     } else {
-        registrar_producto(codigo, nombre, precio, descripcion);
+        registrar_usuario(p_nombre, p_apellido, email, identificacion, email, f_nacimiento, provincia,
+            canton, genero, distrito, direccion);
 
         Swal.fire({
             type: 'success',
@@ -132,8 +133,6 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         })
-
-
     }
 
 

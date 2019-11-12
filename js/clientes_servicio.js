@@ -1,16 +1,26 @@
 'use strict';
 
-let registrar_cliente = async(pcodigo, pnombre, pprecio, pdescripcion) => {
+let registrar_cliente = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo_cliente, pidentificacion,
+    pf_nacimiento, pedad, pgenero, pprovincia, pcanton, pdistrito, pdireccion) => {
     await axios({
             method: 'post',
             url: 'http://localhost:3000/api/registrar-cliente',
             responseType: 'json',
             //body
             data: {
-                codigo: pcodigo,
-                nombre: pnombre,
-                precio: pprecio,
-                descripcion: pdescripcion
+                p_nombre: pp_nombre,
+                s_nombre: ps_nombre,
+                p_apellido: pp_apellido,
+                s_apellido: ps_apellido,
+                correo_cliente: pcorreo_cliente,
+                identificacion: pidentificacion,
+                f_nacimiento: pf_nacimiento,
+                edad: pedad,
+                genero: pgenero,
+                provincia: pprovincia,
+                canton: pcanton,
+                distrito: pdistrito,
+                direccion: pdireccion,
             }
         })
         .then(function(res) {
@@ -23,7 +33,7 @@ let registrar_cliente = async(pcodigo, pnombre, pprecio, pdescripcion) => {
 
 /*al que le toque listarlos, acá sería, ya agregué algunas cosas (Andrés)*/
 
-let listar_clientes = async() => {
+/*let listar_clientes = async() => {
     let listar_clientes;
     await axios({
             method: 'get',
@@ -38,4 +48,4 @@ let listar_clientes = async() => {
             console.log(error);
         });
     return lista_clientes;
-}
+}*/

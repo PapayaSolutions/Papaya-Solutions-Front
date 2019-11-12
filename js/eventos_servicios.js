@@ -6,7 +6,7 @@ let registrar_evento = async(id, nombre, categoria, asistentes_esperados, fecha_
     await axios({
 
                 method: 'post',
-                url: '',
+                url: 'http://localhost:3000/api/registrar-evento',
                 responseType: 'json',
                 data: {
 

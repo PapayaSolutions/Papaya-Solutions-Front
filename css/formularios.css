@@ -8,16 +8,21 @@
 
 /*VERSION 1*/
 
+.formulario {
+    font-family: 'Roboto', sans-serif;
+}
+
 .formulario label {
     display: block;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     padding: 40px 0px 20px 0px;
 }
 
 .formulario h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 30px;
+    letter-spacing: 3px;
     color: #292c2a;
 }
 
@@ -55,6 +60,17 @@ select {
     color: #292c2a;
 }
 
+.error {
+    background: rgba(179, 27, 27, 0.219);
+}
+
+.autoExpand {
+    display: block;
+    box-sizing: padding-box;
+    overflow: hidden;
+    font-size: 14px;
+}
+
 
 /*Grid para usar en tres y dos columnas*/
 
@@ -74,4 +90,31 @@ select {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 25px;
+}
+
+
+/*Botones
+Usar el elemento <button type="button" class="btn" id="el nombre del id que ocupen">*/
+
+.btn_container {
+    margin: auto;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    margin: auto;
+    position: relative;
+    background: #f7882f;
+    font-size: 16px;
+    letter-spacing: 3px;
+    padding: 12px 35px;
+    border-radius: 10rem;
+    color: #ececec;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    transition: 0.4s;
 }

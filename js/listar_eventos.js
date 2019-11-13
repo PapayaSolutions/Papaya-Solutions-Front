@@ -11,7 +11,10 @@ let mostrar_cards = async() => {
     contenedor.innerHTML = '';
     for (let i = 0; i < lista_evento.length; i++) {
         let nombre = lista_evento[i]['nombre'].toLowerCase();
-        if (nombre.includes(filtro)) {
+        let tipo = lista_evento[i]['tipo'].toLowerCase();
+        let fecha_disponible = lista_evento[i]['fecha_disponible'].toLowerCase();
+        if (nombre.includes(filtro) || (tipo.includes(filtro) || (fecha_disponible.includes(filtro)))) {
+
             let div_card = document.createElement('div');
             div_card.classList.add('carta');
 

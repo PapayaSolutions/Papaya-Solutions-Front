@@ -1,0 +1,21 @@
+/*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a  verde muy oscuro
+    #ececec gris 
+    */
+
+#tipos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 220px));
+}
+
+#tipos div {
+    background: #f7c331;
+    margin: 10px;
+    text-align: center;
+    border: 2px double #f7882f;
+    padding: 10px 0;
+    border-radius: 1rem;
+    font-weight: bold;
+}

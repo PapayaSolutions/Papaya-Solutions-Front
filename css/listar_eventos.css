@@ -124,7 +124,7 @@ select:hover {
 #segunda_section {
     margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
     grid-gap: 30px;
 }
 

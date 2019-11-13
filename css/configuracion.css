@@ -1,0 +1,63 @@
+/*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a verde muy oscuro
+    #ececec gris 
+*/
+
+body {
+    background-color: #292c2a;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    width: 90%;
+    min-width: 200px;
+}
+
+#main aside {
+    border-right: solid 2px #f7882f;
+    height: 520px;
+    color: #ececec;
+    width: 100%;
+    min-width: 150px;
+    position: static;
+}
+
+#main h2 {
+    text-align: center;
+    padding: 15px;
+    border-bottom: solid 2px #f7882f;
+    margin-right: 10px;
+}
+
+#main ul {
+    padding: 10px;
+    border-bottom: solid 1px #b1a3a318;
+    margin-right: 10px;
+}
+
+#main ul a {
+    color: #ececec;
+    text-decoration: none;
+}
+
+#main ul a:hover {
+    color: #f7c331;
+}
+
+#main section {
+    width: 100%;
+    min-width: 600px;
+    margin: 10px;
+}
+
+#main section h1 {
+    text-align: center;
+    padding: 15px;
+    margin: 10px;
+    color: #ececec;
+    font-weight: initial;
+    font-size: 22px;
+}

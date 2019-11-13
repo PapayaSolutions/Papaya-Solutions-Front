@@ -60,18 +60,23 @@
         object-fit: cover;
     }
     
-    .banner_left h1 {
+
+    #bnr_nombre {
         color: white;
         font-size: 45px;
         font-weight: 900;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
+
     }
     
     .banner_left p {
         color: #292c2a;
         font-size: 20px;
         font-weight: 500;
-        margin-bottom: 10px;
+
+        margin-bottom: 5px;
+        margin-left: 15px;
+
     }
     
     .banner_left a {
@@ -104,13 +109,17 @@
         border-radius: 10px;
         background: #292c2a;
         padding: 40px;
+        z-index: 1;
     }
-    /*titulos*/
+    /*títulos*/
+
     
     .item1 h1 {
         margin-top: 15px;
         color: #f7882f;
         font-size: 20px;
+        min-width: 500px;
+
     }
     /*datos*/
     
@@ -121,7 +130,9 @@
         margin-left: 150px;
         bottom: 25px;
     }
-    /*descripcion del evento*/
+
+    /*descripción del evento*/
+
     
     .item2 {
         grid-column-start: 1;
@@ -132,23 +143,30 @@
         background: #292c2a;
         padding: 40px;
         max-width: 1375px;
+
+        min-width: 500px;
         margin-top: 10px;
     }
-    /*titulo*/
+    /*título*/
+
     
     .item2 h1 {
         color: #f7882f;
         font-size: 30px;
     }
-    /*descripcion */
+
+    /*descripción */
     
     .item2 p {
-        color: #f7c331;
+        color: white;
+
         font-size: 25px;
         margin-top: 10px;
         margin-left: 30px;
     }
-    /*geolocalizacion mapa de google*/
+
+    /*geolocalización mapa de google*/
+
     
     .item3 {
         grid-column-start: 3;
@@ -160,7 +178,9 @@
         max-height: 300px;
         margin: auto;
     }
-    /*boton que lleva al perfil del recinto*/
+
+    /*botón que lleva al perfil del recinto*/
+
     
     .item4 {
         grid-column-start: 3;
@@ -189,18 +209,22 @@
         grid-column-end: 4;
         grid-row-start: 3;
         grid-row-end: 6;
-        border-radius: 5px;
+
         max-width: 300px;
         margin: auto;
+        z-index: 2;
+
     }
     
     .item5 button {
         width: 300px;
         height: 100px;
-        border-radius: 10px;
+
+        border-radius: 50px;
         border: transparent;
-        color: #f7882f;
-        background: #292c2a;
+        color: #f7c331;
+        background: #f7882f;
+
         font-size: 30px;
         font-weight: 900;
     }
@@ -209,4 +233,104 @@
         font-size: 20px;
         text-align: center;
         margin-top: 5px;
+
+    }
+    /*sección de calificación del evento*/
+    
+    #sct_calificacion {
+        width: 50%;
+        margin: auto;
+        position: relative;
+        background: #292c2a;
+        border-radius: 10px;
+        min-width: 550px;
+    }
+    
+    #sct_calificacion h1 {
+        font-size: 35px;
+        color: #f7c331;
+        position: absolute;
+        padding-left: 20px;
+        top: 10px;
+        left: 10px;
+    }
+    /*sección de las estrellas*/
+    
+    .rating {
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        font-size: 55px;
+        color: white;
+        padding-right: 20px;
+    }
+    
+    .rating>span {
+        display: inline-block;
+        position: relative;
+        width: 1.1em;
+    }
+    
+    .rating>span:hover:before,
+    .rating>span:hover~span:before {
+        content: "\2605";
+        position: absolute;
+        color: #f7c331;
+    }
+    /*sección de comentarios*/
+    
+    #sct_coment {
+        width: 50%;
+        margin: auto;
+        display: grid;
+        margin-top: 40px;
+        grid-template-rows: 60px 1fr 1fr 1fr 1fr 50px;
+        grid-row-gap: 10px;
+    }
+    
+    #coment_head {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        background: #292c2a;
+        color: #f7c331;
+        font-size: 30px;
+        border-radius: 10px;
+        min-height: 60px;
+    }
+    
+    #coment_head h1 {
+        position: relative;
+        left: 20px;
+        top: 15px;
+    }
+    
+    #coment_body {
+        grid-row-start: 2;
+        grid-row-end: 6;
+        padding: 10px;
+        background: #292c2a;
+        border-radius: 10px;
+    }
+    
+    #coment_body textarea {
+        resize: none;
+        min-height: 100px;
+        min-width: 200px;
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /*botón de comentar*/
+    
+    #btn_coment {
+        grid-row-start: 6;
+        grid-row-end: 7;
+        max-width: 150px;
+        border-radius: 50px;
+        border: transparent;
+        color: #f7c331;
+        background: #f7882f;
+        font-size: 25px;
+        font-weight: 700;
+        justify-self: right;
+
     }

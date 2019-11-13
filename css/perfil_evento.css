@@ -60,19 +60,23 @@
         object-fit: cover;
     }
     
+
     #bnr_nombre {
         color: white;
         font-size: 45px;
         font-weight: 900;
         margin-bottom: 5px;
+
     }
     
     .banner_left p {
         color: #292c2a;
         font-size: 20px;
         font-weight: 500;
+
         margin-bottom: 5px;
         margin-left: 15px;
+
     }
     
     .banner_left a {
@@ -108,12 +112,14 @@
         z-index: 1;
     }
     /*títulos*/
+
     
     .item1 h1 {
         margin-top: 15px;
         color: #f7882f;
         font-size: 20px;
         min-width: 500px;
+
     }
     /*datos*/
     
@@ -124,7 +130,9 @@
         margin-left: 150px;
         bottom: 25px;
     }
+
     /*descripción del evento*/
+
     
     .item2 {
         grid-column-start: 1;
@@ -135,24 +143,30 @@
         background: #292c2a;
         padding: 40px;
         max-width: 1375px;
+
         min-width: 500px;
         margin-top: 10px;
     }
     /*título*/
+
     
     .item2 h1 {
         color: #f7882f;
         font-size: 30px;
     }
+
     /*descripción */
     
     .item2 p {
         color: white;
+
         font-size: 25px;
         margin-top: 10px;
         margin-left: 30px;
     }
+
     /*geolocalización mapa de google*/
+
     
     .item3 {
         grid-column-start: 3;
@@ -164,7 +178,9 @@
         max-height: 300px;
         margin: auto;
     }
+
     /*botón que lleva al perfil del recinto*/
+
     
     .item4 {
         grid-column-start: 3;
@@ -193,18 +209,22 @@
         grid-column-end: 4;
         grid-row-start: 3;
         grid-row-end: 6;
+
         max-width: 300px;
         margin: auto;
         z-index: 2;
+
     }
     
     .item5 button {
         width: 300px;
         height: 100px;
+
         border-radius: 50px;
         border: transparent;
         color: #f7c331;
         background: #f7882f;
+
         font-size: 30px;
         font-weight: 900;
     }
@@ -213,6 +233,7 @@
         font-size: 20px;
         text-align: center;
         margin-top: 5px;
+
     }
     /*sección de calificación del evento*/
     
@@ -311,4 +332,5 @@
         font-size: 25px;
         font-weight: 700;
         justify-self: right;
+
     }

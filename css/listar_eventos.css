@@ -128,10 +128,6 @@ select:hover {
     grid-gap: 30px;
 }
 
-.carta {
-    padding: 10px;
-}
-
 .img_container {
     position: relative;
     margin-bottom: 10px;
@@ -191,7 +187,7 @@ select:hover {
 
 .txt_container {
     display: grid;
-    grid-template-columns: 30% 6% 10%;
+    grid-template-columns: 20% 5% 10%;
     color: #f7882f;
     font-size: 15px;
     padding-top: 5px;

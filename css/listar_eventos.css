@@ -138,7 +138,7 @@ select:hover {
     margin-bottom: 10px;
 }
 
-.img_container img {
+.img_container a img {
     background-color: #292c2a;
     max-width: 100%;
     width: 100%;
@@ -162,10 +162,11 @@ select:hover {
     position: absolute;
     right: 0;
     padding: 10px;
-    color: #ececec;
+    color: #292c2a;
     background-color: #f7c331;
     border-radius: 20px 20px 20px 20px;
     margin: 3px;
+    font-size: 15px;
 }
 
 .carta h2 {
@@ -175,30 +176,33 @@ select:hover {
 }
 
 .carta h3 {
-    color: #f7882f;
-    padding: 4px;
+    color: #292c2a;
     font-weight: bold;
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+.lugar_container {
+    color: #f7882f;
+    display: grid;
+    grid-template-columns: 20% 60%;
+    font-size: 15px;
+    padding-top: 5px;
 }
 
 .txt_container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 4px;
-}
-
-.txt_container p {
-    color: #292c2a;
-}
-
-.txt_container span {
-    text-align: right;
+    grid-template-columns: 30% 6% 10%;
     color: #f7882f;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #titulo_categorias {
     text-align: center;
     color: #f7c331;
-    margin: 10px;
+    margin-top: 40px;
 }
 
 #titulo_categorias span {

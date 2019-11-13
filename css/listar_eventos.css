@@ -184,7 +184,7 @@ select:hover {
 .lugar_container {
     color: #f7882f;
     display: grid;
-    grid-template-columns: 20% 60%;
+    grid-template-columns: 20% 80%;
     font-size: 15px;
     padding-top: 5px;
 }

@@ -19,10 +19,6 @@
     font-size: 16px;
 }
 
-.informacion_basica img {
-    border-radius: 40px;
-}
-
 .datos {
     padding: 20px;
     display: grid;
@@ -63,9 +59,6 @@ hr {
     color: #fff;
     margin: auto;
     text-align: center;
-    background: #f7882f;
-    border-radius: 10px;
-    opacity: 0.6;
     padding: 25px;
 }
 

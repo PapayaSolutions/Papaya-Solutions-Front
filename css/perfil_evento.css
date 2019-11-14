@@ -13,15 +13,15 @@
     header {
         width: 100%;
         background: #f7c331;
-        height: 250px;
-        border-bottom: #f7882f solid 30px;
+        height: 300px;
+        border-bottom: #f7882f solid 20px;
         margin-bottom: 40px;
     }
     
     #banner_grid {
         display: grid;
         width: 90%;
-        height: 200px;
+        height: 250px;
         margin: auto;
         grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr 100px;
         grid-template-rows: 30px 1fr 1fr 1fr 30px;
@@ -42,20 +42,20 @@
         grid-row-start: 1;
         grid-row-end: 6;
         overflow: hidden;
-        margin: 10px;
+        margin: auto;
     }
     
     .img_container {
-        min-width: 300px;
+        min-width: 200px;
         height: 200px;
         overflow: hidden;
         margin: auto;
     }
     
     .img_container img {
-        width: 100%;
-        height: 100%;
-        object-fit: scale-down;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
     }
     
     #bnr_nombre {
@@ -108,7 +108,7 @@
         display: block;
         margin-top: 15px;
         color: #f7882f;
-        font-size: 20px;
+        font-size: 16px;
         min-width: 500px;
     }
     /*datos*/
@@ -116,7 +116,7 @@
     .item1 output {
         display: block;
         color: #f7c331;
-        font-size: 25px;
+        font-size: 16px;
         position: relative;
         margin-left: 150px;
         bottom: 25px;
@@ -139,14 +139,14 @@
     
     .item2 h1 {
         color: #f7882f;
-        font-size: 30px;
+        font-size: 20px;
     }
     /*descripción */
     
     .item2 #descripcion_evento {
         color: white;
         font-size: 25px;
-        margin-left: 30px;
+        margin-left: 16px;
         position: relative;
         top: 10px;
     }
@@ -160,6 +160,7 @@
         border-radius: 5px;
         max-width: 300px;
         max-height: 300px;
+        border: 1px solid burlywood;
         margin: auto;
     }
     /*botón que lleva al perfil del recinto*/
@@ -175,14 +176,14 @@
     }
     
     .item4 button {
-        width: 300px;
-        height: 50px;
-        border-radius: 10px;
-        border: transparent;
-        color: #f7c331;
-        background: #292c2a;
-        font-size: 30px;
-        font-weight: 700;
+        background: #f7882f;
+        font-size: 16px;
+        letter-spacing: 3px;
+        border: 1px solid #f7882f;
+        padding: 12px 35px;
+        border-radius: 10rem;
+        color: #ececec;
+        margin-top: 10px;
     }
     /*agregar al carrito de compras  */
     
@@ -201,15 +202,15 @@
         height: 70px;
         border-radius: 50px;
         border: transparent;
-        color: #f7c331;
+        color: white;
         background: #f7882f;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: 900;
         justify-self: center;
     }
     
     .item5 h3 {
-        font-size: 20px;
+        font-size: 16px;
         text-align: center;
         margin-top: 5px;
     }
@@ -296,19 +297,24 @@
     /*botón de comentar*/
     
     #btn_coment {
-        grid-row-start: 6;
-        grid-row-end: 7;
-        justify-self: right;
         background: #f7882f;
         font-size: 16px;
         letter-spacing: 3px;
+        border: 1px solid #f7882f;
         padding: 12px 35px;
         border-radius: 10rem;
         color: #ececec;
-        overflow: hidden;
+        margin-top: 10px;
     }
     
-    button:hover {
-        transform: scale(1.1);
-        transition: 0.4s;
+    #btn_coment:hover {
+        background: transparent;
+        color: #f7882f;
+    }
+    
+    .btn:hover {
+        background: transparent;
+        color: #f7882f;
+        border: 1px solid #f7882f;
+        box-sizing: border-box;
     }

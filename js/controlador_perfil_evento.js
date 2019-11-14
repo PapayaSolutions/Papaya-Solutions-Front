@@ -9,42 +9,62 @@ const precio = document.querySelector('#precio_evento');
 const categoria = document.querySelector('#categoria_evento');
 const descripcion = document.querySelector('#descripcion_evento');
 const cantidad = document.querySelector('#cantidad');
+const imagen = document.querySelector('#img_evento');
 
-
-let evento_id = localStorage.getItem('id_evento');
 
 let datos_evento;
+let ID = '5dcd97235f8dde25b8c02d0c'; //localStorage.getItem('id_evento');
 
-let llenar_perfil = async() => {
-    datos_evento = await listar_evento(); /*en servicios del evento*/
-    /*extrae la info de la bd*/
+let obtener_evento = async(_id) => {
+    try {
+        const response = await axios({
+            method: 'get',
+            params: { _id: _id },
+            url: `http://localhost:3000/api/listar_evento2/`,
+            responseType: 'json'
+        });
+        return response.data.evento;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
+let llenar_perfil = async(_id) => {
+
+    datos_evento = await axios({
+        method: 'get',
+        params: { _id: _id },
+        url: `http://localhost:3000/api/listar_evento2/`,
+        responseType: 'json'
+    });
+
+
+    nombre.innerHTML = datos_evento['nombre'];
+    recinto.value = datos_evento['recinto'];
+    precio.value = ('¢' + (datos_evento['precio_entrada']));
+    categoria.value = datos_evento['categoria'];
+    descripcion.value = datos_evento['descripcion'];
+    cantidad.value = datos_evento['cantidad_maxima_usuario'];
+    direccion.value = datos_evento['pais_evento'];
+    imagen.src = datos_evento['URL_imagen'];
+
+
+    /*  implementacion de hora y fecha antigua
+    fecha.innerHTML = (dayName + '  ' + date.getDate() + ' de ' + mesName + ' del ' + date.getFullYear());
+    hora.value = tiempo;
     let date = new Date(datos_evento[evento_id]['fecha_disponible']);
-    /* asigna las horas a tiempo */
     let tiempo = date.getHours();
-    /**asigna pm o am */
     if (tiempo > 12) {
         tiempo = ((tiempo - 12) + 'pm').toString();
     } else {
         tiempo = (tiempo + 'am')
     }
-    /**arreglo de dias de la semana */
     var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
     var dayName = dias[date.getDay()];
-    /**arreglo de meses del año */
     var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
     var mesName = meses[date.getMonth()];
-
-    nombre.innerHTML = datos_evento[evento_id]['nombre'];
-    fecha.innerHTML = (dayName + '  ' + date.getDate() + ' de ' + mesName + ' del ' + date.getFullYear());
-    hora.value = tiempo;
-    recinto.value = datos_evento[evento_id]['recinto'];
-    precio.value = ('¢' + (datos_evento[evento_id]['precio_entrada']));
-    categoria.value = datos_evento[evento_id]['tipo'];
-    descripcion.value = datos_evento[evento_id]['descripcion'];
-    cantidad.value = datos_evento[evento_id]['cantidad_maxima_usuario'];
-    direccion.value = datos_evento[evento_id]['pais_evento'];
-
-
+    */
 }
 
-llenar_perfil();
+llenar_perfil(ID);

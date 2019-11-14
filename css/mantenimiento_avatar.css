@@ -66,13 +66,13 @@
     }
     
     #bnr_input::placeholder {
-        color: #f7c231b0;
+        color: #070603;
     }
     
     #search_icon {
         position: relative;
         left: 25px;
-        color: #f7c2316c;
+        color: #0a0907;
     }
     
     .banner_right {
@@ -127,6 +127,7 @@
     
     #avatar_container {
         display: flow-root;
+        width: 80%;
     }
     
     .card {

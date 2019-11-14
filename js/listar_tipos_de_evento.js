@@ -2,19 +2,19 @@
 const tbody = document.querySelector('#tipos');
 
 
-let lista_productos;
+let lista_tipo_de_evento;
 
 let llenar_tabla = async() => {
 
-    lista_productos = await listar_productos();
+    lista_tipo_de_evento = await listar_tipos_de_evento();
     tbody.innerHTML = '';
-    for (let i = 0; i < lista_productos.length; i++) {
+    for (let i = 1; i < lista_tipo_de_evento.length; i++) {
 
 
         let div_container = document.createElement('div');
 
         let nombre = document.createElement('span');
-        nombre.innerText = lista_productos[i]['nombre'];
+        nombre.innerText = lista_tipo_de_evento[i]['nombre'];
 
         tbody.appendChild(div_container);
 

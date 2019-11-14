@@ -24,3 +24,13 @@
     color: #f7882f;
     font-size: 30px;
 }
+
+hr {
+    border: #f7882f solid 1px;
+}
+
+h3 {
+    text-align: center;
+    color: #f7882f;
+    font-size: 25px;
+}

@@ -53,11 +53,12 @@ body {
     margin: 10px;
 }
 
-#main section h1 {
+#primera_section h1 {
     text-align: center;
     padding: 15px;
     margin: 10px;
     color: #ececec;
     font-weight: initial;
     font-size: 22px;
+    width: 83%;
 }

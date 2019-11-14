@@ -11,9 +11,8 @@ let mostrar_cards = async() => {
     contenedor.innerHTML = '';
     for (let i = 0; i < lista_evento.length; i++) {
         let nombre = lista_evento[i]['nombre'].toLowerCase();
-        let tipo = lista_evento[i]['tipo'].toLowerCase();
-        let fecha_disponible = lista_evento[i]['fecha_disponible'].toLowerCase();
-        if (nombre.includes(filtro) || (tipo.includes(filtro) || (fecha_disponible.includes(filtro)))) {
+        let categoria = lista_evento[i]['categoria'].toLowerCase();
+        if (nombre.includes(filtro) || (tipo.includes(filtro))) {
 
             let div_card = document.createElement('div');
             div_card.classList.add('carta');
@@ -24,7 +23,6 @@ let mostrar_cards = async() => {
             let div_fecha = document.createElement('div');
 
             let fecha = document.createElement('small');
-            fecha.innerText = lista_evento[i]['fecha_disponible'];
 
 
             let fecha_txt = document.createElement('small');
@@ -35,7 +33,7 @@ let mostrar_cards = async() => {
             let imagen = document.createElement('img');
 
             let categoria = document.createElement('h2');
-            categoria.innerText = lista_evento[i]['tipo'];
+            categoria.innerText = lista_evento[i]['categoria'];
 
             let nombre_evento = document.createElement('h3');
             nombre_evento.innerText = lista_evento[i]['nombre'];
@@ -102,3 +100,32 @@ let mostrar_cards = async() => {
 };
 mostrar_cards();
 input_filtro.addEventListener('keyup', mostrar_cards);
+
+
+//Listar categorias en el dashboard
+const tbody = document.querySelector('#txt-categoria');
+let lista_productos;
+
+let llenar_tabla = async() => {
+
+    lista_productos = await listar_productos();
+    tbody.innerHTML = '';
+
+    for (let i = 0; i < lista_productos.length; i++) {
+        let todas = document.createElement('option');
+        let selecionar = document.createElement('option');
+
+        todas.innerText = 'Todas';
+
+        selecionar.innerText = lista_productos[i]['nombre'];
+
+
+
+
+        tbody.appendChild(selecionar);
+
+
+    };
+};
+
+llenar_tabla();

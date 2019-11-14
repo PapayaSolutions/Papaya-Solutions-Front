@@ -5,24 +5,22 @@
     #ececec gris 
 */
 
-body {
-    background-color: #292c2a;
-}
-
 #main {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    width: 90%;
+    width: 100%;
     min-width: 200px;
 }
 
 #main aside {
+    text-align: center;
     border-right: solid 2px #f7882f;
     height: 520px;
     color: #ececec;
     width: 100%;
+    position: relative;
     min-width: 150px;
-    position: static;
+    background-color: #292c2a;
 }
 
 #main h2 {
@@ -50,7 +48,7 @@ body {
 #main section {
     width: 100%;
     min-width: 600px;
-    margin: 10px;
+    background: #ececec;
 }
 
 #primera_section h1 {

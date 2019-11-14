@@ -82,22 +82,12 @@ nav a {
 }
 
 #container_nav div select:hover {
+    background-color: #f7882f;
+    border: 1px #292c2a solid;
     color: #292c2a;
-    background-color: #f7c331;
-}
-
-#txt_categoria:hover {
-    color: #292c2a;
-}
-
-select:active,
-select:hover {
-    outline: none
-}
-
-select:active,
-select:hover {
-    outline-color: red
+    border-radius: 42px 42px 42px 42px;
+    -moz-border-radius: 42px 42px 42px 42px;
+    -webkit-border-radius: 42px 42px 42px 42px;
 }
 
 #primera_section {
@@ -124,7 +114,7 @@ select:hover {
 #segunda_section {
     margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 275px));
     grid-gap: 30px;
 }
 
@@ -227,6 +217,8 @@ select:hover {
 }
 
 .btn-mas:hover {
-    transform: scale(1.1);
-    transition: 0.4s;
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
+    box-sizing: border-box;
 }

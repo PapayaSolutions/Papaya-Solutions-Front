@@ -1,0 +1,224 @@
+/*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a  verde muy oscuro
+    #ececec gris 
+    */
+
+main {
+    background-color: #ececec;
+}
+
+nav {
+    background-color: #f7882f;
+    color: #ececec;
+}
+
+nav a {
+    text-decoration-line: none;
+    color: #ececec;
+}
+
+#cero_section {
+    background: #f7c331;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    height: 200px;
+    min-height: 50px;
+    min-width: 200px;
+}
+
+#cero_section input {
+    width: 300px;
+    height: 30px;
+    min-width: 50px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.portada_container {
+    width: 40%;
+    min-width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
+#cero_section img {
+    background-color: #292c2a;
+    height: 100%;
+    width: 100%;
+    min-width: 150px;
+    min-height: 100px;
+}
+
+.titulo_container {
+    widows: 30%;
+    margin: auto 0;
+}
+
+.titulo_container h1 {
+    color: #ececec;
+    font-size: 40px;
+    padding: 5px;
+}
+
+.titulo_container h2 {
+    color: #292c2a;
+    font-size: 40px;
+    padding: 5px;
+}
+
+#container_nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
+    padding: 5px;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#container_nav div a:hover {
+    color: #292c2a;
+}
+
+#container_nav div select:hover {
+    background-color: #f7882f;
+    border: 1px #292c2a solid;
+    color: #292c2a;
+    border-radius: 42px 42px 42px 42px;
+    -moz-border-radius: 42px 42px 42px 42px;
+    -webkit-border-radius: 42px 42px 42px 42px;
+}
+
+#primera_section {
+    background-color: #f7882f;
+}
+
+#txt-categoria {
+    background-color: #f7882f;
+    border: 1px #ececec solid;
+    color: #ececec;
+    border-radius: 42px 42px 42px 42px;
+    -moz-border-radius: 42px 42px 42px 42px;
+    -webkit-border-radius: 42px 42px 42px 42px;
+}
+
+.move {
+    padding-left: 300px;
+}
+
+.linear a {
+    border-bottom: 1px #ececec solid;
+}
+
+#segunda_section {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 275px));
+    grid-gap: 30px;
+}
+
+.img_container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.img_container a img {
+    background-color: #292c2a;
+    max-width: 100%;
+    width: 100%;
+    min-width: 50px;
+    height: 180px;
+    border: #f7c331 solid 2px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.img_container img:hover {
+    background-color: #292c2a;
+    max-width: 100%;
+    width: 100%;
+    min-width: 50px;
+    height: 180px;
+    border: #292c2a solid 2px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.carta div div {
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    color: #292c2a;
+    background-color: #f7c331;
+    border-radius: 20px 0px 0px 20px;
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+.carta h2 {
+    color: #f7c331;
+    border-bottom: #f7c331 2px solid;
+    padding: 3px;
+}
+
+.carta h3 {
+    color: #292c2a;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+.lugar_container {
+    color: #f7882f;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.txt_container {
+    display: grid;
+    grid-template-columns: 20% 5% 10%;
+    color: #f7882f;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#titulo_categorias {
+    text-align: center;
+    color: #f7c331;
+    margin-top: 40px;
+}
+
+#titulo_categorias span {
+    background-color: #292c2a;
+    border: solid 2px #f7882f;
+    padding: 10px 40px;
+    border-radius: 15px 15px 15px 15px;
+    font-size: 20px;
+}
+
+.btn_container {
+    text-align: right;
+    margin: auto;
+}
+
+.btn-mas {
+    display: inline-block;
+    margin: auto;
+    position: relative;
+    background: #f7882f;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 5px 10px;
+    border-radius: 10rem;
+    color: #ececec;
+    overflow: hidden;
+}
+
+.btn-mas:hover {
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
+    box-sizing: border-box;
+}

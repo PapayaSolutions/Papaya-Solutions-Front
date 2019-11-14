@@ -1,0 +1,123 @@
+    /*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a verde muy oscuro
+    #ececec gris 
+    */
+    
+    header {
+        text-align: center;
+        padding: 10px;
+        padding: 30px 0;
+        width: 100%;
+        background-color: ;
+        background-image: linear-gradient(to bottom right, #292c2a, #292c2a);
+        border: 1px solid #ececec;
+    }
+    
+    header nav {
+        width: 100%;
+        padding: 10px, 200px;
+    }
+    
+    header nav a {
+        color: white;
+        text-decoration: none;
+        color: #ececec;
+        font-size: 30px;
+        margin: 0 50px;
+        padding: 10px;
+        text-shadow: 5px 5px 5px #292c2a;
+    }
+    
+    header nav a:hover {
+        text-shadow: 3px 3px 3px #ececec;
+        color: #f7c331;
+    }
+    
+    .anima {
+        text-align: center;
+        color: #f7882f;
+        font-size: 70px;
+        font-weight: bold;
+    }
+    
+    .grande {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .primer-conteiner {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        max-width: 1000px;
+    }
+    
+    .primer-conteiner div {
+        text-align: center;
+    }
+    
+    .primer-conteiner div img {
+        width: 50%;
+        min-width: 20%;
+    }
+    
+    .cenfo {
+        padding: 60px;
+    }
+    
+    .titulo-1 {
+        font-size: 35px;
+        text-align: center;
+        color: #292c2a;
+        text-shadow: 3px 6px 3px #f7882f;
+        padding: 20px;
+        font-weight: bold;
+    }
+    
+    .titulo-2 {
+        font-size: 30px;
+        text-align: center;
+        color: #292c2a;
+        padding: 60px;
+    }
+    
+    .integrantes-container {
+        display: grid;
+        width: 100%;
+        min-width: 150px;
+        margin: auto;
+        grid-template-columns: 33% 33% 33%;
+        position: relative;
+        min-height: 200px;
+    }
+    
+    .integrantes-container div {
+        text-align: center;
+        padding: 10px;
+        min-width: 66%;
+        max-width: 1000px;
+    }
+    
+    .integrantes-container img {
+        border: double 6px #f7c331;
+        border-radius: 50%;
+        height: 250px;
+        width: 250px;
+        overflow: hidden;
+    }
+    
+    .integrantes-container div div span {
+        font-weight: oblique;
+        color: #292c2a;
+        font-size: 20px;
+        padding: 4px 20px;
+        border-bottom: solid 1px #f7c331;
+    }
+    
+    .integrantes-container img:hover {
+        transform: scale(1.1);
+        transition: .7s ease;
+    }

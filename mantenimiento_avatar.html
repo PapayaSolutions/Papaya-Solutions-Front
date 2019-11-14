@@ -10,13 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/perfil_evento.css">
+    <link rel="stylesheet" href="css/mantenimiento_avatar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <title>Perfil del Evento</title>
+    <title>Mantenimiento de Avatares</title>
 </head>
 
 <body>
-
     <header>
         <nav>
             <div>
@@ -36,75 +35,41 @@
         <section id="banner_grid">
 
             <div class="banner_left">
-                <label id='bnr_nombre'>Nombre del Evento</label>
+                <h1 id='bnr_titulo'>Mantenimiento</h1>
+                <h2 id="bnr_seccion">IMAGENES DE AVATAR</h2>
+                <i class="fas fa-search" id="search_icon"></i>
+                <input type="text" id="bnr_input" placeholder="Buscar">
 
-                <a href="">Editar Evento</a>
+
             </div>
+
             <div class="banner_right">
-                <div class="img_container">
-                    <img src="img/placeholder.png" alt="">
+                <div>
+                    <figure class="img_container">
+                        <img src="img/default-avatar.png" alt="Seleccionar Imagen" id="imagen_preview">
+                    </figure>
+
+                    <button type="button" class="button" id="btn_agregar_imagen">Agregar</button>
                 </div>
             </div>
 
+            <div class="botonera">
+                <button type="button" class="button" id="btn_eliminar">Eliminar</button>
+                <button type="button" class="button" id="btn_habilitar">Habilitar</button>
+                <button type="button" class="button" id="btn_deshabilitar">Deshabilitar</button>
+            </div>
+
         </section>
-
+        <!-- Banner grid -->
     </header>
+    <Main>
 
-    <main>
+        <div id="avatar_container">
 
-        <div id="main_grid">
-            <div class="grid_item item1">
-                <label>Fecha:</label>
-                <output id="fecha_evento"></output>
-                <label>Hora:</label>
-                <output id="hora_evento"></output>
-                <label>Lugar:</label>
-                <output id="recinto_evento"></output>
-                <label>País:</label>
-                <output id="direccion_evento"></output>
-                <label>Precio:</label>
-                <output id="precio_evento"></output>
-                <label>Categoría:</label>
-                <output id="categoria_evento"></output>
-            </div>
-
-            <div class="grid_item item2">
-                <h1>Descripción</h1>
-                <output id="descripcion_evento"></output>
-            </div>
-
-            <div class="grid_item item3 img_container">
-                <img src="img/placeholder.png" alt="Mapa">
-            </div>
-
-            <div class="grid_item item4">
-                <button type="button">Lugar</button>
-            </div>
-            <div class="grid_item item5">
-                <button type="button">Agregar al Carrito</button>
-                <h3>Máximo <output id="cantidad"></output> tiquetes por persona</h3>
-            </div>
         </div>
-    </main>
+        <!-- avatar container-->
 
-    <section id="sct_calificacion">
-        <h1>Calificación: </h1>
-        <div class="rating">
-            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-        </div>
-    </section>
-
-    <section id="sct_coment">
-        <div id="coment_head">
-            <h1>Comentarios:</h1>
-        </div>
-        <div id="coment_body">
-            <textarea id="txt_coment"></textarea>
-        </div>
-        <button type="button" id="btn_coment">Comentar</button>
-
-    </section>
-
+    </Main>
     <footer>
         <div id="socials_container">
             <div class="grid_socials">
@@ -173,11 +138,17 @@
         </div>
     </footer>
 
-    <!-- Scripting -->
+    <!--Scripting-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"></script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/eventos_servicios.js"></script>
-    <script src="js/controlador_perfil_evento.js"></script>
+
+    <script src="js/avatares_servicios.js"></script>
+    <script src="js/controlador_mantenimiento_avatar.js"></script>
 </body>
 
 </html>

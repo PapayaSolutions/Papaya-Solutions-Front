@@ -149,9 +149,9 @@ nav a {
     padding: 10px;
     color: #292c2a;
     background-color: #f7c331;
-    border-radius: 20px 20px 20px 20px;
-    margin: 3px;
-    font-size: 15px;
+    border-radius: 20px 0px 0px 20px;
+    margin-top: 4px;
+    font-size: 13px;
 }
 
 .carta h2 {

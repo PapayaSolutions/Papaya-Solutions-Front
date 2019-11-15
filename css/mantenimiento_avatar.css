@@ -10,24 +10,11 @@
         background: #ececec;
     }
     
-    header {
-        width: 100%;
-        background: #f7c331;
-        height: 350px;
-        border-bottom: #f7882f solid 15px;
-        margin-bottom: 40px;
-    }
-    
-    main {
-        width: 75%;
-        margin: 40px auto 0 400px;
-    }
-    
     #banner_grid {
         display: grid;
-        width: 90%;
+        width: 100%;
         height: 300px;
-        margin: auto;
+        border-bottom: 10px #f7882f solid;
         grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr 200px;
         grid-template-rows: 30px 1fr 1fr 1fr 30px;
         grid-column-gap: 10px;
@@ -35,16 +22,16 @@
     
     .banner_left {
         position: relative;
-        grid-column-start: 2;
+        grid-column-start: 1;
         grid-column-end: 5;
-        grid-row-start: 2;
+        grid-row-start: 0;
         grid-row-end: 5;
         margin: auto;
     }
     
     #bnr_titulo {
         font-size: 50px;
-        color: white;
+        color: #f7882f;
         font-weight: 900;
         margin-bottom: 25px;
     }
@@ -66,13 +53,13 @@
     }
     
     #bnr_input::placeholder {
-        color: #070603;
+        color: #f7882f;
     }
     
     #search_icon {
         position: relative;
-        left: 25px;
-        color: #0a0907;
+        left: 30px;
+        color: #f7882f;
     }
     
     .banner_right {
@@ -84,11 +71,18 @@
     }
     
     .botonera {
-        grid-column-start: 7;
-        grid-column-end: 8;
-        grid-row-start: 2;
-        grid-row-end: 5;
+        width: 60%;
+        display: grid;
         margin: auto;
+        margin-top: 10px;
+        height: 50px;
+        grid-template-columns: 100px 1fr 1fr 1fr 100px;
+        grid-column-gap: 10px;
+    }
+    
+    #btn_eliminar {
+        grid-column-start: 1;
+        grid-column-start: 2;
     }
     
     .img_container {
@@ -110,24 +104,31 @@
     }
     
     .button {
+        display: inline-block;
+        margin: auto;
+        position: relative;
         background: #f7882f;
-        color: #f7c331;
         font-size: 16px;
         letter-spacing: 3px;
-        padding: 12px 35px;
+        padding: 8px 15px;
         border-radius: 10rem;
+        border: 1px solid #f7882f;
         color: #ececec;
-        margin-bottom: 20px;
     }
     
-    button:hover {
-        transform: scale(1.1);
+    .button:hover {
+        background: transparent;
+        color: #f7882f;
+        border: 1px solid #f7882f;
+        box-sizing: border-box;
         transition: 0.4s;
     }
     
     #avatar_container {
         display: flow-root;
-        width: 80%;
+        grid-column-start: 2;
+        grid-column-end: 8;
+        width: 100%;
     }
     
     .card {

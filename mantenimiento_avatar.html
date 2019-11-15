@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/configuracion.css">
     <link rel="stylesheet" href="css/mantenimiento_avatar.css">
     <link rel="stylesheet" href="css/footer.css">
     <title>Mantenimiento de Avatares</title>
@@ -32,111 +33,70 @@
             </div>
 
         </nav>
-        <section id="banner_grid">
 
-            <div class="banner_left">
-                <h1 id='bnr_titulo'>Mantenimiento</h1>
-                <h2 id="bnr_seccion">IMAGENES DE AVATAR</h2>
-                <i class="fas fa-search" id="search_icon"></i>
-                <input type="text" id="bnr_input" placeholder="Buscar">
+    </header>
+    <Main id="main">
+
+        <aside id="primer_aside">
+            <h2>Ajustes de Administrador</h2>
+            <ul>
+                <a href="listar_perfiles.html">  Clientes</a>
+
+            </ul>
+            <ul>
+                <a href="">Administrador</a>
+            </ul>
+            <ul><a href="">Categorias</a></ul>
+            <ul><a href="">Recintos</a></ul>
+            <ul><a href="">Impuestos</a></ul>
+            <ul><a href="">Descuentos</a></ul>
+            <ul><a href="mantenimiento_avatar.html">Avatares</a></ul>
+            <ul><a href="">Reservas</a></ul>
+            <ul><a href="">Reportes</a></ul>
+
+        </aside>
+        <section>
+            <section id="banner_grid">
+
+                <div class="banner_left">
+                    <h1 id='bnr_titulo'>Mantenimiento</h1>
+                    <h2 id="bnr_seccion">IMAGENES DE AVATAR</h2>
+                    <i class="fas fa-search" id="search_icon"></i>
+                    <input type="text" id="bnr_input" placeholder="Buscar">
 
 
-            </div>
-
-            <div class="banner_right">
-                <div>
-                    <figure class="img_container">
-                        <img src="img/default-avatar.png" alt="Seleccionar Imagen" id="imagen_preview">
-                    </figure>
-
-                    <button type="button" class="button" id="btn_agregar_imagen">Agregar</button>
                 </div>
-            </div>
 
+                <div class="banner_right">
+                    <div>
+                        <figure class="img_container">
+                            <img src="img/default-avatar.png" alt="Seleccionar Imagen" id="imagen_preview">
+                        </figure>
+
+                        <button type="button" class="button" id="btn_agregar_imagen">Agregar</button>
+                    </div>
+                </div>
+
+
+
+            </section>
+            <!-- Banner grid -->
             <div class="botonera">
-                <button type="button" class="button" id="btn_eliminar">Eliminar</button>
-                <button type="button" class="button" id="btn_habilitar">Habilitar</button>
-                <button type="button" class="button" id="btn_deshabilitar">Deshabilitar</button>
+                <button type="button" class="button btn" id="btn_eliminar">Eliminar</button>
+                <button type="button" class="button btn" id="btn_habilitar">Habilitar</button>
+                <button type="button" class="button btn" id="btn_deshabilitar">Deshabilitar</button>
             </div>
+            <div id="avatar_container">
+
+            </div>
+            <!-- avatar container-->
 
         </section>
-        <!-- Banner grid -->
-    </header>
-    <Main>
 
-        <div id="avatar_container">
 
-        </div>
-        <!-- avatar container-->
 
     </Main>
-    <footer>
-        <div id="socials_container">
-            <div class="grid_socials">
 
-                <div class="footer_grid_item socials_1">
-                    <a href=""><img src="img/fb_footer.png" alt=""></a>
-                </div>
-                <div class="footer_grid_item socials_2">
-                    <a href=""><img src="img/ig_footer.png" alt=""></a>
-                </div>
-                <div class="footer_grid_item socials_3">
-                    <a href=""><img src="img/tw_footer.png" alt=""></a>
-                </div>
-                <div class="footer_grid_item socials_4">
-                    <a href=""><img src="img/yt_footer.png" alt=""></a>
-                </div>
-                <div class="footer_grid_item socials_5">
-                    <a href=""><img src="img/in_footer.png" alt=""></a>
-                </div>
-            </div>
-        </div>
-        <div id="links_container">
-            <div class="footer_grid_item2 grid_links">
-                <div>
-                    <h1>INFORMACIÓN</h1>
-                    <ul>
-                        <li><a href="">Qué es Míshka</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h1>NOTICIAS</h1>
-                    <ul>
-                        <li><a href="">Publicaciones</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h1>TU CUENTA</h1>
-                    <ul>
-                        <li><a href="">Iniciar Sesión</a></li>
-                        <li><a href="">Registrarse</a></li>
-                        <li><a href="">Ver carrito de compras</a></li>
-                        <li><a href="">Modificar Información</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h1>LEGAL</h1>
-                    <ul>
-                        <li><a href="">Términos y Condiciones</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h1>CONTÁCTANOS</h1>
-                    <ul>
-                        <li>Oficinas Principales: Míshka Co.</li>
-                        <li>Zip-10101 San José, Costa Rica</li>
-                        <li>Teléfono: (506) 1234-5678</li>
-                        <li>Email: soporte@Mishka.com</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-        <div class="copyright">
-            <p>® Míshka™ &nbsp;&nbsp;&nbsp; Diseño por Papaya Solutions. Todos los derechos reservados.</p>
-        </div>
-    </footer>
 
     <!--Scripting-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

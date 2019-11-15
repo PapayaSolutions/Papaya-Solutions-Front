@@ -1,12 +1,11 @@
 'use strict';
 
-let registrar_recinto = async(nombre, direccion, canton, provincia, distrito, capacidad, asientos_tradicionales,
-    asientos_accesibilidad, estado) => {
+let registrar_recinto = async(nombre, direccion, canton, provincia, distrito, capacidad, asientos_tradicionales, asientos_accesibilidad, estado) => {
 
     await axios({
 
                 method: 'post',
-                url: 'http://localhost:3000/api/registrar-encargado-recinto',
+                url: 'http://localhost:3000/api/registrar-recinto',
                 responseType: 'json',
                 data: {
 

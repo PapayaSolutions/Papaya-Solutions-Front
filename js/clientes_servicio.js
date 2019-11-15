@@ -1,7 +1,7 @@
 'use strict';
 
-let registrar_cliente = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo_cliente, pidentificacion,
-    pf_nacimiento, pedad, pgenero, pprovincia, pcanton, pdistrito, pdireccion) => {
+let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo_cliente, pidentificacion,
+    pf_nacimiento, pgenero, pprovincia, pcanton, pdistrito, pdireccion) => {
     await axios({
             method: 'post',
             url: 'http://localhost:3000/api/registrar-cliente',
@@ -15,7 +15,6 @@ let registrar_cliente = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pc
                 correo_cliente: pcorreo_cliente,
                 identificacion: pidentificacion,
                 f_nacimiento: pf_nacimiento,
-                edad: pedad,
                 genero: pgenero,
                 provincia: pprovincia,
                 canton: pcanton,

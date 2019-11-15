@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/registrar_usuario.css">
     <link rel="stylesheet" href="css/formularios.css">
@@ -17,16 +18,40 @@
 
 <body>
     <header>
+        <nav>
+            <div>
+                <a href="#">Eventos</a>
+                <a href="#">Eventos</a>
+                <a href="#">Eventos </a>
+            </div>
 
-        <!-- nav -->
+            <div class="navegador_derecha">
+                <a href="#"><img src="img/icon-bell.png" alt="Busqueda" ; width="20px" ; height="20px"></a>
+                <a href="#"><img src="img/busqueda.png" alt="Busqueda" ; width="20px" ; height="20px"></a>
+                <a href="#"><img src="img/usuario.png" alt="Busqueda" ; width="20px" ; height="20px"></a>
+                <a href="#">Cerrar Sesión</a>
+            </div>
 
+        </nav>
     </header>
 
     <!-- contenido -->
     <main class="registrar_wrapper">
         <div>
-            <div class="ilustracion">
-                <!--imagen aca-->
+            <div class="formulario">
+                <div class="ilustracion">
+                    <div class="avatar"></div>
+                    <div>
+                        <label for="avatar_cliente">Avatar</label>
+                        <select id="avatar_cliente">
+                                <!--options-->
+                            </select>
+                    </div>
+                    <div class="btn_container">
+                        <button type="button" class="btn_imagen" id="avatar">Cargar imagen</button>
+                    </div>
+                    <img src="img/registro.png" class="ilustracion">
+                </div>
             </div>
         </div>
         <div class="formulario_registro">
@@ -46,8 +71,8 @@
                                 <input id="p_apellido_cliente" type="text">
                             </div>
                             <div>
-                                <label for="email_cliente">Correo electrónico</label>
-                                <input id="email_cliente" type="email" placeholder="me@example.com">
+                                <label for="correo_cliente">Correo electrónico</label>
+                                <input id="correo_cliente" type="email" placeholder="me@example.com">
                             </div>
 
                         </div>
@@ -74,32 +99,30 @@
 
                             <div>
                                 <label for="fecha_nac_cliente">Fecha de nacimiento</label>
-                                <input id="fecha_nac_cliente" type="date">
+                                <input id="fecha_nac_cliente" type="date" onclick="calcular_edad('fecha_nac_cliente')">
                             </div>
                             <div>
                                 <label for="provincia_cliente">Provincia</label>
-                                <select id="provincia_cliente">
-                                        <option value="" disabled selected hidden>Seleccionar...</option>
-                                        <option value="san_jose">San José</option>
-                                        <option value="alajuela">Alajuela</option>
-                                        <option value="cartago">Cartago</option>
-                                        <option value="heredia">Heredia</option>
-                                        <option value="guanacaste">Guanacaste</option>
-                                        <option value="puntarenas">Puntarenas</option>
-                                        <option value="limon">Limón</option>
+                                <select id="provincia_cliente" onchange="popular_cantones('provincia_cliente', 'canton_cliente')">
+                                        <option value="" disabled selected hidden>-</option>
+                                        <option value="San José">San José</option>
+                                        <option value="Alajuela">Alajuela</option>
+                                        <option value="Cartago">Cartago</option>
+                                        <option value="Heredia">Heredia</option>
+                                        <option value="Guanacaste">Guanacaste</option>
+                                        <option value="Puntarenas">Puntarenas</option>
+                                        <option value="Limón">Limón</option>
                                     </select>
                             </div>
                         </div>
                         <div>
                             <div>
                                 <label for="edad_cliente">Edad</label>
-                                <input id="edad_cliente" type="text">
+                                <input id="edad_cliente" type="number">
                             </div>
                             <div>
                                 <label for="canton_cliente">Cantón</label>
-                                <select id="canton_cliente">
-                                     <option value="" disabled selected hidden>Seleccionar...</option>
-                                     <option value="A">A</option>
+                                <select id="canton_cliente" onchange="popular_distritos('provincia_cliente', 'canton_cliente', 'distrito_cliente')">
                                 </select>
                             </div>
                         </div>
@@ -107,7 +130,7 @@
                             <div>
                                 <label for="genero_cliente">Género</label>
                                 <select id="genero_cliente">
-                                    <option option value="" disabled selected hidden>Seleccionar...</option>
+                                    <option option value="" disabled selected hidden>-</option>
                                         <option value="F">Femenino</option>
                                         <option value="M">Masculino</option>
                                         <option value="O">Otro</option>
@@ -117,8 +140,6 @@
                             <div>
                                 <label for="distrito_cliente">Distrito</label>
                                 <select id="distrito_cliente">
-                                        <option value="" disabled selected hidden>Seleccionar...</option>
-                                        <option value="A">A</option>
                                     </select>
                             </div>
                         </div>
@@ -127,7 +148,6 @@
                         <label for="direccion_cliente">Dirección exacta</label>
                         <textarea id="direccion_cliente"></textarea>
                     </div>
-                    <div class="avatar_select"></div>
                     <div class="btn_container">
                         <button type="button" class="btn" id="btn_registro">Registrarse</button>
                     </div>

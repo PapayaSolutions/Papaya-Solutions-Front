@@ -3,7 +3,7 @@
 <html lang="es">
 
 <head>
-    <title>Registro de encargados de recintos</title>
+    <title>Registro recintos</title>
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href="css/reset.css">
@@ -45,59 +45,61 @@
         </div>
         <div class="formulario_registro">
             <div class="formulario">
-                <h1>Registrar nuevo encargado de recinto(s)</h1>
+                <h1>Registrar nuevo recinto</h1>
                 <div class="spacer_h1"></div>
 
-                <form id="form_enc_rec">
+                <form id="form_rec">
 
                     <div>
                         <div>
-                            <label for="txt_nombre_encargado_recinto">Nombre completo</label>
-                            <input id="txt_nombre_encargado_recinto" type="text" placeholder="Nombre completo">
+                            <label for="txt_nombre_recinto">Nombre completo</label>
+                            <input id="txt_nombre_recinto" type="text" placeholder="Nombre del recinto">
+                        </div>
+
+                        <div class="three_collumn_form">
+
+                            <div>
+                                <label for="txt_provincia">Provincia</label>
+                                <input id="txt_provincia" type="text" placeholder="Provincia">
+                            </div>
+                            <div>
+                                <label for="txt_canton">Cantón</label>
+                                <input id="txt_canton" type="text" placeholder="Cantón">
+                            </div>
+                            <div>
+                                <label for="txt_distrito">Distrito</label>
+                                <input id="txt_distrito" type="text" placeholder="Distrito">
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <label for="txt_direccion">Dirección exacta</label>
+                            <input id="txt_direccion" type="text" placeholder="Dirección exacta">
                         </div>
 
                         <div class="two_collumn_form">
 
                             <div>
-                                <label for="txt_numero_encargado">Numero del encargado</label>
-                                <input id="txt_numero_encargado" type="number" placeholder="88880000">
-                            </div>
-                            <div>
-                                <label for="txt_correo">Correo electrónico</label>
-                                <input id="txt_correo" type="email" placeholder="ejemplo@gmail.com">
+                                <label for="txt_asientos_tradicionales">Asientos tradicionales</label>
+                                <input id="txt_asientos_tradicionales" type="number" placeholder="Capacidad de asientos tradicionales">
                             </div>
 
-                        </div>
-
-                        <div class="two_collumn_form">
-
                             <div>
-                                <label for="txt_fecha_nacimiento">Fecha de nacimiento</label>
-                                <input id="txt_fecha_nacimiento" type="date">
-                            </div>
-                            <div>
-                                <label for="txt_genero">Género</label>
-                                <select id="txt_genero">
-                                        <option option value="" disabled selected hidden>Seleccionar...</option>
-                                            <option value="F">Femenino</option>
-                                            <option value="M">Masculino</option>
-                                            <option value="O">Otro</option>
-                                            <option value="N">Prefiero no indicar</option>
-                                    </select>
+                                <label for="txt_asientos_accesibilidad">Asientos de accesibilidad</label>
+                                <input id="txt_asientos_accesibilidad" type="number" placeholder="Capacidad de asientos de accesibilidad ley 7600">
                             </div>
 
                         </div>
 
                         <div class="btn_container">
-
                             <button type="button" class="btn" id="btn_registrar">Registrar</button>
-
                         </div>
-                    </div>
+
 
                 </form>
+                </div>
             </div>
-        </div>
     </main>
 
     <footer>
@@ -171,9 +173,8 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/encargados-recintos-servicio.js"></script>
-    <script src="js/registrar-encargado-recinto-controlador.js"></script>
-
+    <script src="js/recintos_servicio.js"></script>
+    <script src="js/registrar_recintos_controlador.js"></script>
 
 </body>
 

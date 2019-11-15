@@ -1,16 +1,15 @@
 'use strct'
 
-let registrar_producto = async(codigo, nombre, precio, descripcion) => {
+let registrar_tipos_de_evento = async(nombre) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar-producto',
+            url: 'http://localhost:3000/api/registrar-evento',
             responseType: 'json',
             //body
             data: {
-                codigo: codigo,
+
                 nombre: nombre,
-                precio: precio,
-                descripcion: descripcion,
+
             }
 
         })
@@ -22,8 +21,8 @@ let registrar_producto = async(codigo, nombre, precio, descripcion) => {
         });
 };
 
-let listar_productos = async() => {
-    let lista_productos;
+let listar_tipos_de_evento = async() => {
+    let lista_tipo_de_evento;
     await axios({
             method: 'get',
             url: 'http://localhost:3000/api/listar_tipos_de_evento',
@@ -31,10 +30,10 @@ let listar_productos = async() => {
 
         })
         .then(function(res) {
-            lista_productos = res.data.productos;
+            lista_tipo_de_evento = res.data.productos;
         })
         .catch(function(error) {
             console.log(error);
         });
-    return lista_productos;
+    return lista_tipo_de_evento;
 };

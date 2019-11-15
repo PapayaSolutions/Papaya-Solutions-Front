@@ -11,6 +11,7 @@ let llenar_tabla = async() => {
     for (let i = 0; i < lista_clientes.length; i++) {
         let nombre = lista_clientes[i]['p_nombre'].toLowerCase();
         if (nombre.includes(filtro)) {
+
             let fila = tbody.insertRow();
 
             fila.insertCell().innerHTML = lista_clientes[i]['p_nombre'];

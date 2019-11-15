@@ -1,16 +1,15 @@
 'use strct'
 
-let registrar_producto = async(codigo, nombre, precio, descripcion) => {
+let registrar_tipos_de_evento = async(nombre) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar-producto',
+            url: 'http://localhost:3000/api/registrar-evento',
             responseType: 'json',
             //body
             data: {
-                codigo: codigo,
+
                 nombre: nombre,
-                precio: precio,
-                descripcion: descripcion,
+
             }
 
         })

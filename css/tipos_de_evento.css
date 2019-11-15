@@ -33,4 +33,43 @@ h3 {
     text-align: center;
     color: #f7882f;
     font-size: 25px;
+    margin-top: 20px;
+}
+
+form {
+    margin: 0 20px;
+}
+
+label {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    padding: 40px 0px 20px 0px;
+}
+
+input {
+    display: block;
+    width: 30%;
+    border: 2px solid #f7882f;
+    margin-bottom: 10px;
+    color: #292c2a;
+    height: 23px;
+}
+
+button {
+    display: inline-block;
+    margin: auto;
+    position: relative;
+    background: #f7882f;
+    font-size: 15px;
+    letter-spacing: 3px;
+    padding: 8px 15px;
+    border-radius: 10rem;
+    color: #ececec;
+}
+
+button:hover {
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
+    box-sizing: border-box;
 }

@@ -31,10 +31,10 @@
             </nav>
         </header>
         <main id="main">
-            <aside>
+            <aside id="primer_aside">
                 <h2>Ajustes de Administrador</h2>
                 <ul>
-                    <a href="">Clientes</a>
+                    <a href="">  Clientes</a>
 
                 </ul>
                 <ul>
@@ -51,7 +51,13 @@
 
             </aside>
             <section id="primera_section">
-                <h1>Categorias de evento</h1>
+                <div id="arriba">
+                    <h1>Categorias de evento</h1>
+                    <div>
+                        <input type="text" id="txt-filtro" placeholder="Buscar">
+                    </div>
+                </div>
+
                 <section id="segunda_section">
                     <div id="tipos">
 
@@ -65,7 +71,7 @@
                     <form>
                         <div>
                             <label for="txt-tip">Nombre de la categoria:</label>
-                            <input type="text" id="categoria" name="categoria">
+                            <input type="text" id="categoria" name="categoria" placeholder="Categoria">
                             <button type="button" id="btn_guardar">Guardar</button>
                     </form>
                 </section>

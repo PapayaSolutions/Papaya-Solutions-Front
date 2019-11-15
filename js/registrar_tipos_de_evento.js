@@ -11,19 +11,12 @@ let validar = () => {
     } else {
         input_nombre.classList.remove('error')
     }
-
-
     return error;
 }
 
-// strict 5
-// funtion obtener_datos(){}
-/// strict 6
 let obtener_datos = () => {
 
     let nombre = input_nombre.value;
-
-
 
     if (validar()) {
 
@@ -33,8 +26,6 @@ let obtener_datos = () => {
             text: 'Por favor revise los campos en rojo',
             confirmButtonText: 'Entendido',
         })
-
-
 
     } else {
 
@@ -47,7 +38,6 @@ let obtener_datos = () => {
             confirmButtonText: 'Entendido',
         });
     }
-
 
 };
 

@@ -10,17 +10,19 @@
     grid-template-columns: 1fr 4fr;
     width: 100%;
     min-width: 200px;
+    border-bottom: #292c2a solid 20px;
 }
 
 #primer_aside {
     text-align: center;
     border-right: solid 2px #f7882f;
-    height: 520px;
+    height: 100%;
     color: #ececec;
     width: 100%;
     position: relative;
     min-width: 150px;
     background-color: #292c2a;
+    min-height: 600px;
 }
 
 #primer_aside h2 {

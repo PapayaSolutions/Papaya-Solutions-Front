@@ -23,7 +23,7 @@ let mostrar_cards = async() => {
             let div_fecha = document.createElement('div');
 
             let fecha = document.createElement('small');
-
+            fecha.innerText = lista_evento[i]['fecha_disponible'];
 
             let fecha_txt = document.createElement('small');
             fecha_txt.innerText = 'Fecha: '

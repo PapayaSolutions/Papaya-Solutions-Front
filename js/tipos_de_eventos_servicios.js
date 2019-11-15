@@ -3,15 +3,12 @@
 let registrar_tipos_de_evento = async(nombre) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar-evento',
+            url: 'http://localhost:3000/api/registrar_tipos_de_evento',
             responseType: 'json',
             //body
             data: {
-
                 nombre: nombre,
-
             }
-
         })
         .then(function(res) {
             console.log(res.data);

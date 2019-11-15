@@ -1,7 +1,7 @@
 'use strict';
 
 let registrar_recinto = async(nombre, direccion, canton, provincia, distrito, capacidad, asientos_tradicionales,
-    asientos_accesibilidad) => {
+    asientos_accesibilidad, estado) => {
 
     await axios({
 
@@ -19,6 +19,7 @@ let registrar_recinto = async(nombre, direccion, canton, provincia, distrito, ca
                     capacidad: capacidad,
                     asientos_tradicionales: asientos_tradicionales,
                     asientos_accesibilidad: asientos_accesibilidad,
+                    estado: estado
                 }
             }
 

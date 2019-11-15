@@ -93,6 +93,7 @@ let obtener_datos = () => {
     let capacidad = input_capacidad.value;
     let asientos_tradicionales = input_asientos_tradicionales.value;
     let asientos_accesibilidad = input_asientos_accesibilidad;
+    let estado = 'Activo';
     // console.log()
     //  console.log()
 
@@ -108,7 +109,7 @@ let obtener_datos = () => {
     } else {
 
 
-        registrar_recinto(nombre, direccion, canton, provincia, distrito, capacidad, asientos_tradicionales, asientos_accesibilidad)
+        registrar_recinto(nombre, direccion, canton, provincia, distrito, capacidad, asientos_tradicionales, asientos_accesibilidad, estado)
 
         Swal.fire({
             type: 'success',

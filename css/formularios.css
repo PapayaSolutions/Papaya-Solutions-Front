@@ -42,8 +42,7 @@ input[type="search"],
 input[type="time"],
 input[type="url"],
 input[type="password"],
-textarea,
-select {
+textarea {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     outline: none;
@@ -60,8 +59,42 @@ select {
     color: #292c2a;
 }
 
+output[type="text"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 10px 0px 15px 0px;
+    border: none;
+    border-bottom: 1px solid #f7c331;
+    background: transparent;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    height: 18px;
+    color: #292c2a;
+}
+
+select {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 10px 0px 15px 0px;
+    border: none;
+    border-bottom: 1px solid #f7c331;
+    background: transparent;
+    margin-bottom: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    height: 18px;
+    color: #292c2a;
+}
+
 .error {
-    background: rgba(179, 27, 27, 0.219);
+    background: rgba(255, 145, 0, 0.123);
 }
 
 .autoExpand {
@@ -97,6 +130,7 @@ select {
 Usar el elemento <button type="button" class="btn" id="el nombre del id que ocupen">*/
 
 .btn_container {
+    padding-top: 30px;
     margin: auto;
     text-align: center;
 }
@@ -115,6 +149,8 @@ Usar el elemento <button type="button" class="btn" id="el nombre del id que ocup
 }
 
 .btn:hover {
-    transform: scale(1.1);
-    transition: 0.4s;
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
+    box-sizing: border-box;
 }

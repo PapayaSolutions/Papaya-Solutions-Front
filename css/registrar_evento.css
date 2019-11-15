@@ -26,16 +26,7 @@
     width: 100%;
 }
 
-.avatar_select {
-    background: #292c2a;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    height: 120px;
-    width: 120px;
-}
-
-.avatar {
+.imagen_evento {
     background: #f7c331;
     height: 200px;
     width: 200px;

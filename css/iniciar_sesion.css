@@ -1,0 +1,27 @@
+/*Andrés*/
+
+
+/*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a  verde muy oscuro
+    #ececec gris 
+    */
+
+.iniciar_wrapper {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    column-gap: 25px;
+    padding-top: 50px;
+}
+
+.ilustracion {
+    background: #ececec;
+    height: auto;
+    width: 100%;
+}
+
+.formulario_iniciar_sesion {
+    width: 100%;
+}

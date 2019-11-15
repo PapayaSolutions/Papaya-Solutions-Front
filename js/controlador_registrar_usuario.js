@@ -15,7 +15,6 @@ const input_distrito = document.querySelector('#distrito_cliente');
 const input_direccion = document.querySelector('#direccion_cliente');
 const btn_registro = document.querySelector('#btn_registro');
 
-
 // Validación de datos
 let validar = () => {
     let error = false;

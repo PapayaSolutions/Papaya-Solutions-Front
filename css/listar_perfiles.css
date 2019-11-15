@@ -1,0 +1,54 @@
+    /*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a  verde muy oscuro
+    #ececec gris 
+    */
+    
+    html {
+        font-family: 'Roboto', sans-serif;
+        background: #ececec;
+    }
+    
+    #banner_info {
+        display: block;
+        height: 230px;
+        border-bottom: 10px #f7882f solid;
+        padding: 50px 50px 20px 50px;
+    }
+    
+    #bnr_titulo {
+        font-size: 50px;
+        color: #f7882f;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 25px;
+        width: 500px;
+    }
+    
+    #bnr_seccion {
+        font-size: 30px;
+        color: #292c2a;
+        font-weight: 900;
+        width: 500px;
+        margin-bottom: 25px;
+    }
+    
+    #bnr_input {
+        height: 35px;
+        width: 300px;
+        border-radius: 10px;
+        font-size: 20px;
+        padding-left: 30px;
+        color: #f7882f;
+    }
+    
+    #bnr_input::placeholder {
+        color: #f7882f;
+    }
+    
+    #search_icon {
+        position: relative;
+        left: 30px;
+        color: #f7882f;
+    }

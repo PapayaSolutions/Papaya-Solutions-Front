@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/perfil_evento.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/footer.css">
-    <title>Perfil del Evento</title>
+    <link rel="stylesheet" href="css/visualizar_perfil.css">
+    <title>Visualizar Perfil</title>
 </head>
 
 <body>
-
+    <!--nav-->
     <header>
         <nav>
             <div>
@@ -33,78 +32,59 @@
             </div>
 
         </nav>
-        <section id="banner_grid">
-
-            <div class="banner_left">
-                <label id='bnr_nombre'>Nombre del Evento</label>
-
-                <a href="">Editar Evento</a>
-            </div>
-            <div class="banner_right">
-                <div class="img_container">
-                    <img src="img/placeholder.jpg" id='img_evento' alt="">
-                </div>
-            </div>
-
-        </section>
-
     </header>
 
     <main>
+        <!--Contenedor con la información básica, Nombre, apellido etc-->
+        <!--Además el contenedor tiene el avatar del usuario.-->
+        <div id="perfil_container">
+            <div class="informacion_basica">
+                <a href="#"><img src="img/avatar.jpg" alt="Avatar" ; width="125px" ; height="125px" ;></a>
 
-        <div id="main_grid">
-            <div class="grid_item item1">
-                <label>Fecha:</label>
-                <output id="fecha_evento"></output>
-                <label>Hora:</label>
-                <output id="hora_evento"></output>
-                <label>Lugar:</label>
-                <output id="recinto_evento"></output>
-                <label>País:</label>
-                <output id="direccion_evento"></output>
-                <label>Precio:</label>
-                <output id="precio_evento"></output>
-                <label>Categoría:</label>
-                <output id="categoria_evento"></output>
+                <div class="datos">
+                    <a href="visualizar_perfil.html" id="nombre_usuario">Nombre y Apellido</a>
+                    <ul>
+                        <p id="edad">Edad</p>
+                        <p id="genero">Género</p>
+                        <p id="correo">Correo</p>
+                        <p id="direccion">Distrito/Cantón/Provincia</p>
+                    </ul>
+                    <ul>
+                        <p id="direccion_exacta">Dirección</p>
+                        <p id="identificacion">Identificación</p>
+                        <p id="fnacimiento">Fecha de nacimiento</p>
+                    </ul>
+                </div>
+                <div class="btn_container">
+                    <button type="button" class="btn">Editar perfil</button>
+                    <button type="button" class="btn">Actividad</button>
+                </div>
             </div>
-
-            <div class="grid_item item2">
-                <h1>Descripción</h1>
-                <output id="descripcion_evento"></output>
+        </div>
+        <hr>
+        <!--Cards que muestran lass preferencias del usuario en cuanto a eventos-->
+        <div class="genero1">
+            <div>
+                <p>Uno</p>
             </div>
-
-            <div class="grid_item item3 img_container">
-                <img src="img/placeholder.jpg" alt="Mapa">
+            <div>
+                <p>Dos</p>
             </div>
-
-            <div class="grid_item item4">
-                <button type="button" class="btn">Lugar</button>
+            <div>
+                <p>Tres</p>
             </div>
-            <div class="grid_item item5">
-                <button type="button" class="btn">Agregar al Carrito</button>
-                <h3>Máximo <output id="cantidad"></output> tiquetes por persona</h3>
+            <div>
+                <p>cuatro</p>
+            </div>
+            <div>
+                <p>cinco</p>
+            </div>
+            <div>
+                <p>seis</p>
             </div>
         </div>
     </main>
-
-    <section id="sct_calificacion">
-        <h1>Calificación: </h1>
-        <div class="rating">
-            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-        </div>
-    </section>
-
-    <section id="sct_coment">
-        <div id="coment_head">
-            <h1>Comentarios:</h1>
-        </div>
-        <div id="coment_body">
-            <textarea id="txt_coment"></textarea>
-        </div>
-        <button type="button" id="btn_coment" class="btn">Comentar</button>
-
-    </section>
-
+    <!--Footer-->
     <footer>
         <div id="socials_container">
             <div class="grid_socials">
@@ -173,11 +153,9 @@
         </div>
     </footer>
 
-    <!-- Scripting -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/eventos_servicios.js"></script>
-    <script src="js/controlador_perfil_evento.js"></script>
+    <script src="js/visualizar-perfil-servicio.js"></script>
+    <script src="js/controlador_registrar_usuario.js"></script>
 </body>
 
 </html>

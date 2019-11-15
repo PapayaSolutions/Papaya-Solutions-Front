@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Clientes</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/configuracion.css">
+    <link rel="stylesheet" href="css/listar_perfiles.css">
+
+
+    <body>
+        <header>
+            <nav>
+                <div>
+                    <a href="#">Eventos</a>
+                    <a href="#">Eventos</a>
+                    <a href="#">Eventos </a>
+                </div>
+
+                <div class="navegador_derecha">
+                    <a href="#"><img src="img/icon-bell.png" alt="Busqueda" ; width="20px" ; height="20px"></a>
+                    <a href="#"><img src="img/busqueda.png" alt="Busqueda" ; width="20px" ; height="20px"></a>
+                    <a href="#"><img src="img/usuario.png" alt="Busqueda" ; width="20px" ; height="20px"></a>
+                    <a href="#">Cerrar Sesión</a>
+                </div>
+
+            </nav>
+        </header>
+        <main id="main">
+            <aside>
+                <h2>Ajustes de Administrador</h2>
+                <ul>
+                    <a href="listar_perfiles.html">  Clientes</a>
+
+                </ul>
+                <ul>
+                    <a href="">Administrador</a>
+                </ul>
+                <ul><a href="">Categorias</a></ul>
+                <ul><a href="">Recintos</a></ul>
+                <ul><a href="">Impuestos</a></ul>
+                <ul><a href="">Descuentos</a></ul>
+                <ul><a href="mantenimiento_avatar.html">Avatares</a></ul>
+                <ul><a href="">Reservas</a></ul>
+                <ul><a href="">Reportes</a></ul>
+
+            </aside>
+            <section>
+                <!-- listado de perfiles de clientes -->
+                <div id="banner_info">
+                    <h1 id='bnr_titulo'>Mantenimiento</h1>
+                    <h2 id="bnr_seccion">PERFILES DE CLIENTES</h2>
+                    <i class="fas fa-search" id="search_icon"></i>
+                    <input type="text" id="bnr_input" placeholder="Buscar">
+                </div>
+                <div>
+                    <table id="tbl_clientes">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Apellido 2</th>
+                                <th>Correo</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </section>
+            <!-- listado de perfiles de clientes -->
+        </main>
+
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="js/controlador_listar_perfiles.js"></script>
+        <script src="js/clientes_servicio.js"></script>
+    </body>
+
+</html>

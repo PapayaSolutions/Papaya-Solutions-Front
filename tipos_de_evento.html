@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Categorias</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/configuracion.css">
+    <link rel="stylesheet" href="css/tipos_de_evento.css">
+
+    <body>
+        <header>
+            <nav>
+                <div>
+                    <a href="#">Eventos</a>
+                    <a href="#">Eventos</a>
+                    <a href="#">Eventos </a>
+                </div>
+
+                <div class="navegador_derecha">
+                    <a href="#"><img src="img/icon-bell.png" alt="Busqueda" ; width="20px" ; height="20px"></a>
+                    <a href="#"><img src="img/busqueda.png" alt="Busqueda" ; width="20px" ; height="20px"></a>
+                    <a href="#"><img src="img/usuario.png" alt="Busqueda" ; width="20px" ; height="20px"></a>
+                    <a href="#">Cerrar Sesión</a>
+                </div>
+
+            </nav>
+        </header>
+        <main id="main">
+            <aside id="primer_aside">
+                <h2>Ajustes de Administrador</h2>
+                <ul>
+                    <a href="">  Clientes</a>
+
+                </ul>
+                <ul>
+                    <a href="">Administrador</a>
+                </ul>
+                <ul><a href="">Categorias</a></ul>
+                <ul><a href="">Recintos</a></ul>
+                <ul><a href="">Impuestos</a></ul>
+                <ul><a href="">Descuentos</a></ul>
+                <ul><a href="">Avatares</a></ul>
+                <ul><a href="">Reservas</a></ul>
+                <ul><a href="">Reportes</a></ul>
+
+            </aside>
+            <section id="primera_section">
+                <div id="arriba">
+                    <h1>Categorias de evento</h1>
+                    <div>
+                        <input type="text" id="txt-filtro" placeholder="Buscar">
+                    </div>
+                </div>
+
+                <section id="segunda_section">
+                    <div id="tipos">
+
+                    </div>
+
+                </section>
+                <section>
+                    <hr>
+                    <h3>Agregar Nueva Categoria</h3>
+
+                    <form>
+                        <div>
+                            <label for="txt-tip">Nombre de la categoria:</label>
+                            <input type="text" id="categoria" name="categoria" placeholder="Categoria">
+                            <button type="button" id="btn_guardar">Guardar</button>
+                    </form>
+                </section>
+            </section>
+        </main>
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="js/tipos_de_eventos_servicios.js"></script>
+        <script src="js/listar_tipos_de_evento.js"></script>
+        <script src="js/registrar_tipos_de_evento.js"></script>
+
+
+    </body>
+
+</html>

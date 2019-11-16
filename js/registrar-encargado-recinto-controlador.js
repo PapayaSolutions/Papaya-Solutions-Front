@@ -14,42 +14,42 @@ const validar = () => {
 
     if (input_nombre.value == '') {
         error = true;
-        input_codigo.classList.add('error');
-    } else {
-        error = false;
-        input_codigo.classList.remove('error');
-    };
-
-    if (input_numero.value == '') {
-        error = true;
         input_nombre.classList.add('error');
     } else {
         error = false;
         input_nombre.classList.remove('error');
+    };
+
+    if (input_numero.value == '') {
+        error = true;
+        input_numero.classList.add('error');
+    } else {
+        error = false;
+        input_numero.classList.remove('error');
     }
 
     if (input_correo.value == '') {
         error = true;
-        input_precio.classList.add('error');
+        input_correo.classList.add('error');
     } else {
         error = false;
-        input_precio.classList.remove('error');
+        input_correo.classList.remove('error');
     }
 
     if (input_fecha_nacimiento.value == '') {
         error = true;
-        input_descripcion.classList.add('error');
+        input_fecha_nacimiento.classList.add('error');
     } else {
         error = false;
-        input_descripcion.classList.remove('error');
+        input_fecha_nacimiento.classList.remove('error');
     }
 
     if (input_genero.value == '') {
         error = true;
-        input_descripcion.classList.add('error');
+        input_genero.classList.add('error');
     } else {
         error = false;
-        input_descripcion.classList.remove('error');
+        input_genero.classList.remove('error');
     }
     return error;
 };

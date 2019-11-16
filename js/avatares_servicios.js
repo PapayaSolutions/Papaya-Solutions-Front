@@ -3,7 +3,7 @@
 let registrar_avatar = async(nombre, URL, estado) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar-avatar',
+            url: 'http://localhost:3000/api/registrar_avatar',
             responseType: 'json',
             //body
             data: {

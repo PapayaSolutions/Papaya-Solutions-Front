@@ -24,7 +24,6 @@ let mostrar_cards = async() => {
 
             let fecha = document.createElement('small');
 
-
             let fecha_txt = document.createElement('small');
             fecha_txt.innerText = 'Fecha: '
 
@@ -104,20 +103,20 @@ input_filtro.addEventListener('keyup', mostrar_cards);
 
 //Listar categorias en el dashboard
 const tbody = document.querySelector('#txt-categoria');
-let lista_productos;
+let lista_tipo_de_evento;
 
 let llenar_tabla = async() => {
 
-    lista_productos = await listar_productos();
+    lista_tipo_de_evento = await listar_tipos_de_evento();
     tbody.innerHTML = '';
 
-    for (let i = 0; i < lista_productos.length; i++) {
+    for (let i = 0; i < lista_tipo_de_evento.length; i++) {
         let todas = document.createElement('option');
         let selecionar = document.createElement('option');
 
         todas.innerText = 'Todas';
 
-        selecionar.innerText = lista_productos[i]['nombre'];
+        selecionar.innerText = lista_tipo_de_evento[i]['nombre'];
 
 
 

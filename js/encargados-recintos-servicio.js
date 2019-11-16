@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar_encargado_recinto = async(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado) => {
+let registrar_encrgado_recinto = async(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado) => {
 
     await axios({
 

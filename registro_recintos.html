@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registro recintos</title>
+    <meta charset="utf-8" />
+
     <link rel="stylesheet" href="css/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/registrar_usuario.css">
+    <link rel="stylesheet" href="css/registrar_encargado_recinto.css">
+    <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/perfil_evento.css">
     <link rel="stylesheet" href="css/footer.css">
-    <title>Perfil del Evento</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway%7CRoboto&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-
     <header>
         <nav>
             <div>
@@ -33,77 +35,72 @@
             </div>
 
         </nav>
-        <section id="banner_grid">
-
-            <div class="banner_left">
-                <label id='bnr_nombre'>Nombre del Evento</label>
-
-                <a href="">Editar Evento</a>
-            </div>
-            <div class="banner_right">
-                <div class="img_container">
-                    <img src="img/placeholder.jpg" id='img_evento' alt="">
-                </div>
-            </div>
-
-        </section>
-
     </header>
 
-    <main>
-
-        <div id="main_grid">
-            <div class="grid_item item1">
-                <label>Fecha:</label>
-                <output id="fecha_evento"></output>
-                <label>Hora:</label>
-                <output id="hora_evento"></output>
-                <label>Lugar:</label>
-                <output id="recinto_evento"></output>
-                <label>País:</label>
-                <output id="direccion_evento"></output>
-                <label>Precio:</label>
-                <output id="precio_evento"></output>
-                <label>Categoría:</label>
-                <output id="categoria_evento"></output>
-            </div>
-
-            <div class="grid_item item2">
-                <h1>Descripción</h1>
-                <output id="descripcion_evento"></output>
-            </div>
-
-            <div class="grid_item item3 img_container">
-                <img src="img/placeholder.jpg" alt="Mapa">
-            </div>
-
-            <div class="grid_item item4">
-                <button type="button" class="btn">Lugar</button>
-            </div>
-            <div class="grid_item item5">
-                <button type="button" class="btn">Agregar al Carrito</button>
-                <h3>Máximo <output id="cantidad"></output> tiquetes por persona</h3>
+    <main class="registrar_wrapper">
+        <div>
+            <div class="ilustracion_r ">
+                <!--imagen aca-->
             </div>
         </div>
+        <div class="formulario_registro">
+            <div class="formulario">
+                <h1>Registrar nuevo recinto</h1>
+                <div class="spacer_h1"></div>
+
+                <form id="form_rec">
+
+                    <div>
+                        <div>
+                            <label for="txt_nombre_recinto">Nombre completo</label>
+                            <input id="txt_nombre_recinto" type="text" placeholder="Nombre del recinto">
+                        </div>
+
+                        <div class="three_collumn_form">
+
+                            <div>
+                                <label for="txt_provincia">Provincia</label>
+                                <input id="txt_provincia" type="text" placeholder="Provincia">
+                            </div>
+                            <div>
+                                <label for="txt_canton">Cantón</label>
+                                <input id="txt_canton" type="text" placeholder="Cantón">
+                            </div>
+                            <div>
+                                <label for="txt_distrito">Distrito</label>
+                                <input id="txt_distrito" type="text" placeholder="Distrito">
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <label for="txt_direccion">Dirección exacta</label>
+                            <input id="txt_direccion" type="text" placeholder="Dirección exacta">
+                        </div>
+
+                        <div class="two_collumn_form">
+
+                            <div>
+                                <label for="txt_asientos_tradicionales">Asientos tradicionales</label>
+                                <input id="txt_asientos_tradicionales" type="number" placeholder="Capacidad de asientos tradicionales">
+                            </div>
+
+                            <div>
+                                <label for="txt_asientos_accesibilidad">Asientos de accesibilidad</label>
+                                <input id="txt_asientos_accesibilidad" type="number" placeholder="Capacidad de asientos de accesibilidad ley 7600">
+                            </div>
+
+                        </div>
+
+                        <div class="btn_container">
+                            <button type="button" class="btn" id="btn_registrar">Registrar</button>
+                        </div>
+
+
+                </form>
+                </div>
+            </div>
     </main>
-
-    <section id="sct_calificacion">
-        <h1>Calificación: </h1>
-        <div class="rating">
-            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-        </div>
-    </section>
-
-    <section id="sct_coment">
-        <div id="coment_head">
-            <h1>Comentarios:</h1>
-        </div>
-        <div id="coment_body">
-            <textarea id="txt_coment"></textarea>
-        </div>
-        <button type="button" id="btn_coment" class="btn">Comentar</button>
-
-    </section>
 
     <footer>
         <div id="socials_container">
@@ -173,11 +170,12 @@
         </div>
     </footer>
 
-    <!-- Scripting -->
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/eventos_servicios.js"></script>
-    <script src="js/controlador_perfil_evento.js"></script>
+    <script src="js/recintos_servicio.js"></script>
+    <script src="js/registrar_recintos_controlador.js"></script>
+
 </body>
 
 </html>

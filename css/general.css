@@ -3,6 +3,7 @@
     #f7882f anaranjado
     #292c2a  verde muy oscuro
     #ececec gris 
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
     */
 
 body {
@@ -17,4 +18,11 @@ body {
 main {
     width: 90%;
     margin: auto;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: #292c2a;
 }

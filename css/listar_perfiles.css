@@ -80,3 +80,20 @@
         min-width: 150px;
         padding: 3px;
     }
+    
+    #tbl_clientes tbody td input .btn {
+        background: #f7882f;
+        font-size: 10px;
+        letter-spacing: 3px;
+        border: 1px solid #f7882f;
+        padding: 5px 15px;
+        border-radius: 10rem;
+        color: #ececec;
+    }
+    
+    #tbl_clientes tbody td input .btn:hover {
+        background: transparent;
+        color: #f7882f;
+        border: 1px solid #f7882f;
+        box-sizing: border-box;
+    }

@@ -32,32 +32,29 @@
             </div>
         </nav>
     </header>
-    <div class="barra_opciones">
-        <ul>
-            <div class="opciones1">
-                <li><a href="#">Opcion1</a></li>
-                <div class="texto_central">
-                    <a href="listar_tarjeta.html">Formas de pago </a>
 
-                </div>
-                <p>></p>
-                <h1>Agregar nueva tarjeta</h1>
-            </div>
-            <div class="formas_pago">
-                <li><a href="#">Formas de pago</a></li>
-            </div>
-            <div class="opciones">
-                <li><a href="#">Opcion3</a></li>
-            </div>
-            <hr>
-            <div class="opciones">
-                <li>
-                    <a href="#">Configuración</a>
-                </li>
-            </div>
+    <main>
+        <div>
+            <label for="datos">Número de tarjeta</label>
+            <input id="tarjeta" type="string" placeholder="Detalles de tarjeta">
+        </div>
 
-        </ul>
-    </div>
+        <div>
+            <label for="datos">Nombre</label>
+            <input id="nombre" type="text" placeholder="Nombre del propietario">
+        </div>
+
+        <div>
+            <label for="datos">Código postal</label>
+            <input id="codigo" type="string" placeholder="Código">
+        </div>
+
+        <div>
+            <button type="button" class="btn" id="btn_registro">Guardar</button>
+            <button type="button" class="btn" id="btn_retiro"><a href="listar_tarjeta.html">Cancelar</a></button>
+        </div>
+
+    </main>
 
     <!--Footer-->
     <footer>
@@ -127,6 +124,11 @@
             <p>® Míshka™ &nbsp;&nbsp;&nbsp; Diseño por Papaya Solutions. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/tarjeta_servicio.js"></script>
+    <script src="js/registrar_tarjeta_controlador.js"></script>
 </body>
 
 </html>

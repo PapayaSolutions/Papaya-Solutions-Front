@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/configuracion.css">
     <link rel="stylesheet" href="css/registrar_usuario.css">
     <link rel="stylesheet" href="css/registrar_encargado_recinto.css">
     <link rel="stylesheet" href="css/formularios.css">
@@ -37,139 +38,90 @@
         </nav>
     </header>
 
-    <main class="registrar_wrapper">
-        <div>
-            <div class="ilustracion_r ">
-                <!--imagen aca-->
-            </div>
-        </div>
-        <div class="formulario_registro">
-            <div class="formulario">
-                <h1>Registrar nuevo recinto</h1>
-                <div class="spacer_h1"></div>
+    <main id="main">
 
-                <form id="form_rec">
+        <aside>
+            <h2>Ajustes de Administrador</h2>
+            <ul>
+                <a href="listar_perfiles.html">  Clientes</a>
 
-                    <div>
-                        <div>
-                            <label for="txt_nombre_recinto">Nombre completo</label>
-                            <input id="txt_nombre_recinto" type="text" placeholder="Nombre del recinto">
-                        </div>
+            </ul>
+            <ul>
+                <a href="">Administrador</a>
+            </ul>
+            <ul><a href="">Categorias</a></ul>
+            <ul><a href="">Recintos</a></ul>
+            <ul><a href="">Impuestos</a></ul>
+            <ul><a href="">Descuentos</a></ul>
+            <ul><a href="mantenimiento_avatar.html">Avatares</a></ul>
+            <ul><a href="">Reservas</a></ul>
+            <ul><a href="">Reportes</a></ul>
 
-                        <div class="three_collumn_form">
+        </aside>
 
-                            <div>
-                                <label for="txt_provincia">Provincia</label>
-                                <input id="txt_provincia" type="text" placeholder="Provincia">
-                            </div>
-                            <div>
-                                <label for="txt_canton">Cantón</label>
-                                <input id="txt_canton" type="text" placeholder="Cantón">
-                            </div>
-                            <div>
-                                <label for="txt_distrito">Distrito</label>
-                                <input id="txt_distrito" type="text" placeholder="Distrito">
-                            </div>
+        <section>
 
-                        </div>
+            <div class="formulario_registro">
+                <div class="formulario">
+                    <h1 class="formulario h1">Registrar nuevo recinto</h1>
+                    <div class="spacer_h1"></div>
+
+                    <form id="form_rec">
 
                         <div>
-                            <label for="txt_direccion">Dirección exacta</label>
-                            <input id="txt_direccion" type="text" placeholder="Dirección exacta">
-                        </div>
-
-                        <div class="two_collumn_form">
-
                             <div>
-                                <label for="txt_asientos_tradicionales">Asientos tradicionales</label>
-                                <input id="txt_asientos_tradicionales" type="number" placeholder="Capacidad de asientos tradicionales">
+                                <label for="txt_nombre_recinto">Nombre completo</label>
+                                <input id="txt_nombre_recinto" type="text" placeholder="Nombre del recinto">
+                            </div>
+
+                            <div class="three_collumn_form">
+
+                                <div>
+                                    <label for="txt_provincia">Provincia</label>
+                                    <input id="txt_provincia" type="text" placeholder="Provincia">
+                                </div>
+                                <div>
+                                    <label for="txt_canton">Cantón</label>
+                                    <input id="txt_canton" type="text" placeholder="Cantón">
+                                </div>
+                                <div>
+                                    <label for="txt_distrito">Distrito</label>
+                                    <input id="txt_distrito" type="text" placeholder="Distrito">
+                                </div>
+
                             </div>
 
                             <div>
-                                <label for="txt_asientos_accesibilidad">Asientos de accesibilidad</label>
-                                <input id="txt_asientos_accesibilidad" type="number" placeholder="Capacidad de asientos de accesibilidad ley 7600">
+                                <label for="txt_direccion">Dirección exacta</label>
+                                <input id="txt_direccion" type="text" placeholder="Dirección exacta">
                             </div>
 
-                        </div>
+                            <div class="two_collumn_form">
 
-                        <div class="btn_container">
-                            <button type="button" class="btn" id="btn_registrar">Registrar</button>
-                        </div>
+                                <div>
+                                    <label for="txt_asientos_tradicionales">Asientos tradicionales</label>
+                                    <input id="txt_asientos_tradicionales" type="number" placeholder="Capacidad de asientos tradicionales">
+                                </div>
+
+                                <div>
+                                    <label for="txt_asientos_accesibilidad">Asientos de accesibilidad</label>
+                                    <input id="txt_asientos_accesibilidad" type="number" placeholder="Capacidad de asientos de accesibilidad ley 7600">
+                                </div>
+
+                            </div>
+
+                            <div class="btn_container">
+                                <button type="button" class="btn" id="btn_registrar">Registrar</button>
+                            </div>
 
 
-                </form>
+                    </form>
+                    </div>
                 </div>
-            </div>
+
+        </section>
+
     </main>
-
-    <footer>
-        <div id="socials_container">
-            <div class="grid_socials">
-
-                <div class="footer_grid_item socials_1">
-                    <a href=""><img src="img/fb_footer.png" alt=""></a>
-                </div>
-                <div class="footer_grid_item socials_2">
-                    <a href=""><img src="img/ig_footer.png" alt=""></a>
-                </div>
-                <div class="footer_grid_item socials_3">
-                    <a href=""><img src="img/tw_footer.png" alt=""></a>
-                </div>
-                <div class="footer_grid_item socials_4">
-                    <a href=""><img src="img/yt_footer.png" alt=""></a>
-                </div>
-                <div class="footer_grid_item socials_5">
-                    <a href=""><img src="img/in_footer.png" alt=""></a>
-                </div>
-            </div>
-        </div>
-        <div id="links_container">
-            <div class="footer_grid_item2 grid_links">
-                <div>
-                    <h1>INFORMACIÓN</h1>
-                    <ul>
-                        <li><a href="">Qué es Míshka</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h1>NOTICIAS</h1>
-                    <ul>
-                        <li><a href="">Publicaciones</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h1>TU CUENTA</h1>
-                    <ul>
-                        <li><a href="">Iniciar Sesión</a></li>
-                        <li><a href="">Registrarse</a></li>
-                        <li><a href="">Ver carrito de compras</a></li>
-                        <li><a href="">Modificar Información</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h1>LEGAL</h1>
-                    <ul>
-                        <li><a href="">Términos y Condiciones</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h1>CONTÁCTANOS</h1>
-                    <ul>
-                        <li>Oficinas Principales: Míshka Co.</li>
-                        <li>Zip-10101 San José, Costa Rica</li>
-                        <li>Teléfono: (506) 1234-5678</li>
-                        <li>Email: soporte@Mishka.com</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-        <div class="copyright">
-            <p>® Míshka™ &nbsp;&nbsp;&nbsp; Diseño por Papaya Solutions. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

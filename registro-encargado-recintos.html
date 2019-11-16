@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/registrar_usuario.css">
     <link rel="stylesheet" href="css/registrar_encargado_recinto.css">
     <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/configuracion.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -37,137 +38,91 @@
         </nav>
     </header>
 
-    <main class="registrar_wrapper">
-        <div>
-            <div class="ilustracion_r ">
-                <!--imagen aca-->
-            </div>
-        </div>
-        <div class="formulario_registro">
-            <div class="formulario">
-                <h1>Registrar nuevo encargado de recinto(s)</h1>
-                <div class="spacer_h1"></div>
 
-                <form id="form_enc_rec">
 
-                    <div>
+    <main id="main">
+
+        <aside>
+            <h2>Ajustes de Administrador</h2>
+            <ul>
+                <a href="listar_perfiles.html">  Clientes</a>
+
+            </ul>
+            <ul>
+                <a href="">Administrador</a>
+            </ul>
+            <ul><a href="">Categorias</a></ul>
+            <ul><a href="">Recintos</a></ul>
+            <ul><a href="">Impuestos</a></ul>
+            <ul><a href="">Descuentos</a></ul>
+            <ul><a href="mantenimiento_avatar.html">Avatares</a></ul>
+            <ul><a href="">Reservas</a></ul>
+            <ul><a href="">Reportes</a></ul>
+
+        </aside>
+
+        <section class="wrap">
+
+
+            <div class="formulario_registro">
+                <div class="formulario">
+                    <h1>Registrar nuevo encargado de recinto(s)</h1>
+                    <div class="spacer_h1"></div>
+
+                    <form id="form_enc_rec">
+
                         <div>
-                            <label for="txt_nombre_encargado_recinto">Nombre completo</label>
-                            <input id="txt_nombre_encargado_recinto" type="text" placeholder="Nombre completo">
-                        </div>
-
-                        <div class="two_collumn_form">
-
                             <div>
-                                <label for="txt_numero_encargado">Numero del encargado</label>
-                                <input id="txt_numero_encargado" type="number" placeholder="88880000">
-                            </div>
-                            <div>
-                                <label for="txt_correo">Correo electrónico</label>
-                                <input id="txt_correo" type="email" placeholder="ejemplo@gmail.com">
+                                <label for="txt_nombre_encargado_recinto">Nombre completo</label>
+                                <input id="txt_nombre_encargado_recinto" type="text" placeholder="Nombre completo">
                             </div>
 
-                        </div>
+                            <div class="two_collumn_form">
 
-                        <div class="two_collumn_form">
+                                <div>
+                                    <label for="txt_numero_encargado">Numero del encargado</label>
+                                    <input id="txt_numero_encargado" type="number" placeholder="88880000">
+                                </div>
+                                <div>
+                                    <label for="txt_correo">Correo electrónico</label>
+                                    <input id="txt_correo" type="email" placeholder="ejemplo@gmail.com">
+                                </div>
 
-                            <div>
-                                <label for="txt_fecha_nacimiento">Fecha de nacimiento</label>
-                                <input id="txt_fecha_nacimiento" type="date">
                             </div>
-                            <div>
-                                <label for="txt_genero">Género</label>
-                                <select id="txt_genero">
+
+                            <div class="two_collumn_form">
+
+                                <div>
+                                    <label for="txt_fecha_nacimiento">Fecha de nacimiento</label>
+                                    <input id="txt_fecha_nacimiento" type="date">
+                                </div>
+                                <div>
+                                    <label for="txt_genero">Género</label>
+                                    <select id="txt_genero">
                                         <option option value="" disabled selected hidden>Seleccionar...</option>
                                             <option value="F">Femenino</option>
                                             <option value="M">Masculino</option>
                                             <option value="O">Otro</option>
                                             <option value="N">Prefiero no indicar</option>
                                     </select>
+                                </div>
+
                             </div>
 
+                            <div class="btn_container">
+
+                                <button type="button" class="btn" id="btn_registrar">Registrar</button>
+
+                            </div>
                         </div>
 
-                        <div class="btn_container">
-
-                            <button type="button" class="btn" id="btn_registrar">Registrar</button>
-
-                        </div>
-                    </div>
-
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
+
+        </section>
+
     </main>
-
-    <footer>
-        <div id="socials_container">
-            <div class="grid_socials">
-
-                <div class="footer_grid_item socials_1">
-                    <a href=""><img src="img/fb_footer.png" alt=""></a>
-                </div>
-                <div class="footer_grid_item socials_2">
-                    <a href=""><img src="img/ig_footer.png" alt=""></a>
-                </div>
-                <div class="footer_grid_item socials_3">
-                    <a href=""><img src="img/tw_footer.png" alt=""></a>
-                </div>
-                <div class="footer_grid_item socials_4">
-                    <a href=""><img src="img/yt_footer.png" alt=""></a>
-                </div>
-                <div class="footer_grid_item socials_5">
-                    <a href=""><img src="img/in_footer.png" alt=""></a>
-                </div>
-            </div>
-        </div>
-        <div id="links_container">
-            <div class="footer_grid_item2 grid_links">
-                <div>
-                    <h1>INFORMACIÓN</h1>
-                    <ul>
-                        <li><a href="">Qué es Míshka</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h1>NOTICIAS</h1>
-                    <ul>
-                        <li><a href="">Publicaciones</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h1>TU CUENTA</h1>
-                    <ul>
-                        <li><a href="">Iniciar Sesión</a></li>
-                        <li><a href="">Registrarse</a></li>
-                        <li><a href="">Ver carrito de compras</a></li>
-                        <li><a href="">Modificar Información</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h1>LEGAL</h1>
-                    <ul>
-                        <li><a href="">Términos y Condiciones</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h1>CONTÁCTANOS</h1>
-                    <ul>
-                        <li>Oficinas Principales: Míshka Co.</li>
-                        <li>Zip-10101 San José, Costa Rica</li>
-                        <li>Teléfono: (506) 1234-5678</li>
-                        <li>Email: soporte@Mishka.com</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-        <div class="copyright">
-            <p>® Míshka™ &nbsp;&nbsp;&nbsp; Diseño por Papaya Solutions. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

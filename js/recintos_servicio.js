@@ -31,3 +31,25 @@ let registrar_recinto = async(nombre, direccion, canton, provincia, distrito, ca
             console.log(error);
         });
 };
+
+
+let listar_recintos = async() => {
+
+    let lista_recintos;
+
+    await axios({
+        method: 'get',
+        url: 'http://localhost:3000/api/listar-recintos',
+        responseType: 'json'
+
+    })
+
+    .then(function(res) {
+            lista_recintos = (res.data.recintos)
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+
+    return lista_recintos;
+};

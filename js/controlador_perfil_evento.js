@@ -32,13 +32,7 @@ let obtener_evento = async(_id) => {
 
 let llenar_perfil = async(_id) => {
 
-    datos_evento = await axios({
-        method: 'get',
-        params: { _id: _id },
-        url: `http://localhost:3000/api/listar_evento2/`,
-        responseType: 'json'
-    });
-
+    datos_evento = obtener_evento(ID);
 
     nombre.innerHTML = datos_evento['nombre'];
     recinto.value = datos_evento['recinto'];

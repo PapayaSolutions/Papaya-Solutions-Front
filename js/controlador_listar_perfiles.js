@@ -19,6 +19,7 @@ let llenar_tabla = async() => {
             fila.insertCell().innerHTML = lista_clientes[i]['s_apellido'];
             fila.insertCell().innerHTML = lista_clientes[i]['correo_cliente'];
             fila.insertCell().innerHTML = lista_clientes[i]['estado'];
+            fila.insertCell().innerHTML = '<input type = "button">';
 
         }
     };

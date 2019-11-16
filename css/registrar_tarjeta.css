@@ -1,0 +1,86 @@
+.registrar_wrapper {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    column-gap: 25px;
+    padding-top: 50px;
+}
+
+.ilustracion {
+    background: #ececec;
+    height: auto;
+    width: 100%;
+}
+
+.formulario_registro {
+    width: 100%;
+}
+
+input[type="text"],
+input[type="string"],
+textarea {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 30%;
+    border: none;
+    border-bottom: 1px solid #f7c331;
+    background: transparent;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    height: 18px;
+    color: #292c2a;
+}
+
+#btn_registro {
+    display: inline-block;
+    margin-top: 2%;
+    margin-left: 0px;
+    position: relative;
+    background: #f7882f;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding: 10px 25px;
+    border-radius: 10rem;
+    color: #ececec;
+    overflow: hidden;
+}
+
+#btn_retiro {
+    display: inline-block;
+    margin-top: 2%;
+    margin-left: 0px;
+    position: relative;
+    background: #f7882f;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding: 10px 25px;
+    border-radius: 10rem;
+    overflow: hidden;
+}
+
+#btn_retiro a {
+    text-decoration: none;
+    color: #ececec;
+}
+
+#btn_retiro:hover {
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
+    box-sizing: border-box;
+}
+
+#btn_retiro a:hover {
+    text-decoration: none;
+    color: #f7882f;
+}
+
+#btn_registro:hover {
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
+    box-sizing: border-box;
+}

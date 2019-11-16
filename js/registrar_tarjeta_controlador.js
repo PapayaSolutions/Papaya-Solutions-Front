@@ -3,6 +3,9 @@
 const input_tarjeta = document.querySelector('#tarjeta');
 const input_nombre = document.querySelector('#nombre');
 const input_codigo = document.querySelector('#codigo');
+const input_vencimiento = document.querySelector('#vencimiento');
+const input_apellido = document.querySelector('#apellido');
+const input_postal = document.querySelector('#postal');
 const btn_registro = document.querySelector('#btn_registro');
 
 // Validación de datos
@@ -31,7 +34,29 @@ let validar = () => {
         input_codigo.classList.remove('error');
     }
 
+    if (input_vencimiento.value == '') {
+        error = true;
+        input_vencimiento.classList.add('error');
+    } else {
+        input_vencimiento.classList.remove('error');
+    }
+
+    if (input_apellido.value == '') {
+        error = true;
+        input_apellido.classList.add('error');
+    } else {
+        input_apellido.classList.remove('error');
+    }
+
+    if (input_postal.value == '') {
+        error = true;
+        input_postal.classList.add('error');
+    } else {
+        input_postal.classList.remove('error');
+    }
+
     return error;
+
 };
 
 // function obtener_datos(){}
@@ -39,6 +64,9 @@ let obtener_datos = () => {
     let tarjeta = input_tarjeta.value;
     let nombre = input_nombre.value;
     let codigo = input_codigo.value;
+    let tarjeta = input_vencimiento.value;
+    let nombre = input_apellido.value;
+    let codigo = input_postal.value;
 
     btn_registro.addEventListener('click', obtener_datos);
 
@@ -59,6 +87,9 @@ let obtener_datos = () => {
         console.log('tarjeta', codigo);
         console.log('nombre', nombre);
         console.log('codigo', codigo);
+        console.log('vencimiento', vencimiento);
+        console.log('apellido', apellido);
+        console.log('postal', postal);
 
         Swal.fire({
             type: 'success',

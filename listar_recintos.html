@@ -35,53 +35,38 @@
         </nav>
     </header>
 
-    <main id="main">
-        <aside>
-            <h2>Ajustes de Administrador</h2>
-            <ul>
-                <a href="listar_perfiles.html">  Clientes</a>
+    <main>
 
-            </ul>
-            <ul>
-                <a href="">Administrador</a>
-            </ul>
-            <ul><a href="">Categorias</a></ul>
-            <ul><a href="">Recintos</a></ul>
-            <ul><a href="">Impuestos</a></ul>
-            <ul><a href="">Descuentos</a></ul>
-            <ul><a href="mantenimiento_avatar.html">Avatares</a></ul>
-            <ul><a href="">Reservas</a></ul>
-            <ul><a href="">Reportes</a></ul>
+        <section>
 
-        </aside>
-        <section class="center">
-
-            <div class="">
-                <input class="filter" type="text" id="txt-filtro" placeholder="Buscar">
+            <div id="banner_info">
+                <h1 id='bnr_titulo'>Mantenimiento</h1>
+                <h2 id="bnr_seccion">RECINTOS</h2>
+                <i class="fas fa-search" id="search_icon"></i>
+                <input type="text" id="txt-filtro" placeholder="Buscar">
             </div>
+            <div>
+                <table id="tbl-recintos">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Provincia</th>
+                            <th>Cantón</th>
+                            <th>Distrito</th>
+                            <th>Dirección exacta</th>
+                            <th>Asientos tradicionales</th>
+                            <th>Asientos de accesibilidad</th>
+                            <th>Capacidad total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
 
+                    <tbody>
 
-            <table id="tbl-recintos">
+                    </tbody>
+                </table>
 
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Provincia</th>
-                        <th>Cantón</th>
-                        <th>Distrito</th>
-                        <th>Dirección exacta</th>
-                        <th>Asientos tradicionales</th>
-                        <th>Asientos de accesibilidad</th>
-                        <th>Capacidad total</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                </tbody>
-
-            </table>
+            </div>
 
         </section>
     </main>

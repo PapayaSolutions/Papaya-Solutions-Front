@@ -26,8 +26,8 @@ let llenar_tabla = async() => {
             fila.insertCell().innerHTML = lista_recintos[i]['canton'];
             fila.insertCell().innerHTML = lista_recintos[i]['distrito'];
             fila.insertCell().innerHTML = lista_recintos[i]['direccion'];
-            fila.insertCell().innerHTML = lista_recintos[i]['asientosTradicionales'];
-            fila.insertCell().innerHTML = lista_recintos[i]['asientosaccesibilidad'];
+            fila.insertCell().innerHTML = lista_recintos[i]['asientos_tradicionales'];
+            fila.insertCell().innerHTML = lista_recintos[i]['asientos_accesibilidad'];
             fila.insertCell().innerHTML = lista_recintos[i]['capacidad'];
             fila.insertCell().innerHTML = lista_recintos[i]['estado'];
         }

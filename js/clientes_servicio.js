@@ -32,11 +32,11 @@ let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pc
 
 /*al que le toque listarlos, acá sería, ya agregué algunas cosas (Andrés)*/
 
-/*let listar_clientes = async() => {
+let listar_clientes = async() => {
     let listar_clientes;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar-clientes',
+            url: 'http://localhost:3000/api/listar_clientes',
             responseType: 'json'
         })
         .then(function(res) {
@@ -47,4 +47,4 @@ let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pc
             console.log(error);
         });
     return lista_clientes;
-}*/
+}

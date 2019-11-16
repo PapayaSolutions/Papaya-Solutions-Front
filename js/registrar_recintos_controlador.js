@@ -654,7 +654,7 @@ let obtener_datos = () => {
             text: 'Encargado registrado!',
         })
 
-        // document.getElementById("form_rec").reset();
+        document.getElementById("form_rec").reset();
     };
 };
 

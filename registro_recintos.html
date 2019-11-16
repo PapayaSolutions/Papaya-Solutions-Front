@@ -77,16 +77,27 @@
                             <div class="three_collumn_form">
 
                                 <div>
-                                    <label for="txt_provincia">Provincia</label>
-                                    <input id="txt_provincia" type="text" placeholder="Provincia">
+                                    <label for="provincia_cliente">Provincia</label>
+                                    <select id="provincia_cliente" onchange="popular_cantones('provincia_cliente', 'canton_cliente')">
+                                                    <option value="" disabled selected hidden>-</option>
+                                                    <option value="San José">San José</option>
+                                                    <option value="Alajuela">Alajuela</option>
+                                                    <option value="Cartago">Cartago</option>
+                                                    <option value="Heredia">Heredia</option>
+                                                    <option value="Guanacaste">Guanacaste</option>
+                                                    <option value="Puntarenas">Puntarenas</option>
+                                                    <option value="Limón">Limón</option>
+                                                </select>
                                 </div>
                                 <div>
-                                    <label for="txt_canton">Cantón</label>
-                                    <input id="txt_canton" type="text" placeholder="Cantón">
+                                    <label for="canton_cliente">Cantón</label>
+                                    <select id="canton_cliente" onchange="popular_distritos('provincia_cliente', 'canton_cliente', 'distrito_cliente')">
+                                                </select>
                                 </div>
                                 <div>
-                                    <label for="txt_distrito">Distrito</label>
-                                    <input id="txt_distrito" type="text" placeholder="Distrito">
+                                    <label for="distrito_cliente">Distrito</label>
+                                    <select id="distrito_cliente">
+                                            </select>
                                 </div>
 
                             </div>

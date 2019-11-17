@@ -22,8 +22,8 @@ let obtener_datos = () => {
 
         Swal.fire({
             type: 'warning',
-            title: 'Algunos de los campos se encuentran incorrectos.',
-            text: 'Por favor revise los campos en rojo',
+            title: 'El campo se encuentran incorrectos.',
+            text: 'Por favor recuerde ',
             confirmButtonText: 'Entendido',
         })
 
@@ -34,9 +34,12 @@ let obtener_datos = () => {
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con éxito',
-            text: 'El producto ha sido almacenado',
+            text: 'El Tipo de evento ha sido almacenado',
             confirmButtonText: 'Entendido',
+        }).then(function() {
+            location.reload();
         });
+
     }
 
 };

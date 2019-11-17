@@ -52,3 +52,48 @@
         left: 30px;
         color: #f7882f;
     }
+    
+    #tbl_clientes {
+        margin: auto;
+        margin-top: 40px;
+    }
+    
+    #tbl_clientes thead {
+        height: 25px;
+        font-size: 20px;
+        color: #f7882f;
+        border-bottom: #f7882f 2px solid;
+    }
+    
+    #tbl_clientes thead th {
+        min-width: 150px;
+    }
+    
+    #tbl_clientes tbody {
+        height: 18px;
+        border-bottom: #f7882f 1px solid;
+        text-justify: center;
+        text-align: center;
+    }
+    
+    #tbl_clientes tbody td {
+        min-width: 150px;
+        padding: 3px;
+    }
+    
+    #tbl_clientes tbody td input .btn {
+        background: #f7882f;
+        font-size: 10px;
+        letter-spacing: 3px;
+        border: 1px solid #f7882f;
+        padding: 5px 15px;
+        border-radius: 10rem;
+        color: #ececec;
+    }
+    
+    #tbl_clientes tbody td input .btn:hover {
+        background: transparent;
+        color: #f7882f;
+        border: 1px solid #f7882f;
+        box-sizing: border-box;
+    }

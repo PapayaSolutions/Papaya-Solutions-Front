@@ -48,3 +48,20 @@ let listar_clientes = async() => {
         });
     return lista_clientes;
 }
+
+let ver_perfil = async() => {
+    let ver_perfil;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/ver_perfil',
+            responseType: 'json'
+        })
+        .then(function(res) {
+            visualizar_perfil = res.data.clientes;
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    return visualizar_perfil;
+}

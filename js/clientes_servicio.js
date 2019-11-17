@@ -33,7 +33,7 @@ let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pc
 /*al que le toque listarlos, acá sería, ya agregué algunas cosas (Andrés)*/
 
 let listar_clientes = async() => {
-    let listar_clientes;
+    let lista_clientes;
     await axios({
             method: 'get',
             url: 'http://localhost:3000/api/listar_clientes',

@@ -36,7 +36,7 @@
             <aside>
                 <h2>Ajustes de Administrador</h2>
                 <ul>
-                    <a href="listar_perfiles.html">  Clientes</a>
+                    <a href="listar_perfiles.html">  Usuarios</a>
 
                 </ul>
                 <ul>
@@ -54,22 +54,21 @@
             <section>
                 <!-- listado de perfiles de clientes -->
                 <div id="banner_info">
-                    <h1 id='bnr_titulo'>Mantenimiento</h1>
-                    <h2 id="bnr_seccion">PERFILES DE CLIENTES</h2>
-                    <i class="fas fa-search" id="search_icon"></i>
-                    <input type="text" id="bnr_input" placeholder="Buscar">
+                    <div class="banner_left">
+                        <h1 id='bnr_titulo'>Mantenimiento</h1>
+                        <h2 id="bnr_seccion">PERFILES DE USUARIOS</h2>
+                        <i class="fas fa-search" id="search_icon"></i>
+                        <input type="text" id="bnr_input" placeholder="Buscar">
+                    </div>
+
                 </div>
                 <div>
                     <table id="tbl_clientes">
                         <thead>
                             <tr>
                                 <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>2º Apellido</th>
                                 <th>Correo</th>
-                                <th>Edad</th>
                                 <th>Genero</th>
-                                <th>Direccion</th>
                                 <th>Tipo</th>
                                 <th>Estado</th>
 
@@ -92,6 +91,10 @@
 
         <script src="js/clientes_servicio.js"></script>
         <script src="js/controlador_listar_perfiles.js"></script>
+        <script src="js/encargados-recintos-servicio.js"></script>
+
+
+
     </body>
 
 </html>

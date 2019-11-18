@@ -15,7 +15,7 @@ let validar = () => {
     if (input_tarjeta.value == '') {
         error = true;
         input_tarjeta.classList.add('error');
-        console.log('falta numero')
+        console.log('Falta número de tarjeta')
     } else {
         input_tarjeta.classList.remove('error');
     }
@@ -23,6 +23,7 @@ let validar = () => {
     if (input_nombre.value == '') {
         error = true;
         input_nombre.classList.add('error');
+        console.log('Falta nombre del propietario')
     } else {
         input_nombre.classList.remove('error');
     }
@@ -30,6 +31,7 @@ let validar = () => {
     if (input_codigo.value == '') {
         error = true;
         input_codigo.classList.add('error');
+        console.log('Falta código de tarjeta')
     } else {
         input_codigo.classList.remove('error');
     }
@@ -37,6 +39,7 @@ let validar = () => {
     if (input_vencimiento.value == '') {
         error = true;
         input_vencimiento.classList.add('error');
+        console.log('Falta fecha de vencimiento')
     } else {
         input_vencimiento.classList.remove('error');
     }
@@ -55,18 +58,25 @@ let validar = () => {
         input_postal.classList.remove('error');
     }
 
+    if (input_postal.value == 'text') {
+        error = true;
+        input_postal.classList.add('error');
+    } else {
+        input_postal.classList.remove('error');
+    }
     return error;
 
 };
 
 // function obtener_datos(){}
 let obtener_datos = () => {
+
     let tarjeta = input_tarjeta.value;
     let nombre = input_nombre.value;
     let codigo = input_codigo.value;
-    let tarjeta = input_vencimiento.value;
-    let nombre = input_apellido.value;
-    let codigo = input_postal.value;
+    let vencimiento = input_vencimiento.value;
+    let apellido = input_apellido.value;
+    let postal = input_postal.value;
 
     btn_registro.addEventListener('click', obtener_datos);
 

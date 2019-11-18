@@ -19,10 +19,11 @@
     font-size: 16px;
 }
 
-.datos {
+#datos {
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(3);
+    grid-template-columns: 1fr;
+    list-style: none;
 }
 
 hr {

@@ -9,14 +9,17 @@ let registrar_tarjeta = async(tarjeta, nombre, codigo) => {
                 data: {
                     tarjeta: tarjeta,
                     nombre: nombre,
-                    codigo: codigo
+                    codigo: codigo,
+                    vencimiento: vencimiento,
+                    apellido: apellido,
+                    postal: postal,
                 }
 
             }
 
         )
         .then(function(res) {
-            console.log(res.data);
+            console.log(res.data.clientes);
         })
         .catch(function(error) {
             console.log(error);

@@ -10,7 +10,6 @@ main {
 }
 
 nav {
-    background-color: #f7882f;
     color: #ececec;
 }
 
@@ -20,7 +19,7 @@ nav a {
 }
 
 #cero_section {
-    background: #f7c331;
+    background: #ececec;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     height: 200px;
@@ -43,7 +42,6 @@ nav a {
 }
 
 #cero_section img {
-    background-color: #292c2a;
     height: 100%;
     width: 100%;
     min-width: 150px;
@@ -91,11 +89,11 @@ nav a {
 }
 
 #primera_section {
-    background-color: #f7882f;
+    background-color: #f7c331;
 }
 
 #txt-categoria {
-    background-color: #f7882f;
+    background: transparent;
     border: 1px #ececec solid;
     color: #ececec;
     border-radius: 42px 42px 42px 42px;
@@ -154,13 +152,14 @@ nav a {
     font-size: 13px;
 }
 
-.carta h2 {
+.carta h3 {
     color: #f7c331;
     border-bottom: #f7c331 2px solid;
     padding: 3px;
+    font-size: 20px;
 }
 
-.carta h3 {
+.carta h4 {
     color: #292c2a;
     font-weight: bold;
     font-size: 20px;

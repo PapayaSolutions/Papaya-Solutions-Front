@@ -12,7 +12,7 @@ let mostrar_cards = async() => {
     for (let i = 0; i < lista_evento.length; i++) {
         let nombre = lista_evento[i]['nombre'].toLowerCase();
         let categoria = lista_evento[i]['categoria'].toLowerCase();
-        if (nombre.includes(filtro) || (categoria.includes(filtro))) {
+        if (nombre.includes(filtro) || (tipo.includes(filtro))) {
 
             let div_card = document.createElement('div');
             div_card.classList.add('carta');
@@ -31,10 +31,10 @@ let mostrar_cards = async() => {
 
             let imagen = document.createElement('img');
 
-            let categoria = document.createElement('h3');
+            let categoria = document.createElement('h2');
             categoria.innerText = lista_evento[i]['categoria'];
 
-            let nombre_evento = document.createElement('h4');
+            let nombre_evento = document.createElement('h3');
             nombre_evento.innerText = lista_evento[i]['nombre'];
 
             let div_txt = document.createElement('div');
@@ -103,23 +103,28 @@ input_filtro.addEventListener('keyup', mostrar_cards);
 
 //Listar categorias en el dashboard
 const tbody = document.querySelector('#txt-categoria');
-
 let lista_tipo_de_evento;
 
 let llenar_tabla = async() => {
 
     lista_tipo_de_evento = await listar_tipos_de_evento();
-
     tbody.innerHTML = '';
+
     for (let i = 0; i < lista_tipo_de_evento.length; i++) {
-
-
+        let todas = document.createElement('option');
         let selecionar = document.createElement('option');
+
+        todas.innerText = 'Todas';
+
         selecionar.innerText = lista_tipo_de_evento[i]['nombre'];
 
-        tbody.appendChild(selecionar);
-    }
 
+
+
+        tbody.appendChild(selecionar);
+
+
+    };
 };
 
 llenar_tabla();

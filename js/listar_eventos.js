@@ -23,6 +23,7 @@ let mostrar_cards = async() => {
             let div_fecha = document.createElement('div');
 
             let fecha = document.createElement('small');
+            fecha.innerText = lista_evento[i]['fecha_disponible'];
 
             let fecha_txt = document.createElement('small');
             fecha_txt.innerText = 'Fecha: '
@@ -30,6 +31,7 @@ let mostrar_cards = async() => {
             let contenedor_img = document.createElement('a');
 
             let imagen = document.createElement('img');
+            imagen.src = lista_evento[i]['URL_imagen'];
 
             let categoria = document.createElement('h3');
             categoria.innerText = lista_evento[i]['categoria'];

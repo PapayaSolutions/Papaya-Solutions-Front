@@ -1,71 +1,85 @@
-.barra_opciones a {
+.registrar_wrapper {
+    width: 80%;
     display: grid;
-    padding: 20px;
-    padding-left: 15px;
-    text-decoration: none;
-    color: #000;
+    grid-template-columns: 500px 1fr;
+    column-gap: 25px;
+    padding-top: 50px;
 }
 
-.barra_opciones hr {
-    width: 15%;
-    margin-left: 0%;
+.ilustracion {
+    background: #ececec;
+    height: auto;
+    width: 100%;
 }
 
-.formas_pago {
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    width: 15%;
+.formulario_registro {
+    width: 100%;
+}
+
+input[type="text"],
+input[type="string"],
+textarea {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 30%;
+    border: none;
+    border-bottom: 1px solid #f7c331;
+    background: transparent;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    height: 18px;
+    color: #292c2a;
+}
+
+#btn_registro {
+    display: inline-block;
+    margin-top: 2%;
+    margin-left: 0px;
+    position: relative;
     background: #f7882f;
-    opacity: 0.9;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding: 10px 25px;
+    border-radius: 10rem;
+    color: #ececec;
+    overflow: hidden;
 }
 
-.barra_opciones li {
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
+#btn_retiro {
+    display: inline-block;
+    margin-top: 2%;
+    margin-left: 0px;
+    background: #f7882f;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding: 10px 25px;
+    border-radius: 10rem;
+    overflow: hidden;
 }
 
-.opciones {
-    display: grid;
-    grid-template-columns: 15% 1fr;
+#btn_retiro a {
+    text-decoration: none;
+    color: #ececec;
 }
 
-.opciones1 {
-    display: grid;
-    grid-template-columns: 15% 15% 4% 1fr;
-}
-
-.texto_central a {
-    padding: 20px;
-    color: #55504c;
-    border-bottom: 2px solid #f7882f;
-    text-align: left;
-    margin-left: 15%;
-}
-
-.opciones1 h1 {
-    padding: 20px;
+#btn_retiro:hover {
+    background: transparent;
     color: #f7882f;
-    border-bottom: 2px solid #f7882f;
-    text-align: left;
+    border: 1px solid #f7882f;
+    box-sizing: border-box;
 }
 
-.opciones1 p {
-    padding: 20px;
-    color: #55504c;
-    border-bottom: 2px solid #f7882f;
+#btn_retiro a:hover {
+    text-decoration: none;
+    color: #f7882f;
 }
 
-.opciones1 li a {
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-}
-
-.opciones1 li :hover {
-    background: #f7c331;
-    opacity: 0.9;
-}
-
-.opciones li:hover {
-    background: #f7c331;
-    opacity: 0.9;
+#btn_registro:hover {
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
+    box-sizing: border-box;
 }

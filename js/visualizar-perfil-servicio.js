@@ -1,6 +1,7 @@
 'use strict';
 
 let visualizar_perfil = async(correo_cliente) => {
+    let ver_perfil;
     try {
         const response = await axios({
             method: 'get',
@@ -11,4 +12,5 @@ let visualizar_perfil = async(correo_cliente) => {
     } catch (error) {
         console.log(error);
     }
+    return ver_perfil;
 };

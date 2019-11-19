@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/general.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/listar_tarjeta.css">
     <link rel="stylesheet" href="registrar_tarjeta.html">
@@ -20,18 +21,31 @@
     <header>
         <nav>
             <div>
-                <a href="#">Eventos</a>
-                <a href="#">Eventos</a>
-                <a href="#">Más eventos</a>
+                <ul class="navegador_izquierda">
+                    <div>
+                        <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
+                    </div>
+                    <li><a href="listar_eventos.html">Eventos</a></li>
+                    <li><a>Registrarse</a>
+                        <ul>
+                            <li><a href="registrar_usuario.html">Cliente</a></li>
+                            <li><a href="#">Organizador de eventos</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-
-            <div class="navegador_derecha">
-                <a href="#"><img src="img/icon-bell.png" alt="Busqueda" ; width="20px" ; height="20px"></a>
-                <a href="#"><img src="img/busqueda.png" alt="Busqueda" ; width="20px" ; height="20px"></a>
-                <a href="#"><img src="img/usuario.png" alt="Busqueda" ; width="20px" ; height="20px"></a>
-                <a href="#">Cerrar Sesión</a>
+            <div>
+                <ul class="navegador_derecha">
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li><a href="#"><i class="far fa-user"></i></a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="far fa-bell"></i></a></li>
+                    <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
+                    <li> <a href="#">Cerrar Sesión</a></li>
+                </ul>
             </div>
-
         </nav>
     </header>
 
@@ -66,19 +80,19 @@
         <div id="links_container">
             <div class="footer_grid_item2 grid_links">
                 <div>
-                    <h1>INFORMACIÓN</h1>
+                    <h4>INFORMACIÓN</h4>
                     <ul>
                         <li><a href="">Qué es Míshka</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h1>NOTICIAS</h1>
+                    <h4>NOTICIAS</h4>
                     <ul>
                         <li><a href="">Publicaciones</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h1>TU CUENTA</h1>
+                    <h4>TU CUENTA</h4>
                     <ul>
                         <li><a href="">Iniciar Sesión</a></li>
                         <li><a href="">Registrarse</a></li>
@@ -88,13 +102,13 @@
                 </div>
 
                 <div>
-                    <h1>LEGAL</h1>
+                    <h4>LEGAL</h4>
                     <ul>
                         <li><a href="">Términos y Condiciones</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h1>CONTÁCTANOS</h1>
+                    <h4>CONTÁCTANOS</h4>
                     <ul>
                         <li>Oficinas Principales: Míshka Co.</li>
                         <li>Zip-10101 San José, Costa Rica</li>

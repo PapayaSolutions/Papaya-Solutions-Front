@@ -29,7 +29,7 @@ let llenar_perfil = async() => {
 
 
 
-    let date = new Date(datos_evento[0]['fecha_disponible']);
+    let date = new Date((datos_evento[0]['fecha_disponible'])[0]['fecha']);
     let tiempo = date.getHours();
     if (tiempo > 12) {
         tiempo = ((tiempo - 12) + 'pm').toString();

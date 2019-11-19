@@ -19,7 +19,7 @@
 header nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: rgba(246, 246, 246, 0.075);
+    background: rgba(34, 34, 34, 0.26);
     padding: 10px;
 }
 

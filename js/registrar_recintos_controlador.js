@@ -630,7 +630,7 @@ let obtener_datos = () => {
     let asientos_accesibilidad = input_asientos_accesibilidad.value;
     let estado = 'Activo';
 
-    let capacidad = (asientos_accesibilidad + asientos_tradicionales)
+    let capacidad = (parseInt(asientos_accesibilidad, 10) + parseInt(asientos_tradicionales, 10))
     console.log(nombre)
     console.log(asientos_accesibilidad)
 

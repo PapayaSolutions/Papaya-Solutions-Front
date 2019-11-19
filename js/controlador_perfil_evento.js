@@ -11,7 +11,7 @@ const descripcion = document.querySelector('#descripcion_evento');
 const cantidad = document.querySelector('#cantidad');
 const imagen = document.querySelector('#img_evento');
 
-let id = "5dcd97235f8dde25b8c02d0c"; /*localStorage.getItem('id_evento');*/
+let id = localStorage.getItem('id_evento'); /*"5dcd97235f8dde25b8c02d0c";*/
 let datos_evento;
 
 
@@ -19,14 +19,14 @@ let llenar_perfil = async() => {
 
     datos_evento = await obtener_evento_id(id);
 
-    nombre.innerHTML = datos_evento['nombre'];
-    recinto.value = datos_evento['recinto'];
-    precio.value = ('¢' + (datos_evento['precio_entrada']));
-    categoria.value = datos_evento['categoria'];
-    descripcion.value = datos_evento['descripcion'];
-    cantidad.value = datos_evento['cantidad_maxima_usuario'];
-    direccion.value = datos_evento['pais_evento'];
-    imagen.src = datos_evento['URL_imagen'];
+    nombre.innerHTML = datos_evento[0]['nombre'];
+    recinto.value = datos_evento[0]['recinto'];
+    precio.value = ('¢' + (datos_evento[0]['precio_entrada']));
+    categoria.value = datos_evento[0]['categoria'];
+    descripcion.value = datos_evento[0]['descripcion'];
+    cantidad.value = datos_evento[0]['cantidad_maxima_usuario'];
+    direccion.value = datos_evento[0]['pais_evento'];
+    imagen.src = datos_evento[0]['URL_imagen'];
 
 
 };

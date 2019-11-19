@@ -1,0 +1,99 @@
+ /*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a  verde muy oscuro
+    #ececec gris 
+    */
+ 
+ html {
+     font-family: 'Roboto', sans-serif;
+     background: #ececec;
+ }
+ 
+ #banner_info {
+     display: block;
+     height: 230px;
+     border-bottom: 10px #f7882f solid;
+     padding: 50px 50px 20px 50px;
+ }
+ 
+ #bnr_titulo {
+     font-size: 50px;
+     color: #f7882f;
+     font-weight: 900;
+     text-align: center;
+     margin-bottom: 25px;
+     width: 500px;
+ }
+ 
+ #bnr_seccion {
+     font-size: 30px;
+     color: #292c2a;
+     font-weight: 900;
+     width: 500px;
+     margin-bottom: 25px;
+ }
+ 
+ #txt-filtro {
+     height: 35px;
+     width: 300px;
+     border-radius: 10px;
+     font-size: 20px;
+     padding-left: 30px;
+     color: #f7882f;
+ }
+ 
+ #txt-filtro::placeholder {
+     color: #f7882f;
+ }
+ 
+ #search_icon {
+     position: relative;
+     left: 30px;
+     color: #f7882f;
+ }
+ 
+ #tbl-recintos {
+     margin: auto;
+     margin-top: 40px;
+ }
+ 
+ #tbl-recintos thead {
+     height: 25px;
+     font-size: 20px;
+     color: #f7882f;
+     border-bottom: #f7882f 2px solid;
+ }
+ 
+ #tbl-recintos thead th {
+     min-width: 150px;
+ }
+ 
+ #tbl-recintos tbody {
+     height: 18px;
+     border-bottom: #f7882f 1px solid;
+     text-justify: center;
+     text-align: center;
+ }
+ 
+ #tbl-recintos tbody td {
+     min-width: 150px;
+     padding: 3px;
+ }
+ 
+ #tbl-recintos tbody td input .btn {
+     background: #f7882f;
+     font-size: 10px;
+     letter-spacing: 3px;
+     border: 1px solid #f7882f;
+     padding: 5px 15px;
+     border-radius: 10rem;
+     color: #ececec;
+ }
+ 
+ #tbl-recintos tbody td input .btn:hover {
+     background: transparent;
+     color: #f7882f;
+     border: 1px solid #f7882f;
+     box-sizing: border-box;
+ }

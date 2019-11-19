@@ -12,144 +12,143 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/listar_eventos.css">
+</head>
 
-    <body>
-        <header>
-            <nav>
-                <div>
-                    <ul class="navegador_izquierda">
-                        <div>
-                            <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
-                        </div>
-                        <li><a href="listar_eventos.html">Eventos</a></li>
-                        <li><a>Registrarse</a>
-                            <ul>
-                                <li><a href="registrar_usuario.html">Cliente</a></li>
-                                <li><a href="#">Organizador de eventos</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="navegador_derecha">
-                        <li>
-                            <a href=""></a>
-                        </li>
-                        <li><a href="#"><i class="far fa-user"></i></a></li>
-                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                        <li><a href=""><i class="far fa-bell"></i></a></li>
-                        <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
-                        <li> <a href="#">Cerrar Sesión</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <section id="cero_section">
-            <div class="portada_container">
-                <a href="index.html"><img src="img/logo.png" alt=""></a>
+<body>
+    <header>
+        <nav>
+            <div>
+                <ul class="navegador_izquierda">
+                    <div>
+                        <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
+                    </div>
+                    <li><a href="listar_eventos.html">Eventos</a></li>
+                    <li><a>Registrarse</a>
+                        <ul>
+                            <li><a href="registrar_usuario.html">Cliente</a></li>
+                            <li><a href="#">Organizador de eventos</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <div class="titulo_container">
-                <h1>Nosotros te llevamos</h1>
-                <input id="txt_search" type="search" placeholder="Buscar"></input>
+            <div>
+                <ul class="navegador_derecha">
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li><a href="visualizar_perfil.html"><i class="far fa-user"></i></a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href=""><i class="far fa-bell"></i></a></li>
+                    <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
+                    <li> <a href="#">Cerrar Sesión</a></li>
+                </ul>
             </div>
-            <div></div>
-        </section>
-        <section id="primera_section">
-            <nav id="container_nav">
-                <div> <a href="listar_preferencias.html">Preferencias</a></div>
-                <div class="linear"> <a href="listar_eventos.html">Todos los eventos</a></div>
-                <div>
-                    <select id="txt-categoria" name="txt-categoria" onchange="titulo_categoria()">
+        </nav>
+    </header>
+    <section id="cero_section">
+        <div class="portada_container">
+            <a href="index.html"><img src="img/logo.png" alt=""></a>
+        </div>
+        <div class="titulo_container">
+            <h1>Nosotros te llevamos</h1>
+            <input id="txt_search" type="search" placeholder="Buscar"></input>
+        </div>
+        <div></div>
+    </section>
+    <section id="primera_section">
+        <nav id="container_nav">
+            <div> <a href="listar_preferencias.html">Preferencias</a></div>
+            <div class="linear"> <a href="listar_eventos.html">Todos los eventos</a></div>
+            <div>
+                <select id="txt-categoria" name="txt-categoria" onchange="titulo_categoria()">
                 
-                    </select>
-                </div>
-            </nav>
+                </select>
+            </div>
+        </nav>
+    </section>
+    <main>
+
+        <div id="titulo_categorias">
+
+        </div>
+        <section id="segunda_section">
+
         </section>
-        <main>
+    </main>
+    <footer>
+        <div id="socials_container">
+            <div class="grid_socials">
 
-            <div id="titulo_categorias">
-
-            </div>
-            <section id="segunda_section">
-
-            </section>
-        </main>
-
-
-        <footer>
-            <div id="socials_container">
-                <div class="grid_socials">
-
-                    <div class="footer_grid_item socials_1">
-                        <a href=""><img src="img/fb_footer.png" alt=""></a>
-                    </div>
-                    <div class="footer_grid_item socials_2">
-                        <a href=""><img src="img/ig_footer.png" alt=""></a>
-                    </div>
-                    <div class="footer_grid_item socials_3">
-                        <a href=""><img src="img/tw_footer.png" alt=""></a>
-                    </div>
-                    <div class="footer_grid_item socials_4">
-                        <a href=""><img src="img/yt_footer.png" alt=""></a>
-                    </div>
-                    <div class="footer_grid_item socials_5">
-                        <a href=""><img src="img/in_footer.png" alt=""></a>
-                    </div>
+                <div class="footer_grid_item socials_1">
+                    <a href=""><img src="img/fb_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_2">
+                    <a href=""><img src="img/ig_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_3">
+                    <a href=""><img src="img/tw_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_4">
+                    <a href=""><img src="img/yt_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_5">
+                    <a href=""><img src="img/in_footer.png" alt=""></a>
                 </div>
             </div>
-            <div id="links_container">
-                <div class="footer_grid_item2 grid_links">
-                    <div>
-                        <h4>INFORMACIÓN</h4>
-                        <ul>
-                            <li><a href="">Qué es Míshka</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>NOTICIAS</h4>
-                        <ul>
-                            <li><a href="">Publicaciones</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>TU CUENTA</h4>
-                        <ul>
-                            <li><a href="">Iniciar Sesión</a></li>
-                            <li><a href="">Registrarse</a></li>
-                            <li><a href="">Ver carrito de compras</a></li>
-                            <li><a href="">Modificar Información</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4>LEGAL</h4>
-                        <ul>
-                            <li><a href="">Términos y Condiciones</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>CONTÁCTANOS</h4>
-                        <ul>
-                            <li>Oficinas Principales: Míshka Co.</li>
-                            <li>Zip-10101 San José, Costa Rica</li>
-                            <li>Teléfono: (506) 1234-5678</li>
-                            <li>Email: soporte@Mishka.com</li>
-                        </ul>
-                    </div>
+        </div>
+        <div id="links_container">
+            <div class="footer_grid_item2 grid_links">
+                <div>
+                    <h4>INFORMACIÓN</h4>
+                    <ul>
+                        <li><a href="landing_page.html">Qué es Míshka</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>NOTICIAS</h4>
+                    <ul>
+                        <li><a href="">Publicaciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>TU CUENTA</h4>
+                    <ul>
+                        <li><a href="iniciar_sesion.html">Iniciar Sesión</a></li>
+                        <li><a href="registrar_usuario.html">Registrarse</a></li>
+                        <li><a href="">Ver carrito de compras</a></li>
+                        <li><a href="">Modificar Información</a></li>
+                    </ul>
                 </div>
 
+                <div>
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>CONTÁCTANOS</h4>
+                    <ul>
+                        <li>Oficinas Principales: Míshka Co.</li>
+                        <li>Zip-10101 San José, Costa Rica</li>
+                        <li>Teléfono: (506) 1234-5678</li>
+                        <li>Email: soporte@Mishka.com</li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">
-                <p>® Míshka™ &nbsp;&nbsp;&nbsp; Diseño por Papaya Solutions. Todos los derechos reservados.</p>
-            </div>
-        </footer>
-        <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-        <script src="js/eventos_servicios.js"></script>
-        <script src="js/tipos_de_eventos_servicios.js"></script>
-        <script src="js/listar_eventos.js"></script>
 
-    </body>
+        </div>
+        <div class="copyright">
+            <p>® Míshka™ &nbsp;&nbsp;&nbsp; Diseño por Papaya Solutions. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/eventos_servicios.js"></script>
+    <script src="js/tipos_de_eventos_servicios.js"></script>
+    <script src="js/listar_eventos.js"></script>
+
+</body>
 
 </html>

@@ -32,3 +32,20 @@ let registrar_encrgado_recinto = async(nombre, numero, correo, fecha_nacimiento,
             console.log(error);
         });
 };
+
+let listar_encargados = async() => {
+    let lista_encargados;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar-encargados-recintos',
+            responseType: 'json'
+        })
+        .then(function(res) {
+            lista_encargados = res.data.encargados_recintos;
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    return lista_encargados;
+}

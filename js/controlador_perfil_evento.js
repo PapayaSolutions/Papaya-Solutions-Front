@@ -11,9 +11,8 @@ const descripcion = document.querySelector('#descripcion_evento');
 const cantidad = document.querySelector('#cantidad');
 const imagen = document.querySelector('#img_evento');
 
-let id = localStorage.getItem('id_evento'); /*"5dcd97235f8dde25b8c02d0c";*/
+let id = localStorage.getItem('id_evento');
 let datos_evento;
-
 
 let llenar_perfil = async() => {
 
@@ -29,23 +28,22 @@ let llenar_perfil = async() => {
     imagen.src = datos_evento[0]['URL_imagen'];
 
 
+
+    let date = new Date(datos_evento[0]['fecha_disponible']);
+    let tiempo = date.getHours();
+    if (tiempo > 12) {
+        tiempo = ((tiempo - 12) + 'pm').toString();
+    } else {
+        tiempo = (tiempo + 'am')
+    }
+    var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+    var dayName = dias[date.getDay()];
+    var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    var mesName = meses[date.getMonth()];
+
+    fecha.innerHTML = (dayName + '  ' + date.getDate() + ' de ' + mesName + ' del ' + date.getFullYear());
+    hora.value = tiempo;
+
+
 };
 llenar_perfil();
-
-
-
-/*  implementacion de hora y fecha antigua
-fecha.innerHTML = (dayName + '  ' + date.getDate() + ' de ' + mesName + ' del ' + date.getFullYear());
-hora.value = tiempo;
-let date = new Date(datos_evento[evento_id]['fecha_disponible']);
-let tiempo = date.getHours();
-if (tiempo > 12) {
-    tiempo = ((tiempo - 12) + 'pm').toString();
-} else {
-    tiempo = (tiempo + 'am')
-}
-var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-var dayName = dias[date.getDay()];
-var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-var mesName = meses[date.getMonth()];
-*/

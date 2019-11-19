@@ -5,7 +5,6 @@ let listar_evento = async() => {
     await axios({
             method: 'get',
             url: 'http://localhost:3000/api/listar_evento',
-            /* SETEAR LA RUTA!! */
             responseType: 'json',
 
         }).then(function(res) {
@@ -18,12 +17,11 @@ let listar_evento = async() => {
     return lista_evento;
 };
 
-let listar_evento2 = async() => {
+let obtener_evento_id = async(_id) => {
     let lista_evento;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar_evento2',
-            /* SETEAR LA RUTA!! */
+            url: `http://localhost:3000/api/listar_evento_id/${_id}`,
             responseType: 'json',
 
         }).then(function(res) {

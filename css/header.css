@@ -1,29 +1,64 @@
-    /*  #e7d1b3 beige
-    #f7c331 amarillo
-    #f7882f anaranjado
-    #292c2a  verde muy oscuro
-    #ececec gris 
+/*  #e7d1b3 beige
+#f7c331 amarillo
+#f7882f anaranjado
+#292c2a  verde muy oscuro
+#ececec gris 
+
 */
-    
-    header nav {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        background-image: linear-gradient(to bottom right, #292c2a, #292c2a);
-        border-bottom: 2px solid #f7882f;
-        padding: 10px;
-    }
-    
-    .navegador_derecha {
-        text-align: right;
-        text-decoration: none;
-    }
-    
-    header nav a {
-        text-decoration: none;
-        color: #ececec;
-        padding: 10px;
-    }
-    
-    header nav a:hover {
-        color: #f7882f;
-    }
+
+header nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-image: linear-gradient(to bottom right, #292c2a, #292c2a);
+    border-bottom: 2px solid #f7882f;
+}
+
+.navegador_izquierda {
+    display: grid;
+    grid-template-columns: 10% 20% 20%;
+}
+
+.navegador_derecha {
+    display: grid;
+    grid-template-columns: 60% 5% 5% 5% 5% 20%;
+    text-decoration: none;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #ececec;
+}
+
+header nav a:hover {
+    color: #f7882f;
+}
+
+header ul ul {
+    transition: all 0.3;
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    display: block;
+}
+
+header ul li:hover>ul {
+    margin-top: 10px;
+    opacity: 1;
+    visibility: visible;
+    background-color: #292c2a;
+    z-index: 1;
+}
+
+header ul li {
+    padding: 10px;
+    margin: auto;
+}
+
+header ul div {
+    margin: auto;
+}
+
+.navegador_izquierda div a img {
+    width: 30px;
+    height: 30px;
+}

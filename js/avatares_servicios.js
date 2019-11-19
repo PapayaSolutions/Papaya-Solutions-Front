@@ -47,7 +47,7 @@ var myWidget1 = cloudinary.createUploadWidget({
     if (!error && result && result.event === "success") {
         console.log('Done! Here is the image info: ', result.info);
         document.querySelector('#imagen_preview').src = result.info.secure_url;
-        registrar_avatar(result.info.original_filename, result.info.secure_url, 'true');
+        registrar_avatar(result.info.original_filename, result.info.secure_url, 'Activo');
 
         Swal.fire({
             type: 'success',

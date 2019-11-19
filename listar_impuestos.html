@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Impuestos</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/configuracion.css">
+    <link rel="stylesheet" href="css/impuestos.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <ul class="navegador_izquierda">
+                    <div>
+                        <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
+                    </div>
+                    <li><a href="listar_eventos.html">Eventos</a></li>
+                    <li><a>Registrarse</a>
+                        <ul>
+                            <li><a href="registrar_usuario.html">Cliente</a></li>
+                            <li><a href="#">Organizador de eventos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navegador_derecha">
+                    <li>
+                        <a href=""></a>
+                    </li>
+                    <li><a href="visualizar_perfil.html"><i class="far fa-user"></i></a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="far fa-bell"></i></a></li>
+                    <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
+                    <li> <a href="#">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <aside>
+            <h2>Ajustes de Administrador</h2>
+            <ul>
+                <li><a href="listar_perfiles.html">Usuarios</a></li>
+                <li><a href="#">Administrador</a></li>
+                <li><a href="tipos_de_evento.html">Categorias</a></li>
+                <li><a>Recintos</a>
+                    <ul>
+                        <li><a href="registro_recintos.html">Registrar</a></li>
+                        <li><a href="listar_recintos.html">Filtrar</a></li>
+                    </ul>
+                </li>
+                <li><a>Impuestos</a>
+                    <ul>
+                        <li><a href="registrar_impuestos.html">Registar</a></li>
+                        <li><a href="listar_impuestos.html">Listar</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Descuentos</a></li>
+                <li><a href="mantenimiento_avatar.html">Avatares</a></li>
+                <li><a href="#">Reservas</a></li>
+                <li><a href="#">Reportes</a></li>
+                <li><a href="#">Comentarios</a></li>
+            </ul>
+        </aside>
+        <!-- Main Form -->
+
+        <div class="formulario" id="main_form">
+            <h1>Listado de impuestos</h1>
+            <div id="search">
+                <i class="fas fa-search" id="search_icon"></i>
+                <input type="text" id="bnr_input" placeholder="Buscar">
+            </div>
+            <div class="spacer_h1"></div>
+
+            <table id="tbl_impuestos">
+
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Porcentaje</th>
+                        <th>Descripcion</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+
+
+
+        </div>
+
+
+        <!-- Main Form -->
+    </main>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/impuestos_servicios.js"></script>
+    <script src="js/controlador_listar_impuestos.js"></script>
+
+</body>
+
+</html>

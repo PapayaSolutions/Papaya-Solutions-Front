@@ -22,6 +22,14 @@ let llenar_tabla = async() => {
             fila.insertCell().innerHTML = lista_clientes[i]['tipo'];
             fila.insertCell().innerHTML = lista_clientes[i]['estado'];
 
+            let perfil = fila.insertCell();
+
+            let link = document.createElement('a');
+            link.setAttribute("href", lista_clientes[i]['_id']);
+            let linkText = document.createTextNode('Perfil');
+            link.appendChild(linkText);
+            perfil.appendChild(link);
+
         }
     };
 
@@ -41,6 +49,16 @@ let llenar_tabla = async() => {
 
             fila.insertCell().innerHTML = lista_encargados[i]['tipo'];
             fila.insertCell().innerHTML = lista_encargados[i]['estado'];
+
+            let perfil = fila.insertCell();
+
+            let link = document.createElement('a');
+            link.setAttribute("href", lista_encargados[i]['_id']);
+            let linkText = document.createTextNode('Perfil');
+            link.appendChild(linkText);
+            perfil.appendChild(link);
+
+
 
         }
     };

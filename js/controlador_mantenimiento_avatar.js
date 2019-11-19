@@ -1,6 +1,6 @@
 'use strict';
 const contenedor = document.querySelector('#avatar_container');
-contenedor.innerHTML = '';
+
 let input_filtro = document.querySelector('#bnr_input');
 
 

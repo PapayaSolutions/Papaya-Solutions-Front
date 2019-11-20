@@ -50,11 +50,10 @@ let llenar_tablac = async() => {
 
         let capacidad = lista_recintos[i]['capacidad']
 
-        console.log(capacidad)
-        console.log(filtro_cap)
+
+        if (filtro_cap >= capacidad) {
 
 
-        if (filtro_cap > capacidad) {
 
             let fila = tbody.insertRow();
 
@@ -67,7 +66,11 @@ let llenar_tablac = async() => {
             fila.insertCell().innerHTML = lista_recintos[i]['asientos_accesibilidad'];
             fila.insertCell().innerHTML = lista_recintos[i]['capacidad'];
             fila.insertCell().innerHTML = lista_recintos[i]['estado'];
+        }
 
+        if (isNaN(filtro_cap)) {
+
+            llenar_tabla();
         }
     }
 };
@@ -75,4 +78,3 @@ let llenar_tablac = async() => {
 llenar_tabla();
 input_filtro.addEventListener('keyup', llenar_tabla);
 input_filtro_cap.addEventListener('keyup', llenar_tablac);
-llenar_tabla();

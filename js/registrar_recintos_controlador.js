@@ -74,10 +74,10 @@ const validar = () => {
 
     if (input_latitud.value == '') {
         error = true;
-        input_latitud.value.classList.add('error');
+        input_latitud.classList.add('error');
     } else {
         error = false;
-        input_latitud.value.classList.remove('error');
+        input_latitud.classList.remove('error');
     }
 
     if (input_longitud.value == '') {
@@ -698,7 +698,7 @@ let obtener_datos = () => {
     let asientos_tradicionales = input_asientos_tradicionales.value;
     let asientos_accesibilidad = input_asientos_accesibilidad.value;
     let latitud = input_latitud.value;
-    let logitud = input_longitud.value;
+    let longitud = input_longitud.value;
     let estado = 'Activo';
 
     let capacidad = (parseInt(asientos_accesibilidad, 10) + parseInt(asientos_tradicionales, 10))

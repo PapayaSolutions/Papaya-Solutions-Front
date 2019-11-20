@@ -7,6 +7,8 @@ const input_distrito = document.querySelector('#txt_distrito');
 const input_direccion = document.querySelector('#txt_direccion');
 const input_asientos_tradicionales = document.querySelector('#txt_asientos_tradicionales');
 const input_asientos_accesibilidad = document.querySelector('#txt_asientos_accesibilidad');
+const input_latitud = document.querySelector('#txt_latitud');
+const input_longitud = document.querySelector('#txt_longitud');
 const btn_registrar = document.querySelector('#btn_registrar');
 
 
@@ -69,6 +71,23 @@ const validar = () => {
         error = false;
         input_asientos_accesibilidad.classList.remove('error');
     }
+
+    if (input_latitud.value == '') {
+        error = true;
+        input_latitud.value.classList.add('error');
+    } else {
+        error = false;
+        input_latitud.value.classList.remove('error');
+    }
+
+    if (input_longitud.value == '') {
+        error = true;
+        input_longitud.classList.add('error');
+    } else {
+        error = false;
+        input_longitud.classList.remove('error');
+    }
+
 
 
     return error;
@@ -619,6 +638,56 @@ function popular_distritos(pprovincia, pcanton, pdistritos) {
     }
 }
 
+
+var map;
+var marker;
+
+function initMap() {
+
+    var myLatLng = {
+        lat: 9.9323102,
+        lng: -84.0311761
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: myLatLng
+    });
+
+    map.addListener('click', function(e) {
+        placeMarkerAndPanTo(e.latLng, map);
+    });
+
+
+}
+
+function placeMarkerAndPanTo(latLng, map) {
+
+    if (marker != undefined) {
+        marker.position = latLng;
+    } else {
+        marker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            draggable: true,
+        });
+    }
+    actualizar_ubicacion(latLng);
+
+    google.maps.event.addListener(marker, 'drag', function() {
+        actualizar_ubicacion(marker.position);
+    });
+
+    map.panTo(latLng);
+}
+
+const actualizar_ubicacion = position => {
+    let txt_latitud = document.querySelector('#txt_latitud');
+    let txt_longitud = document.querySelector('#txt_longitud');
+    txt_latitud.value = position.lat();
+    txt_longitud.value = position.lng();
+};
+
 // function obtener_datos
 let obtener_datos = () => {
     let nombre = input_nombre.value;
@@ -628,6 +697,8 @@ let obtener_datos = () => {
     let distrito = input_distrito.value;
     let asientos_tradicionales = input_asientos_tradicionales.value;
     let asientos_accesibilidad = input_asientos_accesibilidad.value;
+    let latitud = input_latitud.value;
+    let logitud = input_longitud.value;
     let estado = 'Activo';
 
     let capacidad = (parseInt(asientos_accesibilidad, 10) + parseInt(asientos_tradicionales, 10))
@@ -646,7 +717,7 @@ let obtener_datos = () => {
     } else {
 
 
-        registrar_recinto(nombre, direccion, canton, provincia, distrito, capacidad, asientos_tradicionales, asientos_accesibilidad, estado)
+        registrar_recinto(nombre, direccion, canton, provincia, distrito, capacidad, asientos_tradicionales, asientos_accesibilidad, latitud, longitud, estado)
 
         Swal.fire({
             type: 'success',

@@ -34,7 +34,7 @@
      margin-bottom: 25px;
  }
  
- #txt-filtro {
+ .txt-filtro {
      height: 35px;
      width: 300px;
      border-radius: 10px;
@@ -43,7 +43,7 @@
      color: #f7882f;
  }
  
- #txt-filtro::placeholder {
+ .txt-filtro::placeholder {
      color: #f7882f;
  }
  

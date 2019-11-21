@@ -55,6 +55,6 @@ button {
 button:hover {
     background: transparent;
     color: #f7882f;
-    border: 1px solid #f7882f;
-    box-sizing: border-box;
+    border: 0px solid #f7882f;
+    border-radius: 10rem;
 }

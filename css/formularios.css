@@ -10,6 +10,7 @@
 
 .formulario {
     font-family: 'Roboto', sans-serif;
+    margin: 10px;
 }
 
 .formulario label {
@@ -83,15 +84,14 @@ select {
     outline: none;
     display: block;
     width: 100%;
-    padding: 10px 0px 15px 0px;
+    padding-bottom: 5px;
     border: none;
     border-bottom: 1px solid #f7c331;
     background: transparent;
     margin-bottom: 12px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    height: 18px;
-    color: #292c2a;
+    color: #4d7259;
 }
 
 .error {
@@ -153,5 +153,5 @@ Usar el elemento <button type="button" class="btn" id="el nombre del id que ocup
     background: transparent;
     color: #f7882f;
     border: 1px solid #f7882f;
-    box-sizing: border-box;
+    border-radius: 10rem;
 }

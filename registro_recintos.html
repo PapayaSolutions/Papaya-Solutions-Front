@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/registrar_usuario.css">
     <link rel="stylesheet" href="css/formularios.css">
-
+    <link rel="stylesheet" href="css/geolozalizacion.css">
     <link rel="stylesheet" href="css/configuracion.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -83,14 +83,7 @@
         <section>
             <div>
                 <div class="formulario">
-                    <div class="ilustracion">
-                        <div class="avatar"></div>
 
-                        <div class="btn_container">
-                            <button type="button" class="btn_imagen" id="avatar">Cargar imagen</button>
-                        </div>
-                        <img src="" class="ilustracion">
-                    </div>
                 </div>
             </div>
             <div class="formulario_registro">
@@ -156,11 +149,60 @@
                             <label for="txt_direccion">Dirección exacta</label>
                             <textarea id="txt_direccion"></textarea>
                         </div>
-                        <div class="btn_container">
-                            <button type="button" class="btn" id="btn_registrar">Registrarse</button>
+
+
+                        <div class="two_collumn_form">
+
+                            <div id="map"></div>
+
+                            <div>
+
+                                <div class="avatar"></div>
+
+                                <div class="btn_container">
+                                    <button type="button" class="btn_imagen" id="avatar">Cargar imagen</button>
+                                </div>
+                                <img src="" class="ilustracion">
+
+                            </div>
+
+
                         </div>
-                    </form>
+
+
+                        <div class="two_collumn_form">
+
+
+                            <div>
+                                <label for="txt_latitud">Latitud</label>
+                                <input id="txt_latitud" type="text">
+                            </div>
+
+                            <div>
+                                <label for="txt_longitud">Latitud</label>
+                                <input id="txt_longitud" type="text">
+                            </div>
+
+
+                        </div>
                 </div>
+
+                <div class="btn_container">
+                    <button type="button" class="btn" id="btn_registrar">Registrarse</button>
+                </div>
+
+
+                <!-- <div class="ilustracion">
+                        <div class="avatar"></div>
+
+                        <div class="btn_container">
+                            <button type="button" class="btn_imagen" id="avatar">Cargar imagen</button>
+                        </div>
+                        <img src="" class="ilustracion">
+                </div>
+                -->
+                </form>
+            </div>
             </div>
         </section>
     </main>
@@ -171,6 +213,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/recintos_servicio.js"></script>
     <script src="js/registrar_recintos_controlador.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDQnZ4l9vPokKOvdI5hv1CnCkp-9fi3QE&callback=initMap" async defer></script>
 </body>
 
 </html>

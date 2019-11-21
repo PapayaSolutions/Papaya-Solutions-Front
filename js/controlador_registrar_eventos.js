@@ -16,7 +16,6 @@ let llenar_tabla = async() => {
 
         let selecionar = document.createElement('option');
 
-
         selecionar.value = lista_tipo_de_evento[i]['nombre'];
         selecionar.innerText = lista_tipo_de_evento[i]['nombre'];
 
@@ -67,7 +66,6 @@ const input_precio_evento = document.querySelector('#precio_evento');
 const input_c_maxima_evento = document.querySelector('#c_maxima_evento');
 const input_descripcion_evento = document.querySelector('#descripcion_evento');
 const input_URL_imagen_evento = document.querySelector('#imagen_preview');
-
 
 const btn_registro = document.querySelector('#btn_registro');
 
@@ -164,9 +162,6 @@ let obtener_datos = () => {
     let URL_imagen = input_URL_imagen_evento.src;
     let estado = 'Activo';
 
-
-
-
     //si hay error, entra al if. Si no hay error entra al else
     if (validar()) {
         Swal.fire({
@@ -193,8 +188,11 @@ let obtener_datos = () => {
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con exito',
-            text: 'El evento a sido registrado',
+            text: 'El evento ha sido registrado',
             confirmButtonText: 'Entendido'
+        }).then(function() {
+
+            location.reload();
         });
     }
 };

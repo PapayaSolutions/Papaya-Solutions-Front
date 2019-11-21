@@ -28,6 +28,7 @@
 }
 
 .formulario_registro {
+    min-width: 550px;
     width: 100%;
 }
 

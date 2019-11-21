@@ -7,9 +7,9 @@
     <title>Clientes</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/configuracion.css">
     <link rel="stylesheet" href="css/listar_perfiles.css">
@@ -72,36 +72,32 @@
                     <li><a href="#">Comentarios</a></li>
                 </ul>
             </aside>
-            <section>
-                <!-- listado de perfiles de clientes -->
-                <div id="banner_info">
-                    <div class="banner_left">
-                        <h4 id="bnr_seccion">PERFILES DE USUARIOS</h4>
-                        <i class="fas fa-search" id="search_icon"></i>
-                        <input type="text" id="bnr_input" placeholder="Buscar">
-                    </div>
-
+            <div class="formulario" id="main_form">
+                <h1>Listado de usuarios</h1>
+                <div id="search">
+                    <i class="fas fa-search" id="search_icon"></i>
+                    <input type="text" id="bnr_input" placeholder="Buscar">
                 </div>
-                <div>
-                    <table id="tbl_clientes">
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Correo</th>
-                                <th>Genero</th>
-                                <th>Tipo</th>
-                                <th>Estado</th>
+                <div class="spacer_h1"></div>
 
-                            </tr>
-                        </thead>
-                        <tbody>
+                <table id="tbl_clientes">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Genero</th>
+                            <th>Tipo</th>
+                            <th>Estado</th>
 
-                        </tbody>
-                    </table>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                </div>
+                    </tbody>
+                </table>
+            </div>
 
-            </section>
+
             <!-- listado de perfiles de clientes -->
         </main>
 
@@ -110,8 +106,10 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
         <script src="js/clientes_servicio.js"></script>
-        <script src="js/controlador_listar_perfiles.js"></script>
         <script src="js/encargados-recintos-servicio.js"></script>
+
+        <script src="js/controlador_listar_perfiles.js"></script>
+
 
 
 

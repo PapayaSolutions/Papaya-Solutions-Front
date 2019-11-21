@@ -105,6 +105,7 @@ header nav a:hover {
 
 .contenido p {
     color: #ececec;
+    font-size: 20px;
 }
 
 .contenido h3 span {
@@ -147,8 +148,8 @@ header nav a:hover {
 
 .opciones div div {
     background-color: #292c2a;
-    height: 100px;
-    width: 60%;
+    height: 150px;
+    width: 70%;
 }
 
 .opciones div h4 {
@@ -158,7 +159,7 @@ header nav a:hover {
     letter-spacing: 3px;
     color: #f7882f;
     line-height: 20px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     padding-bottom: 5px;
     margin-bottom: 15px;

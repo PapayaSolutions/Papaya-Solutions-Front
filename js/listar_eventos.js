@@ -24,7 +24,14 @@ let mostrar_cards = async() => {
             let div_fecha = document.createElement('div');
 
             let fecha = document.createElement('small');
-            fecha.innerText = lista_evento[i]['fecha_disponible'];
+            let date = new Date(lista_evento[i]['fecha_disponible']);
+
+            var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+            var dayName = dias[date.getDay()];
+            var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+            var mesName = meses[date.getMonth()];
+
+            fecha.innerText = (dayName + '  ' + date.getDate() + ' de ' + mesName + ' del ' + date.getFullYear());
 
             let fecha_txt = document.createElement('small');
             fecha_txt.innerText = 'Fecha: '
@@ -114,6 +121,9 @@ let llenar_tabla = async() => {
     lista_tipo_de_evento = await listar_tipos_de_evento();
 
     tbody.innerHTML = '';
+    let vacio = document.createElement('option');
+    vacio.innerText = '-';
+    tbody.appendChild(vacio);
     for (let i = 0; i < lista_tipo_de_evento.length; i++) {
 
 
@@ -154,7 +164,14 @@ function titulo_categoria() {
                 let div_fecha = document.createElement('div');
 
                 let fecha = document.createElement('small');
-                fecha.innerText = lista_evento[i]['fecha_disponible'];
+                let date = new Date(lista_evento[i]['fecha_disponible']);
+
+                var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+                var dayName = dias[date.getDay()];
+                var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+                var mesName = meses[date.getMonth()];
+
+                fecha.innerText = (dayName + '  ' + date.getDate() + ' de ' + mesName + ' del ' + date.getFullYear());
 
                 let fecha_txt = document.createElement('small');
                 fecha_txt.innerText = 'Fecha: '
@@ -233,16 +250,3 @@ function titulo_categoria() {
     mostrar_cards();
 
 }
-
-//let date = new Date((lista_evento[i]['fecha_disponible'])[0]['fecha']);
-
-//var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-//var dayName = dias[date.getDay()];
-//var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-//var mesName = meses[date.getMonth()];
-
-//fecha.innerText = (dayName + '  ' + date.getDate() + ' de ' + mesName + ' del ' + date.getFullYear());
-
-
-//let fecha_txt = document.createElement('small');
-//fecha_txt.innerText = 'Fecha: '

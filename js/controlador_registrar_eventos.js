@@ -16,7 +16,6 @@ let llenar_tabla = async() => {
 
         let selecionar = document.createElement('option');
 
-
         selecionar.value = lista_tipo_de_evento[i]['nombre'];
         selecionar.innerText = lista_tipo_de_evento[i]['nombre'];
 
@@ -66,8 +65,7 @@ const input_recinto_evento = document.querySelector('#recinto_evento');
 const input_precio_evento = document.querySelector('#precio_evento');
 const input_c_maxima_evento = document.querySelector('#c_maxima_evento');
 const input_descripcion_evento = document.querySelector('#descripcion_evento');
-const input_URL_imagen_evento = document.querySelector('#URL_imagen');
-
+const input_URL_imagen_evento = document.querySelector('#imagen_preview');
 
 const btn_registro = document.querySelector('#btn_registro');
 
@@ -155,17 +153,14 @@ let obtener_datos = () => {
     let categoria = input_categoria_evento.value;
     let asistentes_esperados = input_asistentes_evento.value;
     let fecha_disponible = input_fecha_evento.value;
-    let hora = input_hora_evento.value;
+    let hora = input_hora_evento.value.toString();
     let pais_evento = input_pais_evento.value;
     let recinto = input_recinto_evento.value;
     let precio_entrada = input_precio_evento.value;
     let cantidad_maxima_usuario = input_c_maxima_evento.value;
     let descripcion = input_descripcion_evento.value;
-    let URL_imagen = input_URL_imagen_evento.value;
+    let URL_imagen = input_URL_imagen_evento.src;
     let estado = 'Activo';
-
-
-
 
     //si hay error, entra al if. Si no hay error entra al else
     if (validar()) {
@@ -176,12 +171,28 @@ let obtener_datos = () => {
         })
     } else {
 
-        registrar_evento(nombre, categoria, asistentes_esperados, fecha_disponible, hora, recinto, pais_evento, precio_entrada, cantidad_maxima_usuario, descripcion, URL_imagen, estado);
+        registrar_evento(
+            nombre,
+            categoria,
+            asistentes_esperados,
+            fecha_disponible,
+            hora,
+            pais_evento,
+            recinto,
+            precio_entrada,
+            cantidad_maxima_usuario,
+            descripcion,
+            URL_imagen,
+            estado);
+
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con exito',
-            text: 'El evento a sido registrado',
+            text: 'El evento ha sido registrado',
             confirmButtonText: 'Entendido'
+        }).then(function() {
+
+            location.reload();
         });
     }
 };

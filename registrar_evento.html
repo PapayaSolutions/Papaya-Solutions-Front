@@ -51,11 +51,20 @@
     <main class="registrar_wrapper">
         <div>
             <div class="ilustracion">
-                <div class="imagen_evento"></div>
-                <div class="btn_container">
-                    <button type="button" class="btn_imagen" id="avatar">Cargar imagen del evento</button>
-                    <input id="URL_imagen" type="text">
+
+                <!-- cloudinary -->
+                <div class="imagen_evento">
+                    <figure class="img_container">
+                        <img src="img/placeholder.jpg" alt="Seleccionar Imagen" id="imagen_preview">
+                    </figure>
                 </div>
+
+                <div class="btn_container">
+                    <button type="button" class="btn_imagen" id="btn_agregar_imagen">Cargar imagen del evento</button>
+                    <!--  <input id="URL_imagen" type="text">-->
+                </div>
+                <!-- cloudinary -->
+
                 <img src="img/registro.png" class="ilustracion">
             </div>
         </div>

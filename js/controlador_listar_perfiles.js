@@ -1,6 +1,7 @@
 'use strict'
 const tbody = document.querySelector('#tbl_clientes tbody');
 const input_filtro = document.querySelector('#bnr_input');
+input_filtro.innerHTML = '';
 
 let lista_clientes;
 let lista_encargados;
@@ -10,6 +11,7 @@ let llenar_tabla = async() => {
     lista_clientes = await listar_clientes();
 
     tbody.innerHTML = '';
+
     for (let i = 0; i < lista_clientes.length; i++) {
         let nombre = (lista_clientes[i]['p_nombre'] + ' ' + lista_clientes[i]['p_apellido'] + ' ' + lista_clientes[i]['s_apellido']).toLowerCase();
         if (nombre.includes(filtro)) {
@@ -32,7 +34,7 @@ let llenar_tabla = async() => {
                 localStorage.setItem("destino_id", this.dataset.destino);
                 window.location.href = 'visualizar_perfil.html';
 
-            })
+            });
 
             perfil.appendChild(boton);
 
@@ -72,7 +74,7 @@ let llenar_tabla = async() => {
 
 
 
-        }
+        };
     };
 };
 

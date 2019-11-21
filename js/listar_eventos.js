@@ -114,6 +114,9 @@ let llenar_tabla = async() => {
     lista_tipo_de_evento = await listar_tipos_de_evento();
 
     tbody.innerHTML = '';
+    let vacio = document.createElement('option');
+    vacio.innerText = '-';
+    tbody.appendChild(vacio);
     for (let i = 0; i < lista_tipo_de_evento.length; i++) {
 
 

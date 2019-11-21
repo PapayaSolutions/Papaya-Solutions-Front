@@ -614,12 +614,17 @@ const validar_numero = (numero) => {
     } else {
         error_num = false
     }
+
+    if (input_numero.value.toLowerCase().includes('e')) {
+        error_num = true
+    }
+
     return error_num
 }
 
 // function para validar la mayoria de edad
 const validar_edad = (fecha) => {
-    let error_edad = false
+    let error_edad = true
     let hoy = new Date();
     let fecha_conv = new Date(fecha);
     let dia_actual = hoy.getDate()
@@ -634,19 +639,26 @@ const validar_edad = (fecha) => {
     console.log('Mes fecha: ' + mes_fecha)
     console.log('Year : ' + anos)
 
-    if (anos < 18) {
-        error_edad = true
-    } else if (mes_actual > mes_fecha) {
-        error_edad = true
-    } else if (dia_actual > dia_fecha) {
-        error_edad = true
-    } else {
-        error_edad = false
-    }
-    return error_edad
+    if (anos >= 18) {
 
+
+        if (mes_fecha > mes_actual) {
+
+
+            if (dia_fecha > dia_actual) {
+                error_edad = false
+            }
+        }
+    }
+    error_edad: false;
+    return error_edad;
+    console(error_edad)
 }
 
+const validar_correo = () => {
+    if (input_correo.value.includes()) {}
+
+}
 
 // function obtener_datos
 let obtener_datos = () => {
@@ -675,28 +687,27 @@ let obtener_datos = () => {
         Swal.fire({
             type: 'warning',
             title: 'Verifique el campo numero',
-            text: 'Minimo debe de tener 8 digitos!',
+            text: 'Minimo debe de tener 8 digitos! No se aceptan letras! No se aceptan simbolos!',
         })
 
-    }
-    /* else if (validar_edad(fecha_nacimiento)) {
-           Swal.fire({
-               type: 'warning',
-               title: 'Verifique la edad',
-               text: 'Debe de ser mayor de edad!',
-           })
+    } else if (validar_edad(fecha_nacimiento)) {
+        Swal.fire({
+            type: 'warning',
+            title: 'Verifique la edad',
+            text: 'Debe de ser mayor de edad!',
+        })
 
 
 
-       }*/
-    else {
+    } else {
 
-        registrar_encargado_recinto(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado)
+
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con exito',
             text: 'Encargado registrado!',
         })
+        registrar_encargado_recinto(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado)
 
         document.getElementById("form_enc_rec").reset();
     };

@@ -33,8 +33,7 @@ let mostrar_cards = async() => {
 
             fecha.innerText = (dayName + '  ' + date.getDate() + ' de ' + mesName + ' del ' + date.getFullYear());
 
-            let fecha_txt = document.createElement('small');
-            fecha_txt.innerText = 'Fecha: '
+
 
             let contenedor_img = document.createElement('a');
 
@@ -42,10 +41,10 @@ let mostrar_cards = async() => {
             imagen.src = lista_evento[i]['URL_imagen'];
 
             let categoria = document.createElement('h3');
-            categoria.innerText = lista_evento[i]['categoria'];
+            categoria.innerText = lista_evento[i]['nombre'];
 
             let nombre_evento = document.createElement('h4');
-            nombre_evento.innerText = lista_evento[i]['nombre'];
+            nombre_evento.innerText = lista_evento[i]['categoria'];
 
             let div_txt = document.createElement('div');
             div_txt.classList.add('txt_container');
@@ -94,7 +93,7 @@ let mostrar_cards = async() => {
             div_lugar.appendChild(lugar);
             div_lugar.appendChild(recinto);
 
-            div_fecha.appendChild(fecha_txt);
+
             div_fecha.appendChild(fecha);
 
             contenedor_img.appendChild(imagen);
@@ -173,8 +172,7 @@ function titulo_categoria() {
 
                 fecha.innerText = (dayName + '  ' + date.getDate() + ' de ' + mesName + ' del ' + date.getFullYear());
 
-                let fecha_txt = document.createElement('small');
-                fecha_txt.innerText = 'Fecha: '
+
 
                 let contenedor_img = document.createElement('a');
 
@@ -182,10 +180,10 @@ function titulo_categoria() {
                 imagen.src = lista_evento[i]['URL_imagen'];
 
                 let categoria = document.createElement('h3');
-                categoria.innerText = lista_evento[i]['categoria'];
+                categoria.innerText = lista_evento[i]['nombre'];
 
                 let nombre_evento = document.createElement('h4');
-                nombre_evento.innerText = lista_evento[i]['nombre'];
+                nombre_evento.innerText = lista_evento[i]['categoria'];
 
                 let div_txt = document.createElement('div');
                 div_txt.classList.add('txt_container');
@@ -199,8 +197,6 @@ function titulo_categoria() {
                 let recinto = document.createElement('p');
                 recinto.innerText = lista_evento[i]['recinto'];
 
-                let precio_txt = document.createElement('span');
-                precio_txt.innerText = 'Precio: ';
 
                 let signo = document.createElement('span');
                 signo.innerText = '₡'
@@ -234,7 +230,7 @@ function titulo_categoria() {
                 div_lugar.appendChild(lugar);
                 div_lugar.appendChild(recinto);
 
-                div_fecha.appendChild(fecha_txt);
+
                 div_fecha.appendChild(fecha);
 
                 contenedor_img.appendChild(imagen);

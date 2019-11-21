@@ -152,16 +152,16 @@ nav a {
 }
 
 .carta h3 {
-    color: #f7c331;
+    color: #292c2a;
     border-bottom: #f7c331 2px solid;
     padding: 3px;
     font-size: 20px;
+    font-weight: bold;
 }
 
 .carta h4 {
-    color: #292c2a;
-    font-weight: bold;
-    font-size: 20px;
+    color: #f7c331;
+    font-size: 18px;
     padding-top: 5px;
 }
 
@@ -192,12 +192,12 @@ nav a {
 .btn_container {
     text-align: right;
     margin: auto;
+    position: relative;
 }
 
 .btn-mas {
     display: inline-block;
-    margin: auto;
-    position: relative;
+    position: absolute;
     background: #f7882f;
     font-size: 13px;
     letter-spacing: 2px;
@@ -205,6 +205,8 @@ nav a {
     border-radius: 10rem;
     color: #ececec;
     overflow: hidden;
+    top: -26px;
+    right: 0px;
 }
 
 .btn-mas:hover {

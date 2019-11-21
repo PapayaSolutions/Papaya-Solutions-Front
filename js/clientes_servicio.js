@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo_cliente, pidentificacion,
+let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo, pidentificacion,
     pf_nacimiento, pgenero, pprovincia, pcanton, pdistrito, pdireccion) => {
     await axios({
             method: 'post',
@@ -12,7 +12,7 @@ let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pc
                 s_nombre: ps_nombre,
                 p_apellido: pp_apellido,
                 s_apellido: ps_apellido,
-                correo_cliente: pcorreo_cliente,
+                correo: pcorreo,
                 identificacion: pidentificacion,
                 f_nacimiento: pf_nacimiento,
                 genero: pgenero,

@@ -24,11 +24,17 @@ let llenar_tabla = async() => {
 
             let perfil = fila.insertCell();
 
-            let link = document.createElement('a');
-            link.setAttribute("href", lista_clientes[i]['_id']);
-            let linkText = document.createTextNode('Perfil');
-            link.appendChild(linkText);
-            perfil.appendChild(link);
+            let boton = document.createElement('button');
+            boton.dataset.destino = lista_encargados[i]['_id'];
+            boton.innerText = 'Ver página';
+
+            boton.addEventListener('click', function() {
+                localStorage.setItem("destino_id", this.dataset.destino);
+                window.location.href = 'visualizar_perfil.html';
+
+            })
+
+            perfil.appendChild(boton);
 
         }
     };
@@ -52,10 +58,16 @@ let llenar_tabla = async() => {
 
             let perfil = fila.insertCell();
 
-            let link = document.createElement('a');
-            link.setAttribute("href", lista_encargados[i]['_id']);
-            let linkText = document.createTextNode('Perfil');
-            link.appendChild(linkText);
+            let link = document.createElement('button');
+            link.dataset.destino = lista_encargados[i]['_id'];
+            link.innerText = 'Ver página';
+
+            link.addEventListener('click', function() {
+                localStorage.setItem("destino_id", this.dataset.destino);
+                window.location.href = 'visualizar_perfil.html';
+
+            })
+
             perfil.appendChild(link);
 
 

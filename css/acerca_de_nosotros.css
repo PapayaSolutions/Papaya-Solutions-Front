@@ -103,8 +103,9 @@ header nav a:hover {
     line-height: 30px;
 }
 
-p {
+.contenido p {
     color: #ececec;
+    font-size: 20px;
 }
 
 .contenido h3 span {
@@ -140,13 +141,15 @@ p {
     display: grid;
     margin: auto;
     width: 80%;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 30px;
     margin-top: 30px;
 }
 
-.opciones div {
-    height: 100px;
+.opciones div div {
+    background-color: #292c2a;
+    height: 150px;
+    width: 70%;
 }
 
 .opciones div h4 {
@@ -156,7 +159,7 @@ p {
     letter-spacing: 3px;
     color: #f7882f;
     line-height: 20px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     padding-bottom: 5px;
     margin-bottom: 15px;
@@ -172,10 +175,9 @@ p {
 .two_columns {
     display: grid;
     margin: auto;
-    width: 80%;
     grid-template-columns: 25% 1fr;
     column-gap: 30px;
-    margin-top: 65px;
+    margin-top: 20px;
 }
 
 .two_columns div img {
@@ -198,4 +200,105 @@ p {
 .logo_main {
     height: 300px;
     width: auto;
+}
+
+#valores {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#valores div {
+    margin: 5px;
+    font-size: 16px;
+}
+
+.img_container {
+    background-color: #292c2a;
+    height: 100px;
+    width: 100%;
+}
+
+.necia {
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.necia p {
+    padding: 4px;
+}
+
+.titulo_valores {
+    text-align: center;
+    color: #f7882f;
+    margin: 40px;
+}
+
+hr {
+    border: 1px solid #f7882f;
+}
+
+.integrantes {
+    display: grid;
+    grid-template-columns: auto 2fr;
+    margin: auto;
+}
+
+.integrantes img {
+    height: 200px;
+}
+
+.contenedor_integrantes {
+    width: 70%;
+    margin: 15px auto;
+    background-color: #d6d3d3;
+}
+
+.contenedor_integrantes2 {
+    width: 70%;
+    margin: 15px auto;
+}
+
+.info {
+    padding: 5px;
+}
+
+.integrantes p {
+    padding: 5px;
+}
+
+.integrantes h3 {
+    color: #f7c331;
+}
+
+.integrantes span {
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.integrantes2 {
+    display: grid;
+    grid-template-columns: 2fr auto;
+    margin: auto;
+}
+
+.integrantes2 img {
+    height: 200px;
+}
+
+.integrantes2 p {
+    padding: 5px;
+}
+
+.integrantes2 h3 {
+    color: #f7c331;
+}
+
+.integrantes2 span {
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#contenedor_boton {
+    margin: 0 auto;
+    width: 30%;
 }

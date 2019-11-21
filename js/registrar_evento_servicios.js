@@ -4,9 +4,6 @@ let registrar_evento = async(
     nombre,
     categoria,
     asistentes_esperados,
-    fecha_disponible,
-    hora,
-    pais_evento,
     recinto,
     precio_entrada,
     cantidad_maxima_usuario,
@@ -22,9 +19,6 @@ let registrar_evento = async(
                 nombre: nombre,
                 categoria: categoria,
                 asistentes_esperados: asistentes_esperados,
-                fecha_disponible: fecha_disponible,
-                hora: hora,
-                pais_evento: pais_evento,
                 recinto: recinto,
                 precio_entrada: precio_entrada,
                 cantidad_maxima_usuario: cantidad_maxima_usuario,
@@ -87,15 +81,12 @@ var myWidget1 = cloudinary.createUploadWidget({
     if (!error && result && result.event === "success") {
         console.log('Done! Here is the image info: ', result.info);
         document.querySelector('#imagen_preview').src = result.info.secure_url;
-        registrar_avatar(result.info.original_filename, result.info.secure_url, 'Activo');
 
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con exito',
             text: 'La imagen ha sido almacenada',
             confirmButtonText: 'Entendido'
-        }).then(function() {
-            location.reload();
         });
 
     }
@@ -107,3 +98,24 @@ let botn = document.querySelector('#btn_agregar_imagen');
 botn.addEventListener('click', function() {
     myWidget1.open();
 }, false);
+
+let registrar_fecha = async(nombre, fecha, hora) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/agregar-fecha',
+            responseType: 'json',
+            //body
+            data: {
+                nombre: nombre,
+                fecha: fecha,
+                hora: hora,
+
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};

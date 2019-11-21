@@ -2,6 +2,10 @@
 //Listar categorias en el dashboard
 
 const tbody = document.querySelector('#categoria_evento');
+const fbody = document.querySelector('#fecha_hora tbody');
+const cant_fechas = document.querySelector('#cantidad_fechas');
+const btn_generador = document.querySelector('#btn_fecha');
+
 let lista_tipo_de_evento;
 
 let llenar_tabla = async() => {
@@ -53,14 +57,36 @@ let llenar_tabla_recintos = async() => {
 llenar_tabla_recintos();
 
 
+//fechas
+
+let generar_fecha = async() => {
+    fbody.innerHTML = "";
+    for (let i = 0; i < cant_fechas.value; i++) {
+        let fila = fbody.insertRow();
+
+        let fecha = fila.insertCell();
+        let input1 = document.createElement('input');
+        input1.type = "date";
+        input1.classList.add('input_date');
+
+        let hora = fila.insertCell();
+        let input2 = document.createElement('input');
+        input2.type = "time";
+        input2.classList.add('input_time');
+
+        fecha.appendChild(input1);
+        hora.appendChild(input2);
+    }
+
+};
+
+generar_fecha();
+
 //registrar eventos
 
 const input_nombre_evento = document.querySelector('#nombre_evento');
 const input_categoria_evento = document.querySelector('#categoria_evento');
 const input_asistentes_evento = document.querySelector('#asistentes_evento');
-const input_fecha_evento = document.querySelector('#fecha_evento');
-const input_hora_evento = document.querySelector('#hora_evento');
-const input_pais_evento = document.querySelector('#pais_evento');
 const input_recinto_evento = document.querySelector('#recinto_evento');
 const input_precio_evento = document.querySelector('#precio_evento');
 const input_c_maxima_evento = document.querySelector('#c_maxima_evento');
@@ -72,9 +98,6 @@ const btn_registro = document.querySelector('#btn_registro');
 input_nombre_evento.innerHTML = '';
 input_categoria_evento.innerHTML = '';
 input_asistentes_evento.innerHTML = '';
-input_fecha_evento.innerHTML = '';
-input_hora_evento.innerHTML = '';
-input_pais_evento.innerHTML = '';
 input_recinto_evento.innerHTML = '';
 input_precio_evento.innerHTML = '';
 input_c_maxima_evento.innerHTML = '';
@@ -108,20 +131,6 @@ let validar = () => {
     } else {
         input_asistentes_evento.classList.remove('error');
     }
-    if (input_fecha_evento.value == '') {
-        error = true;
-        input_fecha_evento.classList.add('error');
-        console.log('revisar el porcentaje')
-    } else {
-        input_fecha_evento.classList.remove('error');
-    }
-    if (input_hora_evento.value == '') {
-        error = true;
-        input_hora_evento.classList.add('error');
-        console.log('revisar el porcentaje')
-    } else {
-        input_hora_evento.classList.remove('error');
-    }
 
     if (input_recinto_evento.value == '') {
         error = true;
@@ -145,16 +154,41 @@ let validar = () => {
         input_c_maxima_evento.classList.remove('error');
     }
 
+    if ((input_URL_imagen_evento.value == '') || (input_URL_imagen_evento.value == 'img/placeholder.jpg')) {
+        error = true;
+        console.log('revisar la imagen')
+    }
+    /*
+        if (input_fechas.length == 0) {
+            error = true;
+            console.log('falta la fecha')
+        } else {
+            if (input_fechas[0].value == '') {
+                error = true;
+                console.log('falta la fecha')
+            }
+        }
+
+        if (input_horas.length == 0) {
+            error = true;
+            console.log('falta la hora')
+        } else {
+            if (input_horas[0].value == '') {
+                error = true;
+                console.log('falta la fecha')
+            }
+        }*/
+    return error;
 }; //validar datos
 
 // function obtener_datos(){}
 let obtener_datos = () => {
+    const input_fechas = document.querySelectorAll('.input_date');
+    const input_horas = document.querySelectorAll('.input_time');
+
     let nombre = input_nombre_evento.value;
     let categoria = input_categoria_evento.value;
     let asistentes_esperados = input_asistentes_evento.value;
-    let fecha_disponible = input_fecha_evento.value;
-    let hora = input_hora_evento.value.toString();
-    let pais_evento = input_pais_evento.value;
     let recinto = input_recinto_evento.value;
     let precio_entrada = input_precio_evento.value;
     let cantidad_maxima_usuario = input_c_maxima_evento.value;
@@ -175,9 +209,6 @@ let obtener_datos = () => {
             nombre,
             categoria,
             asistentes_esperados,
-            fecha_disponible,
-            hora,
-            pais_evento,
             recinto,
             precio_entrada,
             cantidad_maxima_usuario,
@@ -185,14 +216,20 @@ let obtener_datos = () => {
             URL_imagen,
             estado);
 
+        for (let j = 0; j < input_fechas.length; j++) {
+            let fecha = input_fechas[j].value;
+            let hora = input_horas[j].value;
+            registrar_fecha(
+                nombre,
+                fecha,
+                hora);
+        };
+
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con exito',
             text: 'El evento ha sido registrado',
             confirmButtonText: 'Entendido'
-        }).then(function() {
-
-            location.reload();
         });
     }
 };
@@ -201,3 +238,4 @@ let obtener_datos = () => {
 // Eventos asociados a los botones o inputs
 
 btn_registro.addEventListener('click', obtener_datos);
+btn_generador.addEventListener('click', generar_fecha);

@@ -1,0 +1,63 @@
+/*Andrés*/
+
+
+/*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a  verde muy oscuro
+    #ececec gris 
+    */
+
+.registrar_wrapper {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    column-gap: 25px;
+    padding-top: 50px;
+}
+
+.ilustracion {
+    background: #ececec;
+    height: auto;
+    width: 100%;
+}
+
+.formulario_registro {
+    width: 100%;
+}
+
+.avatar_select {
+    background: #292c2a;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    height: 120px;
+    width: 120px;
+}
+
+.avatar {
+    background: #f7c331;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+}
+
+.btn_imagen {
+    display: inline-block;
+    margin-left: 0px;
+    position: relative;
+    background: #f7882f;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding: 10px 25px;
+    border-radius: 10rem;
+    color: #ececec;
+    overflow: hidden;
+}
+
+.btn_imagen:hover {
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
+    box-sizing: border-box;
+}

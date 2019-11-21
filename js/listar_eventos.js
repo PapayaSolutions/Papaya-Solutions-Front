@@ -24,7 +24,8 @@ let mostrar_cards = async() => {
             let div_fecha = document.createElement('div');
 
             let fecha = document.createElement('small');
-            let date = new Date(lista_evento[i]['fecha_disponible']);
+
+            let date = new Date(lista_evento[i]['fecha_disponible'][0]['fecha']);
 
             var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
             var dayName = dias[date.getDay()];
@@ -34,7 +35,7 @@ let mostrar_cards = async() => {
             fecha.innerText = (dayName + '  ' + date.getDate() + ' de ' + mesName + ' del ' + date.getFullYear());
 
             let fecha_txt = document.createElement('small');
-            fecha_txt.innerText = 'Fecha: '
+
 
             let contenedor_img = document.createElement('a');
 
@@ -164,7 +165,7 @@ function titulo_categoria() {
                 let div_fecha = document.createElement('div');
 
                 let fecha = document.createElement('small');
-                let date = new Date(lista_evento[i]['fecha_disponible']);
+                let date = new Date(lista_evento[i]['fecha_disponible'][0]['fecha']);
 
                 var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
                 var dayName = dias[date.getDay()];
@@ -174,7 +175,7 @@ function titulo_categoria() {
                 fecha.innerText = (dayName + '  ' + date.getDate() + ' de ' + mesName + ' del ' + date.getFullYear());
 
                 let fecha_txt = document.createElement('small');
-                fecha_txt.innerText = 'Fecha: '
+
 
                 let contenedor_img = document.createElement('a');
 

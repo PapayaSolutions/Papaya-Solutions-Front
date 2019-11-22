@@ -2,7 +2,7 @@
 
 const input_p_nombre = document.querySelector('#p_nombre_cliente');
 const input_p_apellido = document.querySelector('#p_apellido_cliente');
-const input_correo = document.querySelector('#correo_cliente');
+const input_correo = document.querySelector('#correo');
 const input_s_nombre = document.querySelector('#s_nombre_cliente');
 const input_s_apellido = document.querySelector('#s_apellido_cliente');
 const input_identificacion = document.querySelector('#n_identif_cliente');
@@ -13,6 +13,7 @@ const input_canton = document.querySelector('#canton_cliente');
 const input_genero = document.querySelector('#genero_cliente');
 const input_distrito = document.querySelector('#distrito_cliente');
 const input_direccion = document.querySelector('#direccion_cliente');
+const input_url_avatar = document.querySelector('#url_avatar');
 const btn_registro = document.querySelector('#btn_registro');
 
 // Validación de datos
@@ -22,7 +23,6 @@ let validar = () => {
     if (input_p_nombre.value == '') {
         error = true;
         input_p_nombre.classList.add('error');
-        console.log('falta nombre')
     } else {
         input_p_nombre.classList.remove('error');
     }
@@ -654,7 +654,7 @@ let obtener_datos = () => {
     let s_nombre = input_s_nombre.value;
     let p_apellido = input_p_apellido.value;
     let s_apellido = input_s_apellido.value;
-    let correo_cliente = input_correo.value;
+    let correo = input_correo.value;
     let identificacion = input_identificacion.value;
     let f_nacimiento = input_f_nacimiento.value;
     let provincia = input_provincia.value;
@@ -662,6 +662,7 @@ let obtener_datos = () => {
     let genero = input_genero.value;
     let distrito = input_distrito.value;
     let direccion = input_direccion.value;
+    let url_avatar = input - url_avatar.value;
 
     //si hay error, entra al if. Si no hay error entra al else
     if (validar()) {
@@ -677,15 +678,15 @@ let obtener_datos = () => {
         })
     } else {
         console.log(f_nacimiento)
-        registrar_usuario(p_nombre, s_nombre, p_apellido, s_apellido, correo_cliente, identificacion,
-            f_nacimiento, genero, provincia, canton, distrito, direccion);
+        registrar_usuario(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,
+            f_nacimiento, genero, provincia, canton, distrito, direccion, url_avatar);
 
         Swal.fire({
             type: 'success',
             title: 'Registrado',
             animation: true,
             text: 'Te enviaremos un correo electrónico con tus datos de acceso',
-            confirmButtonText: 'Endentido',
+            confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'
             }

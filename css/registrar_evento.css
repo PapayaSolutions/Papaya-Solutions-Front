@@ -22,7 +22,13 @@
     width: 100%;
 }
 
+.imagen_evento img {
+    width: 200px;
+    height: 200px;
+}
+
 .formulario_registro {
+    min-width: 550px;
     width: 100%;
 }
 
@@ -44,6 +50,7 @@
     border-radius: 10rem;
     color: #ececec;
     overflow: hidden;
+    border: 1px solid #f7882f;
 }
 
 .btn_imagen:hover {
@@ -58,4 +65,49 @@
     padding: 5px;
     letter-spacing: 0px;
     text-align: left;
+    border: 1px solid #f7882f;
+}
+
+#fecha_hora {
+    margin: auto;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#fecha_hora thead {
+    height: 25px;
+    font-size: 20px;
+    color: #f7882f;
+    border-bottom: #f7882f 2px solid;
+}
+
+#fecha_hora thead th {
+    min-width: 100px;
+}
+
+#fecha_hora tbody {
+    height: 18px;
+    border-bottom: #f7882f 1px solid;
+    text-justify: center;
+    text-align: center;
+    line-height: 18px;
+    font-size: 16;
+}
+
+#fecha_hora tbody td {
+    min-width: 100px;
+    padding: 5px;
+}
+
+#fecha_hora tbody tr {
+    border-bottom: 1px dotted #f7c331;
+}
+
+#cantidad_fechas {
+    width: 50px;
+    margin: auto;
+}
+
+#btn_fecha {
+    min-width: 156px;
 }

@@ -10,7 +10,8 @@
 
 .formulario {
     font-family: 'Roboto', sans-serif;
-    margin: 10px;
+    margin: 20px;
+    margin-top: 40px;
 }
 
 .formulario label {
@@ -50,15 +51,16 @@ textarea {
     outline: none;
     display: block;
     width: 100%;
-    padding: 10px 0px 15px 0px;
+    padding: 5px 0px 5px 0px;
     border: none;
     border-bottom: 1px solid #f7c331;
     background: transparent;
     margin-bottom: 5px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    height: 18px;
+    height: 30px;
     color: #292c2a;
+    resize: vertical;
 }
 
 output[type="text"] {

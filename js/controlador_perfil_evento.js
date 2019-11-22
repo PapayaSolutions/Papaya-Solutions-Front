@@ -4,7 +4,7 @@ const nombre = document.querySelector('#bnr_nombre');
 const recinto = document.querySelector('#recinto_evento');
 const fecha = document.querySelector('#fecha_evento');
 const hora = document.querySelector('#hora_evento');
-const direccion = document.querySelector('#direccion_evento');
+
 const precio = document.querySelector('#precio_evento');
 const categoria = document.querySelector('#categoria_evento');
 const descripcion = document.querySelector('#descripcion_evento');
@@ -24,18 +24,15 @@ let llenar_perfil = async() => {
     categoria.value = datos_evento[0]['categoria'];
     descripcion.value = datos_evento[0]['descripcion'];
     cantidad.value = datos_evento[0]['cantidad_maxima_usuario'];
-    direccion.value = datos_evento[0]['pais_evento'];
+
     imagen.src = datos_evento[0]['URL_imagen'];
 
 
 
     let date = new Date((datos_evento[0]['fecha_disponible'])[0]['fecha']);
-    let tiempo = date.getHours();
-    if (tiempo > 12) {
-        tiempo = ((tiempo - 12) + 'pm').toString();
-    } else {
-        tiempo = (tiempo + 'am')
-    }
+
+    let tiempo = datos_evento[0]['fecha_disponible'][0]['hora'];
+
     var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
     var dayName = dias[date.getDay()];
     var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];

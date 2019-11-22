@@ -38,7 +38,7 @@ let listar_encargados = async() => {
     await axios({
             method: 'get',
             url: 'http://localhost:3000/api/listar-encargados-recintos',
-            responseType: 'json'
+            responseType: 'json',
         })
         .then(function(res) {
             lista_encargados = res.data.encargados_recintos;
@@ -48,4 +48,4 @@ let listar_encargados = async() => {
             console.log(error);
         });
     return lista_encargados;
-}
+};

@@ -1,7 +1,7 @@
 let registrar_descuento = async(nombre, descipcion, porcentaje) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/descuento',
+            url: 'http://localhost:3000/api/descuentos',
             responseType: 'json',
             //body
             data: {
@@ -22,7 +22,7 @@ let listar_descuento = async() => {
     let lista_descuento;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar_descuento',
+            url: 'http://localhost:3000/api/listar_descuentos',
             responseType: 'json'
         })
         .then(function(res) {

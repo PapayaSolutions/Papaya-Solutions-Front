@@ -640,17 +640,12 @@ const validar_edad = (fecha) => {
     console.log('Year : ' + anos)
 
     if (anos >= 18) {
-
-
-        if (mes_fecha > mes_actual) {
-
-
-            if (dia_fecha > dia_actual) {
-                error_edad = false
-            }
-        }
+        error_edad: false;
     }
-    error_edad: false;
+    else {
+        error_edad: true;
+    }
+
     return error_edad;
     console(error_edad)
 }

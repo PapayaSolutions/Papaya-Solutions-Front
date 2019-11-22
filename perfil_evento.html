@@ -43,35 +43,48 @@
                     <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="#"><i class="far fa-bell"></i></a></li>
                     <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
-                    <li> <a href="#">Cerrar Sesión</a></li>
+                    <li> <a href="#">Iniciar Sesión</a></li>
                 </ul>
             </div>
         </nav>
         <section id="banner_grid">
 
+            <div class="portada_container">
+                <a href="index.html"><img src="img/logo.png" alt=""></a>
+            </div>
+
             <div class="banner_left">
                 <label id='bnr_nombre'>Nombre del Evento</label>
-
-                <a href="">Editar Evento</a>
             </div>
+
             <div class="banner_right">
                 <div class="img_container">
                     <img src="img/placeholder.jpg" id='img_evento' alt="">
                 </div>
             </div>
-
         </section>
+
 
     </header>
 
     <main>
-
+        <div id="editar"><a href="">Editar Evento</a></div>
         <div id="main_grid">
             <div class="grid_item item1">
-                <label>Fecha:</label>
-                <output id="fecha_evento"></output>
-                <label>Hora:</label>
-                <output id="hora_evento"></output>
+
+                <!--<output id="fecha_evento"></output>-->
+                <table id="fecha_evento">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
                 <label>Lugar:</label>
                 <output id="recinto_evento"></output>
                 <label>Precio:</label>
@@ -81,19 +94,19 @@
             </div>
 
             <div class="grid_item item2">
-                <h1>Descripción</h1>
+                <h1>Descripción:</h1>
                 <output id="descripcion_evento"></output>
             </div>
 
-            <div class="grid_item item3 ">
-                <img src="img/placeholder.jpg" alt="Mapa">
+            <div class="grid_item item3" id="map">
+                <!-- <img src="img/placeholder.jpg" alt="Mapa">-->
             </div>
 
             <div class="grid_item item4">
                 <button type="button" class="btn">Lugar</button>
             </div>
             <div class="grid_item item5">
-                <button type="button" class="btn">Agregar al Carrito</button>
+                <button type="button" class="btn">Agregar al Carrito<i class="fas fa-shopping-cart"></i></button>
                 <h3>Máximo <output id="cantidad"></output> tiquetes por persona</h3>
             </div>
         </div>
@@ -189,8 +202,9 @@
     <!-- Scripting -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDQnZ4l9vPokKOvdI5hv1CnCkp-9fi3QE&callback=initMap" async defer></script>
     <script src="js/eventos_servicios.js"></script>
+    <script src="js/recintos_servicio.js"></script>
     <script src="js/controlador_perfil_evento.js"></script>
-</body>
 
-</html>
+</body>

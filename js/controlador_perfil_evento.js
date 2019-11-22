@@ -24,7 +24,7 @@ let llenar_perfil = async() => {
 
     nombre.innerHTML = datos_evento[0]['nombre'];
     recinto.value = datos_evento[0]['recinto'];
-    localStorage.setItem('id_recinto', recinto.value);
+    localStorage.setItem('id_recinto', datos_evento[0]['recinto']);
     precio.value = ('¢' + (datos_evento[0]['precio_entrada']));
     categoria.value = datos_evento[0]['categoria'];
     descripcion.value = datos_evento[0]['descripcion'];

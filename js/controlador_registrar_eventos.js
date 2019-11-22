@@ -5,6 +5,8 @@ const tbody = document.querySelector('#categoria_evento');
 const fbody = document.querySelector('#fecha_hora tbody');
 const cant_fechas = document.querySelector('#cantidad_fechas');
 const btn_generador = document.querySelector('#btn_fecha');
+let input_fechas;
+let input_horas;
 
 let lista_tipo_de_evento;
 
@@ -102,7 +104,7 @@ input_recinto_evento.innerHTML = '';
 input_precio_evento.innerHTML = '';
 input_c_maxima_evento.innerHTML = '';
 input_descripcion_evento.innerHTML = '';
-input_URL_imagen_evento.innerHTML = '';
+
 
 
 
@@ -154,37 +156,37 @@ let validar = () => {
         input_c_maxima_evento.classList.remove('error');
     }
 
-    if ((input_URL_imagen_evento.value == '') || (input_URL_imagen_evento.value == 'img/placeholder.jpg')) {
+    if (input_URL_imagen_evento.src == 'img/placeholder.jpg') {
         error = true;
         console.log('revisar la imagen')
     }
-    /*
-        if (input_fechas.length == 0) {
+
+    if (input_fechas.length == 0) {
+        error = true;
+        console.log('falta la fecha')
+    } else {
+        if (input_fechas[0].value == '') {
             error = true;
             console.log('falta la fecha')
-        } else {
-            if (input_fechas[0].value == '') {
-                error = true;
-                console.log('falta la fecha')
-            }
         }
+    }
 
-        if (input_horas.length == 0) {
+    if (input_horas.length == 0) {
+        error = true;
+        console.log('falta la hora')
+    } else {
+        if (input_horas[0].value == '') {
             error = true;
             console.log('falta la hora')
-        } else {
-            if (input_horas[0].value == '') {
-                error = true;
-                console.log('falta la fecha')
-            }
-        }*/
+        }
+    }
     return error;
 }; //validar datos
 
 // function obtener_datos(){}
 let obtener_datos = () => {
-    const input_fechas = document.querySelectorAll('.input_date');
-    const input_horas = document.querySelectorAll('.input_time');
+    input_fechas = document.querySelectorAll('.input_date');
+    input_horas = document.querySelectorAll('.input_time');
 
     let nombre = input_nombre_evento.value;
     let categoria = input_categoria_evento.value;
@@ -236,6 +238,5 @@ let obtener_datos = () => {
 
 
 // Eventos asociados a los botones o inputs
-
-btn_registro.addEventListener('click', obtener_datos);
 btn_generador.addEventListener('click', generar_fecha);
+btn_registro.addEventListener('click', obtener_datos);

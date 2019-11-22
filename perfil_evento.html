@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/geolozalizacion.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/perfil_evento.css">
@@ -43,7 +43,7 @@
                     <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="#"><i class="far fa-bell"></i></a></li>
                     <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
-                    <li> <a href="#">Cerrar Sesión</a></li>
+                    <li> <a href="#">Iniciar Sesión</a></li>
                 </ul>
             </div>
         </nav>
@@ -68,10 +68,20 @@
 
         <div id="main_grid">
             <div class="grid_item item1">
-                <label>Fecha:</label>
-                <output id="fecha_evento"></output>
-                <label>Hora:</label>
-                <output id="hora_evento"></output>
+
+                <!--<output id="fecha_evento"></output>-->
+                <table id="fecha_evento">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
                 <label>Lugar:</label>
                 <output id="recinto_evento"></output>
                 <label>Precio:</label>
@@ -85,8 +95,8 @@
                 <output id="descripcion_evento"></output>
             </div>
 
-            <div class="grid_item item3 img_container">
-                <img src="img/placeholder.jpg" alt="Mapa">
+            <div class="grid_item item3 map">
+                <!-- <img src="img/placeholder.jpg" alt="Mapa">-->
             </div>
 
             <div class="grid_item item4">
@@ -97,25 +107,26 @@
                 <h3>Máximo <output id="cantidad"></output> tiquetes por persona</h3>
             </div>
         </div>
+        <div id="calificar">
+            <section id="sct_calificacion">
+                <h1>Calificación: </h1>
+                <div class="rating">
+                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                </div>
+            </section>
+
+            <section id="sct_coment">
+                <div id="coment_head">
+                    <h4>Comentarios:</h4>
+                </div>
+                <div id="coment_body">
+                    <textarea id="txt_coment"></textarea>
+                </div>
+                <button type="button" id="btn_coment" class="btn">Comentar</button>
+
+            </section>
+        </div>
     </main>
-
-    <section id="sct_calificacion">
-        <h1>Calificación: </h1>
-        <div class="rating">
-            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-        </div>
-    </section>
-
-    <section id="sct_coment">
-        <div id="coment_head">
-            <h4>Comentarios:</h4>
-        </div>
-        <div id="coment_body">
-            <textarea id="txt_coment"></textarea>
-        </div>
-        <button type="button" id="btn_coment" class="btn">Comentar</button>
-
-    </section>
 
     <footer>
         <div id="socials_container">
@@ -188,8 +199,7 @@
     <!-- Scripting -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDQnZ4l9vPokKOvdI5hv1CnCkp-9fi3QE&callback=initMap" async defer></script>
     <script src="js/eventos_servicios.js"></script>
     <script src="js/controlador_perfil_evento.js"></script>
 </body>
-
-</html>

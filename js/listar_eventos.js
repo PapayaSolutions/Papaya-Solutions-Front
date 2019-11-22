@@ -200,7 +200,8 @@ function titulo_categoria() {
                 let recinto = document.createElement('p');
                 recinto.innerText = lista_evento[i]['recinto'];
 
-
+                let precio_txt = document.createElement('small');
+                precio_txt.innerText = 'Precio: ';
                 let signo = document.createElement('span');
                 signo.innerText = '₡'
 

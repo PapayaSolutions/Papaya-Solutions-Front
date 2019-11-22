@@ -11,6 +11,7 @@ header nav {
     grid-template-columns: 1fr 1fr;
     background-image: linear-gradient(to bottom right, #292c2a, #292c2a);
     border-bottom: 2px solid #f7882f;
+    height: 36px;
 }
 
 .navegador_izquierda {
@@ -20,7 +21,7 @@ header nav {
 
 .navegador_derecha {
     display: grid;
-    grid-template-columns: 60% 5% 5% 5% 5% 20%;
+    grid-template-columns: 60% 5% 5% 5% 5% 120px;
     text-decoration: none;
 }
 

@@ -5,7 +5,6 @@ const textarea_descripcion = document.querySelector('#descripcion');
 const input_porcentaje = document.querySelector('#porcentaje');
 const btn_registro = document.querySelector('#btn_registro');
 
-
 // Validación de datos
 let validar = () => {
     let error = true;
@@ -60,6 +59,7 @@ let obtener_datos = () => {
             text: 'El impuesto ha sido almacenado',
             confirmButtonText: 'Entendido'
         })
+
     } else {
         Swal.fire({
             type: 'warning',

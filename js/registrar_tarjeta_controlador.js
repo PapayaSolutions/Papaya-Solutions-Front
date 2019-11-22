@@ -9,95 +9,9 @@ const input_postal = document.querySelector('#postal');
 const btn_registro = document.querySelector('#btn_registro');
 
 
-let tarjeta_invalida = false
-
-$("#ccnum").keyup(function(e) {
-    var num = $(this).val().toString();
-    var charCount = num.length;
-
-    /* VALIDACION DE TIPO */
-    if (charCount == 1) {
-        if (num == "4") {
-            $("#type").html("VISA");
-        }
-    }
-    if (charCount == 2) {
-
-        if (num == "51" || num == "55" || num == "53") {
-            $("#type").html("MASTER CARD");
-        } else if (num == "55") {
-            $("#type").html("DISCOVER");
-        }
-    }
-    if (charCount == 3) {
-        if (num == "644") {
-            $("#type").html("DISCOVER")
-        }
-    }
-    if (charCount == 4) {
-        if (num == "6011") {
-            $("#type").html("DISCOVER");
-        }
-    }
-    /* !VALIDACION DE TIPO */
-
-    /* ALGORITMO */
-    if (charCount == 13 || charCount == 14 || charCount == 15 || charCount == 16) {
-        var valid = isValid(num, charCount);
-        if (valid) {
-            $("#type").html("valida");
-            $("input").attr("name", "checkout.cardNumber").attr("class", "valid-card");
-            tarjeta_invalida = false
-        } else {
-            $("#type").html("invalida");
-            $("input").attr("name", "checkout.cardNumber").attr("class", "invalid-card");
-            tarjeta_invalida = true
-        }
-    }
-    /* !ALGORITMO */
-});
-
-function isValid(ccNum, charCount) {
-    var double = true;
-    var numArr = [];
-    var sumTotal = 0;
-    for (i = 0; i < charCount; i++) {
-        var digit = parseInt(ccNum.charAt(i));
-
-        if (double) {
-            digit = digit * 2;
-            digit = toSingle(digit);
-            double = false;
-        } else {
-            double = true;
-        }
-        numArr.push(digit);
-    }
-
-
-    for (i = 0; i < numArr.length; i++) {
-        sumTotal += numArr[i];
-    }
-    var diff = eval(sumTotal % 10);
-    console.log(diff);
-    console.log(diff == "0");
-    return (diff == "0");
-}
-
-function toSingle(digit) {
-    if (digit > 9) {
-        var tmp = digit.toString();
-        var d1 = parseInt(tmp.charAt(0));
-        var d2 = parseInt(tmp.charAt(1));
-        return (d1 + d2);
-    } else {
-        return digit;
-    }
-}
-
 // Validación de datos
 let validar = () => {
-    let error = false;
+    let error = true;
 
     if (input_tarjeta.value == '') {
         error = true;
@@ -168,7 +82,15 @@ let obtener_datos = () => {
     btn_registro.addEventListener('click', obtener_datos);
 
     //si hay error, entra al if. Si no hay error entra al else
-    if (validar() && !tarjeta_invalida) {
+    if (validar()) {
+
+        console.log('tarjeta', tarjeta);
+        console.log('nombre', nombre);
+        console.log('codigo', codigo);
+        console.log('vencimiento', vencimiento);
+        console.log('apellido', apellido);
+        console.log('postal', postal)
+
         Swal.fire({
             type: 'success',
             title: 'Registrado',
@@ -181,12 +103,7 @@ let obtener_datos = () => {
         })
     } else {
 
-        console.log('tarjeta', codigo);
-        console.log('nombre', nombre);
-        console.log('codigo', codigo);
-        console.log('vencimiento', vencimiento);
-        console.log('apellido', apellido);
-        console.log('postal', postal);
+
 
         Swal.fire({
             type: 'warning',

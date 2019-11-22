@@ -7,7 +7,7 @@
     grid-column-gap: 10px;
 }
 
-.descuento {
+#descuento {
     grid-column-start: 2;
     grid-column-end: 5;
     grid-row-start: 2;

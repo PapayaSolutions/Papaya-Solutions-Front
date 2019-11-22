@@ -5,6 +5,21 @@ const textarea_descripcion = document.querySelector('#descripcion');
 const input_porcentaje = document.querySelector('#porcentaje');
 const btn_registro = document.querySelector('#btn_registro');
 
+const validar_numero = (nombre) => {
+    let error_num = false
+    if (nombre.length < 8) {
+        error_num = true
+    } else {
+        error_num = false
+    }
+
+    if (input_nombre.value.toLowerCase().includes('e')) {
+        error_num = true
+    }
+
+    return error_num
+}
+
 // Validación de datos
 let validar = () => {
     let error = true;
@@ -58,6 +73,7 @@ let obtener_datos = () => {
             title: 'Registro realizado con exito',
             text: 'El impuesto ha sido almacenado',
             confirmButtonText: 'Entendido'
+
         })
 
     } else {
@@ -78,3 +94,7 @@ let obtener_datos = () => {
 // Eventos asociados a los botones o inputs
 
 btn_registro.addEventListener('click', obtener_datos);
+
+function newFunction() {
+    document.getElementById("#descuento").reset();
+}

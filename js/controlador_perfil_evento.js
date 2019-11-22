@@ -13,6 +13,7 @@ const imagen = document.querySelector('#img_evento');
 
 let id = localStorage.getItem('id_evento');
 let datos_evento;
+let datos_mapa;
 
 let llenar_perfil = async() => {
 
@@ -49,8 +50,16 @@ let llenar_perfil = async() => {
 };
 llenar_perfil();
 
-var map;
-var marker;
+let llenar_mapa = async() => {
+
+    datos_mapa = await obtener_recinto_nombre(recinto.value);
+}
+
+llenar_mapa();
+
+
+let map;
+let marker;
 
 function initMap() {
 
@@ -71,7 +80,6 @@ function initMap() {
 
 }
 
-
 function placeMarkerAndPanTo(latLng, map) {
 
     if (marker != undefined) {
@@ -83,18 +91,10 @@ function placeMarkerAndPanTo(latLng, map) {
             draggable: true,
         });
     }
-    actualizar_ubicacion(latLng);
 
     google.maps.event.addListener(marker, 'drag', function() {
-        actualizar_ubicacion(marker.position);
+
     });
 
     map.panTo(latLng);
 }
-
-const actualizar_ubicacion = position => {
-    let txt_latitud = document.querySelector('#txt_latitud');
-    let txt_longitud = document.querySelector('#txt_longitud');
-    txt_latitud.value = position.lat();
-    txt_longitud.value = position.lng();
-};

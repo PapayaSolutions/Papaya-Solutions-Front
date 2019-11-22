@@ -623,31 +623,29 @@ const validar_numero = (numero) => {
 }
 
 // function para validar la mayoria de edad
-const validar_edad = (fecha) => {
-    let error_edad = true
+const calcular_edad = (fecha) => {
+
+    let error_edad = false;
     let hoy = new Date();
-    let fecha_conv = new Date(fecha);
-    let dia_actual = hoy.getDate()
-    let dia_fecha = fecha_conv.getDate() + 1
-    let anos = (hoy.getFullYear() - fecha_conv.getFullYear())
-    let mes_actual = hoy.getMonth() + 1
-    let mes_fecha = fecha_conv.getMonth() + 1
+    let cumpleanos = new Date(fecha);
+    let edad = hoy.getFullYear() - cumpleanos.getFullYear();
+    let m = hoy.getMonth() - cumpleanos.getMonth();
 
-    console.log('Dia actual: ' + dia_actual)
-    console.log('Dia fecha: ' + dia_fecha)
-    console.log('Mes actual: ' + mes_actual)
-    console.log('Mes fecha: ' + mes_fecha)
-    console.log('Year : ' + anos)
+    if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate() + 1)) {
+        edad--;
 
-    if (anos >= 18) {
-        error_edad: false;
-    }
-    else {
-        error_edad: true;
+        if (edad < 18) {
+            error_edad = true
+        } else {
+            error_edad = false
+        }
     }
 
+    console.log(m)
+    console.log(hoy.getDate())
+    console.log(cumpleanos.getDate() + 1)
+    console.log(edad)
     return error_edad;
-    console(error_edad)
 }
 
 const validar_correo = () => {
@@ -685,14 +683,12 @@ let obtener_datos = () => {
             text: 'Minimo debe de tener 8 digitos! No se aceptan letras! No se aceptan simbolos!',
         })
 
-    } else if (validar_edad(fecha_nacimiento)) {
+    } else if (calcular_edad(fecha_nacimiento)) {
         Swal.fire({
             type: 'warning',
             title: 'Verifique la edad',
             text: 'Debe de ser mayor de edad!',
         })
-
-
 
     } else {
 
@@ -702,6 +698,7 @@ let obtener_datos = () => {
             title: 'Registro realizado con exito',
             text: 'Encargado registrado!',
         })
+
         registrar_encargado_recinto(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado)
 
         document.getElementById("form_enc_rec").reset();

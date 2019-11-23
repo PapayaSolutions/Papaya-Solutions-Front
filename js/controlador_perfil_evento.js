@@ -3,7 +3,6 @@
 const nombre = document.querySelector('#bnr_nombre');
 const recinto = document.querySelector('#recinto_evento');
 const tabla_fechas = document.querySelector('#fecha_evento tbody');
-const hora = document.querySelector('#hora_evento');
 
 const precio = document.querySelector('#precio_evento');
 const categoria = document.querySelector('#categoria_evento');
@@ -13,6 +12,11 @@ const imagen = document.querySelector('#img_evento');
 
 let id = localStorage.getItem('id_evento');
 let datos_evento;
+let datos_mapa;
+
+let map;
+let marker;
+
 
 let llenar_perfil = async() => {
 
@@ -20,6 +24,8 @@ let llenar_perfil = async() => {
 
     nombre.innerHTML = datos_evento[0]['nombre'];
     recinto.value = datos_evento[0]['recinto'];
+    localStorage.setItem('id_recinto', recinto.value);
+
     precio.value = ('¢' + (datos_evento[0]['precio_entrada']));
     categoria.value = datos_evento[0]['categoria'];
     descripcion.value = datos_evento[0]['descripcion'];
@@ -49,14 +55,26 @@ let llenar_perfil = async() => {
 };
 llenar_perfil();
 
-var map;
-var marker;
+let lugar = localStorage.getItem('id_recinto');
+
+let llenar_mapa = async() => {
+
+    datos_mapa = await obtener_recinto_nombre(lugar);
+
+    localStorage.setItem('latitud', datos_mapa[0]['latitud']);
+    localStorage.setItem('longitud', datos_mapa[0]['longitud']);
+
+
+}
+
+llenar_mapa();
+
 
 function initMap() {
 
     var myLatLng = {
-        lat: 9.9323102,
-        lng: -84.0311761
+        lat: parseFloat(localStorage.getItem('latitud')),
+        lng: parseFloat(localStorage.getItem('longitud')),
     };
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -71,7 +89,6 @@ function initMap() {
 
 }
 
-
 function placeMarkerAndPanTo(latLng, map) {
 
     if (marker != undefined) {
@@ -83,18 +100,10 @@ function placeMarkerAndPanTo(latLng, map) {
             draggable: true,
         });
     }
-    actualizar_ubicacion(latLng);
 
     google.maps.event.addListener(marker, 'drag', function() {
-        actualizar_ubicacion(marker.position);
+
     });
 
     map.panTo(latLng);
 }
-
-const actualizar_ubicacion = position => {
-    let txt_latitud = document.querySelector('#txt_latitud');
-    let txt_longitud = document.querySelector('#txt_longitud');
-    txt_latitud.value = position.lat();
-    txt_longitud.value = position.lng();
-};

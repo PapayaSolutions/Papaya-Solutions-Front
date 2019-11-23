@@ -30,3 +30,26 @@ function codigoVer(length, chars) {
     for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
     return result;
 }
+
+// function para validar la mayoria de edad
+// El parametro que se le pasa es la fecha a validar, importante el '.value si fuera el caso'
+
+const calcular_edad = (fecha) => {
+
+    let error_edad = false;
+    let hoy = new Date();
+    let cumpleanos = new Date(fecha);
+    let edad = hoy.getFullYear() - cumpleanos.getFullYear();
+    let m = hoy.getMonth() - cumpleanos.getMonth();
+
+    if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate() + 1)) {
+        edad--;
+
+        if (edad < 18) {
+            error_edad = true
+        } else {
+            error_edad = false
+        }
+    }
+    return error_edad;
+}

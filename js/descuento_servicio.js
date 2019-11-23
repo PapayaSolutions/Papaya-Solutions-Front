@@ -11,7 +11,7 @@ let registrar_descuento = async(nombre, descipcion, porcentaje) => {
             }
         })
         .then(function(res) {
-            console.log(res.data);
+
         })
         .catch(function(error) {
             console.log(error);

@@ -25,15 +25,6 @@ header nav {
     text-decoration: none;
 }
 
-header nav a {
-    text-decoration: none;
-    color: #ececec;
-}
-
-header nav a:hover {
-    color: #f7882f;
-}
-
 
 /*Contenido*/
 
@@ -128,13 +119,6 @@ header nav a:hover {
     padding: 12px 20px;
     color: #ececec;
     overflow: hidden;
-}
-
-.call_to_action:hover {
-    background: transparent;
-    color: #f7882f;
-    border: 2px solid #f7882f;
-    box-sizing: border-box;
 }
 
 .opciones {
@@ -301,4 +285,11 @@ hr {
 #contenedor_boton {
     margin: 0 auto;
     width: 30%;
+}
+
+#contenedor_boton button:hover {
+    background: transparent;
+    color: #f7882f;
+    border: 0px solid #f7882f;
+    border-radius: 10rem;
 }

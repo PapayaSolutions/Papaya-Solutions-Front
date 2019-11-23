@@ -15,14 +15,15 @@
     <link rel="stylesheet" href="css/configuracion.css">
     <link rel="stylesheet" href="css/mantenimiento_avatar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <title>Registrar descuento</title>
+    <title>Listar descuento</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/configuracion.css">
     <link rel="stylesheet" href="css/formularios.css">
-    <link rel="stylesheet" href="css/descuento.css">
+    <link rel="stylesheet" href="css/listar_descuento.css">
+
 
 </head>
 
@@ -125,37 +126,36 @@
         </aside>
 
         <section>
-            <h1>Registro de descuentos</h1>
-            <div class="registrar_descuento">
 
-                <div id="descuento">
-                    <div id="datos">
-
-                        <label for="datos">Nombre del descuento</label>
-                        <input type="string" id="nombre" />
-                    </div>
-                    <div id="datos">
-                        <label for="datos">Descripción</label>
-                        <textarea name="" id="descripcion" cols="30" rows="10"></textarea>
-                    </div>
-                    <div id="datos">
-                        <label for="datos">Porcentaje de descuento</label>
-                        <input type="string" id="porcentaje" />
-                    </div>
-                    <div class="btn_container">
-                        <button type="button" class="btn" id="btn_registro">Registrar</button>
-                    </div>
+            <div class="formulario" id="main_form">
+                <h1>Descuentos</h1>
+                <div id="search">
+                    <i class="fas fa-search" id="search_icon"></i>
+                    <input type="text" id="bnr_input" placeholder="Buscar">
                 </div>
+                <div class="spacer_h1"></div>
+
+                <table id="tbl_descuento">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Porcentaje</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
             </div>
+
         </section>
     </main>
-
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/descuento_servicio.js"></script>
-    <script src="js/registrar_descuento_controlador.js"></script>
-
+    <script src="js/controlador_listar_descuento.js"></script>
 </body>
 
 </html>

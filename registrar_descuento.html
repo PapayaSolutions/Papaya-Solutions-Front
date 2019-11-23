@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,14 +15,6 @@
     <link rel="stylesheet" href="css/mantenimiento_avatar.css">
     <link rel="stylesheet" href="css/footer.css">
     <title>Registrar descuento</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/configuracion.css">
-    <link rel="stylesheet" href="css/formularios.css">
-    <link rel="stylesheet" href="css/descuento.css">
-
 </head>
 
 <body>
@@ -98,17 +89,9 @@
                 <a href="registro-encargado-recintos.html">
                     <li>Encargado de recintos</li>
                 </a>
-                <a>
-                    <li>Descuentos</a>
-                <ul>
-                    <a href="registrar_descuento.html">
-                        <li>Nuevo descuento</li>
-                    </a>
-                    <a href="listar_descuento.html">
-                        <li>Listar descuentos</li>
-                    </a>
-                </ul>
-                </li>
+                <a href="registrar_descuento.html">
+                    <li>Descuentos</li>
+                </a>
                 <a href="mantenimiento_avatar.html">
                     <li>Avatares</li>
                 </a>
@@ -124,37 +107,8 @@
             </ul>
         </aside>
 
-        <section>
-            <h1>Registro de descuentos</h1>
-            <div class="registrar_descuento">
-
-                <div id="descuento">
-                    <div id="datos">
-
-                        <label for="datos">Nombre del descuento</label>
-                        <input type="string" id="nombre" />
-                    </div>
-                    <div id="datos">
-                        <label for="datos">Descripción</label>
-                        <textarea name="" id="descripcion" cols="30" rows="10"></textarea>
-                    </div>
-                    <div id="datos">
-                        <label for="datos">Porcentaje de descuento</label>
-                        <input type="string" id="porcentaje" />
-                    </div>
-                    <div class="btn_container">
-                        <button type="button" class="btn" id="btn_registro">Registrar</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section></section>
     </main>
-
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/descuento_servicio.js"></script>
-    <script src="js/registrar_descuento_controlador.js"></script>
 
 </body>
 

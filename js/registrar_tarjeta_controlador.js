@@ -8,10 +8,9 @@ const input_apellido = document.querySelector('#apellido');
 const input_postal = document.querySelector('#postal');
 const btn_registro = document.querySelector('#btn_registro');
 
-
 // Validación de datos
 let validar = () => {
-    let error = true;
+    let error = false;
 
     if (input_tarjeta.value == '') {
         error = true;
@@ -83,13 +82,24 @@ let obtener_datos = () => {
 
     //si hay error, entra al if. Si no hay error entra al else
     if (validar()) {
+        Swal.fire({
+            type: 'warning',
+            title: '¡Espera!',
+            animation: true,
+            text: 'Hay espacios que deben ser llenados',
+            confirmButtonText: 'Entendido',
+            customClass: {
+                popup: 'animated tada'
+            }
+        })
+    } else {
 
-        console.log('tarjeta', tarjeta);
+        console.log('tarjeta', codigo);
         console.log('nombre', nombre);
         console.log('codigo', codigo);
         console.log('vencimiento', vencimiento);
         console.log('apellido', apellido);
-        console.log('postal', postal)
+        console.log('postal', postal);
 
         Swal.fire({
             type: 'success',
@@ -101,21 +111,9 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         })
-    } else {
 
-
-
-        Swal.fire({
-            type: 'warning',
-            title: '¡Espera!',
-            animation: true,
-            text: 'Hay espacios que deben ser llenados',
-            confirmButtonText: 'Entendido',
-            customClass: {
-                popup: 'animated tada'
-            }
-        })
     }
+
 };
 
 // Eventos asociados a los botones o inputs

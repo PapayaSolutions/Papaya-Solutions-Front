@@ -386,3 +386,8 @@
     #fecha_evento tbody tr {
         border-bottom: 1px dotted #f7c331;
     }
+    
+    #map {
+        height: 300px;
+        width: 300px;
+    }

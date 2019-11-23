@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/geolozalizacion.css">
+
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/perfil_evento.css">
@@ -95,12 +95,12 @@
                 <output id="descripcion_evento"></output>
             </div>
 
-            <div class="grid_item item3 map">
+            <div class="grid_item item3" id="map">
                 <!-- <img src="img/placeholder.jpg" alt="Mapa">-->
             </div>
 
             <div class="grid_item item4">
-                <button type="button" class="btn">Lugar</button>
+                <button type="button" class="btn">Ver lugar</button>
             </div>
             <div class="grid_item item5">
                 <button type="button" class="btn">Agregar al Carrito</button>
@@ -201,5 +201,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDQnZ4l9vPokKOvdI5hv1CnCkp-9fi3QE&callback=initMap" async defer></script>
     <script src="js/eventos_servicios.js"></script>
+    <script src="js/recintos_servicio.js"></script>
     <script src="js/controlador_perfil_evento.js"></script>
+
 </body>

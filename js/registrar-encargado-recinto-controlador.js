@@ -693,6 +693,8 @@ let obtener_datos = () => {
     } else {
 
 
+        registrar_encrgado_recinto(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado);
+
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con exito',

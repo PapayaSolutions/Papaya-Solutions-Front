@@ -65,7 +65,7 @@
 
                                 <div>
                                     <label for="datos">Número de tarjeta</label>
-                                    <input id="tarjeta" type="string" placeholder="Detalles de tarjeta">
+                                    <input type="string" name="checkout.cardNumber" id="tarjeta" />
                                 </div>
                                 <div>
                                     <label for="datos">Nombre</label>
@@ -95,7 +95,6 @@
                                     <button type="button" class="btn" id="btn_registro">Guardar</button>
                                     <button type="button" class="btn" id="btn_retiro"><a href="listar_tarjeta.html">Cancelar</a></button>
                                 </div>
-
                             </div>
                         </div>
 
@@ -173,7 +172,6 @@
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-        <script src="js/tarjeta_servicio.js"></script>
         <script src="js/registrar_tarjeta_controlador.js"></script>
     </body>
 

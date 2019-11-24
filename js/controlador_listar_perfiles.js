@@ -37,7 +37,7 @@ let llenar_encargados = async() => {
 
             boton.addEventListener('click', function() {
                 localStorage.setItem("destino_id", this.dataset.destino);
-                window.location.href = 'perfil_cliente.html';
+                window.location.href = 'visualizar_perfil.html';
 
             })
 

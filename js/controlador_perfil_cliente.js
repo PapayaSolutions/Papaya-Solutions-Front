@@ -1,19 +1,22 @@
 'use strict';
+const nombre = document.querySelector('nombre');
+const tbody = document.querySelector('#tbl_perfil tbody');
 
-const nombre = document.querySelector('#nombre_perfil');
+let id = localStorage.getItem('id_perfil');
+let lista_clientes;
 
-let lista_perfil;
-let id = localStorage.getItem('id_cliente');
 
 let llenar_perfil = async() => {
 
-    lista_perfil = await obtener_cliente_id(id);
+    lista_clientes = await obtener_cliente_id(id);
 
-    nombre.innerHTML = lista_perfil[0]['nombre'];
+    console.log(lista_clientes);
 
-    localStorage.setItem('nombre', nombre.value);
+    nombre.innerHTML = lista_clientes[0]['p_nombre'];
 
-}
+    localStorage.setItem('id_usuario', nombre);
+
+
+};
+
 llenar_perfil();
-
-localStorage.getItem(llenar_perfil);

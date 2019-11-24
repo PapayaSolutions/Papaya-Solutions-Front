@@ -111,7 +111,7 @@
 
                             <div>
                                 <label for="fecha_nac_cliente">Fecha de nacimiento</label>
-                                <input id="fecha_nac_cliente" type="date" onclick="calcular_edad('fecha_nac_cliente')">
+                                <input id="fecha_nac_cliente" type="date" onchange="mostrar_anos('fecha_nac_cliente.value')">
                             </div>
                             <div>
                                 <label for="provincia_cliente">Provincia</label>
@@ -130,7 +130,7 @@
                         <div>
                             <div>
                                 <label for="edad_cliente">Edad</label>
-                                <input id="edad_cliente" type="number">
+                                <output type="text" id="edad_cliente"></output>
                             </div>
                             <div>
                                 <label for="canton_cliente">Cantón</label>

@@ -9,6 +9,16 @@ let obtener_datos = () => {
     let correo = input_correo.value;
     let contrasena = input_contrasena.value;
 
+
+    let errorBlancos = validar(correo, contrasena);
+    let ususarioAceptado = false;
+
+    if (!errorBlancos) {
+        ususarioAceptado = validar_credenciales(correo, contrasena);
+        if (ususarioAceptado) {
+            window.location.href = 'listar_eventos.html';
+        }
+    }
     if (validar()) {
         Swal.fire({
             type: 'warning',
@@ -20,12 +30,9 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         })
-    } else {
-        validar_credenciales(correo, contrasena);
-        console.log('cool')
-
-    }
+    };
 };
+
 
 // validación de datos
 let validar = () => {

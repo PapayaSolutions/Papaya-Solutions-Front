@@ -3,12 +3,15 @@
 const nombre = document.querySelector('#bnr_nombre');
 const recinto = document.querySelector('#recinto_evento');
 const tabla_fechas = document.querySelector('#fecha_evento tbody');
-
+const tabla_descuentos = document.querySelector('#descuentos_evento tbody');
+const tabla_desc_head = document.querySelector('#descuentos_evento thead');
 const precio = document.querySelector('#precio_evento');
 const categoria = document.querySelector('#categoria_evento');
 const descripcion = document.querySelector('#descripcion_evento');
 const cantidad = document.querySelector('#cantidad');
 const imagen = document.querySelector('#img_evento');
+const entradas = document.querySelector('#entradas');
+const descuentos = document.querySelector('#descuentos');
 
 let id = localStorage.getItem('id_evento');
 let datos_evento;
@@ -30,6 +33,38 @@ let llenar_perfil = async() => {
     categoria.value = datos_evento[0]['categoria'];
     descripcion.value = datos_evento[0]['descripcion'];
     cantidad.value = datos_evento[0]['cantidad_maxima_usuario'];
+    entradas.value = datos_evento[0]['asistentes_esperados'];
+
+    if (datos_evento[0]['descuentos'] != '') {
+
+        let cabeza = tabla_desc_head.insertRow();
+
+        let name = cabeza.insertCell();
+        let nombre = document.createElement('tr');
+        nombre.innerHTML = 'Nombre';
+        let porc = cabeza.insertCell();
+        let porcentaje = document.createElement('tr');
+        porcentaje.innerHTML = 'Porcentaje';
+
+        name.appendChild(nombre);
+        porc.appendChild(porcentaje);
+
+
+        for (let i = 0; i < datos_evento[0]['descuentos'].length; i++) {
+            let nombre = datos_evento[0]['descuentos'][i]['nombre'];
+            let porcentaje = datos_evento[0]['descuentos'][i]['porcentaje'];
+            let fila = tabla_descuentos.insertRow();
+
+            fila.insertCell().innerHTML = nombre;
+            fila.insertCell().innerHTML = (porcentaje + '%');
+
+        }
+
+    } else {
+        descuentos.value = 'No hay descuentos';
+
+    }
+
 
     imagen.src = datos_evento[0]['URL_imagen'];
 
@@ -38,6 +73,7 @@ let llenar_perfil = async() => {
 
         let date = new Date((datos_evento[0]['fecha_disponible'])[i]['fecha']);
         let tiempo = datos_evento[0]['fecha_disponible'][i]['hora'];
+        let tiempo2 = datos_evento[0]['fecha_disponible'][i]['hora_salida'];
 
         var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
         var dayName = dias[date.getDay()];
@@ -49,8 +85,11 @@ let llenar_perfil = async() => {
         fila.insertCell().innerHTML = (dayName + '  ' + date.getDate() + ' de ' + mesName + ' del ' + date.getFullYear());
 
         fila.insertCell().innerHTML = tiempo;
+        fila.insertCell().innerHTML = tiempo2;
 
     }
+
+
 
 };
 llenar_perfil();

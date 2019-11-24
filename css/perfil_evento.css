@@ -24,6 +24,8 @@ header {
 
 .banner_left {
     text-align: center;
+    text-justify: center;
+    margin: auto;
 }
 
 .banner_right {
@@ -49,9 +51,11 @@ header {
     color: #292c2a;
     display: block;
     position: relative;
-    top: 66px;
+    top: 10px;
     font-size: 50px;
     margin-bottom: 5px;
+    height: 150px;
+    overflow: hidden;
 }
 
 .banner_left a {
@@ -67,6 +71,7 @@ header {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-gap: 10px 10px;
+    position: relative;
 }
 
 .portada_container {
@@ -188,7 +193,9 @@ header {
     grid-column-end: 5;
     grid-row-start: 3;
     grid-row-end: 4;
-    margin: auto;
+    position: absolute;
+    top: 0px;
+    left: 10%;
 }
 
 
@@ -242,7 +249,7 @@ header {
 }
 
 #sct_calificacion h1 {
-    font-size: 20px;
+    font-size: 22px;
     color: #f7882f;
     position: absolute;
     padding-left: 20px;
@@ -258,7 +265,7 @@ header {
     unicode-bidi: bidi-override;
     direction: rtl;
     font-size: 40px;
-    color: white;
+    color: #f7c331;
     position: relative;
     top: 50px;
     left: 35px;
@@ -292,9 +299,8 @@ header {
 }
 
 #coment_head {
-    color: #f7c331;
-    font-size: 20px;
-    border-radius: 10px;
+    color: #f7882f;
+    font-size: 22px;
     height: 40px;
     margin-bottom: 5px;
 }
@@ -373,6 +379,45 @@ header {
 }
 
 #fecha_evento tbody tr {
+    border-bottom: 1px dotted #f7c331;
+}
+
+
+/*descuentos*/
+
+#descuentos_evento {
+    margin-top: 10px;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+#descuentos_evento thead {
+    height: 25px;
+    font-size: 20px;
+    color: #f7882f;
+    border-bottom: #f7882f 2px solid;
+    text-align: left;
+}
+
+#descuentos_evento thead th {
+    min-width: 100px;
+    padding-left: 10px;
+}
+
+#descuentos_evento tbody {
+    height: 18px;
+    border-bottom: #f7882f 1px solid;
+    line-height: 18px;
+    font-size: 16;
+    color: #292c2a;
+}
+
+#descuentos_evento tbody td {
+    min-width: 100px;
+    padding: 10px;
+}
+
+#descuentos_evento tbody tr {
     border-bottom: 1px dotted #f7c331;
 }
 

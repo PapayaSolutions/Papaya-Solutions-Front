@@ -7,6 +7,7 @@ const cant_fechas = document.querySelector('#cantidad_fechas');
 const btn_generador = document.querySelector('#btn_fecha');
 let input_fechas;
 let input_horas;
+let input_horas2;
 
 let lista_tipo_de_evento;
 
@@ -76,8 +77,14 @@ let generar_fecha = async() => {
         input2.type = "time";
         input2.classList.add('input_time');
 
+        let hora2 = fila.insertCell();
+        let input3 = document.createElement('input');
+        input3.type = "time";
+        input3.classList.add('input_time2');
+
         fecha.appendChild(input1);
         hora.appendChild(input2);
+        hora2.appendChild(input3);
     }
 
 };
@@ -180,13 +187,42 @@ let validar = () => {
             console.log('falta la hora')
         }
     }
+    if (input_horas2.length == 0) {
+        error = true;
+        console.log('falta la hora 2')
+    } else {
+        if (input_horas2[0].value == '') {
+            error = true;
+            console.log('falta la hora 2')
+        }
+    }
+
     return error;
 }; //validar datos
 
-// function obtener_datos(){}
-let obtener_datos = () => {
+let agregar_fechas = async() => {
     input_fechas = document.querySelectorAll('.input_date');
     input_horas = document.querySelectorAll('.input_time');
+    input_horas2 = document.querySelectorAll('.input_time2');
+
+    for (let j = 0; j < input_fechas.length; j++) {
+        let fecha = input_fechas[j].value;
+        let hora = input_horas[j].value;
+        let hora2 = input_horas2[j].value;
+        await registrar_fecha(
+            nombre,
+            fecha,
+            hora,
+            hora2);
+    };
+}
+
+
+// function obtener_datos(){}
+let obtener_datos = async() => {
+    input_fechas = document.querySelectorAll('.input_date');
+    input_horas = document.querySelectorAll('.input_time');
+    input_horas2 = document.querySelectorAll('.input_time2');
 
     let nombre = input_nombre_evento.value;
     let categoria = input_categoria_evento.value;
@@ -207,7 +243,7 @@ let obtener_datos = () => {
         })
     } else {
 
-        registrar_evento(
+        await registrar_evento(
             nombre,
             categoria,
             asistentes_esperados,
@@ -218,14 +254,7 @@ let obtener_datos = () => {
             URL_imagen,
             estado);
 
-        for (let j = 0; j < input_fechas.length; j++) {
-            let fecha = input_fechas[j].value;
-            let hora = input_horas[j].value;
-            registrar_fecha(
-                nombre,
-                fecha,
-                hora);
-        };
+
 
         Swal.fire({
             type: 'success',
@@ -238,5 +267,5 @@ let obtener_datos = () => {
 
 
 // Eventos asociados a los botones o inputs
-btn_generador.addEventListener('click', generar_fecha);
+
 btn_registro.addEventListener('click', obtener_datos);

@@ -693,13 +693,14 @@ let obtener_datos = () => {
     } else {
 
 
+        registrar_encrgado_recinto(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado);
+
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con exito',
             text: 'Encargado registrado!',
         })
 
-        registrar_encargado_recinto(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado)
 
         document.getElementById("form_enc_rec").reset();
     };

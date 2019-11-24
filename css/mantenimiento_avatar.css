@@ -79,21 +79,6 @@
         margin: auto;
     }
     
-    .botonera {
-        width: 60%;
-        display: grid;
-        margin: auto;
-        margin-top: 10px;
-        height: 50px;
-        grid-template-columns: 100px 1fr 1fr 1fr 100px;
-        grid-column-gap: 10px;
-    }
-    
-    #btn_eliminar {
-        grid-column-start: 1;
-        grid-column-start: 2;
-    }
-    
     .img_container {
         width: 200px;
         height: 200px;

@@ -39,7 +39,7 @@ let mostrar_cards = async() => {
 
             let fecha = document.createElement('small');
 
-            let date = new Date(lista_evento[i]['fecha_disponible'][0]['fecha']);
+            let date = new Date((lista_evento[i]['fecha_disponible'][0]['fecha']).replace(/-/g, '\/'));
 
             var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
             var dayName = dias[date.getDay()];
@@ -185,7 +185,7 @@ function titulo_categoria(evento) {
             let div_fecha = document.createElement('div');
 
             let fecha = document.createElement('small');
-            let date = new Date(filtered_data[i]['fecha_disponible'][0]['fecha']);
+            let date = new Date((lista_evento[i]['fecha_disponible'][0]['fecha']).replace(/-/g, '\/'));
 
             var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
             var dayName = dias[date.getDay()];
@@ -268,11 +268,3 @@ function titulo_categoria(evento) {
     };
     mostrar_cards();
 }
-
-function test_fecha(e) {
-    let temp_value = event.target.value;
-    console.log(
-        numDaysBetween(date, new Date(temp_value)),
-        numDaysBetween(date, new Date(temp_value), true)
-    );
-};

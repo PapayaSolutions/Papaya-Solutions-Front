@@ -48,7 +48,7 @@ let mostrar_cards = async() => {
 
         let fecha = document.createElement('small');
 
-        let date = new Date(filteredEvents[i]['fecha_disponible'][0]['fecha']);
+        let date = new Date((filteredEvents[i]['fecha_disponible'][0]['fecha']).replace(/-/g, '\/'));
 
         var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
         var dayName = dias[date.getDay()];

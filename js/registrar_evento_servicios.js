@@ -99,7 +99,7 @@ botn.addEventListener('click', function() {
     myWidget1.open();
 }, false);
 
-let registrar_fecha = async(nombre, fecha, hora) => {
+let registrar_fecha = async(nombre, fecha, hora, hora_salida) => {
     await axios({
             method: 'post',
             url: 'http://localhost:3000/api/agregar-fecha',
@@ -109,6 +109,7 @@ let registrar_fecha = async(nombre, fecha, hora) => {
                 nombre: nombre,
                 fecha: fecha,
                 hora: hora,
+                hora_salida: hora_salida,
 
             }
         })

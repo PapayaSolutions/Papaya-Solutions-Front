@@ -19,7 +19,8 @@ header {
 
 #banner_grid {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 240px 1fr 300px;
+    margin: auto;
 }
 
 .banner_left {
@@ -29,7 +30,8 @@ header {
 }
 
 .banner_right {
-    margin: auto;
+    margin: auto 20px;
+    width: 260px;
 }
 
 .img_container {
@@ -38,9 +40,7 @@ header {
 
 .img_container img {
     background-color: #292c2a;
-    max-width: 100%;
     width: 250px;
-    min-width: 50px;
     height: 160px;
     border: #f7c331 solid 2px;
     border-radius: 10px 10px 10px 10px;
@@ -68,21 +68,22 @@ header {
 
 #main_grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 500px 200px 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-gap: 10px 10px;
     position: relative;
+    border-bottom: 2px dotted #f7882f;
 }
 
 .portada_container {
-    width: 40%;
-    min-width: 150px;
+    width: 200px;
     height: 150px;
-    margin: auto;
+    margin: auto 20px;
 }
 
 .portada_container img {
-    width: 100%;
+    height: 150px;
+    width: auto;
 }
 
 #editar a {
@@ -105,8 +106,8 @@ header {
 /*la carta del evento*/
 
 .item1 {
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 4;
     border-radius: 10px;
@@ -122,6 +123,7 @@ header {
     color: #f7882f;
     font-size: 16px;
     min-width: 200px;
+    margin: auto;
 }
 
 
@@ -140,8 +142,8 @@ header {
 /*descripción del evento*/
 
 .item2 {
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 4;
     grid-row-end: 6;
     border-radius: 10px;
@@ -171,26 +173,27 @@ header {
 /*geolocalización mapa de google*/
 
 .item3 {
-    grid-column-start: 4;
-    grid-column-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 4;
     grid-row-start: 1;
-    grid-row-end: 4;
+    grid-row-end: 3;
     border-radius: 5px;
+    margin: auto;
 }
 
 .item3 img {
     overflow: hidden;
     object-fit: cover;
-    max-width: 300px;
-    height: auto;
+    width: 250px;
+    height: 250px;
 }
 
 
 /*botón que lleva al perfil del recinto*/
 
 .item4 {
-    grid-column-start: 4;
-    grid-column-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4;
     position: absolute;
@@ -202,23 +205,59 @@ header {
 /*agregar al carrito de compras  */
 
 .item5 {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    max-width: 300px;
-    margin: 0 auto;
-    z-index: 1;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width: 250px;
 }
 
 .item5 button {
     margin: 0 auto;
+    width: 250px;
 }
 
 .item5 h3 {
     font-size: 16px;
     text-align: center;
+    margin-top: 15px;
+}
+
+input {
+    border: none;
+    background: transparent;
+    width: 55px;
+    font-weight: 900;
+    font-size: 18px;
+    margin-left: 10px;
     margin-top: 5px;
+    height: 20px;
+    text-align: center;
+}
+
+#nmbr_mask {
+    position: relative;
+}
+
+#nmbr_mask:after {
+    content: "";
+    width: 75%;
+    height: 30px;
+    left: 0;
+    position: absolute;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+
+/*
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: auto;
 }
 
 
@@ -226,13 +265,12 @@ header {
 
 #calificar {
     display: grid;
-    width: 900px;
+    width: 840px;
     margin: auto;
     margin-top: 40px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 10px 10px;
-    border-top: 2px dotted #f7882f;
 }
 
 #sct_calificacion {
@@ -253,6 +291,7 @@ header {
     color: #f7882f;
     position: absolute;
     padding-left: 20px;
+    font-weight: 900;
     top: 20px;
     left: 50px;
     margin: auto;
@@ -265,7 +304,7 @@ header {
     unicode-bidi: bidi-override;
     direction: rtl;
     font-size: 40px;
-    color: #f7c331;
+    color: #292c2a;
     position: relative;
     top: 50px;
     left: 35px;
@@ -348,7 +387,7 @@ header {
 #fecha_evento {
     margin: auto;
     margin-top: 10px;
-    width: 100%;
+    width: 475px;
     margin-bottom: 30px;
 }
 
@@ -361,8 +400,12 @@ header {
 }
 
 #fecha_evento thead th {
-    min-width: 100px;
+    min-width: 50px;
     padding-left: 10px;
+}
+
+#tbl_hora {
+    width: 50px;
 }
 
 #fecha_evento tbody {
@@ -374,7 +417,7 @@ header {
 }
 
 #fecha_evento tbody td {
-    min-width: 100px;
+    min-width: 50px;
     padding: 10px;
 }
 
@@ -386,9 +429,10 @@ header {
 /*descuentos*/
 
 #descuentos_evento {
-    margin-top: 10px;
-    width: 50%;
-    margin-bottom: 10px;
+    margin: 10px auto 10px;
+    min-width: 300px;
+    width: 300px;
+    margin-bottom: 30px;
 }
 
 #descuentos_evento thead {
@@ -396,11 +440,10 @@ header {
     font-size: 20px;
     color: #f7882f;
     border-bottom: #f7882f 2px solid;
-    text-align: left;
 }
 
 #descuentos_evento thead th {
-    min-width: 100px;
+    min-width: 50px;
     padding-left: 10px;
 }
 
@@ -422,6 +465,6 @@ header {
 }
 
 #map {
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
 }

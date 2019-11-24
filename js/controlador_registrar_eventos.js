@@ -91,6 +91,8 @@ let generar_fecha = async() => {
 
 generar_fecha();
 
+
+
 //registrar eventos
 
 const input_nombre_evento = document.querySelector('#nombre_evento');
@@ -201,24 +203,26 @@ let validar = () => {
 }; //validar datos
 
 let agregar_fechas = async() => {
-    input_fechas = document.querySelectorAll('.input_date');
-    input_horas = document.querySelectorAll('.input_time');
-    input_horas2 = document.querySelectorAll('.input_time2');
+    let fecha;
+    let hora;
+    let hora2;
+    let nombre = input_nombre_evento.value;
 
     for (let j = 0; j < input_fechas.length; j++) {
-        let fecha = input_fechas[j].value;
-        let hora = input_horas[j].value;
-        let hora2 = input_horas2[j].value;
+        fecha = input_fechas[j].value;
+        hora = input_horas[j].value;
+        hora2 = input_horas2[j].value;
+
         await registrar_fecha(
             nombre,
             fecha,
             hora,
             hora2);
     };
-}
+};
 
 
-// function obtener_datos(){}
+
 let obtener_datos = async() => {
     input_fechas = document.querySelectorAll('.input_date');
     input_horas = document.querySelectorAll('.input_time');
@@ -254,7 +258,7 @@ let obtener_datos = async() => {
             URL_imagen,
             estado);
 
-
+        agregar_fechas();
 
         Swal.fire({
             type: 'success',

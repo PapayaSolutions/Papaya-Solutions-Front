@@ -16,7 +16,7 @@ var numDaysBetween = function(d1, d2) {
 var meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
 var diasSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
 var f = new Date();
-document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+
 
 let date = new Date(f);
 var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
@@ -48,7 +48,7 @@ let mostrar_cards = async() => {
 
         let fecha = document.createElement('small');
 
-        let date = new Date(filteredEvents[i]['fecha_disponible'][0]['fecha']);
+        let date = new Date((filteredEvents[i]['fecha_disponible'][0]['fecha']).replace(/-/g, '\/'));
 
         var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
         var dayName = dias[date.getDay()];
@@ -126,10 +126,6 @@ let mostrar_cards = async() => {
 
         btn_container.appendChild(boton);
 
-        function sumarDias(fecha, dias) {
-            fecha.setDate(fecha.getDate() + dias);
-            return fecha;
-        }
     }
 };
 

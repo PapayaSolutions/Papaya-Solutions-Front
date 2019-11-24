@@ -6,7 +6,7 @@ let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pc
             method: 'post',
             url: 'http://localhost:3000/api/registrar-cliente',
             responseType: 'json',
-            //body
+            //body 
             data: {
                 p_nombre: pp_nombre,
                 s_nombre: ps_nombre,
@@ -20,6 +20,7 @@ let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pc
                 canton: pcanton,
                 distrito: pdistrito,
                 direccion: pdireccion,
+
             }
         })
         .then(function(res) {
@@ -59,6 +60,7 @@ let listar_clientes = async() => {
             method: 'get',
             url: 'http://localhost:3000/api/listar_clientes',
             responseType: 'json'
+
         })
         .then(function(res) {
             lista_clientes = res.data.clientes;

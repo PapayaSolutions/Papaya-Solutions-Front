@@ -16,6 +16,33 @@ const input_direccion = document.querySelector('#direccion_cliente');
 const input_url_avatar = document.querySelector('#url_avatar');
 const btn_registro = document.querySelector('#btn_registro');
 
+//dashboard de recintos
+const xbody = document.querySelector('#avatar_cliente');
+let lista_recintos;
+
+let llenar_avatares = async() => {
+
+    lista_avatares = await listar_avatares();
+    xbody.innerHTML = '';
+
+    let vacio = document.createElement('option');
+    vacio.innerText = '-';
+    xbody.appendChild(vacio);
+    for (let i = 0; i < lista_avatares.length; i++) {
+
+        let selecionar = document.createElement('option');
+
+
+        selecionar.value = lista_avatares[i]['URL'];
+        selecionar.innerText = lista_avatares[i]['nombre'];
+
+        xbody.appendChild(selecionar);
+
+    }
+};
+
+llenar_avatares();
+
 // Validación de datos
 let validar = () => {
     let error = false;
@@ -93,14 +120,45 @@ let validar = () => {
     return error;
 };
 
-//Calcular edad
-function calcular_edad() {
-    var fecha = document.getElementById('fecha_nac_cliente').value;
-    var dia = +new Date(fecha);
-    var edad = ~~((Date.now() - dia) / (31557600000));
-    var fecha_final = document.getElementById('edad_cliente');
-    fecha_final.innerHTML = edad;
+// function para generar codigos
+function codigoVer(length, chars) {
+    let result = '';
+    for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
+    return result;
 }
+
+//Calcular edad
+const calcular_edad = (fecha) => {
+
+    let error_edad = false;
+    let hoy = new Date();
+    let cumpleanos = new Date(fecha);
+    let edad = hoy.getFullYear() - cumpleanos.getFullYear();
+    let m = hoy.getMonth() - cumpleanos.getMonth();
+
+    if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate() + 1)) {
+        edad--;
+
+        if (edad < 18) {
+            error_edad = true
+        } else {
+            error_edad = false
+        }
+    }
+    return error_edad;
+}
+
+//años
+const mostrar_anos = (fecha) => {
+    var Q4A = "";
+    var Bdate = document.getElementById('fecha_nac_cliente').value;
+    var Bday = +new Date(Bdate);
+    Q4A = ~~((Date.now() - Bday) / (31557600000));
+    var edad_cliente = document.getElementById('edad_cliente');
+    edad_cliente.innerHTML = Q4A;
+    return Q4A
+}
+
 
 
 //Pupular dropdown de cantones
@@ -676,6 +734,13 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         })
+    } else if (calcular_edad(fecha_nacimiento)) {
+        Swal.fire({
+            type: 'warning',
+            title: 'Verifique la edad',
+            text: 'Debe de ser mayor de edad!',
+        })
+
     } else {
         console.log(f_nacimiento)
         registrar_usuario(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,

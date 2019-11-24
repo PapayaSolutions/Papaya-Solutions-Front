@@ -82,13 +82,13 @@ var myWidget1 = cloudinary.createUploadWidget({
         console.log('Done! Here is the image info: ', result.info);
         document.querySelector('#imagen_preview').src = result.info.secure_url;
 
-        Swal.fire({
-            type: 'success',
-            title: 'Registro realizado con exito',
-            text: 'La imagen ha sido almacenada',
-            confirmButtonText: 'Entendido'
-        });
-
+        /**   Swal.fire({
+              type: 'success',
+              title: 'Registro realizado con exito',
+              text: 'La imagen ha sido almacenada',
+              confirmButtonText: 'Entendido'
+          });
+          */
     }
 
 });

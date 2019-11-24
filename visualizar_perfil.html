@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/ver_perfil.css">
 
 </head>
 
@@ -45,19 +46,63 @@
     </header>
 
     <main>
-        <div>
-            <output id="nombre"></output>
+
+        <div class="perfil">
+
+            <div class="visualizar">
+                <div class="imagen">
+                    <img src="img/avatar.jpg" alt="avatar" , height="125px" , width="125px" ;>
+                </div>
+
+            </div>
+
+            <div class="ver_perfil">
+
+
+                <div class="visualizar">
+                    <table id="tbl_perfil">
+                        <div id="nombre">
+                        </div>
+                        <hr>
+
+                        <div>
+                            <p>Genero:
+                                <output id="genero"></output>
+                            </p>
+                        </div>
+                        <div>
+                            <p>Nacimiento:
+                                <output id="nacimiento"></output>
+                            </p>
+
+                        </div>
+                        <thead>
+                            <tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+
+                        <div>
+                            <p>N.Cédula:
+                                <output id="identificacion"></output>
+                            </p>
+                        </div>
+                        <div>
+                            <p>Correo:
+                                <output id="correo"></output>
+                            </p>
+                        </div>
+                        <div>
+                            <p>Dirección 1:
+                                <output id="direccion"></output>
+                            </p>
+                        </div>
+                    </table>
+                </div>
+
+            </div>
         </div>
-        <table id="tbl_perfil">
-            <thead>
-                <tr>
-
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
     </main>
 
     <footer>

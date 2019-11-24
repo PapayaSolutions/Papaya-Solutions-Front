@@ -1,0 +1,42 @@
+.fondo {
+    position: absolute;
+    height: 175px;
+    width: 650px;
+    background: #f7c331;
+}
+
+hr {
+    border: 1px solid #f7882f;
+}
+
+.perfil {
+    display: grid;
+    grid-template-columns: 200px 500px;
+    column-gap: 25px;
+    padding-top: 50px;
+}
+
+#nombre {
+    color: #f7882f;
+    font-size: 22px;
+}
+
+.btn {
+    border: 1px solid #f7882f;
+    font-size: 16px;
+    left: 10%;
+    margin: auto;
+}
+
+p {
+    color: #f7c331;
+    margin-right: 5%;
+}
+
+output {
+    color: rgb(43, 38, 38);
+    position: absolute;
+    left: 30%;
+    text-align: left;
+    margin: auto;
+}

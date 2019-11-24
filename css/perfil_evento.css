@@ -220,36 +220,41 @@ header {
 }
 
 .item5 button {
-    margin: 0 auto;
+    margin: 20px auto 0px;
     width: 300px;
 }
 
 .item5 h3 {
     font-size: 16px;
     text-align: center;
-    margin-top: 15px;
+    display: inline-block;
+    margin: auto;
 }
 
 input {
     border: none;
     background: transparent;
-    width: 55px;
-    font-weight: 900;
+    width: 50px;
+    font-weight: 600;
     font-size: 18px;
-    margin-left: 10px;
+    color: #f7882f;
+    margin-bottom: 15px;
     margin-top: 5px;
-    height: 20px;
+    margin-left: 50px;
+    height: 30px;
     text-align: center;
+    margin: auto;
 }
 
 #nmbr_mask {
     position: relative;
+    margin-right: -5px;
 }
 
 #nmbr_mask:after {
     content: "";
-    width: 75%;
-    height: 30px;
+    width: 70%;
+    height: 35px;
     left: 0;
     position: absolute;
 }

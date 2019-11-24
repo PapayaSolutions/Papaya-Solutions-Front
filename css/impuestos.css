@@ -32,6 +32,12 @@
     height: 30px;
 }
 
+#num_porcentaje::-webkit-inner-spin-button,
+#num_porcentaje::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    opacity: 0;
+}
+
 #bnr_input {
     height: 35px;
     width: 250px;
@@ -98,9 +104,4 @@
 
 .formulario label {
     font-size: 100%;
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    opacity: 0;
 }

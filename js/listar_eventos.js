@@ -8,7 +8,7 @@ Date.prototype.addDays = function(days) {
 
 const numDaysBetween = function(d1, d2, days) {
     var diff = Math.abs(d1.getTime() - d2.getTime());
-    return !days ? (diff / (1000 * 60 * 60 * 24)) <= (days) : (diff / (1000 * 60 * 60 * 24));
+    return days ? (diff / (1000 * 60 * 60 * 24)) <= (days) : (diff / (1000 * 60 * 60 * 24));
 };
 const date = new Date();
 
@@ -166,9 +166,14 @@ function titulo_categoria(evento) {
         lista_tipo_de_evento = await listar_tipos_de_evento();
         let filtered_data = [];
         if (evento) {
-            let temp_days = numDaysBetween(date, new Date(evento.target.value));
-            filtered_data = lista_evento.filter((e) => numDaysBetween(date, new Date(e.fecha_disponible[0].fecha), temp_days));
+            let temp_days = numDaysBetween(date, new Date((evento.target.value).replace(/-/g, '\/')));
+            filtered_data = lista_evento.filter((e) =>
+                numDaysBetween(date, new Date((e.fecha_disponible[0].fecha).replace(/-/g, '\/')), temp_days) &&
+                (new Date((evento.target.value).replace(/-/g, '\/')).getTime() >= new Date((e.fecha_disponible[0].fecha).replace(/-/g, '\/')).getTime())
+            );
             console.log(evento.target.value);
+            console.log(temp_days);
+            console.log(numDaysBetween(date, new Date(("2020-03-23").replace(/-/g, '\/'))), temp_days);
         } else {
             filtered_data = x == "Todos" ? lista_evento : lista_evento.filter((e) => e.categoria == x);
         }
@@ -185,7 +190,7 @@ function titulo_categoria(evento) {
             let div_fecha = document.createElement('div');
 
             let fecha = document.createElement('small');
-            let date = new Date((lista_evento[i]['fecha_disponible'][0]['fecha']).replace(/-/g, '\/'));
+            let date = new Date((filtered_data[i]['fecha_disponible'][0]['fecha']).replace(/-/g, '\/'));
 
             var dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
             var dayName = dias[date.getDay()];

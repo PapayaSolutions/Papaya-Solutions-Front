@@ -6,6 +6,7 @@ const input_filtro = document.querySelector('#bnr_input');
 
 let lista_encargados;
 let lista_clientes;
+let lista_organizadores;
 
 
 let llenar_encargados = async() => {
@@ -84,12 +85,49 @@ let llenar_clientes = async() => {
 
 };
 
+let llenar_organizadores = async() => {
+
+    let filtro = input_filtro.value.toLowerCase();
+    lista_organizadores = await listar_organizadores();
+
+    for (let i = 0; i < lista_organizadores.length; i++) {
+        let nombre = (lista_organizadores[i]['nombre']).toLowerCase();
+        if (nombre.includes(filtro)) {
+
+            let fila = tbody.insertRow();
+
+            fila.insertCell().innerHTML = lista_organizadores[i]['nombre'];
+            fila.insertCell().innerHTML = lista_organizadores[i]['correo'];
+            fila.insertCell().innerHTML = lista_organizadores[i]['genero'];
+            fila.insertCell().innerHTML = 'Organizador de Eventos';
+            fila.insertCell().innerHTML = lista_organizadores[i]['estado'];
+
+            let perfil = fila.insertCell();
+
+            let boton = document.createElement('button');
+            boton.dataset.destino = lista_organizadores[i]['_id'];
+            boton.innerText = 'Ver perfil';
+            boton.classList.add('btn');
+
+            boton.addEventListener('click', function() {
+                localStorage.setItem("destino_id", this.dataset.destino);
+                window.location.href = 'visualizar_perfil.html';
+
+            });
+
+            perfil.appendChild(boton);
+
+        }
+    };
+
+};
+
 let llenar_tabla = async() => {
     tbody.innerHTML = '';
 
     llenar_clientes();
-
     llenar_encargados();
+    llenar_organizadores();
 
 };
 

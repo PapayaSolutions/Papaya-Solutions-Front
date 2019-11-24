@@ -31,24 +31,6 @@ hr {
     border: 2px solid #f7882f;
 }
 
-.btn_container {
-    padding-top: 15px;
-}
-
-.btn {
-    background: #f7882f;
-    font-size: 14px;
-    border-radius: 10px;
-    color: #ececec;
-    overflow: hidden;
-    height: 40px;
-}
-
-.btn:hover {
-    background: #f7c331;
-    color: #f7882f;
-}
-
 .genero1 {
     display: grid;
     grid-template-columns: repeat(6, 10%);

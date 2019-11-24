@@ -48,3 +48,20 @@ let listar_clientes = async() => {
         });
     return lista_clientes;
 }
+
+let obtener_cliente_id = async(_id) => {
+    let lista_clientes;
+    await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/listar_clientes_id/${_id}`,
+            responseType: 'json',
+
+        }).then(function(res) {
+            lista_clientes = res.data.clientes;
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    return lista_clientes;
+};

@@ -20,7 +20,9 @@ header {
 #banner_grid {
     display: grid;
     grid-template-columns: 240px 1fr 300px;
-    margin: auto;
+    min-width: 1000px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .banner_left {
@@ -68,7 +70,10 @@ header {
 
 #main_grid {
     display: grid;
-    grid-template-columns: 1fr 500px 200px 1fr;
+    min-width: 900px;
+    width: 80%;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-gap: 10px 10px;
     position: relative;
@@ -106,12 +111,13 @@ header {
 /*la carta del evento*/
 
 .item1 {
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 4;
     border-radius: 10px;
     padding: 20px;
+    margin: 0% auto;
 }
 
 
@@ -142,8 +148,8 @@ header {
 /*descripción del evento*/
 
 .item2 {
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
     grid-row-start: 4;
     grid-row-end: 6;
     border-radius: 10px;
@@ -173,7 +179,7 @@ header {
 /*geolocalización mapa de google*/
 
 .item3 {
-    grid-column-start: 3;
+    grid-column-start: 4;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 3;
@@ -192,7 +198,7 @@ header {
 /*botón que lleva al perfil del recinto*/
 
 .item4 {
-    grid-column-start: 3;
+    grid-column-start: 4;
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4;
@@ -205,16 +211,16 @@ header {
 /*agregar al carrito de compras  */
 
 .item5 {
-    grid-column-start: 3;
+    grid-column-start: 4;
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4;
-    width: 250px;
+    width: 300px;
 }
 
 .item5 button {
     margin: 0 auto;
-    width: 250px;
+    width: 300px;
 }
 
 .item5 h3 {
@@ -385,7 +391,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #fecha_evento {
-    margin: auto;
     margin-top: 10px;
     width: 475px;
     margin-bottom: 30px;
@@ -429,10 +434,8 @@ input[type=number]::-webkit-outer-spin-button {
 /*descuentos*/
 
 #descuentos_evento {
-    margin: 10px auto 10px;
+    margin-top: 15px;
     min-width: 300px;
-    width: 300px;
-    margin-bottom: 30px;
 }
 
 #descuentos_evento thead {
@@ -465,6 +468,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #map {
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid #f7c331;
 }

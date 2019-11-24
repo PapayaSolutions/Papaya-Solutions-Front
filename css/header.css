@@ -12,17 +12,20 @@ header nav {
     background-image: linear-gradient(to bottom right, #292c2a, #292c2a);
     border-bottom: 2px solid #f7882f;
     height: 36px;
+    min-width: 900px;
 }
 
 .navegador_izquierda {
     display: grid;
     grid-template-columns: 10% 20% 20%;
+    margin-left: 15px;
 }
 
 .navegador_derecha {
     display: grid;
     grid-template-columns: 60% 5% 5% 5% 5% 120px;
     text-decoration: none;
+    margin-right: 15px;
 }
 
 header nav a {

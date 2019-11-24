@@ -50,11 +50,12 @@ button {
     padding: 8px 15px;
     border-radius: 10rem;
     color: #ececec;
+    border: 1px solid #f7882f;
 }
 
 button:hover {
     background: transparent;
     color: #f7882f;
-    border: 0px solid #f7882f;
+    border: 1px solid #f7882f;
     border-radius: 10rem;
 }

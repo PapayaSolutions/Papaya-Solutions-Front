@@ -12,6 +12,7 @@ const cantidad = document.querySelector('#cantidad');
 const imagen = document.querySelector('#img_evento');
 const entradas = document.querySelector('#entradas');
 const descuentos = document.querySelector('#descuentos');
+const ticketes = document.querySelector('#cant_ticks');
 
 let id = localStorage.getItem('id_evento');
 let datos_evento;
@@ -33,6 +34,7 @@ let llenar_perfil = async() => {
     categoria.value = datos_evento[0]['categoria'];
     descripcion.value = datos_evento[0]['descripcion'];
     cantidad.value = datos_evento[0]['cantidad_maxima_usuario'];
+    ticketes.max = cantidad.value;
     entradas.value = datos_evento[0]['asistentes_esperados'];
 
     if (datos_evento[0]['descuentos'] != '') {
@@ -40,12 +42,11 @@ let llenar_perfil = async() => {
         let cabeza = tabla_desc_head.insertRow();
 
         let name = cabeza.insertCell();
-        let nombre = document.createElement('tr');
+        let nombre = document.createElement('th');
         nombre.innerHTML = 'Nombre';
         let porc = cabeza.insertCell();
-        let porcentaje = document.createElement('tr');
+        let porcentaje = document.createElement('th');
         porcentaje.innerHTML = 'Porcentaje';
-
         name.appendChild(nombre);
         porc.appendChild(porcentaje);
 

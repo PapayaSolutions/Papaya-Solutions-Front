@@ -72,6 +72,7 @@
     margin: auto;
     margin-top: 10px;
     width: 100%;
+    text-align: center;
 }
 
 #fecha_hora thead {
@@ -94,20 +95,18 @@
     font-size: 16;
 }
 
-#fecha_hora tbody td {
+#fecha_hora tbody tr {
     min-width: 100px;
     padding: 5px;
 }
 
-#fecha_hora tbody tr {
-    border-bottom: 1px dotted #f7c331;
+#fecha_hora tbody tr td {
+    margin: auto;
+    position: relative;
+    left: 40px;
 }
 
 #cantidad_fechas {
     width: 50px;
     margin: auto;
-}
-
-#btn_fecha {
-    min-width: 156px;
 }

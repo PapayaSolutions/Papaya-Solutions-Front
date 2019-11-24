@@ -30,6 +30,27 @@ let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pc
         });
 };
 
+let listar_avatares = async() => {
+
+    let lista_avatares;
+
+    await axios({
+        method: 'get',
+        url: 'http://localhost:3000/api/listar_avatar',
+        responseType: 'json'
+
+    })
+
+    .then(function(res) {
+            lista_avatares = (res.data.URL)
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+
+    return lista_avatares;
+};
+
 /*al que le toque listarlos, acá sería, ya agregué algunas cosas (Andrés)*/
 
 let listar_clientes = async() => {

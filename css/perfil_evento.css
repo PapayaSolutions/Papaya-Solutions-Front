@@ -12,6 +12,7 @@ html {
 
 header {
     width: 100%;
+    min-width: 1050px;
     height: 210px;
     border-bottom: #f7c331 solid 5px;
     margin-bottom: 20px;

@@ -13,7 +13,7 @@ const input_canton = document.querySelector('#canton_cliente');
 const input_genero = document.querySelector('#genero_cliente');
 const input_distrito = document.querySelector('#distrito_cliente');
 const input_direccion = document.querySelector('#direccion_cliente');
-const input_url_avatar = document.querySelector('#url_avatar');
+const input_url_avatar = document.querySelector('#imagen_preview');
 const btn_registro = document.querySelector('#btn_registro');
 
 //dashboard de recintos
@@ -721,7 +721,7 @@ let obtener_datos = () => {
     let genero = input_genero.value;
     let distrito = input_distrito.value;
     let direccion = input_direccion.value;
-    let url_avatar = input - url_avatar.value;
+    let url_avatar = input_url_avatar.src;
 
     //si hay error, entra al if. Si no hay error entra al else
     if (validar()) {

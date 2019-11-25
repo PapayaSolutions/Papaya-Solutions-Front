@@ -28,7 +28,7 @@
 
 <body>
     <header>
-        <nav>
+        <nav id="nav_principal">
             <div>
                 <ul class="navegador_izquierda">
                     <div>
@@ -41,18 +41,19 @@
                             <li><a href="#">Organizador de eventos</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="registrar_evento.html">Crear evento</a>
+                    </li>
                 </ul>
             </div>
             <div>
                 <ul class="navegador_derecha">
-                    <li>
-                        <a href=""></a>
-                    </li>
                     <li><a href="visualizar_perfil.html"><i class="far fa-user"></i></a></li>
                     <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="#"><i class="far fa-bell"></i></a></li>
                     <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
-                    <li> <a href="#">Cerrar Sesión</a></li>
+                    <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
+                    <li> <a href="" id="btn_cerrar_sesion">Cerrar sesión</a></li>
                 </ul>
             </div>
         </nav>
@@ -62,15 +63,15 @@
         <aside>
             <h2>Ajustes de Administrador</h2>
             <ul>
-                <a href="listar_perfiles.html">
-                    <li>Usuarios</li>
-                </a>
                 <a href="#">
                     <li>Administrador</li>
                 </a>
+                <a href="listar_perfiles.html">
+                    <li>Usuarios</li>
+                </a>
                 </li>
                 <a href="tipos_de_evento.html">
-                    <li>Categorias</li>
+                    <li>Categorías</li>
                 </a>
                 <a>
                     <li>Recintos</a>
@@ -83,8 +84,8 @@
                     </a>
                 </ul>
                 </li>
-                <a href="listar_impuestos.html">
-                    <li>Impuestos</li>
+                <a>
+                    <li>Impuestos
                 </a>
                 <ul>
                     <a href="registrar_impuestos.html">
@@ -112,15 +113,7 @@
                 <a href="mantenimiento_avatar.html">
                     <li>Avatares</li>
                 </a>
-                <a href="#">
-                    <li>Reservas</li>
-                </a>
-                <a href="#">
-                    <li>Reportes</li>
-                </a>
-                <a href="#">
-                    <li>Comentarios</li>
-                </a>
+
             </ul>
         </aside>
 
@@ -153,6 +146,7 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/controlador_general.js"></script>
     <script src="js/descuento_servicio.js"></script>
     <script src="js/registrar_descuento_controlador.js"></script>
 

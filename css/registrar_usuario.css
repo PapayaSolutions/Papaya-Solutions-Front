@@ -83,3 +83,12 @@
     border: 1px solid #f7882f;
     box-sizing: border-box;
 }
+
+.categoria_evento {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr;
+}
+
+.categoria_evento label {
+    padding: 2px;
+}

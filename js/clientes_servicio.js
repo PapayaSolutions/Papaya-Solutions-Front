@@ -43,7 +43,7 @@ let listar_avatares = async() => {
     })
 
     .then(function(res) {
-            lista_avatares = (res.data.URL)
+            lista_avatares = (res.data.avatares)
         })
         .catch(function(error) {
             console.log(error);
@@ -71,6 +71,22 @@ let listar_clientes = async() => {
         });
     return lista_clientes;
 }
+let listar_tipos_de_evento = async() => {
+    let lista_tipo_de_evento;
+    await axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/listar_tipos_de_evento',
+            responseType: 'json'
+
+        })
+        .then(function(res) {
+            lista_tipo_de_evento = res.data.productos;
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    return lista_tipo_de_evento;
+};
 
 //--------------------------- CLOUDINARY WIDGET --------------------------------------------------------
 var myWidget1 = cloudinary.createUploadWidget({

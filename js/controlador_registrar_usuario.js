@@ -16,9 +16,11 @@ const input_direccion = document.querySelector('#direccion_cliente');
 const input_url_avatar = document.querySelector('#imagen_preview');
 const btn_registro = document.querySelector('#btn_registro');
 
-//dashboard de recintos
+
 const xbody = document.querySelector('#avatar_cliente');
-let lista_recintos;
+
+const tbody = document.querySelector('.categoria_evento');
+let lista_avatares;
 
 let llenar_avatares = async() => {
 
@@ -33,7 +35,7 @@ let llenar_avatares = async() => {
         let selecionar = document.createElement('option');
 
 
-        selecionar.value = lista_avatares[i]['URL'];
+        selecionar.value = lista_avatares[i]['nombre'];
         selecionar.innerText = lista_avatares[i]['nombre'];
 
         xbody.appendChild(selecionar);
@@ -43,6 +45,35 @@ let llenar_avatares = async() => {
 };
 
 llenar_avatares();
+
+
+//listar tipos de evento
+let lista_tipo_de_evento;
+
+let llenar_tabla = async() => {
+
+    lista_tipo_de_evento = await listar_tipos_de_evento();
+    tbody.innerHTML = '';
+
+    for (let i = 0; i < lista_tipo_de_evento.length; i++) {
+
+        let labe = document.createElement('label');
+        let selecionar = document.createElement('input');
+
+        selecionar.type = "checkbox";
+        selecionar.name = lista_tipo_de_evento[i]['nombre'];
+        selecionar.value = lista_tipo_de_evento[i]['nombre'];
+
+        labe.for = lista_tipo_de_evento[i]['nombre'];
+        labe.innerText = lista_tipo_de_evento[i]['nombre'];
+
+        tbody.appendChild(labe);
+        tbody.appendChild(selecionar);
+
+
+    }
+};
+llenar_tabla();
 
 // Validación de datos
 let validar = () => {

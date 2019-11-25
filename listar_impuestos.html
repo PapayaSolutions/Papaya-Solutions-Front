@@ -18,7 +18,7 @@
 
 <body>
     <header>
-        <nav>
+        <nav id="nav_principal">
             <div>
                 <ul class="navegador_izquierda">
                     <div>
@@ -31,18 +31,19 @@
                             <li><a href="#">Organizador de eventos</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="registrar_evento.html">Crear evento</a>
+                    </li>
                 </ul>
             </div>
             <div>
                 <ul class="navegador_derecha">
-                    <li>
-                        <a href=""></a>
-                    </li>
                     <li><a href="visualizar_perfil.html"><i class="far fa-user"></i></a></li>
                     <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="#"><i class="far fa-bell"></i></a></li>
                     <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
-                    <li> <a href="iniciar_sesion.html">Iniciar Sesión</a></li>
+                    <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
+                    <li> <a href="" id="btn_cerrar_sesion">Cerrar sesión</a></li>
                 </ul>
             </div>
         </nav>
@@ -128,6 +129,8 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+    <script src="js/controlador_general.js"></script>
     <script src="js/impuestos_servicios.js"></script>
     <script src="js/controlador_listar_impuestos.js"></script>
 

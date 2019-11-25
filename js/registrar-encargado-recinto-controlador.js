@@ -703,6 +703,8 @@ let obtener_datos = () => {
 
         registrar_encrgado_recinto(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado)
 
+        document.getElementById("form_enc_rec").reset();
+
     };
 };
 

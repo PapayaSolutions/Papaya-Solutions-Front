@@ -5,9 +5,9 @@ const input_porcentaje = document.querySelector('#num_porcentaje');
 const input_descripcion = document.querySelector('#txt_descripcion');
 const btn_registro = document.querySelector('#btn_registro');
 
-input_nombre.innerHTML = '';
-input_porcentaje.innerHTML = '';
-input_descripcion.innerHTML = '';
+input_nombre.value = '';
+input_porcentaje.value = '';
+input_descripcion.value = '';
 
 // Validación de datos
 let validar = () => {
@@ -61,7 +61,9 @@ let obtener_datos = () => {
             text: 'El impuesto ha sido almacenado',
             confirmButtonText: 'Entendido'
         }).then(function() {
-
+            input_nombre.value = '';
+            input_porcentaje.value = '';
+            input_descripcion.value = '';
             location.reload();
         });
 

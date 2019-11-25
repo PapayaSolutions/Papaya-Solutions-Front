@@ -17,6 +17,11 @@
     display: grid;
 }
 
+#main_registro {
+    width: 600px;
+    margin: 30px 0px 30px 30px;
+}
+
 #txt_descripcion {
     min-height: 50px;
     resize: vertical;
@@ -25,6 +30,12 @@
 #num_porcentaje {
     padding: 5px 0px 5px 0px;
     height: 30px;
+}
+
+#num_porcentaje::-webkit-inner-spin-button,
+#num_porcentaje::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    opacity: 0;
 }
 
 #bnr_input {
@@ -89,4 +100,8 @@
 
 .nombre {
     text-align: left;
+}
+
+.formulario label {
+    font-size: 100%;
 }

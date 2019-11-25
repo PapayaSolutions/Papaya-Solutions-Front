@@ -52,12 +52,18 @@
         <div>
             <div class="formulario">
                 <div class="ilustracion">
-                    <div class="avatar"></div>
+                    <!--Cloudinary -->
+                    <div class="avatar" id="poner_avatar">
+                        <img src="img/default-avatar.png" alt="Seleccionar Imagen" id="imagen_preview">
+                    </div>
+                    <button type="button" class="button" id="btn_agregar_imagen">Agregar</button>
+                    <!--Cloudinary end-->
+
                     <div>
-                        <label for="avatar_cliente">Avatar</label>
-                        <select id="avatar_cliente">
+                        <label for="avatar_cliente"></label>
+                        <select id="avatar_cliente" onchange="myFunction('avatar_cliente')">
                                 <!--options-->
-                            </select>
+                        </select>
                     </div>
                     <div class="btn_container">
                         <button type="button" class="btn_imagen" id="avatar">Cargar imagen</button>
@@ -156,9 +162,16 @@
                             </div>
                         </div>
                     </div>
+
                     <div>
                         <label for="direccion_cliente">Dirección exacta</label>
                         <textarea id="direccion_cliente"></textarea>
+                    </div>
+                    <div>
+                        <label for="categoria_evento">Elegí que tipo de eventos te gustan más:</label>
+                        <div class="categoria_evento" name="categoria_evento"></div>
+
+                        <!--opctions-->
                     </div>
                     <div class="btn_container">
                         <button type="button" class="btn" id="btn_registro">Registrarse</button>
@@ -237,6 +250,12 @@
             <p>® Míshka™ &nbsp;&nbsp;&nbsp; Diseño por Papaya Solutions. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"></script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

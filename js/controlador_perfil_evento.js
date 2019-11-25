@@ -12,11 +12,14 @@ const cantidad = document.querySelector('#cantidad');
 const imagen = document.querySelector('#img_evento');
 const entradas = document.querySelector('#entradas');
 const descuentos = document.querySelector('#descuentos');
+const ticketes = document.querySelector('#cant_ticks');
 
 let id = localStorage.getItem('id_evento');
 let datos_evento;
 let datos_mapa;
-
+var lugar;
+let latitud;
+let longitud;
 let map;
 let marker;
 
@@ -28,11 +31,11 @@ let llenar_perfil = async() => {
     nombre.innerHTML = datos_evento[0]['nombre'];
     recinto.value = datos_evento[0]['recinto'];
     localStorage.setItem('id_recinto', recinto.value);
-
     precio.value = ('¢' + (datos_evento[0]['precio_entrada']));
     categoria.value = datos_evento[0]['categoria'];
     descripcion.value = datos_evento[0]['descripcion'];
     cantidad.value = datos_evento[0]['cantidad_maxima_usuario'];
+    ticketes.max = cantidad.value;
     entradas.value = datos_evento[0]['asistentes_esperados'];
 
     if (datos_evento[0]['descuentos'] != '') {
@@ -40,12 +43,11 @@ let llenar_perfil = async() => {
         let cabeza = tabla_desc_head.insertRow();
 
         let name = cabeza.insertCell();
-        let nombre = document.createElement('tr');
+        let nombre = document.createElement('th');
         nombre.innerHTML = 'Nombre';
         let porc = cabeza.insertCell();
-        let porcentaje = document.createElement('tr');
+        let porcentaje = document.createElement('th');
         porcentaje.innerHTML = 'Porcentaje';
-
         name.appendChild(nombre);
         porc.appendChild(porcentaje);
 
@@ -94,26 +96,28 @@ let llenar_perfil = async() => {
 };
 llenar_perfil();
 
-let lugar = localStorage.getItem('id_recinto');
 
-let llenar_mapa = async() => {
+
+let llena_mapa = async() => {
+    lugar = localStorage.getItem('id_recinto');
 
     datos_mapa = await obtener_recinto_nombre(lugar);
 
     localStorage.setItem('latitud', datos_mapa[0]['latitud']);
     localStorage.setItem('longitud', datos_mapa[0]['longitud']);
 
+};
 
-}
-
-llenar_mapa();
+llena_mapa();
 
 
 function initMap() {
+    latitud = parseFloat(localStorage.getItem('latitud'));
+    longitud = parseFloat(localStorage.getItem('longitud'));
 
     var myLatLng = {
-        lat: parseFloat(localStorage.getItem('latitud')),
-        lng: parseFloat(localStorage.getItem('longitud')),
+        lat: latitud,
+        lng: longitud,
     };
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -124,9 +128,7 @@ function initMap() {
     map.addListener('click', function(e) {
         placeMarkerAndPanTo(e.latLng, map);
     });
-
-
-}
+};
 
 function placeMarkerAndPanTo(latLng, map) {
 
@@ -145,4 +147,4 @@ function placeMarkerAndPanTo(latLng, map) {
     });
 
     map.panTo(latLng);
-}
+};

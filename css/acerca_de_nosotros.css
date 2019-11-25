@@ -286,10 +286,3 @@ hr {
     margin: 0 auto;
     width: 30%;
 }
-
-#contenedor_boton button:hover {
-    background: transparent;
-    color: #f7882f;
-    border: 0px solid #f7882f;
-    border-radius: 10rem;
-}

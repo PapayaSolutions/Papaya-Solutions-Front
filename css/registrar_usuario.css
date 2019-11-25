@@ -22,6 +22,28 @@
     width: 100%;
 }
 
+.avatar {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    top: 10px;
+    border: 1px solid #f7882f;
+}
+
+#imagen_preview {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+#btn_agregar_imagen {
+    width: 200px;
+    position: relative;
+    top: 20px;
+    left: 130px;
+}
+
 .formulario_registro {
     width: 100%;
 }
@@ -60,4 +82,13 @@
     color: #f7882f;
     border: 1px solid #f7882f;
     box-sizing: border-box;
+}
+
+.categoria_evento {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr;
+}
+
+.categoria_evento label {
+    padding: 2px;
 }

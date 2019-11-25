@@ -13,12 +13,14 @@ const input_canton = document.querySelector('#canton_cliente');
 const input_genero = document.querySelector('#genero_cliente');
 const input_distrito = document.querySelector('#distrito_cliente');
 const input_direccion = document.querySelector('#direccion_cliente');
-const input_url_avatar = document.querySelector('#url_avatar');
+const input_url_avatar = document.querySelector('#imagen_preview');
 const btn_registro = document.querySelector('#btn_registro');
 
-//dashboard de recintos
+
 const xbody = document.querySelector('#avatar_cliente');
-let lista_recintos;
+
+const tbody = document.querySelector('.categoria_evento');
+let lista_avatares;
 
 let llenar_avatares = async() => {
 
@@ -39,9 +41,47 @@ let llenar_avatares = async() => {
         xbody.appendChild(selecionar);
 
     }
+    localStorage.setItem('nombre', input_p_nombre);
 };
 
 llenar_avatares();
+
+
+//listar tipos de evento
+let lista_tipo_de_evento;
+
+let llenar_tabla = async() => {
+
+    lista_tipo_de_evento = await listar_tipos_de_evento();
+    tbody.innerHTML = '';
+
+    for (let i = 0; i < lista_tipo_de_evento.length; i++) {
+
+        let labe = document.createElement('label');
+        let selecionar = document.createElement('input');
+
+        selecionar.type = "checkbox";
+        selecionar.name = lista_tipo_de_evento[i]['nombre'];
+        selecionar.value = lista_tipo_de_evento[i]['nombre'];
+
+        labe.for = lista_tipo_de_evento[i]['nombre'];
+        labe.innerText = lista_tipo_de_evento[i]['nombre'];
+
+        tbody.appendChild(labe);
+        tbody.appendChild(selecionar);
+
+
+    }
+};
+llenar_tabla();
+const contenedor_img = document.querySelector('#poner_avatar');
+
+function myFunction() {
+
+    var x = document.getElementById("avatar_cliente").value;
+    document.querySelector('#imagen_preview').src = x;
+
+};
 
 // Validación de datos
 let validar = () => {
@@ -720,7 +760,7 @@ let obtener_datos = () => {
     let genero = input_genero.value;
     let distrito = input_distrito.value;
     let direccion = input_direccion.value;
-    let url_avatar = input - url_avatar.value;
+    let url_avatar = input_url_avatar.src;
 
     //si hay error, entra al if. Si no hay error entra al else
     if (validar()) {

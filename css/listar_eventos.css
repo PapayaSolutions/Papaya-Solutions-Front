@@ -27,13 +27,6 @@ nav a {
     min-width: 200px;
 }
 
-#cero_section input {
-    width: 300px;
-    height: 30px;
-    min-width: 50px;
-    border-radius: 5px 5px 5px 5px;
-}
-
 .portada_container {
     width: 40%;
     min-width: 150px;
@@ -78,15 +71,6 @@ nav a {
     color: #292c2a;
 }
 
-#container_nav div select:hover {
-    background-color: #f7c331;
-    border: 1px #292c2a solid;
-    color: #292c2a;
-    border-radius: 42px 42px 42px 42px;
-    -moz-border-radius: 42px 42px 42px 42px;
-    -webkit-border-radius: 42px 42px 42px 42px;
-}
-
 #primera_section {
     background-color: #f7c331;
 }
@@ -95,9 +79,11 @@ nav a {
     background-color: #f7c331;
     border: 1px #ececec solid;
     color: #ececec;
+    font-size: 16px;
     border-radius: 42px 42px 42px 42px;
     -moz-border-radius: 42px 42px 42px 42px;
     -webkit-border-radius: 42px 42px 42px 42px;
+    margin-top: 2px;
 }
 
 .move {
@@ -214,4 +200,61 @@ nav a {
     color: #f7882f;
     border: 1px solid #f7882f;
     box-sizing: border-box;
+}
+
+#calendario {
+    background-color: #f7c331;
+    color: #ececec;
+}
+
+#calendario {
+    background-color: #f7c331;
+    color: #ececec;
+}
+
+#txt_search {
+    outline: none;
+    display: block;
+    width: 40%;
+    padding: 5px 0px 5px 0px;
+    border: none;
+    border-bottom: 1px solid #f7c331;
+    background: transparent;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    height: 30px;
+    color: #292c2a;
+    resize: vertical;
+    height: 35px;
+    width: 250px;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-left: 30px;
+    color: #f7882f;
+}
+
+#search_icon {
+    position: relative;
+    left: 10px;
+    top: 24px;
+    color: #f7c331;
+}
+
+#bnr_input {
+    height: 35px;
+    width: 250px;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-left: 30px;
+    color: #f7c331;
+}
+
+#txt_search::placeholder {
+    color: #f7c331;
+    position: relative;
+}
+
+.alinear_nav {
+    margin-top: 3px;
 }

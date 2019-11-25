@@ -12,6 +12,7 @@ html {
 
 header {
     width: 100%;
+    min-width: 1050px;
     height: 210px;
     border-bottom: #f7c331 solid 5px;
     margin-bottom: 20px;
@@ -19,7 +20,10 @@ header {
 
 #banner_grid {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 240px 1fr 300px;
+    min-width: 1000px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .banner_left {
@@ -29,7 +33,8 @@ header {
 }
 
 .banner_right {
-    margin: auto;
+    margin: auto 20px;
+    width: 260px;
 }
 
 .img_container {
@@ -38,9 +43,7 @@ header {
 
 .img_container img {
     background-color: #292c2a;
-    max-width: 100%;
     width: 250px;
-    min-width: 50px;
     height: 160px;
     border: #f7c331 solid 2px;
     border-radius: 10px 10px 10px 10px;
@@ -68,21 +71,25 @@ header {
 
 #main_grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    min-width: 900px;
+    width: 80%;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-gap: 10px 10px;
     position: relative;
+    border-bottom: 2px dotted #f7882f;
 }
 
 .portada_container {
-    width: 40%;
-    min-width: 150px;
+    width: 200px;
     height: 150px;
-    margin: auto;
+    margin: auto 20px;
 }
 
 .portada_container img {
-    width: 100%;
+    height: 150px;
+    width: auto;
 }
 
 #editar a {
@@ -111,6 +118,7 @@ header {
     grid-row-end: 4;
     border-radius: 10px;
     padding: 20px;
+    margin: 0% auto;
 }
 
 
@@ -122,6 +130,7 @@ header {
     color: #f7882f;
     font-size: 16px;
     min-width: 200px;
+    margin: auto;
 }
 
 
@@ -172,17 +181,18 @@ header {
 
 .item3 {
     grid-column-start: 4;
-    grid-column-end: 5;
+    grid-column-end: 4;
     grid-row-start: 1;
-    grid-row-end: 4;
+    grid-row-end: 3;
     border-radius: 5px;
+    margin: auto;
 }
 
 .item3 img {
     overflow: hidden;
     object-fit: cover;
-    max-width: 300px;
-    height: auto;
+    width: 250px;
+    height: 250px;
 }
 
 
@@ -190,7 +200,7 @@ header {
 
 .item4 {
     grid-column-start: 4;
-    grid-column-end: 5;
+    grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 4;
     position: absolute;
@@ -203,22 +213,63 @@ header {
 
 .item5 {
     grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    max-width: 300px;
-    margin: 0 auto;
-    z-index: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width: 300px;
 }
 
 .item5 button {
-    margin: 0 auto;
+    margin: 20px auto 0px;
+    width: 300px;
 }
 
 .item5 h3 {
     font-size: 16px;
     text-align: center;
+    display: inline-block;
+    margin: auto;
+}
+
+input {
+    border: none;
+    background: transparent;
+    width: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #f7882f;
+    margin-bottom: 15px;
     margin-top: 5px;
+    margin-left: 50px;
+    height: 30px;
+    text-align: center;
+    margin: auto;
+}
+
+#nmbr_mask {
+    position: relative;
+    margin-right: -5px;
+}
+
+#nmbr_mask:after {
+    content: "";
+    width: 70%;
+    height: 35px;
+    left: 0;
+    position: absolute;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+
+/*
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: auto;
 }
 
 
@@ -226,13 +277,12 @@ header {
 
 #calificar {
     display: grid;
-    width: 900px;
+    width: 840px;
     margin: auto;
     margin-top: 40px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 10px 10px;
-    border-top: 2px dotted #f7882f;
 }
 
 #sct_calificacion {
@@ -253,6 +303,7 @@ header {
     color: #f7882f;
     position: absolute;
     padding-left: 20px;
+    font-weight: 900;
     top: 20px;
     left: 50px;
     margin: auto;
@@ -265,7 +316,7 @@ header {
     unicode-bidi: bidi-override;
     direction: rtl;
     font-size: 40px;
-    color: #f7c331;
+    color: #292c2a;
     position: relative;
     top: 50px;
     left: 35px;
@@ -346,9 +397,8 @@ header {
 }
 
 #fecha_evento {
-    margin: auto;
     margin-top: 10px;
-    width: 100%;
+    width: 475px;
     margin-bottom: 30px;
 }
 
@@ -361,8 +411,12 @@ header {
 }
 
 #fecha_evento thead th {
-    min-width: 100px;
+    min-width: 50px;
     padding-left: 10px;
+}
+
+#tbl_hora {
+    width: 50px;
 }
 
 #fecha_evento tbody {
@@ -374,7 +428,7 @@ header {
 }
 
 #fecha_evento tbody td {
-    min-width: 100px;
+    min-width: 50px;
     padding: 10px;
 }
 
@@ -386,9 +440,8 @@ header {
 /*descuentos*/
 
 #descuentos_evento {
-    margin-top: 10px;
-    width: 50%;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    min-width: 300px;
 }
 
 #descuentos_evento thead {
@@ -396,11 +449,10 @@ header {
     font-size: 20px;
     color: #f7882f;
     border-bottom: #f7882f 2px solid;
-    text-align: left;
 }
 
 #descuentos_evento thead th {
-    min-width: 100px;
+    min-width: 50px;
     padding-left: 10px;
 }
 
@@ -424,4 +476,6 @@ header {
 #map {
     height: 300px;
     width: 300px;
+    border-radius: 10px;
+    border: 1px solid #f7c331;
 }

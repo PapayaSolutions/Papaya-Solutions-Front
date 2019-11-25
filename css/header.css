@@ -8,24 +8,11 @@
 
 header nav {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 450px;
+    column-gap: 45%;
     background-image: linear-gradient(to bottom right, #292c2a, #292c2a);
     border-bottom: 2px solid #f7882f;
     height: 36px;
-    min-width: 1050px;
-}
-
-.navegador_izquierda {
-    display: grid;
-    grid-template-columns: 10% 20% 20%;
-    margin-left: 15px;
-}
-
-.navegador_derecha {
-    display: grid;
-    grid-template-columns: 60% 5% 5% 5% 5% 120px;
-    text-decoration: none;
-    margin-right: 15px;
 }
 
 header nav a {
@@ -55,14 +42,34 @@ header ul li:hover>ul {
 
 header ul li {
     padding: 10px;
-    margin: auto;
 }
 
 header ul div {
     margin: auto;
 }
 
+.navegador_izquierda {
+    display: flex;
+    grid-template-columns: 10% 20% 20%;
+    margin-left: 15px;
+}
+
+.navegador_izquierda ul li {
+    float: left;
+}
+
 .navegador_izquierda div a img {
-    width: 30px;
+    float: left;
+    width: auto;
     height: 30px;
+    left: 20px;
+}
+
+.navegador_derecha {
+    display: flex;
+    margin-right: 15px;
+}
+
+.navegador_derecha ul li {
+    float: left;
 }

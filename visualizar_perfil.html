@@ -2,21 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Perfil cliente</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/visualizar_perfil.css">
-    <title>Visualizar Perfil</title>
+    <link rel="stylesheet" href="css/ver_perfil.css">
+
 </head>
 
 <body>
-    <!--nav-->
     <header>
         <nav>
             <div>
@@ -42,70 +39,72 @@
                     <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="#"><i class="far fa-bell"></i></a></li>
                     <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
-                    <li> <a href="#">Cerrar Sesión</a></li>
+                    <li> <a href="iniciar_sesion.html">Iniciar Sesión</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
     <main>
-        <!--Contenedor con la información básica, Nombre, apellido etc-->
-        <!--Además el contenedor tiene el avatar del usuario.-->
-        <div id="perfil_container">
-            <div class="informacion_basica">
-                <a href="#"><img src="img/avatar.jpg" alt="Avatar" ; width="125px" ; height="125px" ;></a>
-                <section>
-                    <div id="datos">
-                        <div>
-                            <div id="perfilNombre">
-                                <tr>Nombre</tr>
-                            </div>
-                            <div id="perfilCorreo">
-                                <tr>Correo</tr>
-                            </div>
-                            <div id="perfilNacimiento">
-                                <tr>Fecha nacimiento</tr>
-                            </div>
-                            <div id="perfilGenero">
-                                <tr>Genero</tr>
-                            </div>
-                            <div id="perfilDireccion">
-                                <tr>Dirección</tr>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
-                <div class="btn_container">
-                    <button type="button" class="btn">Editar perfil</button>
-                    <button type="button" class="btn">Actividad</button>
+        <div class="perfil">
+
+            <div class="visualizar">
+                <div class="imagen">
+                    <img src="img/avatar.jpg" alt="avatar" , height="125px" , width="125px" ;>
                 </div>
+
             </div>
-        </div>
-        <hr>
-        <!--Cards que muestran lass preferencias del usuario en cuanto a eventos-->
-        <div class="genero1">
-            <div>
-                <p>Uno</p>
-            </div>
-            <div>
-                <p>Dos</p>
-            </div>
-            <div>
-                <p>Tres</p>
-            </div>
-            <div>
-                <p>cuatro</p>
-            </div>
-            <div>
-                <p>cinco</p>
-            </div>
-            <div>
-                <p>seis</p>
+
+            <div class="ver_perfil">
+
+
+                <div class="visualizar">
+                    <table id="tbl_perfil">
+                        <div id="nombre">
+                        </div>
+                        <hr>
+
+                        <div>
+                            <p>Genero:
+                                <output id="genero"></output>
+                            </p>
+                        </div>
+                        <div>
+                            <p>Nacimiento:
+                                <output id="nacimiento"></output>
+                            </p>
+
+                        </div>
+                        <thead>
+                            <tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+
+                        <div>
+                            <p>N.Cédula:
+                                <output id="identificacion"></output>
+                            </p>
+                        </div>
+                        <div>
+                            <p>Correo:
+                                <output id="correo"></output>
+                            </p>
+                        </div>
+                        <div>
+                            <p>Dirección 1:
+                                <output id="direccion"></output>
+                            </p>
+                        </div>
+                    </table>
+                </div>
+
             </div>
         </div>
     </main>
-    <!--Footer-->
+
     <footer>
         <div id="socials_container">
             <div class="grid_socials">
@@ -132,7 +131,7 @@
                 <div>
                     <h4>INFORMACIÓN</h4>
                     <ul>
-                        <li><a href="landing_page.html">Qué es Míshka</a></li>
+                        <li><a href="landing_page.html">¿Qué es Míshka?</a></li>
                     </ul>
                 </div>
                 <div>
@@ -176,6 +175,8 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/clientes_servicio.js"></script>
+    <script src="js/controlador_perfil_cliente.js"></script>
+
 </body>
 
 </html>

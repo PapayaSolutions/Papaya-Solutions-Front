@@ -39,6 +39,7 @@ let llenar_avatares = async() => {
         xbody.appendChild(selecionar);
 
     }
+    localStorage.setItem('nombre', input_p_nombre);
 };
 
 llenar_avatares();

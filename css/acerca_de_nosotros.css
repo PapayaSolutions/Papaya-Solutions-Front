@@ -131,9 +131,13 @@ header nav {
 }
 
 .opciones div div {
-    background-color: #292c2a;
     height: 150px;
-    width: 70%;
+    width: 100%;
+}
+
+.mv {
+    height: 150px;
+    width: auto;
 }
 
 .opciones div h4 {
@@ -197,7 +201,6 @@ header nav {
 }
 
 .img_container {
-    background-color: #292c2a;
     height: 100px;
     width: 100%;
 }
@@ -234,7 +237,6 @@ hr {
 .contenedor_integrantes {
     width: 70%;
     margin: 15px auto;
-    background-color: #d6d3d3;
 }
 
 .contenedor_integrantes2 {
@@ -267,6 +269,7 @@ hr {
 
 .integrantes2 img {
     height: 200px;
+    width: 200px;
 }
 
 .integrantes2 p {

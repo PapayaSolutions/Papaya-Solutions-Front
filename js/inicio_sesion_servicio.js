@@ -10,6 +10,8 @@ let validar_credenciales = async(correo, contrasena) => {
             sessionStorage.setItem('conectado', res.success);
             sessionStorage.setItem('correo', res.data.clienteBD.correo_cliente);
             sessionStorage.setItem('tipo_usuario', res.data.clienteBD.tipo);
+            console.log('guardó');
+            window.location.href = 'listar_eventos.html';
         })
         .catch(function(error) {
             console.log(error);

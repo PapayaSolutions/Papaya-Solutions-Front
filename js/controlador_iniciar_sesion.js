@@ -15,9 +15,9 @@ let obtener_datos = () => {
 
     if (!errorBlancos) {
         ususarioAceptado = validar_credenciales(correo, contrasena);
-        if (ususarioAceptado) {
-            window.location.href = 'listar_eventos.html';
-        }
+        // if (ususarioAceptado) {
+        //     window.location.href = 'listar_eventos.html';
+        // }
     }
     if (validar()) {
         Swal.fire({

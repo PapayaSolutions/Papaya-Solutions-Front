@@ -35,7 +35,7 @@ let llenar_avatares = async() => {
         let selecionar = document.createElement('option');
 
 
-        selecionar.value = lista_avatares[i]['nombre'];
+        selecionar.value = lista_avatares[i]['URL'];
         selecionar.innerText = lista_avatares[i]['nombre'];
 
         xbody.appendChild(selecionar);
@@ -74,6 +74,14 @@ let llenar_tabla = async() => {
     }
 };
 llenar_tabla();
+const contenedor_img = document.querySelector('#poner_avatar');
+
+function myFunction() {
+
+    var x = document.getElementById("avatar_cliente").value;
+    document.querySelector('#imagen_preview').src = x;
+
+};
 
 // Validación de datos
 let validar = () => {

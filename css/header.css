@@ -9,7 +9,7 @@
 header nav {
     display: grid;
     grid-template-columns: 1fr 450px;
-    column-gap: 45%;
+    column-gap: 42%;
     background-image: linear-gradient(to bottom right, #292c2a, #292c2a);
     border-bottom: 2px solid #f7882f;
     height: 36px;

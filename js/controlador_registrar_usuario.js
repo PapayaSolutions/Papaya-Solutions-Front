@@ -766,7 +766,7 @@ let obtener_datos = () => {
     let genero = input_genero.value;
     let distrito = input_distrito.value;
     let direccion = input_direccion.value;
-    let url_avatar = input_url_avatar.src;
+
 
     //si hay error, entra al if. Si no hay error entra al else
     if (validar()) {
@@ -790,7 +790,7 @@ let obtener_datos = () => {
     } else {
         console.log(f_nacimiento)
         registrar_usuario(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,
-            f_nacimiento, genero, provincia, canton, distrito, direccion, url_avatar);
+            f_nacimiento, genero, provincia, canton, distrito, direccion);
 
         Swal.fire({
             type: 'success',

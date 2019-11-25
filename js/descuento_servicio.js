@@ -1,4 +1,4 @@
-let registrar_descuento = async(nombre, descipcion, porcentaje) => {
+let registrar_descuento = async(nombre, descripcion, porcentaje, estado) => {
     await axios({
             method: 'post',
             url: 'http://localhost:3000/api/descuentos',
@@ -6,8 +6,9 @@ let registrar_descuento = async(nombre, descipcion, porcentaje) => {
             //body
             data: {
                 nombre: nombre,
-                descipcion: descipcion,
+                descripcion: descripcion,
                 porcentaje: porcentaje,
+                estado: estado
             }
         })
         .then(function(res) {

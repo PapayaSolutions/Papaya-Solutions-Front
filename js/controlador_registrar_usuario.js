@@ -156,6 +156,12 @@ let validar = () => {
     } else {
         input_direccion.classList.remove('error');
     }
+    if (input_url_avatar.src == 'img/default-avatar.png') {
+        error = true;
+        input_url_avatar.classList.add('error');
+    } else {
+        input_url_avatar.classList.remove('error');
+    }
 
     return error;
 };
@@ -774,7 +780,7 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         })
-    } else if (calcular_edad(fecha_nacimiento)) {
+    } else if (calcular_edad(f_nacimiento)) {
         Swal.fire({
             type: 'warning',
             title: 'Verifique la edad',

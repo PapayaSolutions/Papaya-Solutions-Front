@@ -59,3 +59,7 @@ button:hover {
     border: 1px solid #f7882f;
     border-radius: 10rem;
 }
+
+.ocultar {
+    display: none;
+}

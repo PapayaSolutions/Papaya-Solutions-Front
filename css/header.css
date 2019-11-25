@@ -7,12 +7,10 @@
 */
 
 header nav {
-    display: grid;
-    grid-template-columns: 1fr 450px;
-    column-gap: 42%;
+    display: flex;
+    justify-content: space-between;
     background-image: linear-gradient(to bottom right, #292c2a, #292c2a);
     border-bottom: 2px solid #f7882f;
-    height: 36px;
 }
 
 header nav a {
@@ -30,6 +28,10 @@ header ul ul {
     position: absolute;
     visibility: hidden;
     display: block;
+}
+
+#nav_principal div {
+    margin: 0 5px;
 }
 
 header ul li:hover>ul {
@@ -50,8 +52,6 @@ header ul div {
 
 .navegador_izquierda {
     display: flex;
-    grid-template-columns: 10% 20% 20%;
-    margin-left: 15px;
 }
 
 .navegador_izquierda ul li {
@@ -67,7 +67,6 @@ header ul div {
 
 .navegador_derecha {
     display: flex;
-    margin-right: 15px;
 }
 
 .navegador_derecha ul li {

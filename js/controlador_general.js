@@ -1,7 +1,10 @@
 'use strict';
 
-const nav = document.querySelectorAll('#nav_principal a');
-const no_li = document.querySelectorAll('#nav_principal li')
+const nav = document.querySelectorAll('.navegador_izquierda li');
+
+
+const no_li = document.querySelectorAll('.navegador_derecha li')
+
 const btn_cerrar_sesion = document.querySelector('#btn_cerrar_sesion')
 
 let conectado = sessionStorage.getItem('conectado');
@@ -14,20 +17,25 @@ if (conectado) {
 
             break;
         case 'Cliente':
-            nav[2].classList.add('ocultar');
-            no_li[1].classList.add('ocultar')
-            nav[3].classList.add('ocultar');
+            nav[1].classList.add('ocultar');
             nav[4].classList.add('ocultar');
-            nav[5].classList.add('ocultar');
-            nav[9].classList.add('ocultar');
-            no_li[9].classList.add('ocultar')
-            nav[10].classList.add('ocultar');
+            no_li[4].classList.add('ocultar')
+            no_li[3].classList.add('ocultar')
+
 
             break;
         case 'Encargado':
+            nav[4].classList.add('ocultar');
+            no_li[0].classList.add('ocultar')
+            no_li[2].classList.add('ocultar')
+            no_li[3].classList.add('ocultar')
+            no_li[5].classList.add('ocultar')
 
             break;
         case 'Organizador':
+            nav[1].classList.add('ocultar');
+            no_li[4].classList.add('ocultar')
+            no_li[3].classList.add('ocultar')
 
             break;
         default:
@@ -35,11 +43,13 @@ if (conectado) {
             break;
     }
 } else {
-    nav[5].classList.add('ocultar');
-    nav[6].classList.add('ocultar');
-    nav[8].classList.add('ocultar');
-    nav[9].classList.add('ocultar');
-    nav[11].classList.add('ocultar');
+
+    nav[4].classList.add('ocultar');
+    no_li[0].classList.add('ocultar')
+    no_li[2].classList.add('ocultar')
+    no_li[3].classList.add('ocultar')
+    no_li[5].classList.add('ocultar')
+
 }
 
 function cerrar_sesion() {

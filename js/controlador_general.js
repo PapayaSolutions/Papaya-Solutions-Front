@@ -14,7 +14,7 @@ let tipo_usuario = sessionStorage.getItem('tipo_usuario');
 if (conectado) {
     switch (tipo_usuario) {
         case 'Admin':
-
+            no_li[4].classList.add('ocultar')
             break;
         case 'Cliente':
             nav[1].classList.add('ocultar');
@@ -54,7 +54,7 @@ if (conectado) {
 
 function cerrar_sesion() {
     sessionStorage.clear();
-    window.location.href = 'landing_page.html';
+    window.location.href = "index.html";
 }
 
 btn_cerrar_sesion.addEventListener('click', cerrar_sesion);

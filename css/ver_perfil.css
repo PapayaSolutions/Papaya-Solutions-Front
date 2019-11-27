@@ -1,19 +1,46 @@
-.fondo {
-    position: absolute;
-    height: 175px;
-    width: 650px;
-    background: #f7c331;
+#spacer {
+    height: 25px;
 }
 
-hr {
-    border: 1px solid #f7882f;
+.fondo {
+    display: grid;
+    column-gap: 25px;
+    height: 400px;
+    width: 550px;
+    background: #000000;
+    top: 80px;
+    border-radius: 20px;
+    border: 3px solid #f7c331;
+    opacity: 0.7;
 }
 
 .perfil {
     display: grid;
     grid-template-columns: 200px 500px;
     column-gap: 25px;
-    padding-top: 50px;
+    padding-top: 30px;
+}
+
+.imagen {
+    display: grid;
+    margin: auto;
+}
+
+#avat {
+    border-radius: 20px;
+}
+
+.visualizar {
+    display: grid;
+    padding-top: 30px;
+    padding-left: 40px;
+}
+
+.espacio_info {
+    padding: 2px;
+    display: grid;
+    grid-template-columns: 200px 200px 1fr;
+    text-align: left;
 }
 
 #nombre {
@@ -21,22 +48,74 @@ hr {
     font-size: 22px;
 }
 
-.btn {
+#correo {
+    color: #fff;
+    padding-top: 3px;
+}
+
+.visualizar hr {
+    position: relative;
     border: 1px solid #f7882f;
-    font-size: 16px;
-    left: 10%;
-    margin: auto;
+    right: 24%;
+    width: 50%;
+}
+
+hr {
+    position: relative;
+    border: 1px solid #f7c331;
+    right: 24%;
+    width: 50%;
+}
+
+.preferencias_fila_1 {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    padding-left: 50px;
+}
+
+.preferencias_fila_1 img {
+    border-radius: 20px;
+}
+
+.preferencias_fila_2 {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    padding-top: 30px;
+    padding-left: 50px
+}
+
+.preferencias_fila_2 img {
+    border-radius: 20px;
+}
+
+.btn {
+    position: absolute;
+    margin-left: 27%;
 }
 
 p {
-    color: #f7c331;
+    color: #f7882f;
     margin-right: 5%;
 }
 
 output {
-    color: rgb(43, 38, 38);
-    position: absolute;
-    left: 30%;
+    color: #fff;
     text-align: left;
     margin: auto;
+}
+
+#tbl_perfil tbody {
+    color: #fff;
+}
+
+.acomodo_ilustracion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 5px;
+    width: 5px;
+    background: #000000;
+    top: 80px;
+    border-radius: 20px;
+    border: 3px solid #f7c331;
+    opacity: 0.7;
 }

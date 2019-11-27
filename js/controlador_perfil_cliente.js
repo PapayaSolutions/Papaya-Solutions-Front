@@ -20,27 +20,17 @@ let llenar_tabla = async() => {
 
     nombre.innerHTML = (lista_clientes[0]['p_nombre'] + ' ' + lista_clientes[0]['s_nombre'] + ' ' + lista_clientes[0]['p_apellido'] + ' ' + lista_clientes[0]['s_apellido']);
     genero.innerHTML = lista_clientes[0]['genero'];
-    fila.insertCell().innerHTML = ('Dirección 2:' + ' ' + lista_clientes[0]['provincia'] + ' ' + lista_clientes[0]['canton'] + ' ' + lista_clientes[0]['distrito'] + ' ');
+    fila.insertCell().innerHTML = (lista_clientes[0]['provincia'] + ', ' + lista_clientes[0]['canton'] + ', ' + lista_clientes[0]['distrito'] + '.');
     direccion.innerHTML = lista_clientes[0]['direccion'];
     identificacion.innerHTML = lista_clientes[0]['identificacion'];
-    correo_cliente.innerHTML = lista_clientes[0]['correo_cliente'];
+    correo_cliente.innerHTML = lista_clientes[0]['correo'];
     nacimiento.innerHTML = lista_clientes[0]['f_nacimiento'];
-
-    let perfil = fila.insertCell();
-    let boton = document.createElement('button');
-    boton.innerText = 'Editar perfil';
-    boton.classList.add('btn');
-    boton.addEventListener('click', function() {
-        window.location.href = 'visualizar_perfil.html';
-    });
-    perfil.appendChild(boton);
 
     localStorage.setItem('id_cliente', JSON.stringify(lista_clientes));
 
     JSON.parse(localStorage.getItem('id_cliente'));
 
 };
-
 llenar_tabla();
 
 

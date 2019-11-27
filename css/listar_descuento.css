@@ -6,6 +6,14 @@
     display: grid;
 }
 
+#spacer {
+    height: 50px;
+}
+
+h1 {
+    padding-left: 60px;
+}
+
 #txt_descripcion {
     min-height: 50px;
     resize: vertical;
@@ -32,9 +40,14 @@
 
 #search_icon {
     position: relative;
-    left: 10px;
-    top: 23px;
+    left: 60px;
+    top: 10px;
     color: #f7892f67;
+}
+
+#search {
+    display: grid;
+    grid-template-columns: 1px 1fr 140px;
 }
 
 #tbl_descuento {

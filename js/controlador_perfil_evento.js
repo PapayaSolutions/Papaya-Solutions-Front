@@ -11,6 +11,7 @@ const descripcion = document.querySelector('#descripcion_evento');
 const cantidad = document.querySelector('#cantidad');
 const imagen = document.querySelector('#img_evento');
 const entradas = document.querySelector('#entradas');
+const disponibles = document.querySelector('#disponibles');
 const descuentos = document.querySelector('#descuentos');
 const ticketes = document.querySelector('#cant_ticks');
 
@@ -37,6 +38,8 @@ let llenar_perfil = async() => {
     cantidad.value = datos_evento[0]['cantidad_maxima_usuario'];
     ticketes.max = cantidad.value;
     entradas.value = datos_evento[0]['asistentes_esperados'];
+    disponibles.value = datos_evento[0]['cantidad_entradas_restante'];
+
 
     if (datos_evento[0]['descuentos'] != '') {
 
@@ -44,7 +47,7 @@ let llenar_perfil = async() => {
 
         let name = cabeza.insertCell();
         let nombre = document.createElement('th');
-        nombre.innerHTML = 'Nombre';
+        nombre.innerHTML = 'Descuento';
         let porc = cabeza.insertCell();
         let porcentaje = document.createElement('th');
         porcentaje.innerHTML = 'Porcentaje';

@@ -48,7 +48,7 @@ let obtener_datos = () => {
     let nombre = input_nombre.value;
     let descripcion = textarea_descripcion.value;
     let porcentaje = input_porcentaje.value;
-    let estado = 'activo';
+    let estado = 'Activo';
 
     //si hay error, entra al if. Si no hay error entra al else
     if (validar()) {

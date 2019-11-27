@@ -119,27 +119,37 @@
 
         <section>
             <h1>Registro de descuentos</h1>
-            <div class="registrar_descuento">
 
-                <div id="descuento">
-                    <div id="datos">
+            <form id="formulario_prin">
 
-                        <label for="datos">Nombre del descuento</label>
-                        <input type="string" id="nombre" />
-                    </div>
-                    <div id="datos">
-                        <label for="datos">Descripción</label>
-                        <textarea name="" id="descripcion" cols="30" rows="10"></textarea>
-                    </div>
-                    <div id="datos">
-                        <label for="datos">Porcentaje de descuento</label>
-                        <input type="string" id="porcentaje" />
-                    </div>
-                    <div class="btn_container">
-                        <button type="button" class="btn" id="btn_registro">Registrar</button>
+                <div class="registrar_descuento">
+
+                    <div id="descuento">
+                        <div id="datos">
+
+                            <label for="datos">Nombre del descuento</label>
+                            <input type="string" id="nombre" />
+                        </div>
+                        <div id="datos">
+                            <label for="datos">Descripción</label>
+                            <textarea name="" id="descripcion" cols="30" rows="10"></textarea>
+                        </div>
+                        <div id="datos">
+                            <label for="datos">Porcentaje de descuento</label>
+                            <input type="number" id="porcentaje" />
+                        </div>
+                        <div class="btn_container">
+                            <button type="button" class="btn" id="btn_registro">Registrar</button>
+                            <a href="listar_descuento.html">
+
+                                <button type="button" class="btn"> Listar descuentos</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+            </form>
+
         </section>
     </main>
 

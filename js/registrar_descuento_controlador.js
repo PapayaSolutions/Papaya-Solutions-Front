@@ -55,8 +55,8 @@ let obtener_datos = () => {
 
         Swal.fire({
             type: 'warning',
-            title: 'Espera',
-            text: 'El impuesto no registrado, revisa los campos',
+            title: 'Verifique los campos!',
+            text: 'Hay espacios que deben ser llenados!',
             confirmButtonText: 'Entendido'
 
         })
@@ -75,6 +75,8 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         });
+
+        document.getElementById("formulario_prin").reset();
     }
 };
 

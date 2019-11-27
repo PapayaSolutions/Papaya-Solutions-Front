@@ -794,7 +794,7 @@ let obtener_datos = () => {
 
         Swal.fire({
             type: 'success',
-            title: 'Registrado',
+            title: 'Registrado!',
             animation: true,
             text: 'Te enviaremos un correo electrónico con tus datos de acceso',
             confirmButtonText: 'Entendido',
@@ -802,6 +802,8 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         })
+
+        document.getElementById("formulario_principal").reset();
     }
 };
 

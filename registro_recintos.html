@@ -123,129 +123,135 @@
                     <div class="spacer_h1"></div>
                     <form id="form_rec">
 
-
-
-                        <div>
-                            <label for="txt_nombre_recinto">Nombre</label>
-                            <input id="txt_nombre_recinto" type="text" placeholder="Nombre">
-                        </div>
-
                         <div class="two_collumn_form">
 
+                            <!-- Primera columna -->
                             <div>
-                                <label for="txt_asientos_accesibilidad">Asientos accesibilidad</label>
-                                <input id="txt_asientos_accesibilidad" type="number">
-                            </div>
-
-                            <div>
-                                <label for="txt_asientos_tradicionales">Asientos tradicionales</label>
-                                <input id="txt_asientos_tradicionales" type="number">
-                            </div>
-
-                        </div>
 
 
-                        <div class="three_collumn_form">
-
-                            <div>
-                                <label for="txt_provincia">Provincia</label>
-                                <select id="txt_provincia" onchange="popular_cantones('txt_provincia', 'txt_canton')">
-                                            <option value="" disabled selected hidden>-</option>
-                                            <option value="San José">San José</option>
-                                            <option value="Alajuela">Alajuela</option>
-                                            <option value="Cartago">Cartago</option>
-                                            <option value="Heredia">Heredia</option>
-                                            <option value="Guanacaste">Guanacaste</option>
-                                            <option value="Puntarenas">Puntarenas</option>
-                                            <option value="Limón">Limón</option>
-                                        </select>
-                            </div>
-
-                            <div>
-                                <label for="txt_canton">Cantón</label>
-                                <select id="txt_canton" onchange="popular_distritos('txt_provincia', 'txt_canton', 'txt_distrito')">
-                                    </select>
-                            </div>
-
-                            <div>
-                                <label for="txt_distrito">Distrito</label>
-                                <select id="txt_distrito">
-                                        </select>
-                            </div>
-
-                        </div>
-
-
-                        <div>
-                            <label for="txt_direccion">Dirección exacta</label>
-                            <textarea id="txt_direccion"></textarea>
-                        </div>
-
-
-                        <div class="two_collumn_form">
-
-                            <div id="map"></div>
-
-                            <!--    <div>
-
-                                <div class="avatar"></div>
-
-                                <div class="btn_container">
-                                    <button type="button" class="btn_imagen" id="avatar">Cargar imagen</button>
+                                <div>
+                                    <label for="txt_nombre_recinto">Nombre</label>
+                                    <input id="txt_nombre_recinto" type="text" placeholder="Nombre del recinto">
                                 </div>
-                                <img src="" class="ilustracion">
 
-                         --></div>
+                                <div class="two_collumn_form">
+
+                                    <div>
+                                        <label for="txt_asientos_accesibilidad">Asientos accesibilidad</label>
+                                        <input id="txt_asientos_accesibilidad" type="number" placeholder="Asientos de ley 7600">
+                                    </div>
+
+                                    <div>
+                                        <label for="txt_asientos_tradicionales">Asientos tradicionales</label>
+                                        <input id="txt_asientos_tradicionales" type="number" placeholder="Asientos tradicionales">
+                                    </div>
+
+                                </div>
+
+
+                                <div class="three_collumn_form">
+
+                                    <div>
+                                        <label for="txt_provincia">Provincia</label>
+                                        <select id="txt_provincia" onchange="popular_cantones('txt_provincia', 'txt_canton')">
+                                                            <option value="" disabled selected hidden>-</option>
+                                                            <option value="San José">San José</option>
+                                                            <option value="Alajuela">Alajuela</option>
+                                                            <option value="Cartago">Cartago</option>
+                                                            <option value="Heredia">Heredia</option>
+                                                            <option value="Guanacaste">Guanacaste</option>
+                                                            <option value="Puntarenas">Puntarenas</option>
+                                                            <option value="Limón">Limón</option>
+                                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="txt_canton">Cantón</label>
+                                        <select id="txt_canton" onchange="popular_distritos('txt_provincia', 'txt_canton', 'txt_distrito')">
+                                                    </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="txt_distrito">Distrito</label>
+                                        <select id="txt_distrito">
+                                                        </select>
+                                    </div>
+
+                                </div>
+
+
+                                <div>
+                                    <label for="txt_direccion">Dirección exacta</label>
+                                    <textarea id="txt_direccion" placeholder="Dirección exacta del recinto"></textarea>
+                                </div>
+                            </div>
+
+
+                            <!-- Segunda columna -->
+                            <div>
+
+
+                                <div id="map"></div>
+
+                                <div class="two_collumn_form">
+
+                                    <div>
+                                        <label for="txt_latitud">Latitud</label>
+                                        <input id="txt_latitud" type="text">
+                                    </div>
+
+                                    <div>
+                                        <label for="txt_longitud">Latitud</label>
+                                        <input id="txt_longitud" type="text">
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                            <!-- Fin del las 2 columnas-->
+                        </div>
+
 
 
                 </div>
 
-
-                <div class="two_collumn_form">
-
-
-                    <div>
-                        <label for="txt_latitud">Latitud</label>
-                        <input id="txt_latitud" type="text">
-                    </div>
-
-                    <div>
-                        <label for="txt_longitud">Latitud</label>
-                        <input id="txt_longitud" type="text">
-                    </div>
+                <div class="btn_container">
+                    <button type="button" class="btn" id="btn_registrar">Registrarse</button>
 
 
+                    <a href="listar_recintos.html">
+
+                        <button type="button" class="btn"> Listar recintos</button>
+                    </a>
                 </div>
-            </div>
-
-            <div class="btn_container">
-                <button type="button" class="btn" id="btn_registrar">Registrarse</button>
-            </div>
 
 
-            <!-- <div class="ilustracion">
+                <!-- <div class="ilustracion">
                         <div class="avatar"></div>
 
                         <div class="btn_container">
                             <button type="button" class="btn_imagen" id="avatar">Cargar imagen</button>
                         </div>
                         <img src="" class="ilustracion">
-                </div>
-               
+                </div> -->
+
                 </form>
             </div>
             </div>
         </section>
     </main>
-    <!-- footer -->
 
-
-            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-            <script src="js/controlador_general.js"></script>
-            <script src="js/recintos_servicio.js"></script>
-            <script src="js/registrar_recintos_controlador.js"></script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDQnZ4l9vPokKOvdI5hv1CnCkp-9fi3QE&callback=initMap" async defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/controlador_general.js"></script>
+    <script src="js/recintos_servicio.js"></script>
+    <script src="js/registrar_recintos_controlador.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDQnZ4l9vPokKOvdI5hv1CnCkp-9fi3QE&callback=initMap" async defer></script>
 </body>
 
 </html>

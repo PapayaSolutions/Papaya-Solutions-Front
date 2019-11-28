@@ -1,7 +1,7 @@
 'use strict';
 
 let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo, pidentificacion,
-    pf_nacimiento, pgenero, pprovincia, pcanton, pdistrito, pdireccion, ) => {
+    pf_nacimiento, pgenero, pprovincia, pcanton, pdistrito, pdireccion, url_avatar) => {
     await axios({
             method: 'post',
             url: 'http://localhost:3000/api/registrar-cliente',
@@ -12,7 +12,7 @@ let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pc
                 s_nombre: ps_nombre,
                 p_apellido: pp_apellido,
                 s_apellido: ps_apellido,
-                correo: pcorreo,
+                correo_cliente: pcorreo,
                 identificacion: pidentificacion,
                 f_nacimiento: pf_nacimiento,
                 genero: pgenero,
@@ -20,6 +20,7 @@ let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pc
                 canton: pcanton,
                 distrito: pdistrito,
                 direccion: pdireccion,
+                url_avatar: url_avatar,
 
             }
         })
@@ -88,6 +89,23 @@ let listar_tipos_de_evento = async() => {
     return lista_tipo_de_evento;
 };
 
+let obtener_cliente_id = async(_id) => {
+    let lista_cliente;
+    await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/listar_cliente_id/${_id}`,
+            responseType: 'json',
+
+        }).then(function(res) {
+            lista_cliente = res.data.clientes;
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    return lista_cliente;
+};
+
 //--------------------------- CLOUDINARY WIDGET --------------------------------------------------------
 var myWidget1 = cloudinary.createUploadWidget({
     cloudName: 'pypsolutionscr',
@@ -96,16 +114,6 @@ var myWidget1 = cloudinary.createUploadWidget({
     if (!error && result && result.event === "success") {
         console.log('Done! Here is the image info: ', result.info);
         document.querySelector('#imagen_preview').src = result.info.secure_url;
-
-
-        Swal.fire({
-            type: 'success',
-            title: 'Registro realizado con exito',
-            text: 'El Avatar ha sido almacenado',
-            confirmButtonText: 'Entendido'
-        }).then(function() {
-            location.reload();
-        });
 
     }
 

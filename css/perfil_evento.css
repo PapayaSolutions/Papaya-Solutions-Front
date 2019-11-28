@@ -21,6 +21,10 @@ header {
     margin: 3px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .img_container img {
     background-color: #292c2a;
     width: 300px;
@@ -79,6 +83,7 @@ header {
     grid-row-end: 3;
     border-radius: 10px;
     padding: 20px;
+    padding-bottom: 40px;
     margin: 0% auto;
 }
 
@@ -168,6 +173,7 @@ output {
     margin: auto;
     bottom: 40px;
     right: 15px;
+    z-index: 1;
 }
 
 .item5 button {
@@ -195,6 +201,19 @@ output {
     grid-row-end: 6;
     margin: auto;
     margin-top: 10px;
+}
+
+.item7 {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    height: 40px;
+    width: 365px;
+    display: inline-block;
+    position: relative;
+    margin: auto;
+    bottom: 110px;
 }
 
 input {
@@ -247,33 +266,33 @@ input[type=number]::-webkit-outer-spin-button {
     display: grid;
     width: 840px;
     margin: auto;
-    margin-top: 40px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 10px 10px;
+    position: absolute;
 }
 
 #sct_calificacion {
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 4;
     width: 300px;
     height: 100px;
+    margin: auto;
     position: relative;
     border-radius: 10px;
-    margin: auto;
     margin-top: 20px;
 }
 
 #sct_calificacion h1 {
-    font-size: 22px;
+    font-size: 20px;
     color: #f7882f;
     position: absolute;
     padding-left: 20px;
     font-weight: 900;
-    top: 20px;
-    left: 50px;
+    top: 60px;
+    left: 15px;
     margin: auto;
 }
 
@@ -287,7 +306,7 @@ input[type=number]::-webkit-outer-spin-button {
     color: #292c2a;
     position: relative;
     top: 50px;
-    left: 35px;
+    left: 200px;
     width: 220px;
 }
 
@@ -310,9 +329,10 @@ input[type=number]::-webkit-outer-spin-button {
 #sct_coment {
     width: 550px;
     position: relative;
+    margin: auto;
     margin-top: 20px;
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 3;
 }
@@ -446,4 +466,8 @@ input[type=number]::-webkit-outer-spin-button {
     width: 300px;
     border-radius: 10px;
     border: 2px solid #f7c331;
+}
+
+.hidden {
+    visibility: hidden;
 }

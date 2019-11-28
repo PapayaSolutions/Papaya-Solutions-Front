@@ -16,7 +16,7 @@
     <title>Perfil de evento</title>
 </head>
 
-<body>
+<body id="body">
 
     <header>
         <nav id="nav_principal">
@@ -93,11 +93,13 @@
                 <div class="img_container">
                     <img src="img/placeholder.jpg" id='img_evento' alt="">
                 </div>
-                <div id="editar"><a href="">Editar evento</a></div>
+                <div id="editar" class="hidden"><a href="">Editar evento</a> </div>
+
+
 
 
             </div>
-            <div class="grid_item item5">
+            <div class="grid_item item5 hidden" id="item5">
                 <h3>Tiquetes</h3>
                 <span id="nmbr_mask"><input type="number"  id="cant_ticks" value="1" min="1" max="5" onkeydown="return false"></span>
                 <button type="button" class="btn">Agregar al carrito  <i class="fas fa-shopping-cart"></i></button>
@@ -106,7 +108,7 @@
             <div class="grid_item item6">
 
                 <label>Lugar:</label>
-                <output id="recinto_evento"></output>
+                <a href="perfil_recinto.html" id="link_recinto"> <output id="recinto_evento"></output></a>
                 <label>Precio:</label>
                 <output id="precio_evento"></output>
                 <label>Tipo:</label>
@@ -128,20 +130,21 @@
                     </tbody>
                 </table>
 
-
-
-
+            </div>
+            <div class="grid_item item7 hidden" id="item7">
+                <section id="sct_calificacion">
+                    <h1>Calificación: </h1>
+                    <div class="rating">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    </div>
+                </section>
 
             </div>
 
         </div>
-        <div id="calificar">
-            <section id="sct_calificacion">
-                <h1>Calificación: </h1>
-                <div class="rating">
-                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                </div>
-            </section>
+        <!--Grid-->
+        <div id="calificar" class="hidden">
+
 
             <section id="sct_coment">
                 <div id="coment_head">

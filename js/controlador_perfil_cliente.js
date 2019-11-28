@@ -24,10 +24,15 @@ let llenar_tabla = async() => {
     direccion.innerHTML = lista_clientes[0]['direccion'];
     identificacion.innerHTML = lista_clientes[0]['identificacion'];
     correo_cliente.innerHTML = lista_clientes[0]['correo'];
-    nacimiento.innerHTML = lista_clientes[0]['f_nacimiento'];
+
+    for (let i = 0; i < lista_clientes[0]['f_nacimiento'].length; i++) {
+        let date = new Date((lista_clientes[0]['f_nacimiento']));
+
+        nacimiento.innerHTML = (date.getDate() + '/ ' + date.getMonth() + '/ ' + date.getFullYear());
+    };
+
 
     localStorage.setItem('id_cliente', JSON.stringify(lista_clientes));
-
     JSON.parse(localStorage.getItem('id_cliente'));
 
 };

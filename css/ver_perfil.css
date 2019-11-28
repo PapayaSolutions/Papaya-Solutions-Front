@@ -2,86 +2,110 @@
     height: 25px;
 }
 
+#mini_spacer {
+    height: 10px;
+}
+
 .fondo {
     display: grid;
     column-gap: 25px;
     height: 400px;
-    width: 550px;
-    background: #000000;
     top: 80px;
-    border-radius: 20px;
-    border: 3px solid #f7c331;
-    opacity: 0.7;
 }
 
 .perfil {
     display: grid;
-    grid-template-columns: 200px 500px;
+    grid-template-columns: 200px 500px 1fr;
     column-gap: 25px;
     padding-top: 30px;
+    height: 300px;
+    margin: 0 auto;
 }
 
 .imagen {
     display: grid;
-    margin: auto;
+    height: 130px;
+    grid-template-columns: 225px 515px;
+}
+
+.imagen_avatar {
+    display: grid;
+    height: 130px;
+}
+
+#info_general {
+    display: grid;
+    grid-template-columns: 600px 200px;
+    height: 100px;
+    padding-top: 20px;
+}
+
+.info_tarjeta p {
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 #avat {
     border-radius: 20px;
 }
 
-.visualizar {
-    display: grid;
-    padding-top: 30px;
-    padding-left: 40px;
+#visual {
+    height: 40px;
+    width: 515px;
+    background: black;
 }
 
-.espacio_info {
-    padding: 2px;
+#nac_gen {
     display: grid;
-    grid-template-columns: 200px 200px 1fr;
-    text-align: left;
+    grid-template-columns: 270px 500px;
 }
 
 #nombre {
     color: #f7882f;
     font-size: 22px;
-}
-
-#correo {
-    color: #fff;
     padding-top: 3px;
 }
 
-.visualizar hr {
-    position: relative;
-    border: 1px solid #f7882f;
-    right: 24%;
-    width: 50%;
+#correo {
+    color: #000;
+    padding-top: 2px;
+}
+
+.visualizar {
+    display: grid;
+    grid-template-columns: 350px;
 }
 
 hr {
     position: relative;
     border: 1px solid #f7c331;
-    right: 24%;
-    width: 50%;
+}
+
+.acomodo {
+    margin: 0 auto;
 }
 
 .preferencias_fila_1 {
     display: grid;
-    grid-template-columns: repeat(3, 200px);
-    padding-left: 50px;
+    grid-template-columns: repeat(4, 200px);
+    padding-top: 30px;
+    margin-left: 20%;
 }
 
 .preferencias_fila_1 img {
     border-radius: 20px;
 }
 
+a {
+    color: #f7882f;
+    padding: 10px;
+}
+
 .preferencias_fila_2 {
     display: grid;
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(4, 200px);
     padding-top: 30px;
-    padding-left: 50px
+    margin-left: 20%;
 }
 
 .preferencias_fila_2 img {
@@ -90,7 +114,7 @@ hr {
 
 .btn {
     position: absolute;
-    margin-left: 27%;
+    margin-left: 32%;
 }
 
 p {
@@ -99,23 +123,14 @@ p {
 }
 
 output {
-    color: #fff;
-    text-align: left;
-    margin: auto;
+    color: #000;
+}
+
+.espacio_info {
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 #tbl_perfil tbody {
-    color: #fff;
-}
-
-.acomodo_ilustracion {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 5px;
-    width: 5px;
-    background: #000000;
-    top: 80px;
-    border-radius: 20px;
-    border: 3px solid #f7c331;
-    opacity: 0.7;
+    color: #000;
 }

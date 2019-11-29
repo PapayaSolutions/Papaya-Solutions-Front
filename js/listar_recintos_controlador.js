@@ -20,18 +20,18 @@ let llenar_tabla = async() => {
 
         if (nombre.includes(filtro)) {
 
-
             let fila = tbody.insertRow();
+
+            let botton = document.createElement('div');
+            botton.classList.add('btnmas');
+            botton.innerText = 'ver más'
 
             fila.insertCell().innerHTML = lista_recintos[i]['nombre'];
             fila.insertCell().innerHTML = lista_recintos[i]['provincia'];
             fila.insertCell().innerHTML = lista_recintos[i]['canton'];
-            fila.insertCell().innerHTML = lista_recintos[i]['distrito'];
-            fila.insertCell().innerHTML = lista_recintos[i]['direccion'];
-            fila.insertCell().innerHTML = lista_recintos[i]['asientos_tradicionales'];
-            fila.insertCell().innerHTML = lista_recintos[i]['asientos_accesibilidad'];
             fila.insertCell().innerHTML = lista_recintos[i]['capacidad'];
             fila.insertCell().innerHTML = lista_recintos[i]['estado'];
+            fila.appendChild(botton);
 
         }
     }
@@ -60,10 +60,6 @@ let llenar_tablac = async() => {
             fila.insertCell().innerHTML = lista_recintos[i]['nombre'];
             fila.insertCell().innerHTML = lista_recintos[i]['provincia'];
             fila.insertCell().innerHTML = lista_recintos[i]['canton'];
-            fila.insertCell().innerHTML = lista_recintos[i]['distrito'];
-            fila.insertCell().innerHTML = lista_recintos[i]['direccion'];
-            fila.insertCell().innerHTML = lista_recintos[i]['asientos_tradicionales'];
-            fila.insertCell().innerHTML = lista_recintos[i]['asientos_accesibilidad'];
             fila.insertCell().innerHTML = lista_recintos[i]['capacidad'];
             fila.insertCell().innerHTML = lista_recintos[i]['estado'];
         }

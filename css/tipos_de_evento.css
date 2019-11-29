@@ -8,13 +8,7 @@
 #tipos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 220px));
-}
-
-#tipos div {
-    margin: 10px 20px;
     text-align: center;
-    border: 2px double #f7882f;
-    padding: 10px 0;
 }
 
 #main h1 {
@@ -35,7 +29,9 @@ h3 {
 }
 
 form {
-    margin: 0 20px;
+    width: 90%;
+    margin: auto;
+    padding-top: 74px;
 }
 
 label {
@@ -49,7 +45,7 @@ label {
 input {
     outline: none;
     display: block;
-    width: 40%;
+    width: 60%;
     padding: 5px 0px 5px 0px;
     border: none;
     border-bottom: 1px solid #f7c331;
@@ -64,7 +60,7 @@ input {
 
 button {
     display: inline-block;
-    margin: auto;
+    margin: 10px auto;
     position: relative;
     background: #f7882f;
     font-size: 15px;
@@ -109,4 +105,52 @@ h1 {
     left: 10px;
     top: 30px;
     color: #f7892f67;
+}
+
+#tercera_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#preview {
+    width: 200px;
+    height: 120px;
+    overflow: hidden;
+    border: #f7882f solid 1px;
+}
+
+#preview img {
+    height: 100%;
+    width: 100%;
+}
+
+.error input,
+.error .img_container {
+    border: 2px solid #e74c3c !important;
+}
+
+.error::after {
+    content: "Este campo es requerido.";
+    color: #e74c3c;
+}
+
+.img_container2 {
+    border: 2px double #f7882f;
+    height: 130px;
+    margin: 10px 10px 30px 10px;
+}
+
+.img_container2 img {
+    height: 100%;
+    width: 100%;
+}
+
+#quinta_section {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#div_boton {
+    width: 87%;
+    margin: auto;
 }

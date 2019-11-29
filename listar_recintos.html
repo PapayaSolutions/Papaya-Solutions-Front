@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/listar_recintos.css">
     <link rel="stylesheet" href="css/configuracion.css">
+    <link rel="stylesheet" href="css/formularios.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRoboto&display=swap" rel="stylesheet">
@@ -45,7 +46,6 @@
                         <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
                         <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
                         <li> <a href="index.html" id="btn_cerrar_sesion">Cerrar sesión</a></li>
-
                     </ul>
                 </div>
             </nav>
@@ -109,34 +109,28 @@
             </ul>
         </aside>
         <section>
-
-
             <div id="banner_info">
-
-                <h4 id="bnr_seccion">RECINTOS</h4>
-                <i class="fas fa-search" id="search_icon"></i>
-                <input type="text" class="txt-filtro" id="txt-filtro" placeholder="Buscar por nombre">
-
-                <i class="fas fa-search" id="search_icon"></i>
-                <input type="number" class="txt-filtro" id="txt-filtro-cap" placeholder="Filtrar por capacidad">
-
-                <a href="registro_recintos.html">
-
-                    <button type="button" class="btn"> Registrar recinto</button>
-                </a>
+                <h1>RECINTOS</h1>
+                <div id="contenedor">
+                    <div> <i class="fas fa-search" id="search_icon"></i>
+                        <input type="text" class="txt-filtro" id="txt-filtro" placeholder="Buscar por nombre"></div>
+                    <div> <i class="fas fa-search" id="search_icon"></i>
+                        <input type="number" class="txt-filtro" id="txt-filtro-cap" placeholder="Filtrar por capacidad"></div>
+                </div>
 
             </div>
-            <div>
+
+            <div id="contenedor_tabla">
+                <hr>
                 <table id="tbl-recintos">
                     <thead>
                         <tr>
                             <th>Nombre</th>
                             <th>Provincia</th>
                             <th>Cantón</th>
-                            <th>Distrito</th>
-                            <th>Dirección exacta</th>
-                            <th>Asientos tradicionales</th>
-                            <th>Asientos de accesibilidad</th>
+
+
+
                             <th>Capacidad total</th>
                             <th>Estado</th>
                         </tr>

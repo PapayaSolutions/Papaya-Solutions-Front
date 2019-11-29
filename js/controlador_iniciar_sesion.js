@@ -14,7 +14,7 @@ let obtener_datos = () => {
     let ususarioAceptado = false;
 
     if (!errorBlancos) {
-        ususarioAceptado = validar_credenciales(correo, contrasena);
+        usuarioAceptado = validar_credenciales(correo, contrasena);
         // if (ususarioAceptado) {
         //     window.location.href = 'listar_eventos.html';
         // }

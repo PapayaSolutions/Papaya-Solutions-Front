@@ -158,7 +158,7 @@ let obtener_datos = () => {
     btn_registro.addEventListener('click', obtener_datos);
 
     //si hay error, entra al if. Si no hay error entra al else
-    if (validar() && !tarjeta_valida()) {
+    if (validar() && !tarjeta_valida) {
         Swal.fire({
             type: 'warning',
             title: '¡Espera!',

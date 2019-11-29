@@ -11,11 +11,11 @@ let obtener_datos = () => {
 
 
     let errorBlancos = validar(correo, contrasena);
-    let ususarioAceptado = false;
+    let usuarioAceptado = false;
 
     if (!errorBlancos) {
         usuarioAceptado = validar_credenciales(correo, contrasena);
-        // if (ususarioAceptado) {
+        // if (usuarioAceptado) {
         //     window.location.href = 'listar_eventos.html';
         // }
     }

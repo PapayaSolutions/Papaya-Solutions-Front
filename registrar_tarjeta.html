@@ -14,165 +14,191 @@
     <link rel="stylesheet" href="css/registrar_tarjeta.css">
     <link rel="stylesheet" href="css/formularios.css">
 
-    <body>
-        <header>
-            <nav>
-                <div>
-                    <ul class="navegador_izquierda">
-                        <div>
-                            <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
-                        </div>
-                        <li><a href="listar_eventos.html">Eventos</a></li>
-                        <li><a>Registrarse</a>
-                            <ul>
-                                <li><a href="registrar_usuario.html">Cliente</a></li>
-                                <li><a href="#">Organizador de eventos</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="navegador_derecha">
-                        <li>
-                            <a href=""></a>
-                        </li>
-                        <li><a href="#"><i class="far fa-user"></i></a></li>
-                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                        <li><a href="#"><i class="far fa-bell"></i></a></li>
-                        <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
-                        <li> <a href="index.html" id="btn_cerrar_sesion">Cerrar sesión</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <main class="registrar_wrapper">
+    <script>
+        function solonumeros(e) {
+            key = e.keyCode || e.which;
+            teclado = String.fromCharCode(key);
+            numeros = '0123456789';
+            especiales = "8-37-38-46"; //Array
+            teclado_especial = false;
+
+            for (var i in especiales) {
+                if (key == especiales[i]) {
+                    teclado_especial = true;
+                }
+            }
+
+            if (numeros.indexOf(teclado) == -1 && !teclado_especial) {
+                return false;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <nav id="nav_principal">
             <div>
-                <div class="formulario">
-                    <div class="ilustracion">
-                        <div class="avatar"></div>
-                        <img src="img/registro.png" class="ilustracion">
+                <ul class="navegador_izquierda">
+                    <div>
+                        <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
                     </div>
+                    <li><a href="listar_eventos.html">Eventos</a></li>
+                    <li><a>Registrarse</a>
+                        <ul>
+                            <li><a href="registrar_usuario.html">Cliente</a></li>
+                            <li><a href="#">Organizador de eventos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="registrar_evento.html">Crear evento</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navegador_derecha">
+                    <li><a href="visualizar_perfil.html"><i class="far fa-user"></i></a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="far fa-bell"></i></a></li>
+                    <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
+                    <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
+                    <li> <a href="" id="btn_cerrar_sesion">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="registrar_wrapper">
+        <div>
+            <div class="formulario">
+                <div class="ilustracion">
+                    <div class="avatar"></div>
+                    <img src="img/registro.png" class="ilustracion">
                 </div>
             </div>
+        </div>
 
-            <div class="formulario_registro">
-                <div class="formulario">
-                    <h1>Agregar metodo de pago</h1>
-                    <div class="spacer_h1"></div>
-                    <form>
-                        <div class="two_collumn_form">
+        <div class="formulario_registro">
+            <div class="formulario">
+                <h1>Agregar metodo de pago</h1>
+                <div class="spacer_h1"></div>
+                <form>
+                    <div class="two_collumn_form">
+                        <div>
+
                             <div>
-
-                                <div>
-                                    <label for="datos">Número de tarjeta</label>
-                                    <input type="string" name="checkout.cardNumber" id="tarjeta" />
-                                </div>
-                                <div>
-                                    <label for="datos">Nombre</label>
-                                    <input id="nombre" type="string" placeholder="Enrique">
-                                </div>
-                                <div>
-                                    <label for="datos">Código de cuatro digitos</label>
-                                    <input id="codigo" type="string" placeholder="1234">
-                                </div>
-
+                                <label for="datos">Número de tarjeta</label>
+                                <input type="string" name="numero_tarjeta" id="tarjeta" onkeypress="return solonumeros(event)" maxlength="16" />
+                                <div id="type"></div>
                             </div>
                             <div>
+                                <label for="datos">Nombre</label>
+                                <input id="nombre" type="string" placeholder="Enrique">
+                            </div>
+                            <div>
+                                <label for="datos">CMV</label>
+                                <input id="codigo" type="string" placeholder="123" onkeypress="return solonumeros(event)" maxlength="3">
+                            </div>
 
-                                <div>
-                                    <label for="datos">Fecha de vencimiento</label>
-                                    <input id="vencimiento" type="text" placeholder="mm/vv">
-                                </div>
-                                <div>
-                                    <label for="datos">Apellido</label>
-                                    <input id="apellido" type="text" placeholder="Segoviano">
-                                </div>
-                                <div>
-                                    <label for="datos">Código postal</label>
-                                    <input id="postal" type="string">
-                                </div>
-                                <div>
-                                    <button type="button" class="btn" id="btn_registro">Guardar</button>
-                                    <button type="button" class="btn" id="btn_retiro"><a href="listar_tarjeta.html">Cancelar</a></button>
-                                </div>
+                        </div>
+                        <div>
+
+                            <div>
+                                <label for="datos">Fecha de vencimiento</label>
+                                <input id="vencimiento" type="text" placeholder="mm/vv" onkeypress="return solonumeros(event)" maxlength="4">
+                            </div>
+                            <div>
+                                <label for="datos">Apellido</label>
+                                <input id="apellido" type="text" placeholder="Segoviano">
+                            </div>
+                            <div>
+                                <label for="datos">Código postal</label>
+                                <input id="postal" type="string" onkeypress="return solonumeros(event)" maxlength="5">
+                            </div>
+                            <div>
+                                <button type="button" class="btn" id="btn_registro">Guardar</button>
+                                <button type="button" class="btn" id="btn_retiro"><a href="listar_tarjeta.html">Cancelar</a></button>
                             </div>
                         </div>
+                    </div>
 
-        </main>
+    </main>
 
-        <!--Footer-->
-        <footer>
-            <div id="socials_container">
-                <div class="grid_socials">
+    <!--Footer-->
+    <footer>
+        <div id="socials_container">
+            <div class="grid_socials">
 
-                    <div class="footer_grid_item socials_1">
-                        <a href=""><img src="img/fb_footer.png" alt=""></a>
-                    </div>
-                    <div class="footer_grid_item socials_2">
-                        <a href=""><img src="img/ig_footer.png" alt=""></a>
-                    </div>
-                    <div class="footer_grid_item socials_3">
-                        <a href=""><img src="img/tw_footer.png" alt=""></a>
-                    </div>
-                    <div class="footer_grid_item socials_4">
-                        <a href=""><img src="img/yt_footer.png" alt=""></a>
-                    </div>
-                    <div class="footer_grid_item socials_5">
-                        <a href=""><img src="img/in_footer.png" alt=""></a>
-                    </div>
+                <div class="footer_grid_item socials_1">
+                    <a href=""><img src="img/fb_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_2">
+                    <a href=""><img src="img/ig_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_3">
+                    <a href=""><img src="img/tw_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_4">
+                    <a href=""><img src="img/yt_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_5">
+                    <a href=""><img src="img/in_footer.png" alt=""></a>
                 </div>
             </div>
-            <div id="links_container">
-                <div class="footer_grid_item2 grid_links">
-                    <div>
-                        <h4>INFORMACIÓN</h4>
-                        <ul>
-                            <li><a href="">Qué es Míshka</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>NOTICIAS</h4>
-                        <ul>
-                            <li><a href="">Publicaciones</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>TU CUENTA</h4>
-                        <ul>
-                            <li><a href="">Iniciar Sesión</a></li>
-                            <li><a href="">Registrarse</a></li>
-                            <li><a href="">Ver carrito de compras</a></li>
-                            <li><a href="">Modificar Información</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4>LEGAL</h4>
-                        <ul>
-                            <li><a href="">Términos y Condiciones</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>CONTÁCTANOS</h4>
-                        <ul>
-                            <li>Oficinas Principales: Míshka Co.</li>
-                            <li>Zip-10101 San José, Costa Rica</li>
-                            <li>Teléfono: (506) 1234-5678</li>
-                            <li>Email: soporte@Mishka.com</li>
-                        </ul>
-                    </div>
+        </div>
+        <div id="links_container">
+            <div class="footer_grid_item2 grid_links">
+                <div>
+                    <h4>INFORMACIÓN</h4>
+                    <ul>
+                        <li><a href="">Qué es Míshka</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>NOTICIAS</h4>
+                    <ul>
+                        <li><a href="">Publicaciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>TU CUENTA</h4>
+                    <ul>
+                        <li><a href="">Iniciar Sesión</a></li>
+                        <li><a href="">Registrarse</a></li>
+                        <li><a href="">Ver carrito de compras</a></li>
+                        <li><a href="">Modificar Información</a></li>
+                    </ul>
                 </div>
 
+                <div>
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>CONTÁCTANOS</h4>
+                    <ul>
+                        <li>Oficinas Principales: Míshka Co.</li>
+                        <li>Zip-10101 San José, Costa Rica</li>
+                        <li>Teléfono: (506) 1234-5678</li>
+                        <li>Email: soporte@Mishka.com</li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">
-                <p>® Míshka™ &nbsp;&nbsp;&nbsp; Diseño por Papaya Solutions. Todos los derechos reservados.</p>
-            </div>
-        </footer>
+
+        </div>
+        <div class="copyright">
+            <p>® Míshka™ &nbsp;&nbsp;&nbsp; Diseño por Papaya Solutions. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
 
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-        <script src="js/registrar_tarjeta_controlador.js"></script>
-    </body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/registrar_tarjeta_controlador.js"></script>
+</body>
 
 </html>

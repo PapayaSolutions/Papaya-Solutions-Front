@@ -35,14 +35,33 @@
 
 #info_general {
     display: grid;
-    grid-template-columns: 600px 200px;
+    grid-template-columns: 570px 200px;
     height: 100px;
     padding-top: 20px;
 }
 
+.info_tarjeta {
+    height: 100px;
+    width: 170px;
+    border-radius: 20px;
+    border: 1px solid #f7882f;
+}
+
+.info_tarjeta i {
+    color: #f7882f;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
 .info_tarjeta p {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    color: #f7882f;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#agregar_info_tarjeta {
+    padding-top: 15px;
+    margin-left: 100px;
 }
 
 #avat {
@@ -98,7 +117,6 @@ hr {
 
 a {
     color: #f7882f;
-    padding: 10px;
 }
 
 .preferencias_fila_2 {

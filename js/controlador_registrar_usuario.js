@@ -785,7 +785,8 @@ let obtener_datos = () => {
         Swal.fire({
             type: 'warning',
             title: 'Verifique la edad',
-            text: 'Debe de ser mayor de edad!',
+            text: 'Debes de ser mayor de edad para crear una cuenta',
+            confirmButtonText: 'Entendido',
         })
 
     } else {
@@ -795,7 +796,7 @@ let obtener_datos = () => {
 
         Swal.fire({
             type: 'success',
-            title: 'Registrado!',
+            title: '¡Registrado!',
             animation: true,
             text: 'Te enviaremos un correo electrónico con tus datos de acceso',
             confirmButtonText: 'Entendido',
@@ -805,6 +806,7 @@ let obtener_datos = () => {
         })
 
         document.getElementById("formulario_principal").reset();
+        window.location.href = 'ingresar_codigo.html';
     }
 };
 

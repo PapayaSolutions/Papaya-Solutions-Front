@@ -1,42 +1,136 @@
-.fondo {
-    position: absolute;
-    height: 175px;
-    width: 650px;
-    background: #f7c331;
+#spacer {
+    height: 25px;
 }
 
-hr {
-    border: 1px solid #f7882f;
+#mini_spacer {
+    height: 10px;
+}
+
+.fondo {
+    display: grid;
+    column-gap: 25px;
+    height: 400px;
+    top: 80px;
 }
 
 .perfil {
     display: grid;
-    grid-template-columns: 200px 500px;
+    grid-template-columns: 200px 500px 1fr;
     column-gap: 25px;
-    padding-top: 50px;
+    padding-top: 30px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.imagen {
+    display: grid;
+    height: 130px;
+    grid-template-columns: 225px 515px;
+}
+
+.imagen_avatar {
+    display: grid;
+    height: 130px;
+}
+
+#info_general {
+    display: grid;
+    grid-template-columns: 600px 200px;
+    height: 100px;
+    padding-top: 20px;
+}
+
+.info_tarjeta p {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#avat {
+    border-radius: 20px;
+}
+
+#visual {
+    height: 40px;
+    width: 515px;
+    background: black;
+}
+
+#nac_gen {
+    display: grid;
+    grid-template-columns: 270px 500px;
 }
 
 #nombre {
     color: #f7882f;
     font-size: 22px;
+    padding-top: 3px;
+}
+
+#correo {
+    color: #000;
+    padding-top: 2px;
+}
+
+.visualizar {
+    display: grid;
+    grid-template-columns: 350px;
+}
+
+hr {
+    position: relative;
+    border: 1px solid #f7c331;
+}
+
+.acomodo {
+    margin: 0 auto;
+}
+
+.preferencias_fila_1 {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    padding-top: 30px;
+    margin-left: 20%;
+}
+
+.preferencias_fila_1 img {
+    border-radius: 20px;
+}
+
+a {
+    color: #f7882f;
+    padding: 10px;
+}
+
+.preferencias_fila_2 {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    padding-top: 30px;
+    margin-left: 20%;
+}
+
+.preferencias_fila_2 img {
+    border-radius: 20px;
 }
 
 .btn {
-    border: 1px solid #f7882f;
-    font-size: 16px;
-    left: 10%;
-    margin: auto;
+    position: absolute;
+    margin-left: 32%;
 }
 
 p {
-    color: #f7c331;
+    color: #f7882f;
     margin-right: 5%;
 }
 
 output {
-    color: rgb(43, 38, 38);
-    position: absolute;
-    left: 30%;
-    text-align: left;
-    margin: auto;
+    color: #000;
+}
+
+.espacio_info {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+#tbl_perfil tbody {
+    color: #000;
 }

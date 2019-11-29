@@ -721,7 +721,7 @@ let obtener_datos = () => {
 
         Swal.fire({
             type: 'success',
-            title: 'Registro realizado con exito',
+            title: 'Registro realizado con exito!',
             text: 'Encargado registrado!',
         })
 

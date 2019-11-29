@@ -44,7 +44,7 @@
                     <li><a href="#"><i class="far fa-bell"></i></a></li>
                     <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
                     <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
-                    <li> <a href="" id="btn_cerrar_sesion">Cerrar sesión</a></li>
+                    <li> <a href="index.html" id="btn_cerrar_sesion">Cerrar sesión</a></li>
                 </ul>
             </div>
         </nav>
@@ -118,17 +118,22 @@
                         <input type="text" id="txt_nombre">
                     </div>
                     <div>
-                        <label for="num_porcentaje">Porcentaje nuevo impuesto</label>
+                        <label for="num_porcentaje">Porcentaje del nuevo impuesto (1-100%)</label>
                         <input type="number" id="num_porcentaje" min="1" max="100">
                     </div>
 
                 </div>
 
-                <label for="txt_descripcion">Descripcion del nuevo impuesto</label>
+                <label for="txt_descripcion">Descripción del nuevo impuesto</label>
                 <textarea id="txt_descripcion" cols="30" rows="10"></textarea>
 
                 <div class="btn_container">
                     <button type="button" class="btn" id="btn_registro">Registrar</button>
+
+                    <a href="listar_impuestos.html">
+
+                        <button type="button" class="btn"> Listar impuestos</button>
+                    </a>
                 </div>
 
             </form>

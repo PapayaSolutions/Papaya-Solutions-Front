@@ -40,70 +40,162 @@
                     <li><a href="#"><i class="far fa-bell"></i></a></li>
                     <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
                     <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
-                    <li> <a href="" id="btn_cerrar_sesion">Cerrar sesión</a></li>
+                    <li> <a href="index.html" id="btn_cerrar_sesion">Cerrar sesión</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
     <main>
+        <div id="spacer"></div>
+        <div id="spacer"></div>
 
-        <div class="perfil">
+        <div class="fondo">
 
-            <div class="visualizar">
+            <div class="perfil">
+
                 <div class="imagen">
-                    <img src="img/avatar.jpg" alt="avatar" , height="125px" , width="125px" ;>
-                </div>
 
-            </div>
+                    <div class="imagen_avatar">
+                        <img id="avat" src="img/avatar.jpg" alt="avatar" , height="140px" , width="140x" ;>
 
-            <div class="ver_perfil">
+                        <div id="spacer"></div>
 
+                        <div id="info_general">
 
-                <div class="visualizar">
-                    <table id="tbl_perfil">
-                        <div id="nombre">
+                            <div class="datos_cliente">
+
+                                <div class="espacio_info">
+                                    <p>Identificación:
+                                        <output id="identificacion"></output></p>
+                                </div>
+
+                                <table id="tbl_perfil">
+                                    <thead>
+                                        <tr>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+
+                                <div class="espacio_info">
+                                    <output id="direccion"></output>
+                                </div>
+
+                            </div>
+                            <div class="info_tarjeta">
+                                <p>Información tarjeta</p>
+                                <div id="mini_spacer"></div>
+                                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                                <a href="#"><i class="fas fa-cog"></i></a>
+                            </div>
+
                         </div>
+
+                    </div>
+
+                    <div>
+
+                        <button type="button" class="btn">Editar</button>
+
+                        <div id="nombre"></div>
+                        <div id="correo"></div>
+
+                        <div id="mini_spacer"></div>
+
                         <hr>
 
-                        <div>
-                            <p>Genero:
-                                <output id="genero"></output>
-                            </p>
-                        </div>
-                        <div>
-                            <p>Nacimiento:
-                                <output id="nacimiento"></output>
-                            </p>
+                        <div id="mini_spacer"></div>
+
+                        <div id="nac_gen">
+
+                            <div class="espacio_info">
+                                <p>Fecha de nacimiento:
+                                    <output id="nacimiento"></output></p>
+                            </div>
+
+                            <div class="espacio_info">
+                                <p>Género:
+                                    <output id="genero"></output></p>
+                            </div>
 
                         </div>
-                        <thead>
-                            <tr>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
 
-                        <div>
-                            <p>N.Cédula:
-                                <output id="identificacion"></output>
-                            </p>
-                        </div>
-                        <div>
-                            <p>Correo:
-                                <output id="correo"></output>
-                            </p>
-                        </div>
-                        <div>
-                            <p>Dirección 1:
-                                <output id="direccion"></output>
-                            </p>
-                        </div>
-                    </table>
+
+                        <div id="mini_spacer"></div>
+                        <img id='visual' src="img/tribal_prueba.jpeg" alt="">
+
+                    </div>
+
                 </div>
 
             </div>
+
         </div>
+
+        <hr>
+
+        <div class="preferencias">
+
+            <div class="acomodo">
+
+
+
+                <h1>Preferencias</h1>
+
+                <div class="preferencias_fila_1">
+
+                    <div id="texto_fila">
+                        <p>Arte</p>
+                        <img src="img/arte.jpg" alt="Arte" height="115px" , width="115px" ;>
+                    </div>
+
+                    <div id="texto_fila">
+                        <p>Cultura</p>
+                        <img src="img/cultura.jpg" alt="Arte" height="115px" , width="115px" ;>
+                    </div>
+
+                    <div id="texto_fila">
+                        <p>Festival</p>
+                        <img src="img/festival.jpg" alt=" Arte " height="115px " , width="115px " ;>
+                    </div>
+
+                    <div id="texto_fila">
+                        <p>Festival</p>
+                        <img src="img/festival.jpg" alt=" Arte " height="115px " , width="115px " ;>
+                    </div>
+
+                </div>
+
+                <div class="preferencias_fila_2">
+
+                    <div id="texto_fila">
+                        <p>Teatro</p>
+                        <img src="img/teatro.jpeg" alt="Arte" height="115px" , width="115px" ;>
+                    </div>
+
+                    <div id="texto_fila">
+                        <p>Deporte</p>
+                        <img src="img/deporte.jpg" alt="Arte" height="115px" , width="115px" ;>
+                    </div>
+
+                    <div id="texto_fila">
+                        <p>Festival</p>
+                        <img src="img/festival.jpg" alt=" Arte " height="115px " , width="115px " ;>
+                    </div>
+
+                    <div id="texto_fila">
+                        <p>Festival</p>
+                        <img src="img/festival.jpg" alt=" Arte " height="115px " , width="115px " ;>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
     </main>
 
     <footer>
@@ -174,10 +266,10 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="js/controlador_general.js"></script>
-    <script src="js/clientes_servicio.js"></script>
-    <script src="js/controlador_perfil_cliente.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
+    <script src="js/controlador_general.js "></script>
+    <script src="js/clientes_servicio.js "></script>
+    <script src="js/controlador_perfil_cliente.js "></script>
 
 </body>
 

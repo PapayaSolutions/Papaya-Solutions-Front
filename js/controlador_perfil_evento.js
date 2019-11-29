@@ -11,16 +11,26 @@ const descripcion = document.querySelector('#descripcion_evento');
 const cantidad = document.querySelector('#cantidad');
 const imagen = document.querySelector('#img_evento');
 const entradas = document.querySelector('#entradas');
+const disponibles = document.querySelector('#disponibles');
 const descuentos = document.querySelector('#descuentos');
 const ticketes = document.querySelector('#cant_ticks');
+const link_recinto = document.querySelector('#link_recinto');
+const body = document.querySelector('#body');
 
+const item5 = document.querySelector('#item5');
+const item7 = document.querySelector('#item7');
+const editar = document.querySelector('#editar');
+const comentarios = document.querySelector('#calificar');
+
+let estado;
+let usuario = sessionStorage.getItem('tipo_usuario');
 let id = localStorage.getItem('id_evento');
 let datos_evento;
 let datos_mapa;
 var lugar;
 let latitud;
 let longitud;
-let map;
+const map = document.querySelector('#map');
 let marker;
 
 
@@ -37,6 +47,8 @@ let llenar_perfil = async() => {
     cantidad.value = datos_evento[0]['cantidad_maxima_usuario'];
     ticketes.max = cantidad.value;
     entradas.value = datos_evento[0]['asistentes_esperados'];
+    disponibles.value = datos_evento[0]['cantidad_entradas_restante'];
+    estado = datos_evento[0]['estado'];
 
     if (datos_evento[0]['descuentos'] != '') {
 
@@ -44,7 +56,7 @@ let llenar_perfil = async() => {
 
         let name = cabeza.insertCell();
         let nombre = document.createElement('th');
-        nombre.innerHTML = 'Nombre';
+        nombre.innerHTML = 'Descuento';
         let porc = cabeza.insertCell();
         let porcentaje = document.createElement('th');
         porcentaje.innerHTML = 'Porcentaje';
@@ -63,7 +75,7 @@ let llenar_perfil = async() => {
         }
 
     } else {
-        descuentos.value = 'No hay descuentos';
+        descuentos.value = '';
 
     }
 
@@ -98,15 +110,18 @@ llenar_perfil();
 
 
 
+
 let llena_mapa = async() => {
     lugar = localStorage.getItem('id_recinto');
 
     datos_mapa = await obtener_recinto_nombre(lugar);
 
+    localStorage.setItem('recinto_id', datos_mapa[0]['_id']);
     localStorage.setItem('latitud', datos_mapa[0]['latitud']);
     localStorage.setItem('longitud', datos_mapa[0]['longitud']);
 
 };
+
 
 llena_mapa();
 
@@ -120,15 +135,19 @@ function initMap() {
         lng: longitud,
     };
 
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(document.querySelector('#map'), {
         zoom: 16,
         center: myLatLng
     });
 
+    placeMarkerAndPanTo(myLatLng, map);
+
     map.addListener('click', function(e) {
         placeMarkerAndPanTo(e.latLng, map);
     });
-};
+}
+
+
 
 function placeMarkerAndPanTo(latLng, map) {
 
@@ -142,9 +161,65 @@ function placeMarkerAndPanTo(latLng, map) {
         });
     }
 
-    google.maps.event.addListener(marker, 'drag', function() {
-
-    });
-
     map.panTo(latLng);
+}
+
+let esconder = () => {
+
+    item5.classList.add('hidden');
+
+    item7.classList.remove('hidden');
+
+
+
+    comentarios.classList.remove('hidden');
+
+    comentarios.style.position = 'relative';
+
+
 };
+
+let mostrar = () => {
+    item5.classList.remove('hidden');
+    item7.classList.add('hidden');
+
+
+
+    comentarios.classList.add('hidden');
+
+    comentarios.style.position = 'absolute';
+};
+
+
+let activar = async() => {
+    if (estado == 'Activo') {
+        mostrar();
+    } else {
+        if (estado == 'Finalizado') {
+            esconder();
+        }
+    }
+
+    if (usuario == 'Organizador') {
+        editar.classList.remove('hidden');
+    } else {
+        editar.classList.add('hidden');
+    }
+
+    await llena_mapa();
+
+    await llena_mapa();
+
+
+};
+activar();
+
+link_recinto.addEventListener('click', function() {
+
+    window.location.href = 'perfil_recinto.html'
+});
+
+body.onload = function() {
+    activar();
+
+}

@@ -766,6 +766,7 @@ let obtener_datos = () => {
     let genero = input_genero.value;
     let distrito = input_distrito.value;
     let direccion = input_direccion.value;
+    let url_avatar = input_url_avatar.src;
 
 
     //si hay error, entra al if. Si no hay error entra al else
@@ -790,11 +791,11 @@ let obtener_datos = () => {
     } else {
         console.log(f_nacimiento)
         registrar_usuario(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,
-            f_nacimiento, genero, provincia, canton, distrito, direccion);
+            f_nacimiento, genero, provincia, canton, distrito, direccion, url_avatar);
 
         Swal.fire({
             type: 'success',
-            title: 'Registrado',
+            title: 'Registrado!',
             animation: true,
             text: 'Te enviaremos un correo electrónico con tus datos de acceso',
             confirmButtonText: 'Entendido',
@@ -802,6 +803,8 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         })
+
+        document.getElementById("formulario_principal").reset();
     }
 };
 

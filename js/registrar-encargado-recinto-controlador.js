@@ -679,8 +679,8 @@ let obtener_datos = () => {
     } else if (validar_numero(numero)) {
         Swal.fire({
             type: 'warning',
-            title: 'Verifique el campo numero',
-            text: 'Minimo debe de tener 8 digitos! No se aceptan letras! No se aceptan simbolos!',
+            title: 'Verifique el campo número',
+            text: 'Mínimo debe de tener 8 dígitos! No se aceptan letras! No se aceptan símbolos!!',
         })
 
     } else if (calcular_edad(fecha_nacimiento)) {
@@ -702,6 +702,8 @@ let obtener_datos = () => {
         })
 
         registrar_encrgado_recinto(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado)
+
+        document.getElementById("form_enc_rec").reset();
 
     };
 };

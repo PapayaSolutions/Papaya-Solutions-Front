@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/perfil_evento.css">
     <link rel="stylesheet" href="css/footer.css">
-    <title>Perfil del Evento</title>
+    <title>Perfil de evento</title>
 </head>
 
-<body>
+<body id="body">
 
     <header>
         <nav id="nav_principal">
@@ -44,36 +44,23 @@
                     <li><a href="#"><i class="far fa-bell"></i></a></li>
                     <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
                     <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
-                    <li> <a href="" id="btn_cerrar_sesion">Cerrar sesión</a></li>
+                    <li> <a href="index.html" id="btn_cerrar_sesion">Cerrar sesión</a></li>
                 </ul>
             </div>
         </nav>
-        <section id="banner_grid">
 
-            <div class="portada_container">
-                <a href="index.html"><img src="img/logo.png" alt=""></a>
-            </div>
-
-            <div class="banner_left">
-                <label id='bnr_nombre'>Nombre del Evento</label>
-            </div>
-
-            <div class="banner_right">
-                <div class="img_container">
-                    <img src="img/placeholder.jpg" id='img_evento' alt="">
-                </div>
-            </div>
-        </section>
 
 
     </header>
 
     <main>
-        <div id="editar"><a href="">Editar Evento</a></div>
+
         <div id="main_grid">
             <div class="grid_item item1">
 
-                <!--<output id="fecha_evento"></output>-->
+                <label id='bnr_nombre'>Nombre del evento</label>
+                <div class="spacer"></div>
+
                 <table id="fecha_evento">
                     <thead>
                         <tr>
@@ -86,16 +73,53 @@
 
                     </tbody>
                 </table>
+                <label>Descripción:</label>
+                <output id="descripcion_evento"></output>
+
+
+            </div>
+
+            <div class="grid_item item2">
+
+
+
+            </div>
+
+            <div class="grid_item item3" id="map">
+
+            </div>
+
+            <div class="grid_item item4">
+                <div class="img_container">
+                    <img src="img/placeholder.jpg" id='img_evento' alt="">
+                </div>
+                <div id="editar" class="hidden"><a href="">Editar evento</a> </div>
+
+
+
+
+            </div>
+            <div class="grid_item item5 hidden" id="item5">
+                <h3>Tiquetes</h3>
+                <span id="nmbr_mask"><input type="number"  id="cant_ticks" value="1" min="1" max="5" onkeydown="return false"></span>
+                <button type="button" class="btn">Agregar al carrito  <i class="fas fa-shopping-cart"></i></button>
+
+            </div>
+            <div class="grid_item item6">
 
                 <label>Lugar:</label>
-                <output id="recinto_evento"></output>
+                <a href="perfil_recinto.html" id="link_recinto"> <output id="recinto_evento"></output></a>
                 <label>Precio:</label>
                 <output id="precio_evento"></output>
                 <label>Tipo:</label>
                 <output id="categoria_evento"></output>
-                <label>Entradas:</label>
+                <label>Total de entradas:</label>
                 <output id="entradas"></output>
-                <label>Descuentos:</label>
+                <label>Entradas disponibles:</label>
+                <output id="disponibles"></output>
+                <label>Máximo de tiquetes <br>por persona: </label>
+                <output id="cantidad"></output>
+
                 <output id="descuentos"></output>
 
                 <table id="descuentos_evento">
@@ -107,39 +131,20 @@
                 </table>
 
             </div>
-
-            <div class="grid_item item2">
-                <h1>Descripción:</h1>
-                <output id="descripcion_evento"></output>
-            </div>
-
-            <div class="grid_item item3" id="map">
-
-            </div>
-
-            <div class="grid_item item4">
-
-                <!--<button type="button" class="btn">Ver lugar</button>-->
-            </div>
-            <div class="grid_item item5">
-                <h3>Tiquetes</h3>
-                <span id="nmbr_mask"><input type="number"  id="cant_ticks" value="1" min="1" max="5" onkeydown="return false"></span>
-                <br>
-                <h3>Máximo <output id="cantidad"></output> tiquetes por persona</h3>
-                <br>
-                <button type="button" class="btn">Agregar al Carrito  <i class="fas fa-shopping-cart"></i></button>
-
-
+            <div class="grid_item item7 hidden" id="item7">
+                <section id="sct_calificacion">
+                    <h1>Calificación: </h1>
+                    <div class="rating">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    </div>
+                </section>
 
             </div>
+
         </div>
-        <div id="calificar">
-            <section id="sct_calificacion">
-                <h1>Calificación: </h1>
-                <div class="rating">
-                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                </div>
-            </section>
+        <!--Grid-->
+        <div id="calificar" class="hidden">
+
 
             <section id="sct_coment">
                 <div id="coment_head">
@@ -195,20 +200,20 @@
                         <li><a href="iniciar_sesion.html">Iniciar Sesión</a></li>
                         <li><a href="registrar_usuario.html">Registrarse</a></li>
                         <li><a href="">Ver carrito de compras</a></li>
-                        <li><a href="">Modificar Información</a></li>
+                        <li><a href="">Modificar información</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4>LEGAL</h4>
                     <ul>
-                        <li><a href="">Términos y Condiciones</a></li>
+                        <li><a href="">Términos y condiciones</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>CONTÁCTANOS</h4>
                     <ul>
-                        <li>Oficinas Principales: Míshka Co.</li>
+                        <li>Oficinas principales: Míshka Co.</li>
                         <li>Zip-10101 San José, Costa Rica</li>
                         <li>Teléfono: (506) 1234-5678</li>
                         <li>Email: soporte@Mishka.com</li>

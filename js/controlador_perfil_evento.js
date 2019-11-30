@@ -15,6 +15,7 @@ const disponibles = document.querySelector('#disponibles');
 const descuentos = document.querySelector('#descuentos');
 const ticketes = document.querySelector('#cant_ticks');
 const link_recinto = document.querySelector('#link_recinto');
+const ver_recinto = document.querySelector('#ver_recinto');
 const body = document.querySelector('#body');
 
 const item5 = document.querySelector('#item5');
@@ -28,16 +29,22 @@ let usuario = sessionStorage.getItem('tipo_usuario');
 let id = localStorage.getItem('id_evento');
 let datos_evento;
 let datos_mapa;
-var lugar;
+let lugar;
 let latitud;
 let longitud;
-const map = document.querySelector('#map');
+/*const map = document.querySelector('#map');*/
 let marker;
 
 
 let llenar_perfil = async() => {
 
     datos_evento = await obtener_evento_id(id);
+    lugar = datos_evento[0]['recinto'];
+    datos_mapa = await obtener_recinto_nombre(lugar);
+
+    localStorage.setItem('recinto_id', datos_mapa[0]['_id']);
+    localStorage.setItem('latitud', datos_mapa[0]['latitud']);
+    localStorage.setItem('longitud', datos_mapa[0]['longitud']);
 
     nombre.innerHTML = datos_evento[0]['nombre'];
     recinto.value = datos_evento[0]['recinto'];
@@ -119,32 +126,64 @@ let llenar_perfil = async() => {
 llenar_perfil();
 
 
+let esconder = () => {
 
+    item5.classList.add('hidden');
 
-let llena_mapa = async() => {
-    lugar = localStorage.getItem('id_recinto');
+    item7.classList.remove('hidden');
 
-    datos_mapa = await obtener_recinto_nombre(lugar);
+    comentarios.classList.remove('hidden');
 
-    localStorage.setItem('recinto_id', datos_mapa[0]['_id']);
-    localStorage.setItem('latitud', datos_mapa[0]['latitud']);
-    localStorage.setItem('longitud', datos_mapa[0]['longitud']);
+    comentarios.style.position = 'relative';
 
+    finalizado.classList.remove('hidden');
+};
+
+let mostrar = () => {
+    item5.classList.remove('hidden');
+    item7.classList.add('hidden');
+
+    finalizado.classList.add('hidden');
+
+    comentarios.classList.add('hidden');
+
+    comentarios.style.position = 'absolute';
 };
 
 
-llena_mapa();
+let activar = () => {
+
+
+    if (usuario === 'Organizador') {
+        editar.classList.remove('hidden');
+        editar.style.position = 'relative';
+    } else {
+        editar.classList.add('hidden');
+        editar.style.position = 'absolute';
+    };
+
+    if ('Activo' === estado) {
+        mostrar();
+    } else {
+
+        if ('Finalizado' === estado) {
+            esconder();
+        }
+    };
+};
+
+activar();
+
+latitud = parseFloat(localStorage.getItem('latitud'));
+longitud = parseFloat(localStorage.getItem('longitud'));
 
 
 function initMap() {
-    latitud = parseFloat(localStorage.getItem('latitud'));
-    longitud = parseFloat(localStorage.getItem('longitud'));
 
     var myLatLng = {
         lat: latitud,
         lng: longitud,
     };
-
     var map = new google.maps.Map(document.querySelector('#map'), {
         zoom: 16,
         center: myLatLng
@@ -174,62 +213,13 @@ function placeMarkerAndPanTo(latLng, map) {
     map.panTo(latLng);
 }
 
-let esconder = () => {
-
-    item5.classList.add('hidden');
-
-    item7.classList.remove('hidden');
-
-    comentarios.classList.remove('hidden');
-
-    comentarios.style.position = 'relative';
-
-    finalizado.classList.remove('hidden');
-};
-
-let mostrar = () => {
-    item5.classList.remove('hidden');
-    item7.classList.add('hidden');
-
-    finalizado.classList.add('hidden');
-
-    comentarios.classList.add('hidden');
-
-    comentarios.style.position = 'absolute';
-};
-
-
-let activar = async() => {
-    if (estado == 'Activo') {
-        mostrar();
-    } else {
-        if (estado == 'Finalizado') {
-            esconder();
-        }
-    }
-
-    if (usuario == 'Organizador') {
-        editar.classList.remove('hidden');
-        editar.style.position = 'relative';
-    } else {
-        editar.classList.add('hidden');
-        editar.style.position = 'absolute';
-    }
-
-    await llena_mapa();
-
-    await llena_mapa();
-
-
-};
-activar();
-
-link_recinto.addEventListener('click', function() {
-
-    window.location.href = 'perfil_recinto.html'
-});
 
 body.onload = function() {
     activar();
 
 }
+
+ver_recinto.addEventListener('click', function() {
+
+    window.location.href = 'perfil_recinto.html'
+});

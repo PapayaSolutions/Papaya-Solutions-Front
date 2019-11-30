@@ -200,6 +200,7 @@ output {
     grid-row-end: 6;
     margin: auto;
     margin-top: 10px;
+    position: relative;
 }
 
 .item7 {
@@ -484,4 +485,13 @@ input[type=number]::-webkit-outer-spin-button {
 
 .hidden {
     visibility: hidden;
+}
+
+#ver_recinto {
+    position: absolute;
+    top: -2px;
+    left: 150px;
+    height: 25px;
+    font-size: 12px;
+    padding: 0px 5px 0px 5px;
 }

@@ -4,7 +4,9 @@
 const tbody = document.querySelector('#categoria_evento');
 const fbody = document.querySelector('#fecha_hora tbody');
 const cant_fechas = document.querySelector('#cantidad_fechas');
-const btn_generador = document.querySelector('#btn_fecha');
+const btn_mas = document.querySelector('#boton_plus');
+const btn_menos = document.querySelector('#boton_minus');
+
 let input_fechas;
 let input_horas;
 let input_horas2;
@@ -90,6 +92,19 @@ let generar_fecha = async() => {
 };
 
 generar_fecha();
+
+let subir_fecha = () => {
+    cant_fechas.value = parseInt(cant_fechas.value) + 1;
+    fbody.innerHTML = "";
+    generar_fecha();
+}
+let bajar_fecha = () => {
+    if (cant_fechas.value > 1) {
+        cant_fechas.value = parseInt(cant_fechas.value) - 1;
+        fbody.innerHTML = "";
+        generar_fecha();
+    }
+}
 
 
 
@@ -273,3 +288,5 @@ let obtener_datos = async() => {
 // Eventos asociados a los botones o inputs
 
 btn_registro.addEventListener('click', obtener_datos);
+btn_mas.addEventListener('click', subir_fecha);
+btn_menos.addEventListener('click', bajar_fecha);

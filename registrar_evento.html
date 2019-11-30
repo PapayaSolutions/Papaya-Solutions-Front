@@ -118,9 +118,14 @@
                         <thead>
                             <tr>
                                 <th>Fecha del evento</th>
-                                <th>Inicio</th>
+                                <th>Inicia</th>
                                 <th>Finaliza</th>
-                                <th>Fechas <input type="number" id="cantidad_fechas" value="1" min="1" onkeydown="return false" onchange="generar_fecha()"></th>
+                                <th>
+                                    <input type="number" id="cantidad_fechas" value="1" min="1" onkeydown="return false" onchange="generar_fecha()">
+                                    <button type="button" id="boton_plus"> Agregar</button>
+                                    <button type="button" id="boton_minus"> Quitar</button>
+                                </th>
+
 
 
                             </tr>

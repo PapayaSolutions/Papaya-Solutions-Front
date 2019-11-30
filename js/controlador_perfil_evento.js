@@ -21,6 +21,7 @@ const item5 = document.querySelector('#item5');
 const item7 = document.querySelector('#item7');
 const editar = document.querySelector('#editar');
 const comentarios = document.querySelector('#calificar');
+const finalizado = document.querySelector('#item8');
 
 let estado;
 let usuario = sessionStorage.getItem('tipo_usuario');
@@ -65,17 +66,26 @@ let llenar_perfil = async() => {
 
 
         for (let i = 0; i < datos_evento[0]['descuentos'].length; i++) {
+
             let nombre = datos_evento[0]['descuentos'][i]['nombre'];
             let porcentaje = datos_evento[0]['descuentos'][i]['porcentaje'];
-            let fila = tabla_descuentos.insertRow();
 
-            fila.insertCell().innerHTML = nombre;
-            fila.insertCell().innerHTML = (porcentaje + '%');
+            if (usuario != "Cliente" && nombre == 'Míshka') {
+                let fila = tabla_descuentos.insertRow();
 
+                fila.insertCell().innerHTML = '¡Regístrate para obtener un descuento del ' + porcentaje + '% en todas tus compras con Míshka!'
+
+            } else {
+
+                let fila = tabla_descuentos.insertRow();
+
+                fila.insertCell().innerHTML = nombre;
+                fila.insertCell().innerHTML = (porcentaje + '%');
+            }
         }
 
     } else {
-        descuentos.value = '';
+        descuentos.value = '¡Regístrate para obtener un descuento del 15% en todas tus compras con Míshka!';
 
     }
 
@@ -170,20 +180,18 @@ let esconder = () => {
 
     item7.classList.remove('hidden');
 
-
-
     comentarios.classList.remove('hidden');
 
     comentarios.style.position = 'relative';
 
-
+    finalizado.classList.remove('hidden');
 };
 
 let mostrar = () => {
     item5.classList.remove('hidden');
     item7.classList.add('hidden');
 
-
+    finalizado.classList.add('hidden');
 
     comentarios.classList.add('hidden');
 
@@ -202,8 +210,10 @@ let activar = async() => {
 
     if (usuario == 'Organizador') {
         editar.classList.remove('hidden');
+        editar.style.position = 'relative';
     } else {
         editar.classList.add('hidden');
+        editar.style.position = 'absolute';
     }
 
     await llena_mapa();

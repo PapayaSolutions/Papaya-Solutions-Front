@@ -75,6 +75,13 @@
     text-align: center;
 }
 
+#fecha_hora button {
+    height: 25px;
+    padding: 5px;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
 #fecha_hora thead {
     height: 25px;
     font-size: 20px;
@@ -109,4 +116,14 @@
 #cantidad_fechas {
     width: 50px;
     margin: auto;
+    display: none;
+}
+
+#fecha_hora input {
+    resize: none;
+}
+
+#fecha_hora input::-webkit-inner-spin-button,
+#fecha_hora input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
 }

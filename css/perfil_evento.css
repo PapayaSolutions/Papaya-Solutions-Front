@@ -18,7 +18,7 @@ header {
 }
 
 .img_container {
-    margin: 3px;
+    margin: auto;
 }
 
 a {
@@ -156,7 +156,6 @@ output {
     grid-row-start: 1;
     grid-row-end: 3;
     margin: auto;
-    margin-top: 10px;
 }
 
 
@@ -257,6 +256,15 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: auto;
+}*/
+
+.item8 {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border-radius: 10px;
+    margin: 0% auto;
 }
 
 
@@ -426,6 +434,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /*descuentos*/
+
+#descuentos {
+    margin: auto;
+    margin-top: 15px;
+    width: 90%;
+}
 
 #descuentos_evento {
     margin-top: 15px;

@@ -5,11 +5,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/perfil_recinto.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>Perfil de recinto</title>
 </head>
 
-<body>
+<body id="body">
+
+    <header>
+        <nav id="nav_principal">
+            <div>
+                <ul class="navegador_izquierda">
+                    <div>
+                        <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
+                    </div>
+                    <li><a href="listar_eventos.html">Eventos</a></li>
+                    <li><a>Registrarse</a>
+                        <ul>
+                            <li><a href="registrar_usuario.html">Cliente</a></li>
+                            <li><a href="#">Organizador de eventos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="registrar_evento.html">Crear evento</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navegador_derecha">
+                    <li><a href="visualizar_perfil.html"><i class="far fa-user"></i></a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="far fa-bell"></i></a></li>
+                    <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
+                    <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
+                    <li> <a href="index.html" id="btn_cerrar_sesion">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+    </header>
+
+    <main>
+
+        <div id="main_grid">
+            <div class="grid_item item1">
+
+                <label id='bnr_nombre'>Nombre del recinto</label>
+                <div class="spacer"></div>
+
+                <label>Dirección:</label>
+                <output id="direccion_recinto"></output>
+
+                <label>Ubicación:</label>
+                <output id="provincia"></output>
+                <output id="canton"></output>
+                <output id="distrito"></output>
+
+                <label>Capacidad total:</label>
+                <output id="capadidad"></output>
+
+                <label>Asientos de accesibilidad especial:</label>
+                <output id="especiales"></output>
+
+            </div>
+
+            <div class="grid_item item2">
+
+                <!-- Decoracion va acá-->
+
+            </div>
+
+            <div class="grid_item item3" id="map">
+
+            </div>
+
+            <div class="grid_item item4">
+                <div class="img_container">
+                    <img src="img/placeholder.jpg" id='img_recinto' alt="">
+                </div>
+            </div>
+
+
+        </div>
+        <!--Grid-->
+
+    </main>
+
+    <footer>
+        <div id="socials_container">
+            <div class="grid_socials">
+
+                <div class="footer_grid_item socials_1">
+                    <a href=""><img src="img/fb_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_2">
+                    <a href=""><img src="img/ig_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_3">
+                    <a href=""><img src="img/tw_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_4">
+                    <a href=""><img src="img/yt_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_5">
+                    <a href=""><img src="img/in_footer.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div id="links_container">
+            <div class="footer_grid_item2 grid_links">
+                <div>
+                    <h4>INFORMACIÓN</h4>
+                    <ul>
+                        <li><a href="landing_page.html">¿Qué es Míshka?</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>NOTICIAS</h4>
+                    <ul>
+                        <li><a href="">Publicaciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>TU CUENTA</h4>
+                    <ul>
+                        <li><a href="iniciar_sesion.html">Iniciar Sesión</a></li>
+                        <li><a href="registrar_usuario.html">Registrarse</a></li>
+                        <li><a href="">Ver carrito de compras</a></li>
+                        <li><a href="">Modificar información</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>CONTÁCTANOS</h4>
+                    <ul>
+                        <li>Oficinas principales: Míshka Co.</li>
+                        <li>Zip-10101 San José, Costa Rica</li>
+                        <li>Teléfono: (506) 1234-5678</li>
+                        <li>Email: soporte@Mishka.com</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="copyright">
+            <p>® Míshka™ &nbsp;&nbsp;&nbsp; Diseño por Papaya Solutions. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripting -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDQnZ4l9vPokKOvdI5hv1CnCkp-9fi3QE&callback=initMap" async defer></script>
+
+    <script src="js/controlador_general.js"></script>
+
+    <script src="js/recintos_servicio.js"></script>
+
 
 </body>
-
-</html>

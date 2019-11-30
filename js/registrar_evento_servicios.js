@@ -36,22 +36,24 @@ let registrar_evento = async(
 };
 
 let listar_tipos_de_evento = async() => {
-    let lista_tipo_de_evento;
+    let resultado;
+
     await axios({
             method: 'get',
+
             url: 'http://localhost:3000/api/listar_tipos_de_evento',
             responseType: 'json'
-
         })
         .then(function(res) {
-            lista_tipo_de_evento = res.data.productos;
+            resultado = res.data.tipos;
+
         })
         .catch(function(error) {
             console.log(error);
         });
-    return lista_tipo_de_evento;
-};
 
+    return resultado;
+};
 let listar_recintos = async() => {
 
     let lista_recintos;

@@ -58,27 +58,27 @@
         <div id="main_grid">
             <div class="grid_item item1">
 
-                <label id='bnr_nombre'>Nombre del recinto</label>
+                <label id='nombre'>Nombre del recinto</label>
                 <div class="spacer"></div>
-
-                <label>Dirección:</label>
-                <output id="direccion_recinto"></output>
 
                 <label>Ubicación:</label>
                 <output id="provincia"></output>
                 <output id="canton"></output>
                 <output id="distrito"></output>
 
-                <label>Capacidad total:</label>
-                <output id="capadidad"></output>
+                <label>Dirección:</label>
+                <output id="direccion_recinto"></output>
 
-                <label>Asientos de accesibilidad especial:</label>
+                <label>Capacidad total:</label>
+                <output id="capacidad"></output>
+
+                <label>Asientos de accesibilidad<br> especial:</label>
                 <output id="especiales"></output>
 
             </div>
 
             <div class="grid_item item2">
-
+                <button type="button" id="volver">Volver</button>
                 <!-- Decoracion va acá-->
 
             </div>
@@ -168,13 +168,14 @@
     </footer>
 
     <!-- Scripting -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDQnZ4l9vPokKOvdI5hv1CnCkp-9fi3QE&callback=initMap" async defer></script>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/controlador_general.js"></script>
 
     <script src="js/recintos_servicio.js"></script>
+    <script src="js/controlador_perfil_recinto.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDQnZ4l9vPokKOvdI5hv1CnCkp-9fi3QE&callback=initMap" async defer></script>
 
 </body>

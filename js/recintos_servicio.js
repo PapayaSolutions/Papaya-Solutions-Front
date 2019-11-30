@@ -72,3 +72,20 @@ let obtener_recinto_nombre = async(nombre) => {
         });
     return lista_recinto;
 };
+
+let obtener_recinto_id = async(_id) => {
+    let lista_recinto;
+    await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/listar_recinto_id/${_id}`,
+            responseType: 'json',
+
+        }).then(function(res) {
+            lista_recinto = res.data.recintos;
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    return lista_recinto;
+};

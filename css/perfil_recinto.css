@@ -39,10 +39,10 @@ header {
 #main_grid {
     display: grid;
     min-width: 900px;
-    width: 80%;
+    width: 90%;
     margin: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 40px 1fr 1fr;
+    grid-template-rows: 1fr 1fr 40px;
     grid-gap: 10px 10px;
     position: relative;
 }
@@ -59,10 +59,12 @@ header {
     grid-column-end: 6;
     grid-row-start: 1;
     grid-row-end: 3;
+    min-width: 300px;
     border-radius: 10px;
     padding: 20px;
     padding-bottom: 10px;
-    margin: 0% auto;
+    margin: auto;
+    z-index: 1;
 }
 
 
@@ -76,6 +78,10 @@ label {
     min-width: 200px;
     margin: auto;
     padding-left: 10px;
+}
+
+#nombre {
+    font-size: 20px;
 }
 
 
@@ -109,10 +115,10 @@ output {
 /*geolocalización mapa de google*/
 
 .item3 {
-    grid-column-start: 3;
+    grid-column-start: 4;
     grid-column-end: 5;
-    grid-row-start: 4;
-    grid-row-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
     border-radius: 5px;
     margin: auto;
     margin-top: 10px;
@@ -130,9 +136,13 @@ output {
 
 .item4 {
     grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 4;
-    grid-row-end: 6;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
     margin: auto;
     margin-top: 10px;
+}
+
+#volver {
+    margin-top: 5px;
 }

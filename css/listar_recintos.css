@@ -47,6 +47,7 @@ html {
 
 #tbl-recintos {
     margin: 10px;
+    text-align: center;
 }
 
 #tbl-recintos thead {
@@ -54,11 +55,11 @@ html {
     font-size: 20px;
     color: #f7882f;
     border-bottom: #f7882f 2px solid;
-    text-align: left;
+    text-align: center;
 }
 
 #tbl-recintos thead th {
-    min-width: 150px;
+    min-width: 130px;
 }
 
 #tbl-recintos tbody {
@@ -104,13 +105,19 @@ html {
     grid-template-columns: 30% 30%;
 }
 
-.btnmas {
-    background: #f7882f;
-    font-size: 13px;
+.btn {
+    width: 135px;
+    height: 30px;
+    border: 1px solid #f7882f;
+    font-size: 16px;
     padding: 5px;
-    border-radius: 10rem;
-    color: #ececec;
-    margin: 5px;
+    margin: auto;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
 }
 
 hr {

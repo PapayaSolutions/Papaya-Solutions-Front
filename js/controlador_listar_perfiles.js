@@ -111,6 +111,7 @@ let llenar_organizadores = async() => {
 
             boton.addEventListener('click', function() {
                 localStorage.setItem("destino_id", this.dataset.destino);
+                localStorage.setItem('previo', window.location.href);
                 window.location.href = 'visualizar_perfil.html';
 
             });

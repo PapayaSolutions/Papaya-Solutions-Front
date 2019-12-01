@@ -11,13 +11,12 @@ const imagen_avatar = document.querySelector('#avat');
 const p_tarjeta = document.querySelector('#tarjeta_informacion');
 
 let lista_clientes;
-let lista_tarjetas;
+let usuario = sessionStorage.getItem('tipo_usuario');
 let id = localStorage.getItem('destino_id');
 
 let llenar_tabla = async() => {
 
     lista_clientes = await obtener_cliente_id(id);
-    lista_tarjetas = await obtener_cliente_id(tarjetas);
     console.log(lista_clientes);
 
     let fila = tbody.insertRow();
@@ -29,40 +28,24 @@ let llenar_tabla = async() => {
     identificacion.innerHTML = lista_clientes[0]['identificacion'];
     correo_cliente.innerHTML = lista_clientes[0]['correo_cliente'];
     imagen_avatar.src = lista_clientes[0]['url_avatar'];
-    p_tarjeta.innerHTML = lista_tarjetas[0]['tarjeta'];
+
+    for (let i = 0; i < lista_clientes[0]['metodos_pago'].length; i++) {
+
+        let tarjeta = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
+        p_tarjeta.innerHTML = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
+
+    }
+
+
+
 
     for (let i = 0; i < lista_clientes[0]['f_nacimiento'].length; i++) {
-
         let date = new Date((lista_clientes[0]['f_nacimiento']));
         nacimiento.innerHTML = (date.getDate() + '/ ' + date.getMonth() + '/ ' + date.getFullYear());
-
     };
 
-    localStorage.setItem('id_cliente', JSON.stringify(lista_clientes));
-    JSON.parse(localStorage.getItem('id_cliente'));
+    localStorage.setItem('id_tarjeta', JSON.stringify(lista_clientes));
+    JSON.parse(localStorage.getItem('id_tarjeta'));
 
 };
 llenar_tabla();
-
-/*
-const nombre = document.querySelector('nombre');
-const tbody = document.querySelector('#tbl_perfil tbody');
-
-let id = localStorage.getItem('id_perfil');
-let lista_clientes;
-
-
-let llenar_perfil = async() => {
-
-    lista_clientes = await obtener_cliente_id(id);
-
-    console.log(lista_clientes);
-
-    nombre.innerHTML = lista_clientes[0]['p_nombre'];
-
-    localStorage.setItem('id_usuario', nombre);
-
-
-};
-
-llenar_perfil();*/

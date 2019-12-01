@@ -130,6 +130,7 @@ let validar = () => {
     } else {
         input_postal.classList.remove('error');
     }
+
     return error;
 
 };

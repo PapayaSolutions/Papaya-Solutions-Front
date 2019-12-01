@@ -9,6 +9,7 @@ const identificacion = document.querySelector('#identificacion');
 const correo_cliente = document.querySelector('#correo');
 const imagen_avatar = document.querySelector('#avat');
 const p_tarjeta = document.querySelector('#tarjeta_informacion');
+const tipo_tarjeta = document.querySelector('#tipo_tarjeta');
 
 let lista_clientes;
 let usuario = sessionStorage.getItem('tipo_usuario');
@@ -29,9 +30,15 @@ let llenar_tabla = async() => {
     correo_cliente.innerHTML = lista_clientes[0]['correo_cliente'];
     imagen_avatar.src = lista_clientes[0]['url_avatar'];
 
+
+
+
+
     for (let i = 0; i < lista_clientes[0]['metodos_pago'].length; i++) {
 
+
         let tarjeta = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
+        tipo_tarjeta.innerHTML = lista_clientes[0]['type1'];
         p_tarjeta.innerHTML = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
 
     }

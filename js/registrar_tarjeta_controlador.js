@@ -6,6 +6,7 @@ const input_codigo = document.querySelector('#codigo');
 const input_vencimiento = document.querySelector('#vencimiento');
 const input_apellido = document.querySelector('#apellido');
 const input_postal = document.querySelector('#postal');
+const tipo_tarjeta = document.querySelector('#type1')
 const btn_registro = document.querySelector('#btn_registro');
 
 var tarjeta_invalida = false;
@@ -17,12 +18,12 @@ $("#tarjeta").keyup(function(e) {
     /* VALIDACION DE TIPO */
     if (charCount == 1) {
         if (num == "4") {
-            $("#type").html("VISA");
+            $("#type1").html("VISA");
         }
     }
     if (charCount == 2) {
         if (num == "51" || num == "55" || num == "53") {
-            $("#type").html("MASTER CARD");
+            $("#type1").html("MASTER CARD");
         }
     }
 
@@ -32,11 +33,11 @@ $("#tarjeta").keyup(function(e) {
     if (charCount == 13 || charCount == 14 || charCount == 15 || charCount == 16) {
         var valid = isValid(num, charCount);
         if (valid) {
-            $("#type").html("Valida");
+            $("#type2").html("Valida");
             $("input").attr("name", "numero_tarjeta").attr("class", "valid-card");
             tarjeta_invalida = true;
         } else {
-            $("#type").html("Invalida");
+            $("#type2").html("Invalida");
             $("input").attr("name", "numero_tarjeta").attr("class", "invalid-card");
             tarjeta_invalida = false;
         }

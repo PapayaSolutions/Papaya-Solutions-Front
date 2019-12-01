@@ -84,18 +84,10 @@ function toSingle(digito) {
 
 // Validación de datos
 let validar = () => {
-    let error = true;
-
-    if (input_tarjeta.value == '') {
-        error = false;
-        input_tarjeta.classList.add('error');
-        console.log('Favor llenar correctamente el campo de número de tarjeta.')
-    } else {
-        input_tarjeta.classList.remove('error');
-    }
+    let error = false;
 
     if (input_nombre.value == '') {
-        error = false;
+        error = true;
         input_nombre.classList.add('error');
         console.log('Falta nombre del propietario')
     } else {
@@ -103,7 +95,7 @@ let validar = () => {
     }
 
     if (input_codigo.value == '') {
-        error = false;
+        error = true;
         input_codigo.classList.add('error');
         console.log('Falta código de tarjeta')
     } else {
@@ -111,7 +103,7 @@ let validar = () => {
     }
 
     if (input_vencimiento.value == '') {
-        error = false;
+        error = true;
         input_vencimiento.classList.add('error');
         console.log('Falta fecha de vencimiento')
     } else {
@@ -119,21 +111,21 @@ let validar = () => {
     }
 
     if (input_apellido.value == '') {
-        error = false;
+        error = true;
         input_apellido.classList.add('error');
     } else {
         input_apellido.classList.remove('error');
     }
 
     if (input_postal.value == '') {
-        error = false;
+        error = true;
         input_postal.classList.add('error');
     } else {
         input_postal.classList.remove('error');
     }
 
     if (input_postal.value == 'text') {
-        error = false;
+        error = true;
         input_postal.classList.add('error');
     } else {
         input_postal.classList.remove('error');
@@ -153,18 +145,28 @@ let obtener_datos = () => {
     let postal = input_postal.value;
 
     //si hay error, entra al if. Si no hay error entra al else
-    if (validar() && tarjeta_invalida == false) {
+    if (tarjeta_invalida == false) {
         Swal.fire({
             type: 'warning',
-            title: '¡Espera!',
+            title: 'Verifique el número de tarjeta',
             animation: true,
-            text: 'Hay espacios que deben ser llenados',
+            text: '',
             confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'
             }
         })
-
+    } else if (validar()) {
+        Swal.fire({
+            type: 'warning',
+            title: 'Verifique los campos',
+            animation: true,
+            text: '¡Hay espacios que deben ser llenados!',
+            confirmButtonText: 'Entendido',
+            customClass: {
+                popup: 'animated tada'
+            }
+        })
     } else {
         console.log('tarjeta', codigo);
         console.log('nombre', nombre);
@@ -177,8 +179,8 @@ let obtener_datos = () => {
             type: 'success',
             title: 'Registrado',
             animation: true,
-            text: 'Se han guardado los datos de la tarjeta con éxito.',
-            confirmButtonText: 'Endentido',
+            text: '¡Se han guardado los datos de la tarjeta con éxito!',
+            confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'
             }

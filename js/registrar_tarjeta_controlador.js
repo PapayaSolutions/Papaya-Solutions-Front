@@ -8,7 +8,7 @@ const input_apellido = document.querySelector('#apellido');
 const input_postal = document.querySelector('#postal');
 const btn_registro = document.querySelector('#btn_registro');
 
-let tarjeta_valida = true;
+var tarjeta_invalida = false;
 
 $("#tarjeta").keyup(function(e) {
     var num = $(this).val().toString();
@@ -34,13 +34,11 @@ $("#tarjeta").keyup(function(e) {
         if (valid) {
             $("#type").html("Valida");
             $("input").attr("name", "numero_tarjeta").attr("class", "valid-card");
-            tarjeta_valida = true;
-
+            tarjeta_invalida = true;
         } else {
             $("#type").html("Invalida");
             $("input").attr("name", "numero_tarjeta").attr("class", "invalid-card");
-            tarjeta_valida = false;
-
+            tarjeta_invalida = false;
         }
     }
     /* !ALGORITMO */
@@ -86,10 +84,10 @@ function toSingle(digito) {
 
 // Validación de datos
 let validar = () => {
-    let error = false;
+    let error = true;
 
     if (input_tarjeta.value == '') {
-        error = true;
+        error = false;
         input_tarjeta.classList.add('error');
         console.log('Favor llenar correctamente el campo de número de tarjeta.')
     } else {
@@ -97,7 +95,7 @@ let validar = () => {
     }
 
     if (input_nombre.value == '') {
-        error = true;
+        error = false;
         input_nombre.classList.add('error');
         console.log('Falta nombre del propietario')
     } else {
@@ -105,7 +103,7 @@ let validar = () => {
     }
 
     if (input_codigo.value == '') {
-        error = true;
+        error = false;
         input_codigo.classList.add('error');
         console.log('Falta código de tarjeta')
     } else {
@@ -113,7 +111,7 @@ let validar = () => {
     }
 
     if (input_vencimiento.value == '') {
-        error = true;
+        error = false;
         input_vencimiento.classList.add('error');
         console.log('Falta fecha de vencimiento')
     } else {
@@ -121,21 +119,21 @@ let validar = () => {
     }
 
     if (input_apellido.value == '') {
-        error = true;
+        error = false;
         input_apellido.classList.add('error');
     } else {
         input_apellido.classList.remove('error');
     }
 
     if (input_postal.value == '') {
-        error = true;
+        error = false;
         input_postal.classList.add('error');
     } else {
         input_postal.classList.remove('error');
     }
 
     if (input_postal.value == 'text') {
-        error = true;
+        error = false;
         input_postal.classList.add('error');
     } else {
         input_postal.classList.remove('error');
@@ -153,12 +151,9 @@ let obtener_datos = () => {
     let vencimiento = input_vencimiento.value;
     let apellido = input_apellido.value;
     let postal = input_postal.value;
-    let tarjeta_valida = true;
-
-    btn_registro.addEventListener('click', obtener_datos);
 
     //si hay error, entra al if. Si no hay error entra al else
-    if (validar() && !tarjeta_valida) {
+    if (validar() && tarjeta_invalida == false) {
         Swal.fire({
             type: 'warning',
             title: '¡Espera!',
@@ -169,8 +164,8 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         })
-    } else {
 
+    } else {
         console.log('tarjeta', codigo);
         console.log('nombre', nombre);
         console.log('codigo', codigo);
@@ -188,9 +183,7 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         })
-
     }
-
 };
 
 // Eventos asociados a los botones o inputs

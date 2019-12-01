@@ -30,21 +30,15 @@ let llenar_tabla = async() => {
     correo_cliente.innerHTML = lista_clientes[0]['correo_cliente'];
     imagen_avatar.src = lista_clientes[0]['url_avatar'];
 
-
-
-
-
     for (let i = 0; i < lista_clientes[0]['metodos_pago'].length; i++) {
 
+        if (p_tar)
 
-        let tarjeta = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
+            let tarjeta = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
         tipo_tarjeta.innerHTML = lista_clientes[0]['type1'];
         p_tarjeta.innerHTML = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
 
     }
-
-
-
 
     for (let i = 0; i < lista_clientes[0]['f_nacimiento'].length; i++) {
         let date = new Date((lista_clientes[0]['f_nacimiento']));

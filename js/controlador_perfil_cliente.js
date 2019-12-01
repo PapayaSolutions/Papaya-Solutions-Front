@@ -8,12 +8,16 @@ const direccion = document.querySelector('#direccion');
 const identificacion = document.querySelector('#identificacion');
 const correo_cliente = document.querySelector('#correo');
 const imagen_avatar = document.querySelector('#avat');
+const p_tarjeta = document.querySelector('#tarjeta_informacion');
+
 let lista_clientes;
+let lista_tarjetas;
 let id = localStorage.getItem('destino_id');
 
 let llenar_tabla = async() => {
 
     lista_clientes = await obtener_cliente_id(id);
+    lista_tarjetas = await obtener_cliente_id(tarjetas);
     console.log(lista_clientes);
 
     let fila = tbody.insertRow();
@@ -24,22 +28,21 @@ let llenar_tabla = async() => {
     direccion.innerHTML = lista_clientes[0]['direccion'];
     identificacion.innerHTML = lista_clientes[0]['identificacion'];
     correo_cliente.innerHTML = lista_clientes[0]['correo_cliente'];
-    imagen_avatar.src = lista_clientes[0]['url_avatar']
+    imagen_avatar.src = lista_clientes[0]['url_avatar'];
+    p_tarjeta.innerHTML = lista_tarjetas[0]['tarjeta'];
 
     for (let i = 0; i < lista_clientes[0]['f_nacimiento'].length; i++) {
+
         let date = new Date((lista_clientes[0]['f_nacimiento']));
-
         nacimiento.innerHTML = (date.getDate() + '/ ' + date.getMonth() + '/ ' + date.getFullYear());
-    };
 
+    };
 
     localStorage.setItem('id_cliente', JSON.stringify(lista_clientes));
     JSON.parse(localStorage.getItem('id_cliente'));
 
 };
 llenar_tabla();
-
-
 
 /*
 const nombre = document.querySelector('nombre');

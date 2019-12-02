@@ -77,5 +77,6 @@ function placeMarkerAndPanTo(latLng, map) {
 }
 
 volver.addEventListener('click', function() {
-    window.location.href = 'perfil_evento.html'
+
+    window.location.href = localStorage.getItem('previo');
 });

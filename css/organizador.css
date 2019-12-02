@@ -40,30 +40,6 @@
     padding-top: 20px;
 }
 
-.info_tarjeta {
-    height: 100px;
-    width: 170px;
-    border-radius: 20px;
-    border: 1px solid #f7882f;
-}
-
-.info_tarjeta i {
-    color: #f7882f;
-    padding-top: 5px;
-    padding-left: 10px;
-}
-
-.info_tarjeta p {
-    color: #f7882f;
-    padding-top: 10px;
-    padding-left: 10px;
-}
-
-#agregar_info_tarjeta {
-    padding-top: 15px;
-    margin-left: 100px;
-}
-
 #avat {
     border-radius: 20px;
 }
@@ -93,6 +69,7 @@
 .visualizar {
     display: grid;
     grid-template-columns: 350px;
+    background-size: cover;
 }
 
 hr {
@@ -100,11 +77,11 @@ hr {
     border: 1px solid #f7c331;
 }
 
-#preferencia {
+#eventos {
     width: 65%;
 }
 
-#preferencia_h1 {
+#eventos_h1 {
     margin-left: 17%;
 }
 
@@ -112,14 +89,14 @@ hr {
     margin: 0 auto;
 }
 
-.preferencias_fila_1 {
+.eventos_fila_1 {
     display: grid;
     grid-template-columns: repeat(4, 200px);
     padding-top: 30px;
     margin-left: 20%;
 }
 
-.preferencias_fila_1 img {
+.eventos_fila_1 img {
     border-radius: 20px;
 }
 
@@ -127,14 +104,14 @@ a {
     color: #f7882f;
 }
 
-.preferencias_fila_2 {
+.eventos_fila_2 {
     display: grid;
     grid-template-columns: repeat(4, 200px);
     padding-top: 30px;
     margin-left: 20%;
 }
 
-.preferencias_fila_2 img {
+.eventos_fila_2 img {
     border-radius: 20px;
 }
 

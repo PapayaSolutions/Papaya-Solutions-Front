@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Perfil organizador de eventos</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/organizador.css">
+
+</head>
+
+<body>
+    <header>
+        <nav id="nav_principal">
+            <div>
+                <ul class="navegador_izquierda">
+                    <div>
+                        <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
+                    </div>
+                    <li><a href="listar_eventos.html">Eventos</a></li>
+                    <li><a>Registrarse</a>
+                        <ul>
+                            <li><a href="registrar_usuario.html">Cliente</a></li>
+                            <li><a href="#">Organizador de eventos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="registrar_evento.html">Crear evento</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navegador_derecha">
+                    <li><a href="visualizar_perfil.html"><i class="far fa-user"></i></a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="far fa-bell"></i></a></li>
+                    <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
+                    <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
+                    <li> <a href="index.html" id="btn_cerrar_sesion">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="volver">
+        <a href="listar_perfiles.html"><i class="fas fa-arrow-left"></i></a>
+    </div>
+    <main>
+        <div id="spacer"></div>
+        <div id="spacer"></div>
+
+        <div class="fondo">
+
+            <div class="perfil">
+
+                <div class="imagen">
+
+                    <div class="imagen_avatar">
+                        <img id="avat" src="img/avatar.jpg" alt="avatar" , height="140px" , width="140x" ;>
+
+                        <div id="spacer"></div>
+
+                        <div id="info_general">
+
+                            <div class="datos_cliente">
+
+                                <div class="espacio_info">
+                                    <p>Identificación:
+                                        <output id="identificacion"></output></p>
+                                </div>
+
+                                <table id="tbl_perfil">
+                                    <thead>
+                                        <tr>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+
+                                <div class="espacio_info">
+                                    <output id="direccion"></output>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+
+                        <button type="button" class="btn">Editar</button>
+
+                        <div id="nombre"></div>
+                        <div id="correo"></div>
+
+                        <div id="mini_spacer"></div>
+
+                        <hr>
+
+                        <div id="mini_spacer"></div>
+
+                        <div id="nac_gen">
+
+                            <div class="espacio_info">
+                                <p>Fecha de nacimiento:
+                                    <output id="nacimiento"></output></p>
+                            </div>
+
+                            <div class="espacio_info">
+                                <p>Género:
+                                    <output id="genero"></output></p>
+                            </div>
+
+                        </div>
+
+
+                        <div id="mini_spacer"></div>
+                        <img id='visual' src="img/pared_ladrillo.jpg" alt="">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr id="eventos">
+
+        <div class="eventos_realizados">
+
+            <div class="acomodo">
+
+                <h1 id="eventos_h1">Eventos realizados</h1>
+
+                <div class="eventos_fila_1">
+
+                    <div id="texto_fila">
+                        <p>Evento</p>
+                        <img src="img/fran.JPG" alt="Arte" height="115px" , width="115px" ;>
+                    </div>
+
+                    <div id="texto_fila">
+                        <p>Evento</p>
+                        <img src="img/andres.JPG" alt="Arte" height="115px" , width="115px" ;>
+                    </div>
+
+                    <div id="texto_fila">
+                        <p>Evento</p>
+                        <img src="img/will.JPG" alt=" Arte " height="115px " , width="115px " ;>
+                    </div>
+
+                    <div id="texto_fila">
+                        <p>Evento</p>
+                        <img src="img/andres.JPG" alt=" Arte " height="115px " , width="115px " ;>
+                    </div>
+
+                </div>
+
+                <div class="eventos_fila_2">
+
+                    <div id="texto_fila">
+                        <p>Evento</p>
+                        <img src="img/marco.JPG" alt="Arte" height="115px" , width="115px" ;>
+                    </div>
+
+                    <div id="texto_fila">
+                        <p>Evento</p>
+                        <img src="img/fran.JPG" alt="Arte" height="115px" , width="115px" ;>
+                    </div>
+
+                    <div id="texto_fila">
+                        <p>Evento</p>
+                        <img src="img/will.JPG" alt=" Arte " height="115px " , width="115px " ;>
+                    </div>
+
+                    <div id="texto_fila">
+                        <p>Evento</p>
+                        <img src="img/daniel.JPG" alt=" Arte " height="115px " , width="115px " ;>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <footer>
+        <div id="socials_container">
+            <div class="grid_socials">
+
+                <div class="footer_grid_item socials_1">
+                    <a href=""><img src="img/fb_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_2">
+                    <a href=""><img src="img/ig_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_3">
+                    <a href=""><img src="img/tw_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_4">
+                    <a href=""><img src="img/yt_footer.png" alt=""></a>
+                </div>
+                <div class="footer_grid_item socials_5">
+                    <a href=""><img src="img/in_footer.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div id="links_container">
+            <div class="footer_grid_item2 grid_links">
+                <div>
+                    <h4>INFORMACIÓN</h4>
+                    <ul>
+                        <li><a href="landing_page.html">¿Qué es Míshka?</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>NOTICIAS</h4>
+                    <ul>
+                        <li><a href="">Publicaciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>TU CUENTA</h4>
+                    <ul>
+                        <li><a href="iniciar_sesion.html">Iniciar Sesión</a></li>
+                        <li><a href="registrar_usuario.html">Registrarse</a></li>
+                        <li><a href="">Ver carrito de compras</a></li>
+                        <li><a href="">Modificar Información</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>CONTÁCTANOS</h4>
+                    <ul>
+                        <li>Oficinas Principales: Míshka Co.</li>
+                        <li>Zip-10101 San José, Costa Rica</li>
+                        <li>Teléfono: (506) 1234-5678</li>
+                        <li>Email: soporte@Mishka.com</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="copyright">
+            <p>® Míshka™ &nbsp;&nbsp;&nbsp; Diseño por Papaya Solutions. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
+    <script src="js/controlador_general.js "></script>
+    <script src="js/clientes_servicio.js "></script>
+
+
+</body>
+
+</html>

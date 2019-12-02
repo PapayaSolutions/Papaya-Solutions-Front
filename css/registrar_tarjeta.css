@@ -60,6 +60,19 @@ textarea {
     overflow: hidden;
 }
 
+#type1 {
+    color: #f7882f;
+    position: absolute;
+    margin-left: 200px;
+    padding-top: 10px;
+}
+
+#type2 {
+    color: #f7882f;
+    position: absolute;
+    padding-left: 200px;
+}
+
 #btn_retiro a {
     text-decoration: none;
     color: #ececec;

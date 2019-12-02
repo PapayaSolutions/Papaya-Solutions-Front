@@ -187,6 +187,7 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         })
+        window.location.href = 'visualizar_perfil.html';
     }
 };
 

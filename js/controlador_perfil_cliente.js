@@ -10,6 +10,7 @@ const correo_cliente = document.querySelector('#correo');
 const imagen_avatar = document.querySelector('#avat');
 const p_tarjeta = document.querySelector('#tarjeta_informacion');
 const tipo_tarjeta = document.querySelector('#tipo_tarjeta');
+const div_i = document.querySelectorAll('#volver a i')
 
 let lista_clientes;
 let usuario = sessionStorage.getItem('tipo_usuario');
@@ -32,10 +33,21 @@ let llenar_tabla = async() => {
 
     for (let i = 0; i < lista_clientes[0]['metodos_pago'].length; i++) {
 
-        if (p_tar)
 
-            let tarjeta = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
-        tipo_tarjeta.innerHTML = lista_clientes[0]['type1'];
+
+        /* var charCount = lista_clientes[0]['metodos_pago'][i]['tarjeta'].length;
+         if (charCount == 1) {
+             if (p_tarjeta == '4')
+               
+         }
+
+         if (charCount == 1) {
+             if (p_tarjeta == '5')
+                 
+         } */
+
+        let tarjeta = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
+        tipo_tarjeta.innerHTML = "Master Card";
         p_tarjeta.innerHTML = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
 
     }
@@ -50,3 +62,25 @@ let llenar_tabla = async() => {
 
 };
 llenar_tabla();
+
+if (conectado) {
+    switch (tipo_usuario) {
+
+        case 'Cliente':
+            div_i[0].classList.add('ocultar');
+            break;
+        case 'Encargado':
+            div_i[0].classList.add('ocultar');
+
+            break;
+        case 'Organizador':
+            div_i[0].classList.add('ocultar');
+
+            break;
+        default:
+
+            break;
+    }
+} else {
+    div_i[0].classList.add('ocultar');
+}

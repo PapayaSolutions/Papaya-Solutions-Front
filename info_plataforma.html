@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/configuracion.css">
     <link rel="stylesheet" href="css/formularios.css">
-    <link rel="stylesheet" href="css/info_mishka.css">
+    <link rel="stylesheet" href="css/info_plataforma.css">
 </head>
 
 <body>
@@ -108,16 +108,20 @@
         <section>
             <div class="formulario">
 
-                <h1>Configuración de la plataforma</h1>
+                <h1>Información de la plataforma</h1>
+                <button type="button" id="editar">Editar</button>
                 <div class="spacer_h1"></div>
-                <div class="two_collumn_form">
+                <div class="three_collumn_form">
+
                     <div class="item1">
                         <label for="nombre">Nombre de la empresa:</label>
                         <label for="razon">Razón social:</label>
                         <label for="cedula">Cédula jurídica:</label>
                         <label for="direccion">Dirección exacta:</label>
+                        <label for="ubicacion">Ubicación:</label>
                         <label for="experiencia">Años de experiencia:</label>
-                        <label for="telefonos">Número(s) de teléfono:</label>
+                        <label for="comision">Cargo de comisión:</label>
+
 
                     </div>
                     <div class="item2">
@@ -125,12 +129,39 @@
                         <output type="text" id="razon"></output>
                         <output type="text" id="cedula"></output>
                         <output type="text" id="direccion"></output>
+                        <output type="text" id="ubicacion"></output>
                         <output type="text" id="experiencia"></output>
-                        <output type="text" id="telefonos"></output>
+                        <output type="text" id="comision"></output>
+
+                    </div>
+                    <div id="imagenes">
+                        <div id="imagen_container">
+                            <img src="" alt="Logo" id="logo">
+                        </div>
+                        <div id="map"></div>
                     </div>
                 </div>
-                <label for="logo">Logotipo:</label>
-                <label for="mapa">Mapa:</label>
+
+                <div class="custom_collumn_form">
+                    <div id="item4">
+                        <label for="telefonos">Número(s) de teléfono:</label>
+                    </div>
+                    <div id='item5'>
+                        <table id="telefonos">
+                            <thead>
+                                <tr>
+                                    <th>Teléfono</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div></div>
+
+                </div>
             </div>
 
 
@@ -141,6 +172,12 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/controlador_general.js"></script>
+    <script src="js/plataforma_servicios.js"></script>
+    <script src="js/controlador_info_plataforma.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDQnZ4l9vPokKOvdI5hv1CnCkp-9fi3QE&callback=initMap" async defer></script>
 
 </body>
 

@@ -1,0 +1,100 @@
+/*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a verde muy oscuro
+    #ececec gris 
+*/
+
+.reportes {
+    padding: 50px 40px 10px 40px;
+}
+
+.txt-filtro::placeholder {
+    color: #f7882f;
+}
+
+#search_icon {
+    position: relative;
+    left: 4px;
+    color: #f7882f;
+    top: 25px;
+}
+
+#tbl-recintos {
+    margin: 10px;
+}
+
+#tbl-recintos thead {
+    height: 25px;
+    font-size: 20px;
+    color: #f7882f;
+    border-bottom: #f7882f 2px solid;
+    text-align: left;
+}
+
+#tbl-recintos thead th {
+    min-width: 150px;
+}
+
+#tbl-recintos tbody {
+    height: 18px;
+    border-bottom: #f7882f 1px solid;
+    text-justify: center;
+}
+
+#tbl-recintos tbody td {
+    padding: 5px;
+    border-bottom: #f7882f 1px solid;
+}
+
+#tbl-recintos tbody td input .btn {
+    background: #f7882f;
+    font-size: 10px;
+    letter-spacing: 3px;
+    border: 1px solid #f7882f;
+    padding: 5px 15px;
+    border-radius: 10rem;
+    color: #ececec;
+}
+
+#tbl-recintos tbody td input .btn:hover {
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
+    box-sizing: border-box;
+}
+
+#filtro_mes,
+#filtro_anno {
+    height: 35px;
+    width: 250px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding-left: 30px;
+    color: #f7882f;
+}
+
+.two_collumn {
+    padding: 5px 40px 10px 40px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 30% 30%;
+}
+
+.btnmas {
+    background: #f7882f;
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 10rem;
+    color: #ececec;
+    margin: 5px;
+}
+
+hr {
+    border: #f7882f solid 1px;
+}
+
+.contenedor_tabla {
+    padding: 5px 40px 10px 40px;
+    margin: auto;
+}

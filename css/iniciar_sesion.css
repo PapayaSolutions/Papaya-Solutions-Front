@@ -25,3 +25,18 @@
 .formulario_iniciar_sesion {
     width: 100%;
 }
+
+.recuperar {
+    padding-top: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.recuperar a {
+    color: #f7882f;
+    font-size: 14px;
+}
+
+.recuperar a:hover {
+    color: #f7c331;
+}

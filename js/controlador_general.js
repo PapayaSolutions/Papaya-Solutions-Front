@@ -2,7 +2,6 @@
 
 const nav = document.querySelectorAll('.navegador_izquierda li');
 
-
 const no_li = document.querySelectorAll('.navegador_derecha li')
 
 const btn_cerrar_sesion = document.querySelector('#btn_cerrar_sesion')
@@ -56,5 +55,6 @@ function cerrar_sesion() {
     sessionStorage.clear();
     window.location.href = "index.html";
 }
+
 
 btn_cerrar_sesion.addEventListener('click', cerrar_sesion);

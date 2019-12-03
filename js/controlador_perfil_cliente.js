@@ -8,7 +8,12 @@ const direccion = document.querySelector('#direccion');
 const identificacion = document.querySelector('#identificacion');
 const correo_cliente = document.querySelector('#correo');
 const imagen_avatar = document.querySelector('#avat');
+const p_tarjeta = document.querySelector('#tarjeta_informacion');
+const tipo_tarjeta = document.querySelector('#tipo_tarjeta');
+const div_i = document.querySelectorAll('#volver a i')
+
 let lista_clientes;
+let usuario = sessionStorage.getItem('tipo_usuario');
 let id = localStorage.getItem('destino_id');
 
 let llenar_tabla = async() => {
@@ -24,42 +29,58 @@ let llenar_tabla = async() => {
     direccion.innerHTML = lista_clientes[0]['direccion'];
     identificacion.innerHTML = lista_clientes[0]['identificacion'];
     correo_cliente.innerHTML = lista_clientes[0]['correo_cliente'];
-    imagen_avatar.src = lista_clientes[0]['url_avatar']
+    imagen_avatar.src = lista_clientes[0]['url_avatar'];
+
+    for (let i = 0; i < lista_clientes[0]['metodos_pago'].length; i++) {
+
+
+
+        /* var charCount = lista_clientes[0]['metodos_pago'][i]['tarjeta'].length;
+         if (charCount == 1) {
+             if (p_tarjeta == '4')
+               
+         }
+
+         if (charCount == 1) {
+             if (p_tarjeta == '5')
+                 
+         } */
+
+        let tarjeta = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
+        tipo_tarjeta.innerHTML = "Master Card";
+        p_tarjeta.innerHTML = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
+
+    }
 
     for (let i = 0; i < lista_clientes[0]['f_nacimiento'].length; i++) {
         let date = new Date((lista_clientes[0]['f_nacimiento']));
-
         nacimiento.innerHTML = (date.getDate() + '/ ' + date.getMonth() + '/ ' + date.getFullYear());
     };
 
-
-    localStorage.setItem('id_cliente', JSON.stringify(lista_clientes));
-    JSON.parse(localStorage.getItem('id_cliente'));
+    localStorage.setItem('id_tarjeta', JSON.stringify(lista_clientes));
+    JSON.parse(localStorage.getItem('id_tarjeta'));
 
 };
 llenar_tabla();
 
+if (conectado) {
+    switch (tipo_usuario) {
 
+        case 'Cliente':
+            div_i[0].classList.add('ocultar');
+            break;
+        case 'Encargado':
+            div_i[0].classList.add('ocultar');
 
-/*
-const nombre = document.querySelector('nombre');
-const tbody = document.querySelector('#tbl_perfil tbody');
+            break;
+        case 'Organizador':
+            div_i[0].classList.add('ocultar');
 
-let id = localStorage.getItem('id_perfil');
-let lista_clientes;
+            break;
+        default:
 
-
-let llenar_perfil = async() => {
-
-    lista_clientes = await obtener_cliente_id(id);
-
-    console.log(lista_clientes);
-
-    nombre.innerHTML = lista_clientes[0]['p_nombre'];
-
-    localStorage.setItem('id_usuario', nombre);
-
-
-};
-
-llenar_perfil();*/
+            break;
+    }
+} else {
+    div_i[0].classList.add('ocultar');
+}

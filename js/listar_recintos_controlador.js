@@ -3,6 +3,7 @@
 const tbody = document.querySelector('#tbl-recintos tbody');
 const input_filtro = document.querySelector('#txt-filtro');
 const input_filtro_cap = document.querySelector('#txt-filtro-cap');
+const btnmas = document.querySelector('#btnmas');
 
 let lista_recintos;
 let llenar_tabla = async() => {
@@ -22,16 +23,29 @@ let llenar_tabla = async() => {
 
             let fila = tbody.insertRow();
 
-            let botton = document.createElement('div');
-            botton.classList.add('btnmas');
-            botton.innerText = 'ver más'
 
             fila.insertCell().innerHTML = lista_recintos[i]['nombre'];
             fila.insertCell().innerHTML = lista_recintos[i]['provincia'];
             fila.insertCell().innerHTML = lista_recintos[i]['canton'];
             fila.insertCell().innerHTML = lista_recintos[i]['capacidad'];
             fila.insertCell().innerHTML = lista_recintos[i]['estado'];
-            fila.appendChild(botton);
+
+            let perfil = fila.insertCell();
+
+            let boton = document.createElement('button');
+            boton.dataset.destino = lista_recintos[i]['_id'];
+            boton.innerText = 'Ver perfil';
+            boton.classList.add('btn');
+
+            boton.addEventListener('click', function() {
+                localStorage.setItem("recinto_id", this.dataset.destino);
+                localStorage.setItem('previo', window.location.href);
+                window.location.href = 'perfil_recinto.html';
+
+            });
+
+            perfil.appendChild(boton);
+
 
         }
     }

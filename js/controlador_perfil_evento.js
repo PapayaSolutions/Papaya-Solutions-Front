@@ -214,12 +214,27 @@ function placeMarkerAndPanTo(latLng, map) {
 }
 
 
+let qrcode1 = new QRCode("qr_output", {
+    text: window.location.href,
+    width: 128,
+    height: 128,
+    colorDark: "#f7882f",
+    colorLight: "#ececec",
+    correctLevel: QRCode.CorrectLevel.H
+});
+
+
+
 body.onload = function() {
     activar();
+    qrcode1();
 
 }
 
-ver_recinto.addEventListener('click', function() {
 
+
+
+ver_recinto.addEventListener('click', function() {
+    localStorage.setItem('previo', window.location.href);
     window.location.href = 'perfil_recinto.html'
 });

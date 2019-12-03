@@ -6,9 +6,10 @@ const input_codigo = document.querySelector('#codigo');
 const input_vencimiento = document.querySelector('#vencimiento');
 const input_apellido = document.querySelector('#apellido');
 const input_postal = document.querySelector('#postal');
+const tipo_tarjeta = document.querySelector('#type1')
 const btn_registro = document.querySelector('#btn_registro');
 
-let tarjeta_valida = true;
+var tarjeta_invalida = false;
 
 $("#tarjeta").keyup(function(e) {
     var num = $(this).val().toString();
@@ -17,12 +18,12 @@ $("#tarjeta").keyup(function(e) {
     /* VALIDACION DE TIPO */
     if (charCount == 1) {
         if (num == "4") {
-            $("#type").html("VISA");
+            $("#type1").html("VISA");
         }
     }
     if (charCount == 2) {
         if (num == "51" || num == "55" || num == "53") {
-            $("#type").html("MASTER CARD");
+            $("#type1").html("MASTER CARD");
         }
     }
 
@@ -32,15 +33,13 @@ $("#tarjeta").keyup(function(e) {
     if (charCount == 13 || charCount == 14 || charCount == 15 || charCount == 16) {
         var valid = isValid(num, charCount);
         if (valid) {
-            $("#type").html("Valida");
+            $("#type2").html("Valida");
             $("input").attr("name", "numero_tarjeta").attr("class", "valid-card");
-            tarjeta_valida = true;
-
+            tarjeta_invalida = true;
         } else {
-            $("#type").html("Invalida");
+            $("#type2").html("Invalida");
             $("input").attr("name", "numero_tarjeta").attr("class", "invalid-card");
-            tarjeta_valida = false;
-
+            tarjeta_invalida = false;
         }
     }
     /* !ALGORITMO */
@@ -88,14 +87,6 @@ function toSingle(digito) {
 let validar = () => {
     let error = false;
 
-    if (input_tarjeta.value == '') {
-        error = true;
-        input_tarjeta.classList.add('error');
-        console.log('Favor llenar correctamente el campo de número de tarjeta.')
-    } else {
-        input_tarjeta.classList.remove('error');
-    }
-
     if (input_nombre.value == '') {
         error = true;
         input_nombre.classList.add('error');
@@ -140,6 +131,7 @@ let validar = () => {
     } else {
         input_postal.classList.remove('error');
     }
+
     return error;
 
 };
@@ -153,24 +145,31 @@ let obtener_datos = () => {
     let vencimiento = input_vencimiento.value;
     let apellido = input_apellido.value;
     let postal = input_postal.value;
-    let tarjeta_valida = true;
-
-    btn_registro.addEventListener('click', obtener_datos);
 
     //si hay error, entra al if. Si no hay error entra al else
-    if (validar() && !tarjeta_valida) {
+    if (tarjeta_invalida == false) {
         Swal.fire({
             type: 'warning',
-            title: '¡Espera!',
+            title: 'Verifique el número de tarjeta',
             animation: true,
-            text: 'Hay espacios que deben ser llenados',
+            text: '',
+            confirmButtonText: 'Entendido',
+            customClass: {
+                popup: 'animated tada'
+            }
+        })
+    } else if (validar()) {
+        Swal.fire({
+            type: 'warning',
+            title: 'Verifique los campos',
+            animation: true,
+            text: '¡Hay espacios que deben ser llenados!',
             confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'
             }
         })
     } else {
-
         console.log('tarjeta', codigo);
         console.log('nombre', nombre);
         console.log('codigo', codigo);
@@ -182,15 +181,14 @@ let obtener_datos = () => {
             type: 'success',
             title: 'Registrado',
             animation: true,
-            text: 'Se han guardado los datos de la tarjeta con éxito.',
-            confirmButtonText: 'Endentido',
+            text: '¡Se han guardado los datos de la tarjeta con éxito!',
+            confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'
             }
         })
-
+        window.location.href = 'visualizar_perfil.html';
     }
-
 };
 
 // Eventos asociados a los botones o inputs

@@ -8,7 +8,7 @@ const ubicacion = document.querySelector('#ubicacion');
 const experiencia = document.querySelector('#experiencia');
 const comision = document.querySelector('#comision');
 const telefonos = document.querySelector('#telefonos tbody');
-
+const btn_editar = document.querySelector('#editar');
 const logo = document.querySelector('#logo');
 const mapa = document.querySelector('#mapa');
 let datos_perfil;
@@ -88,3 +88,8 @@ function placeMarkerAndPanTo(latLng, map) {
 
     map.panTo(latLng);
 }
+
+btn_editar.addEventListener('click', function() {
+    localStorage.setItem('previo', window.location.href);
+    window.location.href = 'editar_plataforma.html'
+});

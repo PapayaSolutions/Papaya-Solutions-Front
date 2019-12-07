@@ -25,11 +25,6 @@ input[type="text"] {
     column-gap: 25px;
 }
 
-#ubicacion {
-    margin: 30px auto;
-    padding: 0px 30px;
-}
-
 .item1 {
     padding-left: 30px;
 }

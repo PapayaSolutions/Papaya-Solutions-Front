@@ -81,7 +81,7 @@ let modificar_plataforma = async(
             responseType: 'json',
             //body
             data: {
-
+                nombre,
                 razon,
                 cedula,
                 direccion,

@@ -810,6 +810,25 @@ let obtener_datos = () => {
     }
 };
 
+//--------------------------- CLOUDINARY WIDGET --------------------------------------------------------
+var myWidget1 = cloudinary.createUploadWidget({
+    cloudName: 'pypsolutionscr',
+    uploadPreset: 'psolutions'
+}, (error, result) => {
+    if (!error && result && result.event === "success") {
+        console.log('Done! Here is the image info: ', result.info);
+        document.querySelector('#imagen_preview').src = result.info.secure_url;
+
+    }
+
+});
+
+let botn = document.querySelector('#btn_agregar_imagen');
+
+botn.addEventListener('click', function() {
+    myWidget1.open();
+}, false);
+
 // Eventos asociados a los botones o inputs
 
 btn_registro.addEventListener('click', obtener_datos);

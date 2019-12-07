@@ -110,7 +110,7 @@ output {
     color: #292c2a;
     font-size: 18px;
     position: relative;
-    margin-left: 250px;
+    left: 250px;
     bottom: 17px;
 }
 

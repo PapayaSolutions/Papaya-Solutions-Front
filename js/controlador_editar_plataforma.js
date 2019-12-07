@@ -607,7 +607,7 @@ let validar = () => {
     } else {
         experiencia.classList.remove('error');
     }
-    if (comision.value == '') {
+    if ((comision.value == '') || (comision.value == 'e')) {
         error = true;
         comision.classList.add('error');
     } else {
@@ -626,8 +626,36 @@ let validar = () => {
         input_longitud.classList.remove('error');
     }
 
+
+    if ((input_provincia.value != "") && (((input_canton.value === "") || (input_canton.value === "-")) || ((input_distrito.value === "") || (input_distrito.value === "-")))) {
+        error = true;
+        if ((input_canton.value === "") || (input_canton.value === "-")) {
+            input_canton.classList.add('error');
+        } else {
+            input_canton.classList.remove('error');
+        }
+
+        if ((input_distrito.value === "") || (input_distrito.value === "-")) {
+            input_distrito.classList.add('error');
+        } else {
+            input_distrito.classList.remove('error');
+        }
+
+    } else {
+        if ((input_canton.value != "") && (input_canton.value != "-")) {
+            input_canton.classList.remove('error');
+        }
+        if ((input_distrito.value != "") && (input_distrito.value != "-")) {
+            input_distrito.classList.remove('error');
+        }
+    }
+
+
+
+
     return error;
 }
+
 let llenar_perfil = async() => {
 
     datos_perfil = await listar_plataforma();
@@ -636,7 +664,7 @@ let llenar_perfil = async() => {
     cedula.value = datos_perfil[0]['cedula'];
     direccion.value = datos_perfil[0]['direccion'];
     experiencia.value = datos_perfil[0]['experiencia'];
-    comision.value = ('¢' + datos_perfil[0]['comision']);
+    comision.value = datos_perfil[0]['comision'];
 
     label_provincia.innerHTML = datos_perfil[0]['provincia'];
     label_canton.innerHTML = datos_perfil[0]['canton'];
@@ -732,22 +760,24 @@ let modificar_datos = async() => {
     let pcanton;
     let pdistrito;
 
-    if (input_provincia === '' || input_provincia === '-') {
+    if (input_provincia.value === "" || input_provincia.value === "-") {
         pprovincia = label_provincia.innerHTML;
     } else {
         pprovincia = input_provincia.value;
     }
 
-    if (input_canton === '') {
+    if (input_canton.value === "" || input_canton.value === "-") {
         pcanton = label_canton.innerHTML;
     } else {
         pcanton = input_canton.value;
     }
-    if (input_distrito === '') {
+
+    if (input_distrito.value === "" || input_distrito.value === "-") {
         pdistrito = label_distrito.innerHTML;
     } else {
         pdistrito = input_distrito.value;
     }
+
     if (validar()) {
         Swal.fire({
             type: 'warning',
@@ -777,16 +807,14 @@ let modificar_datos = async() => {
         );
         Swal.fire({
             type: 'success',
-            title: '¡Registro modificado!',
-            animation: true,
+            title: 'Registro realizado con exito',
+            text: 'La información ha sido actualizada',
+            confirmButtonText: 'Entendido'
+        }).then(function() {
+            window.location.href = 'info_plataforma.html';
+        });
 
-            confirmButtonText: 'Entendido',
-            customClass: {
-                popup: 'animated tada'
-            }
-        })
 
-        //window.location.href = 'info_plataforma.html';
     }
 
 };

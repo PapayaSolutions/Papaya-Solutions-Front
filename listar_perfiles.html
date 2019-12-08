@@ -50,105 +50,52 @@
 
         </header>
         <main id="main">
-            <aside>
-                <h2>Ajustes de Administrador</h2>
-                <ul>
-                    <a href="#">
-                        <li>Administrador</li>
-                    </a>
-                    <a href="listar_perfiles.html">
-                        <li>Usuarios</li>
-                    </a>
-                    </li>
-                    <a href="tipos_de_evento.html">
-                        <li>Categorías</li>
-                    </a>
-                    <a>
-                        <li>Recintos</a>
-                    <ul>
-                        <a href="registro_recintos.html">
-                            <li>Registrar recinto</li>
-                        </a>
-                        <a href="listar_recintos.html">
-                            <li>Listar recintos</li>
-                        </a>
-                    </ul>
-                    </li>
-                    <a>
-                        <li>Impuestos
-                    </a>
-                    <ul>
-                        <a href="registrar_impuestos.html">
-                            <li>Registar</li>
-                        </a>
-                        <a href="listar_impuestos.html">
-                            <li>Listar</li>
-                        </a>
-                    </ul>
-                    </li>
-                    <a href="registro-encargado-recintos.html">
-                        <li>Encargado de recintos</li>
-                    </a>
-                    <a>
-                        <li>Descuentos</a>
-                    <ul>
-                        <a href="registrar_descuento.html">
-                            <li>Nuevo descuento</li>
-                        </a>
-                        <a href="listar_descuento.html">
-                            <li>Listar descuentos</li>
-                        </a>
-                    </ul>
-                    </li>
-                    <a href="mantenimiento_avatar.html">
-                        <li>Avatares</li>
-                    </a>
+            <div id="xaside">
+</head>
+<div class="formulario" id="main_form">
+    <h1>Listado de usuarios</h1>
+    <div id="search">
+        <i class="fas fa-search" id="search_icon"></i>
+        <input type="text" id="bnr_input" placeholder="Buscar por nombre">
+    </div>
+    <div class="spacer_h1"></div>
 
-                </ul>
-            </aside>
-            <div class="formulario" id="main_form">
-                <h1>Listado de usuarios</h1>
-                <div id="search">
-                    <i class="fas fa-search" id="search_icon"></i>
-                    <input type="text" id="bnr_input" placeholder="Buscar por nombre">
-                </div>
-                <div class="spacer_h1"></div>
+    <table id="tbl_clientes">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Género</th>
+                <th>Tipo</th>
+                <th>Estado</th>
 
-                <table id="tbl_clientes">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Correo</th>
-                            <th>Género</th>
-                            <th>Tipo</th>
-                            <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
-            </div>
+        </tbody>
+    </table>
+</div>
 
 
-            <!-- listado de perfiles de clientes -->
-        </main>
+<!-- listado de perfiles de clientes -->
+</main>
 
 
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script src="js/controlador_x.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/controlador_general.js"></script>
 
-        <script src="js/controlador_general.js"></script>
-
-        <script src="js/clientes_servicio.js"></script>
-        <script src="js/encargados-recintos-servicio.js"></script>
-        <script src="js/organizadores_servicios.js"></script>
-        <script src="js/controlador_listar_perfiles.js"></script>
+<script src="js/clientes_servicio.js"></script>
+<script src="js/encargados-recintos-servicio.js"></script>
+<script src="js/organizadores_servicios.js"></script>
+<script src="js/controlador_listar_perfiles.js"></script>
 
 
 
 
-    </body>
+</body>
 
 </html>

@@ -8,7 +8,6 @@
 #tipos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 220px));
-    text-align: center;
 }
 
 #main h1 {
@@ -42,7 +41,7 @@ label {
     width: 20%;
 }
 
-input {
+.input {
     outline: none;
     display: block;
     width: 60%;
@@ -56,6 +55,14 @@ input {
     height: 30px;
     color: #292c2a;
     resize: vertical;
+}
+
+.input2 {
+    outline: none;
+    width: 60%;
+    border: none;
+    border-bottom: 1px solid #f7c331;
+    background: transparent;
 }
 
 button {
@@ -137,7 +144,8 @@ h1 {
 .img_container2 {
     border: 2px double #f7882f;
     height: 130px;
-    margin: 10px 10px 30px 10px;
+    margin: 1px 10px 30px 10px;
+    position: relative;
 }
 
 .img_container2 img {
@@ -153,4 +161,33 @@ h1 {
 #div_boton {
     width: 87%;
     margin: auto;
+}
+
+#tipos div span {
+    margin-left: 10px;
+}
+
+.btn-mas {
+    display: inline-block;
+    background: #f7882f;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 5px 10px;
+    border-radius: 10rem;
+    color: #ececec;
+    overflow: hidden;
+    top: -26px;
+    right: 0px;
+}
+
+.invi {
+    display: none;
+}
+
+.icono {
+    position: absolute;
+    left: 0px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
 }

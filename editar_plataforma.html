@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Míshka</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/configuracion.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/info_plataforma.css">
+</head>
+
+<body>
+    <header>
+        <nav id="nav_principal">
+            <div>
+                <ul class="navegador_izquierda">
+                    <div>
+                        <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
+                    </div>
+                    <li><a href="listar_eventos.html">Eventos</a></li>
+                    <li><a>Registrarse</a>
+                        <ul>
+                            <li><a href="registrar_usuario.html">Cliente</a></li>
+                            <li><a href="#">Organizador de eventos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="registrar_evento.html">Crear evento</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navegador_derecha">
+                    <li><a href="visualizar_perfil.html"><i class="far fa-user"></i></a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="far fa-bell"></i></a></li>
+                    <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
+                    <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
+                    <li> <a href="" id="btn_cerrar_sesion">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <aside>
+            <h2>Ajustes de Administrador</h2>
+            <ul>
+                <a href="#">
+                    <li>Administrador</li>
+                </a>
+                <a href="listar_perfiles.html">
+                    <li>Usuarios</li>
+                </a>
+                </li>
+                <a href="tipos_de_evento.html">
+                    <li>Categorías</li>
+                </a>
+                <a>
+                    <li>Recintos</a>
+                <ul>
+                    <a href="registro_recintos.html">
+                        <li>Registrar recinto</li>
+                    </a>
+                    <a href="listar_recintos.html">
+                        <li>Listar recintos</li>
+                    </a>
+                </ul>
+                </li>
+                <a>
+                    <li>Impuestos
+                </a>
+                <ul>
+                    <a href="registrar_impuestos.html">
+                        <li>Registar</li>
+                    </a>
+                    <a href="listar_impuestos.html">
+                        <li>Listar</li>
+                    </a>
+                </ul>
+                </li>
+                <a href="registro-encargado-recintos.html">
+                    <li>Encargado de recintos</li>
+                </a>
+                <a>
+                    <li>Descuentos</a>
+                <ul>
+                    <a href="registrar_descuento.html">
+                        <li>Nuevo descuento</li>
+                    </a>
+                    <a href="listar_descuento.html">
+                        <li>Listar descuentos</li>
+                    </a>
+                </ul>
+                </li>
+                <a href="mantenimiento_avatar.html">
+                    <li>Avatares</li>
+                </a>
+
+            </ul>
+        </aside>
+        <!-- MAIN-->
+        <section>
+            <div class="formulario">
+
+                <h1>Editar información de la plataforma</h1>
+                <button type="button" id="modificar">Modificar</button>
+
+                <div class="spacer_h1"></div>
+                <div class="three_collumn_form">
+
+                    <div class="item1">
+                        <label for="nombre">Nombre de la empresa:</label>
+                        <label for="razon">Razón social:</label>
+                        <label for="cedula">Cédula jurídica:</label>
+                        <label for="direccion">Dirección exacta:</label>
+
+                        <label for="experiencia">Años de experiencia:</label>
+                        <label for="comision">Cargo de comisión:</label>
+                        <label for="txt_latitud">Latitud:</label>
+                        <label for="txt_longitud">Longitud:</label>
+
+
+                    </div>
+                    <div class="item2">
+                        <input type="text" id="nombre"></input>
+                        <input type="text" id="razon"></input>
+                        <input type="text" id="cedula"></input>
+                        <input type="text" id="direccion"></input>
+
+                        <input type="text" id="experiencia"></input>
+                        <input type="text" id="comision"></input>
+                        <input type="text" id="txt_latitud"></input>
+                        <input type="text" id="txt_longitud"></input>
+
+                    </div>
+                    <div id="imagenes">
+                        <div id="imagen_container">
+                            <img src="" alt="Logo" id="logo">
+                            <button type="button" id="btn_agregar_imagen">Modificar imagen</button>
+                        </div>
+                        <div id="map"></div>
+                    </div>
+                </div>
+                <div class="three_collumn_form" id="ubicacion">
+
+                    <div>
+                        <label for="txt_provincia">Provincia</label>
+                        <label id="provincia"></label>
+                        <select id="txt_provincia" onchange="popular_cantones('txt_provincia', 'txt_canton')">
+                                                <option value="" disabled selected hidden>-</option>
+                                                <option value="San José">San José</option>
+                                                <option value="Alajuela">Alajuela</option>
+                                                <option value="Cartago">Cartago</option>
+                                                <option value="Heredia">Heredia</option>
+                                                <option value="Guanacaste">Guanacaste</option>
+                                                <option value="Puntarenas">Puntarenas</option>
+                                                <option value="Limón">Limón</option>
+                                            </select>
+                    </div>
+
+                    <div>
+                        <label for="txt_canton">Cantón</label>
+                        <label id="canton"></label>
+                        <select id="txt_canton" onchange="popular_distritos('txt_provincia', 'txt_canton', 'txt_distrito')">
+                                        </select>
+                    </div>
+
+                    <div>
+                        <label for="txt_distrito">Distrito</label>
+                        <label id="distrito"></label>
+                        <select id="txt_distrito">
+                                            </select>
+                    </div>
+
+                </div>
+                <div class="custom_collumn_form">
+                    <div id="item4">
+                        <label for="telefonos">Número(s) de teléfono:</label>
+                    </div>
+                    <div id='item5'>
+                        <table id="telefonos">
+                            <thead>
+                                <tr>
+                                    <th>Teléfono</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div></div>
+
+                </div>
+            </div>
+
+
+        </section>
+        <!-- MAIN-->
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"></script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/controlador_general.js"></script>
+    <script src="js/plataforma_servicios.js"></script>
+    <script src="js/controlador_editar_plataforma.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDQnZ4l9vPokKOvdI5hv1CnCkp-9fi3QE&callback=initMap" async defer></script>
+
+</body>
+
+</html>

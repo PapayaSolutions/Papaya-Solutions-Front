@@ -37,13 +37,13 @@ img {
 
 #datos_cliente {
     display: grid;
-    grid-template-columns: 185px 300px;
+    grid-template-columns: 185px 250px;
     margin: auto;
 }
 
 #datos_clientes {
     display: grid;
-    grid-template-columns: 500px 300px;
+    grid-template-columns: 485px 250px;
     margin: auto;
 }
 
@@ -52,12 +52,39 @@ img {
 }
 
 #icono i {
-    display: absolute;
+    position: absolute;
     padding-top: 5px;
+    margin-top: 85px;
     text-align: center;
     color: #ececec;
     background: #f7882f;
     border-radius: 50px;
     height: 25px;
     width: 30px;
+}
+
+#icono i:hover {
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
+    border-radius: 10rem;
+}
+
+#icono_img i {
+    position: absolute;
+    padding-top: 5px;
+    text-align: center;
+    margin-top: 110px;
+    color: #ececec;
+    background: #f7882f;
+    border-radius: 50px;
+    height: 25px;
+    width: 30px;
+}
+
+#icono_img i:hover {
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
+    border-radius: 10rem;
 }

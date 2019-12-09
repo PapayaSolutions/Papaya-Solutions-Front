@@ -14,14 +14,17 @@
     <link rel="stylesheet" href="css/configuracion.css">
     <link rel="stylesheet" href="css/listar_perfiles.css">
 
-
 </head>
 
 <body>
     <header>
+
         <nav id="nav_principal">
+
             <div>
+
                 <ul class="navegador_izquierda">
+
                     <div>
                         <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
                     </div>
@@ -49,36 +52,40 @@
                 </ul>
             </div>
         </nav>
+
     </header>
 
+
     <main id="main">
+
         <div id="xaside"></div>
-        <section>
-            <div class="formulario" id="main_form">
-                <h1><i class="fas fa-users"></i> Listado de usuarios</h1>
-                <div id="search">
-                    <i class="fas fa-search" id="search_icon"></i>
-                    <input type="text" id="bnr_input" placeholder="Buscar por nombre">
-                </div>
-                <div class="spacer_h1"></div>
 
-                <table id="tbl_clientes">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Correo</th>
-                            <th>Género</th>
-                            <th>Tipo</th>
-                            <th>Estado</th>
+        <div class="formulario" id="main_form">
 
-                        </tr>
-                    </thead>
-                    <tbody>
+            <h1>Listado de usuarios</h1>
 
-                    </tbody>
-                </table>
+            <div id="search">
+                <i class="fas fa-search" id="search_icon"></i>
+                <input type="text" id="bnr_input" placeholder="Buscar por nombre">
             </div>
-        </section>
+
+            <div class="spacer_h1"></div>
+
+            <table id="tbl_clientes">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Género</th>
+                        <th>Tipo</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
 
         <!-- listado de perfiles de clientes -->
     </main>
@@ -93,9 +100,6 @@
     <script src="js/encargados-recintos-servicio.js"></script>
     <script src="js/organizadores_servicios.js"></script>
     <script src="js/controlador_listar_perfiles.js"></script>
-
-
-
 
 </body>
 

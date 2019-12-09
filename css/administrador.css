@@ -32,12 +32,16 @@ hr {
     display: grid;
     grid-template-columns: 175px 200px 200px;
     margin-top: 5%;
-    margin-left: 5%
+    margin-left: 5%;
 }
 
 .contrasena_admin {
     display: grid;
     grid-template-columns: 175px 200px 200px;
+    margin-left: 5%;
+}
+
+#nombre_emp {
     margin-left: 5%
 }
 

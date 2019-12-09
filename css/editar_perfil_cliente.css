@@ -1,0 +1,63 @@
+#spacer {
+    height: 20px;
+}
+
+#mini_spacer {
+    height: 10px;
+}
+
+hr {
+    border: 1px solid #f7c331;
+}
+
+.acomodo {
+    margin: auto;
+    width: 70%;
+}
+
+img {
+    border-radius: 20px;
+}
+
+#info_clientes {
+    display: grid;
+    grid-template-columns: 300px 450px 100px;
+    padding-top: 25px;
+}
+
+#info_cliente {
+    display: grid;
+    grid-template-columns: 185px 300px;
+    padding-top: 25px;
+}
+
+#info_cliente p {
+    color: #636e72;
+}
+
+#datos_cliente {
+    display: grid;
+    grid-template-columns: 185px 300px;
+    margin: auto;
+}
+
+#datos_clientes {
+    display: grid;
+    grid-template-columns: 500px 300px;
+    margin: auto;
+}
+
+#datos_cliente p {
+    color: #636e72;
+}
+
+#icono i {
+    display: absolute;
+    padding-top: 5px;
+    text-align: center;
+    color: #ececec;
+    background: #f7882f;
+    border-radius: 50px;
+    height: 25px;
+    width: 30px;
+}

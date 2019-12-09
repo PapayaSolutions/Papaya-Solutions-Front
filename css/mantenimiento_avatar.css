@@ -111,6 +111,7 @@
         width: 125px;
         position: relative;
         bottom: 0px;
+        border-radius: 5px;
     }
     
     .button {

@@ -25,8 +25,6 @@ a {
     text-decoration: none;
 }
 
-#links_container {}
-
 .img_container img {
     background-color: #292c2a;
     width: 300px;
@@ -451,6 +449,8 @@ input[type=number]::-webkit-outer-spin-button {
     margin: auto;
     margin-top: 15px;
     width: 90%;
+    position: relative;
+    left: 00px;
 }
 
 #descuentos_evento {

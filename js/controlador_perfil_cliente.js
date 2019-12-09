@@ -12,10 +12,12 @@ const p_tarjeta = document.querySelector('#tarjeta_informacion');
 const tipo_tarjeta = document.querySelector('#tipo_tarjeta');
 const div_i = document.querySelectorAll('#volver a i');
 const editar_perfil = document.querySelector('#tbl_editar tbody');
+const contenedor = document.querySelector('#cards');
 
 let lista_clientes;
 let usuario = sessionStorage.getItem('tipo_usuario');
 let id = localStorage.getItem('destino_id');
+let lista_tipo_de_evento;
 
 let llenar_tabla = async() => {
 
@@ -33,17 +35,6 @@ let llenar_tabla = async() => {
     imagen_avatar.src = lista_clientes[0]['url_avatar'];
 
     for (let i = 0; i < lista_clientes[0]['metodos_pago'].length; i++) {
-
-        /* var charCount = lista_clientes[0]['metodos_pago'][i]['tarjeta'].length;
-         if (charCount == 1) {
-             if (p_tarjeta == '4')
-               
-         }
-
-         if (charCount == 1) {
-             if (p_tarjeta == '5')
-                 
-         } */
 
         let tarjeta = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
         tipo_tarjeta.innerHTML = "Master Card";
@@ -80,7 +71,34 @@ let llenar_tabla = async() => {
 };
 llenar_tabla();
 
+let mostrar_cards = async() => {
 
+    lista_tipo_de_evento = await listar_tipos_de_evento();
+
+    contenedor.innerHTML = '';
+    for (let i = 0; i < lista_tipo_de_evento.length; i++) {
+        let div_card = document.createElement('div');
+        div_card.classList.add('card');
+
+        let header = document.createElement('header');
+
+        let nombre = document.createElement('span');
+        nombre.innerText = lista_tipo_de_evento[i]['nombre'];
+
+        let imagen = document.createElement('img');
+        imagen.src = lista_tipo_de_evento[i]['URL']
+        imagen.id = `img_${lista_tipo_de_evento[i]['_id']}`;
+
+        contenedor.appendChild(div_card);
+
+        div_card.appendChild(header);
+        div_card.appendChild(nombre);
+        div_card.appendChild(imagen);
+
+    };
+};
+
+mostrar_cards();
 
 if (conectado) {
     switch (tipo_usuario) {

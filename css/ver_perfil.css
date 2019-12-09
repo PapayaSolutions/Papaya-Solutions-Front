@@ -127,3 +127,12 @@ output {
 #tbl_perfil tbody {
     color: #000;
 }
+
+#cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 220px));
+}
+
+#cards div span {
+    margin-left: 10px;
+}

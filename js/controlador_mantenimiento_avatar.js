@@ -21,9 +21,34 @@ let mostrar_cards = async() => {
             let imagen = document.createElement('img');
             imagen.src = lista_avatares[i]['URL'];
 
-            let chk_box = document.createElement('input');
-            chk_box.type = 'checkbox';
 
+            /* botones de control*/
+            let botones = document.createElement('div');
+            botones.classList.add('botones');
+
+            let edit_btn = document.createElement('button');
+            edit_btn.dataset.id = lista_avatares[i]['_id'];
+            edit_btn.innerText = 'Edit';
+            edit_btn.classList.add('edit');
+
+            let del_btn = document.createElement('button');
+            del_btn.classList.add('del');
+            del_btn.innerText = 'Eliminar';
+
+            let habit_btn = document.createElement('button');
+            habit_btn.classList.add('habit');
+            habit_btn.innerText = 'Habilitar';
+
+            let deshabit_btn = document.createElement('button');
+            deshabit_btn.classList.add('deshabit');
+            deshabit_btn.innerText = 'Deshabilitar';
+
+            edit_btn.addEventListener('click', function() {
+                botones.classList.toggle('hidden');
+
+            });
+
+            /* botones de control*/
             let div_info = document.createElement('div');
             div_info.classList.add('avatar_info');
 
@@ -49,7 +74,12 @@ let mostrar_cards = async() => {
             contenedor.appendChild(div_card);
             div_card.appendChild(div_figure);
             div_figure.appendChild(imagen);
-            div_card.appendChild(chk_box);
+            div_card.appendChild(botones);
+            div_card.appendChild(edit_btn);
+            botones.appendChild(del_btn);
+            botones.appendChild(habit_btn);
+            botones.appendChild(deshabit_btn);
+
             div_card.appendChild(div_info);
             div_info.appendChild(titulo);
             div_info.appendChild(division);
@@ -61,6 +91,11 @@ let mostrar_cards = async() => {
     }; //for
 
 };
+
+let hacer_visible = async() => {
+
+
+}
 
 mostrar_cards();
 input_filtro.addEventListener('keyup', mostrar_cards);

@@ -66,7 +66,7 @@ let obtener_datos = () => {
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: 'Fatal varas.',
+            title: 'Ingrese todos los datos requeridos',
             text: 'Por favor verificar.',
             confirmButtonText: 'Entendido',
         })

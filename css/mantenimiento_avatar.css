@@ -111,6 +111,7 @@
         width: 125px;
         position: relative;
         bottom: 0px;
+        border-radius: 5px;
     }
     
     .button {
@@ -151,6 +152,7 @@
         padding: 10px;
         float: left;
         box-sizing: border-box;
+        position: relative;
     }
     
     .card input {
@@ -189,8 +191,33 @@
         margin-top: 5px;
     }
     
-    .img_checkbox {
-        position: relative;
-        left: 170px;
+    .edit {
+        position: absolute;
+        left: 25px;
         top: 15px;
+        border-radius: 0px 30px 30px 00px;
+    }
+    
+    .edit:hover {
+        border-radius: 0px 30px 30px 00px;
+    }
+    
+    .botones {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 55px;
+        right: 25px;
+        width: 100%;
+    }
+    
+    .botones button {
+        flex: 1;
+        margin-right: 0%;
+        margin-bottom: 5px;
+        border-radius: 30px 0px 0px 30px;
+    }
+    
+    .hidden {
+        display: flex;
     }

@@ -47,70 +47,15 @@
         </nav>
     </header>
     <main id="main">
-        <aside>
-            <h2>Ajustes de Administrador</h2>
-            <ul>
-                <a href="#">
-                    <li>Administrador</li>
-                </a>
-                <a href="listar_perfiles.html">
-                    <li>Usuarios</li>
-                </a>
-                </li>
-                <a href="tipos_de_evento.html">
-                    <li>Categorías</li>
-                </a>
-                <a>
-                    <li>Recintos</a>
-                <ul>
-                    <a href="registro_recintos.html">
-                        <li>Registrar recinto</li>
-                    </a>
-                    <a href="listar_recintos.html">
-                        <li>Listar recintos</li>
-                    </a>
-                </ul>
-                </li>
-                <a>
-                    <li>Impuestos
-                </a>
-                <ul>
-                    <a href="registrar_impuestos.html">
-                        <li>Registar</li>
-                    </a>
-                    <a href="listar_impuestos.html">
-                        <li>Listar</li>
-                    </a>
-                </ul>
-                </li>
-                <a href="registro-encargado-recintos.html">
-                    <li>Encargado de recintos</li>
-                </a>
-                <a>
-                    <li>Descuentos</a>
-                <ul>
-                    <a href="registrar_descuento.html">
-                        <li>Nuevo descuento</li>
-                    </a>
-                    <a href="listar_descuento.html">
-                        <li>Listar descuentos</li>
-                    </a>
-                </ul>
-                </li>
-                <a href="mantenimiento_avatar.html">
-                    <li>Avatares</li>
-                </a>
-
-            </ul>
-        </aside>
+        <div id="xaside"></div>
         <section id="primera_section">
             <div id="arriba">
-                <h1>Agregar nueva categoría</h1>
+                <h1><i class="fas fa-folder-open"></i> Agregar nueva categoría</h1>
             </div>
             <section id="quinta_section">
                 <form>
                     <div>
-                        <input type="text" id="categoria" name="categoria" placeholder="Nueva categoría">
+                        <input type="text" id="categoria" class="input" name="categoria" placeholder="Nueva categoría">
                     </div>
                     <button type="button" id="btn_guardar">Registrar</button>
                 </form>
@@ -128,7 +73,7 @@
                 <h3>Lista de categorías</h3>
                 <div id="search">
                     <i class="fas fa-search" id="search_icon"></i>
-                    <input type="text" id="txt-filtro" placeholder="Buscar por nombre">
+                    <input class='input' type="text" id="txt-filtro" placeholder="Buscar por nombre">
                 </div>
             </section>
 
@@ -148,11 +93,13 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+    <script src="js/controlador_x.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/controlador_general.js"></script>
     <script src="js/tipos_de_eventos_servicios.js"></script>
     <script src="js/listar_tipos_de_evento.js"></script>
     <script src="js/registrar_tipos_de_evento.js"></script>
-
 
 </body>
 

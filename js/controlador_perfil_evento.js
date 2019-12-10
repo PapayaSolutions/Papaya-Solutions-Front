@@ -227,8 +227,9 @@ let qrcode1 = new QRCode("qr_output", {
 
 body.onload = function() {
     activar();
-
-
+    $.get("xfooter.html", function(data) {
+        $("#xfooter").html(data);
+    })
 }
 
 

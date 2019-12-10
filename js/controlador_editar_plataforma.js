@@ -1,217 +1,39 @@
 'use strict';
 
-const input_p_nombre = document.querySelector('#p_nombre_cliente');
-const input_p_apellido = document.querySelector('#p_apellido_cliente');
-const input_correo = document.querySelector('#correo');
-const input_s_nombre = document.querySelector('#s_nombre_cliente');
-const input_s_apellido = document.querySelector('#s_apellido_cliente');
-const input_identificacion = document.querySelector('#n_identif_cliente');
-const input_f_nacimiento = document.querySelector('#fecha_nac_cliente');
-const input_edad = document.querySelector('#edad_cliente');
-const input_provincia = document.querySelector('#provincia_cliente');
-const input_canton = document.querySelector('#canton_cliente');
-const input_genero = document.querySelector('#genero_cliente');
-const input_distrito = document.querySelector('#distrito_cliente');
-const input_direccion = document.querySelector('#direccion_cliente');
-const input_url_avatar = document.querySelector('#imagen_preview');
-const btn_registro = document.querySelector('#btn_registro');
+const nombre = document.querySelector('#nombre');
+const razon = document.querySelector('#razon');
+const cedula = document.querySelector('#cedula');
+const direccion = document.querySelector('#direccion');
+const ubicacion = document.querySelector('#ubicacion');
+const experiencia = document.querySelector('#experiencia');
+const comision = document.querySelector('#comision');
 
+const input_provincia = document.querySelector('#txt_provincia');
+const input_canton = document.querySelector('#txt_canton');
+const input_distrito = document.querySelector('#txt_distrito');
+const label_provincia = document.querySelector('#provincia');
+const label_canton = document.querySelector('#canton');
+const label_distrito = document.querySelector('#distrito');
 
-const xbody = document.querySelector('#avatar_cliente');
+const input_latitud = document.querySelector('#txt_latitud');
+const input_longitud = document.querySelector('#txt_longitud');
+const btn_modificar = document.querySelector('#modificar');
 
-const tbody = document.querySelector('.categoria_evento');
-let lista_avatares;
+const telefonos = document.querySelector('#telefonos tbody');
 
-let llenar_avatares = async() => {
-
-    lista_avatares = await listar_avatares();
-    xbody.innerHTML = '';
-
-    let vacio = document.createElement('option');
-    vacio.innerText = '-';
-    xbody.appendChild(vacio);
-    for (let i = 0; i < lista_avatares.length; i++) {
-
-        let selecionar = document.createElement('option');
-
-
-        selecionar.value = lista_avatares[i]['URL'];
-        selecionar.innerText = lista_avatares[i]['nombre'];
-
-        xbody.appendChild(selecionar);
-
-    }
-    localStorage.setItem('nombre', input_p_nombre);
-};
-
-llenar_avatares();
-
-
-//listar tipos de evento
-let lista_tipo_de_evento;
-
-let llenar_tabla = async() => {
-
-    lista_tipo_de_evento = await listar_tipos_de_evento();
-    tbody.innerHTML = '';
-
-    for (let i = 0; i < lista_tipo_de_evento.length; i++) {
-
-        let labe = document.createElement('label');
-        let selecionar = document.createElement('input');
-
-        selecionar.type = "checkbox";
-        selecionar.name = lista_tipo_de_evento[i]['nombre'];
-        selecionar.value = lista_tipo_de_evento[i]['nombre'];
-
-        labe.for = lista_tipo_de_evento[i]['nombre'];
-        labe.innerText = lista_tipo_de_evento[i]['nombre'];
-
-        tbody.appendChild(labe);
-        tbody.appendChild(selecionar);
-
-
-    }
-};
-llenar_tabla();
-const contenedor_img = document.querySelector('#poner_avatar');
-
-function myFunction() {
-
-    var x = document.getElementById("avatar_cliente").value;
-    document.querySelector('#imagen_preview').src = x;
-
-};
-
-// Validación de datos
-let validar = () => {
-    let error = false;
-
-    if (input_p_nombre.value == '') {
-        error = true;
-        input_p_nombre.classList.add('error');
-    } else {
-        input_p_nombre.classList.remove('error');
-    }
-
-    if (input_p_apellido.value == '') {
-        error = true;
-        input_p_apellido.classList.add('error');
-    } else {
-        input_p_apellido.classList.remove('error');
-    }
-
-    if (input_correo.value == '') {
-        error = true;
-        input_correo.classList.add('error');
-    } else {
-        input_correo.classList.remove('error');
-    }
-
-    if (input_identificacion.value == '') {
-        error = true;
-        input_identificacion.classList.add('error');
-    } else {
-        input_identificacion.classList.remove('error');
-    }
-
-    if (input_f_nacimiento.value == '') {
-        error = true;
-        input_f_nacimiento.classList.add('error');
-    } else {
-        input_f_nacimiento.classList.remove('error');
-    }
-
-    if (input_provincia.value == '') {
-        error = true;
-        input_provincia.classList.add('error');
-    } else {
-        input_provincia.classList.remove('error');
-    }
-
-    if (input_canton.value == '') {
-        error = true;
-        input_canton.classList.add('error');
-    } else {
-        input_canton.classList.remove('error');
-    }
-
-    if (input_genero.value == '') {
-        error = true;
-        input_genero.classList.add('error');
-    } else {
-        input_genero.classList.remove('error');
-    }
-
-    if (input_distrito.value == '') {
-        error = true;
-        input_distrito.classList.add('error');
-    } else {
-        input_distrito.classList.remove('error');
-    }
-
-    if (input_direccion.value == '') {
-        error = true;
-        input_direccion.classList.add('error');
-    } else {
-        input_direccion.classList.remove('error');
-    }
-    if (input_url_avatar.src == 'img/default-avatar.png') {
-        error = true;
-        input_url_avatar.classList.add('error');
-    } else {
-        input_url_avatar.classList.remove('error');
-    }
-
-    return error;
-};
-
-// function para generar codigos
-function codigoVer(length, chars) {
-    let result = '';
-    for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
-    return result;
-}
-
-//Calcular edad
-const calcular_edad = (fecha) => {
-
-    let error_edad = false;
-    let hoy = new Date();
-    let cumpleanos = new Date(fecha);
-    let edad = hoy.getFullYear() - cumpleanos.getFullYear();
-    let m = hoy.getMonth() - cumpleanos.getMonth();
-
-    if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate() + 1)) {
-        edad--;
-
-        if (edad < 18) {
-            error_edad = true
-        } else {
-            error_edad = false
-        }
-    }
-    return error_edad;
-}
-
-//años
-const mostrar_anos = (fecha) => {
-    var Q4A = "";
-    var Bdate = document.getElementById('fecha_nac_cliente').value;
-    var Bday = +new Date(Bdate);
-    Q4A = ~~((Date.now() - Bday) / (31557600000));
-    var edad_cliente = document.getElementById('edad_cliente');
-    edad_cliente.innerHTML = Q4A;
-    return Q4A
-}
-
-
+const logo = document.querySelector('#logo');
+const mapa = document.querySelector('#mapa');
+let datos_perfil;
+let longitud;
+let latitud;
+let marker;
 
 //Pupular dropdown de cantones
 function popular_cantones(pprovincia, pcantones) {
     var pprovincia = document.getElementById(pprovincia);
     var canton = document.getElementById(pcantones);
     canton.innerHTML = "";
+
     //San José
     if (pprovincia.value == "San José") {
         var optionArray = ["-|-", "San José|San José", "Escazú|Escazú", "Desamparados|Desamparados",
@@ -751,73 +573,258 @@ function popular_distritos(pprovincia, pcanton, pdistritos) {
         distrito.options.add(newOption);
     }
 }
+// Validación de datos
+let validar = () => {
+    let error = false;
 
-// function obtener_datos(){}
-let obtener_datos = () => {
-    let p_nombre = input_p_nombre.value;
-    let s_nombre = input_s_nombre.value;
-    let p_apellido = input_p_apellido.value;
-    let s_apellido = input_s_apellido.value;
-    let correo = input_correo.value;
-    let identificacion = input_identificacion.value;
-    let f_nacimiento = input_f_nacimiento.value;
-    let provincia = input_provincia.value;
-    let canton = input_canton.value;
-    let genero = input_genero.value;
-    let distrito = input_distrito.value;
-    let direccion = input_direccion.value;
-    let url_avatar = input_url_avatar.src;
+    if (nombre.value == '') {
+        error = true;
+        nombre.classList.add('error');
+    } else {
+        nombre.classList.remove('error');
+    }
+    if (razon.value == '') {
+        error = true;
+        razon.classList.add('error');
+    } else {
+        razon.classList.remove('error');
+    }
+    if (cedula.value == '') {
+        error = true;
+        cedula.classList.add('error');
+    } else {
+        cedula.classList.remove('error');
+    }
+    if (direccion.value == '') {
+        error = true;
+        direccion.classList.add('error');
+    } else {
+        direccion.classList.remove('error');
+    }
+    if (experiencia.value == '') {
+        error = true;
+        experiencia.classList.add('error');
+    } else {
+        experiencia.classList.remove('error');
+    }
+    if ((comision.value == '') || (comision.value == 'e')) {
+        error = true;
+        comision.classList.add('error');
+    } else {
+        comision.classList.remove('error');
+    }
+    if (input_latitud.value == '') {
+        error = true;
+        input_latitud.classList.add('error');
+    } else {
+        input_latitud.classList.remove('error');
+    }
+    if (input_longitud.value == '') {
+        error = true;
+        input_longitud.classList.add('error');
+    } else {
+        input_longitud.classList.remove('error');
+    }
 
 
-    //si hay error, entra al if. Si no hay error entra al else
+    if ((input_provincia.value != "") && (((input_canton.value === "") || (input_canton.value === "-")) || ((input_distrito.value === "") || (input_distrito.value === "-")))) {
+        error = true;
+        if ((input_canton.value === "") || (input_canton.value === "-")) {
+            input_canton.classList.add('error');
+        } else {
+            input_canton.classList.remove('error');
+        }
+
+        if ((input_distrito.value === "") || (input_distrito.value === "-")) {
+            input_distrito.classList.add('error');
+        } else {
+            input_distrito.classList.remove('error');
+        }
+
+    } else {
+        if ((input_canton.value != "") && (input_canton.value != "-")) {
+            input_canton.classList.remove('error');
+        }
+        if ((input_distrito.value != "") && (input_distrito.value != "-")) {
+            input_distrito.classList.remove('error');
+        }
+    }
+
+
+
+
+    return error;
+}
+
+let llenar_perfil = async() => {
+
+    datos_perfil = await listar_plataforma();
+    nombre.value = datos_perfil[0]['nombre'];
+    razon.value = datos_perfil[0]['razon'];
+    cedula.value = datos_perfil[0]['cedula'];
+    direccion.value = datos_perfil[0]['direccion'];
+    experiencia.value = datos_perfil[0]['experiencia'];
+    comision.value = datos_perfil[0]['comision'];
+
+    label_provincia.innerHTML = datos_perfil[0]['provincia'];
+    label_canton.innerHTML = datos_perfil[0]['canton'];
+    label_distrito.innerHTML = datos_perfil[0]['distrito'];
+    input_latitud.value = datos_perfil[0]['latitud'];
+    input_longitud.value = datos_perfil[0]['longitud'];
+
+    localStorage.setItem('latitud', datos_perfil[0]['latitud']);
+    localStorage.setItem('longitud', datos_perfil[0]['longitud']);
+    logo.src = datos_perfil[0]['logo'];
+
+    for (let i = 0; i < datos_perfil[0]['telefonos'].length; i++) {
+
+        let numero = datos_perfil[0]['telefonos'][i]['numero'];
+        let descripcion = datos_perfil[0]['telefonos'][i]['descripcion'];
+
+        let fila = telefonos.insertRow();
+        fila.insertCell().innerHTML = numero;
+        fila.insertCell().innerHTML = descripcion;
+
+    }
+
+};
+
+llenar_perfil();
+
+latitud = parseFloat(localStorage.getItem('latitud'));
+longitud = parseFloat(localStorage.getItem('longitud'));
+
+
+
+var map;
+const actualizar_ubicacion = position => {
+    let txt_latitud = document.querySelector('#txt_latitud');
+    let txt_longitud = document.querySelector('#txt_longitud');
+    txt_latitud.value = position.lat();
+    txt_longitud.value = position.lng();
+};
+
+
+
+function placeMarkerAndPanTo(latLng, map) {
+
+    if (marker != undefined) {
+        marker.position = latLng;
+    } else {
+        marker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            draggable: true,
+        });
+    }
+    actualizar_ubicacion(latLng);
+
+    google.maps.event.addListener(marker, 'drag', function() {
+        actualizar_ubicacion(marker.position);
+
+    });
+
+    map.panTo(latLng);
+}
+
+function initMap() {
+
+    var myLatLng = {
+        lat: latitud,
+        lng: longitud
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: myLatLng
+    });
+
+
+
+    map.addListener('click', function(e) {
+        placeMarkerAndPanTo(e.latLng, map);
+    });
+}
+
+let modificar_datos = async() => {
+    let pnombre = nombre.value;
+    let prazon = razon.value;
+    let pcedula = cedula.value;
+    let pdireccion = direccion.value;
+    let pexperiencia = experiencia.value;
+    let pcomision = comision.value;
+    let platitud = input_latitud.value;
+    let plongitud = input_longitud.value;
+    let plogo = logo.src;
+    let pprovincia;
+    let pcanton;
+    let pdistrito;
+
+    if (input_provincia.value === "" || input_provincia.value === "-") {
+        pprovincia = label_provincia.innerHTML;
+    } else {
+        pprovincia = input_provincia.value;
+    }
+
+    if (input_canton.value === "" || input_canton.value === "-") {
+        pcanton = label_canton.innerHTML;
+    } else {
+        pcanton = input_canton.value;
+    }
+
+    if (input_distrito.value === "" || input_distrito.value === "-") {
+        pdistrito = label_distrito.innerHTML;
+    } else {
+        pdistrito = input_distrito.value;
+    }
+
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: '¡Espera!',
+            title: '¡Atencion!',
             animation: true,
-            text: 'Hay espacios que deben ser llenados',
+            text: 'Hay espacios que deben ser modificados',
             confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'
             }
         })
-    } else if (calcular_edad(f_nacimiento)) {
-        Swal.fire({
-            type: 'warning',
-            title: 'Verifique la edad',
-            text: 'Debes de ser mayor de edad para crear una cuenta',
-            confirmButtonText: 'Entendido',
-        })
-
     } else {
-        console.log(f_nacimiento)
-        registrar_usuario(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,
-            f_nacimiento, genero, provincia, canton, distrito, direccion, url_avatar);
+        modificar_plataforma(
+            pnombre,
+            prazon,
+            pcedula,
+            pdireccion,
+            pprovincia,
+            pcanton,
+            pdistrito,
+            pexperiencia,
+            plogo,
+            plongitud,
+            platitud,
+            pcomision,
 
+        );
         Swal.fire({
             type: 'success',
-            title: '¡Registrado!',
-            animation: true,
-            text: 'Te enviaremos un correo electrónico con tus datos de acceso',
-            confirmButtonText: 'Entendido',
-            customClass: {
-                popup: 'animated tada'
-            }
-        })
+            title: 'Registro realizado con exito',
+            text: 'La información ha sido actualizada',
+            confirmButtonText: 'Entendido'
+        }).then(function() {
+            window.location.href = 'info_plataforma.html';
+        });
 
-        document.getElementById("formulario_principal").reset();
-        window.location.href = 'ingresar_codigo.html';
+
     }
-};
 
-//--------------------------- CLOUDINARY WIDGET --------------------------------------------------------
+};
 var myWidget1 = cloudinary.createUploadWidget({
     cloudName: 'pypsolutionscr',
     uploadPreset: 'psolutions'
 }, (error, result) => {
     if (!error && result && result.event === "success") {
         console.log('Done! Here is the image info: ', result.info);
-        document.querySelector('#imagen_preview').src = result.info.secure_url;
+        document.querySelector('#logo').src = result.info.secure_url;
 
     }
 
@@ -828,7 +835,4 @@ let botn = document.querySelector('#btn_agregar_imagen');
 botn.addEventListener('click', function() {
     myWidget1.open();
 }, false);
-
-// Eventos asociados a los botones o inputs
-
-btn_registro.addEventListener('click', obtener_datos);
+btn_modificar.addEventListener('click', modificar_datos);

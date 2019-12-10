@@ -25,10 +25,6 @@ a {
     text-decoration: none;
 }
 
-#links_container {
-    position: relative;
-}
-
 .img_container img {
     background-color: #292c2a;
     width: 300px;
@@ -112,7 +108,7 @@ output {
     color: #292c2a;
     font-size: 18px;
     position: relative;
-    margin-left: 250px;
+    left: 250px;
     bottom: 17px;
 }
 
@@ -264,12 +260,20 @@ input[type=number]::-webkit-outer-spin-button {
 }*/
 
 .item8 {
-    grid-column-start: 3;
+    grid-column-start: 5;
     grid-column-end: 6;
-    grid-row-start: 1;
+    grid-row-start: 2;
     grid-row-end: 3;
     border-radius: 10px;
     margin: 0% auto;
+}
+
+.item8 img {
+    height: 150%;
+    width: 150%;
+    position: relative;
+    top: 50px;
+    right: 50px;
 }
 
 
@@ -294,6 +298,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 100px;
     margin: auto;
     position: relative;
+    right: 250px;
     border-radius: 10px;
     margin-top: 20px;
 }
@@ -444,6 +449,8 @@ input[type=number]::-webkit-outer-spin-button {
     margin: auto;
     margin-top: 15px;
     width: 90%;
+    position: relative;
+    left: 00px;
 }
 
 #descuentos_evento {

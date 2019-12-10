@@ -97,7 +97,8 @@ select {
 }
 
 .error {
-    background: rgba(255, 145, 0, 0.123);
+    background: rgba(255, 145, 0, 0.123) !important;
+    border-bottom: 2px solid red !important;
 }
 
 .autoExpand {

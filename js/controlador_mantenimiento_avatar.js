@@ -21,40 +21,56 @@ let mostrar_cards = async() => {
             let imagen = document.createElement('img');
             imagen.src = lista_avatares[i]['URL'];
 
-
+            if (lista_avatares[i]['estado'] === 'false') {
+                imagen.classList.add('deshabilitada');
+            } else {
+                imagen.classList.remove('deshabilitada');
+            }
             /* botones de control*/
             let botones = document.createElement('div');
             botones.classList.add('botones');
 
-            let edit_btn = document.createElement('button');
-            edit_btn.dataset.id = lista_avatares[i]['_id'];
-            edit_btn.innerText = 'Edit';
-            edit_btn.classList.add('edit');
-
-            let del_btn = document.createElement('button');
-            del_btn.classList.add('del');
-            del_btn.innerText = 'Eliminar';
+            /*   let edit_btn = document.createElement('button');
+               edit_btn.innerText = 'Edit';
+               edit_btn.classList.add('edit');*/
 
             let habit_btn = document.createElement('button');
             habit_btn.classList.add('habit');
             habit_btn.innerText = 'Habilitar';
+            habit_btn.dataset.id = lista_avatares[i]['_id'];
 
             let deshabit_btn = document.createElement('button');
             deshabit_btn.classList.add('deshabit');
             deshabit_btn.innerText = 'Deshabilitar';
+            deshabit_btn.dataset.id = lista_avatares[i]['_id'];
 
-            edit_btn.addEventListener('click', function() {
-                botones.classList.toggle('hidden');
+            if (lista_avatares[i]['estado'] === 'false') {
+                imagen.classList.add('deshabilitada');
+                deshabit_btn.classList.add('hidden');
+                habit_btn.classList.remove('hidden');
+            } else {
+                imagen.classList.remove('deshabilitada');
+                deshabit_btn.classList.remove('hidden');
+                habit_btn.classList.add('hidden');
+            }
 
+            /*   edit_btn.addEventListener('click', function() {
+                   botones.classList.toggle('hidden');
+               });*/
+            habit_btn.addEventListener('click', function() {
+                habilitar_avatar(habit_btn.dataset.id);
+                crear_bitacora('Habilitar', 'Habilitar avatar');
+            });
+            deshabit_btn.addEventListener('click', function() {
+                deshabilitar_avatar(deshabit_btn.dataset.id);
+                crear_bitacora('Deshabilitar', 'Deshabilitar avatar');
             });
 
             /* botones de control*/
             let div_info = document.createElement('div');
             div_info.classList.add('avatar_info');
 
-            let titulo = document.createElement('label');
-            titulo.innerHTML = "Avatar";
-            titulo.classList.add('titulo');
+
 
             let division = document.createElement('hr');
 
@@ -75,13 +91,13 @@ let mostrar_cards = async() => {
             div_card.appendChild(div_figure);
             div_figure.appendChild(imagen);
             div_card.appendChild(botones);
-            div_card.appendChild(edit_btn);
-            botones.appendChild(del_btn);
+            /*  div_card.appendChild(edit_btn);*/
+
             botones.appendChild(habit_btn);
             botones.appendChild(deshabit_btn);
 
             div_card.appendChild(div_info);
-            div_info.appendChild(titulo);
+
             div_info.appendChild(division);
             div_info.appendChild(nombre);
             div_info.appendChild(div_estado);
@@ -92,10 +108,7 @@ let mostrar_cards = async() => {
 
 };
 
-let hacer_visible = async() => {
 
-
-}
 
 mostrar_cards();
 input_filtro.addEventListener('keyup', mostrar_cards);

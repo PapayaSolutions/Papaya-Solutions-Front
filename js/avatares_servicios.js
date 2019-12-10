@@ -39,6 +39,49 @@ let listar_avatares = async() => {
         });
     return lista_avatar;
 };
+
+let habilitar_avatar = async(_id) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/habilitar_avatar',
+            responseType: 'json',
+            //body
+            data: {
+                _id: _id,
+                estado: true,
+
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+            mostrar_cards();
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};
+let deshabilitar_avatar = async(_id) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/deshabilitar_avatar',
+            responseType: 'json',
+            //body
+            data: {
+                _id: _id,
+                estado: false,
+
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+            mostrar_cards();
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};
+
 //--------------------------- CLOUDINARY WIDGET --------------------------------------------------------
 var myWidget1 = cloudinary.createUploadWidget({
     cloudName: 'pypsolutionscr',
@@ -55,6 +98,7 @@ var myWidget1 = cloudinary.createUploadWidget({
             text: 'El Avatar ha sido almacenado',
             confirmButtonText: 'Entendido'
         }).then(function() {
+            crear_bitacora('Registro', 'Registro de nuevo avatar');
             location.reload();
         });
 

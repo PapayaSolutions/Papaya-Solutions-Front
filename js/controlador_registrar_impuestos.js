@@ -20,7 +20,7 @@ let validar = () => {
     } else {
         input_nombre.classList.remove('error');
     }
-    if (input_porcentaje.value == '') {
+    if ((input_porcentaje.value === '') || (input_porcentaje.value > 100) || (input_porcentaje.value < 1)) {
         error = true;
         input_porcentaje.classList.add('error');
         console.log('revisar el porcentaje')
@@ -55,6 +55,7 @@ let obtener_datos = () => {
     } else {
 
         registrar_impuesto(p_nombre, p_porcentaje, p_descripcion, p_estado);
+        crear_bitacora('Registrar', 'Registro de nuevo impuesto');
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con exito',

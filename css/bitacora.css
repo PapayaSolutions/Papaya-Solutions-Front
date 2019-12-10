@@ -1,0 +1,99 @@
+/*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a  verde muy oscuro
+    #ececec gris
+     
+    AGREGAR ESTO QUE SIGUE EN TODOS LOS HTML, OBLIGADO
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    */
+
+#main_form {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 30px;
+    display: grid;
+}
+
+#txt_descripcion {
+    min-height: 50px;
+    resize: vertical;
+}
+
+#num_porcentaje {
+    padding: 5px 0px 5px 0px;
+    height: 25px;
+}
+
+#bnr_input {
+    height: 35px;
+    width: 250px;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-left: 30px;
+    color: #f7882f;
+}
+
+#bnr_input::placeholder {
+    color: #f7892f85;
+    position: relative;
+}
+
+#search_icon {
+    position: relative;
+    left: 10px;
+    top: 23px;
+    color: #f7892f67;
+}
+
+#tbl_bitacora {
+    margin: auto;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#tbl_bitacora thead {
+    height: 25px;
+    font-size: 20px;
+    color: #f7882f;
+    border-bottom: #f7882f 2px solid;
+}
+
+#tbl_bitacora thead th {
+    min-width: 100px;
+}
+
+#tbl_bitacora tbody {
+    height: 18px;
+    border-bottom: #f7882f 1px solid;
+    text-justify: center;
+    text-align: center;
+    line-height: 18px;
+    font-size: 16;
+}
+
+#tbl_bitacora tbody td {
+    min-width: 100px;
+    padding: 5px;
+}
+
+#tbl_bitacora tbody tr {
+    border-bottom: 1px dotted #f7c331;
+}
+
+.btn {
+    width: 135px;
+    height: 30px;
+    border: 1px solid #f7882f;
+    font-size: 16px;
+    padding: 5px;
+    margin: auto;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #f7882f;
+    border: 1px solid #f7882f;
+}

@@ -227,7 +227,7 @@ let qrcode1 = new QRCode("qr_output", {
 
 body.onload = function() {
     activar();
-    qrcode1();
+
 
 }
 

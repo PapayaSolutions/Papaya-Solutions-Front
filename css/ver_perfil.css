@@ -104,43 +104,10 @@ hr {
     width: 65%;
 }
 
-#preferencia_h1 {
-    margin-left: 17%;
-}
-
-.acomodo {
-    margin: 0 auto;
-}
-
-.preferencias_fila_1 {
-    display: grid;
-    grid-template-columns: repeat(4, 200px);
-    padding-top: 30px;
-    margin-left: 20%;
-}
-
-.preferencias_fila_1 img {
-    border-radius: 20px;
-}
-
-a {
-    color: #f7882f;
-}
-
-.preferencias_fila_2 {
-    display: grid;
-    grid-template-columns: repeat(4, 200px);
-    padding-top: 30px;
-    margin-left: 20%;
-}
-
-.preferencias_fila_2 img {
-    border-radius: 20px;
-}
-
 .btn {
     position: absolute;
     margin-left: 32%;
+    top: 120px;
 }
 
 p {

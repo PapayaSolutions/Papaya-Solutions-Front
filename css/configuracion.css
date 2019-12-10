@@ -112,3 +112,8 @@
     width: 100%;
     height: auto;
 }
+
+.icon_span i {
+    width: 20px;
+    margin-left: 15px;
+}

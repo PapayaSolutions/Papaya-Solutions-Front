@@ -48,67 +48,12 @@
         </nav>
     </header>
     <main id="main">
-        <aside>
-            <h2>Ajustes de Administrador</h2>
-            <ul>
-                <a href="#">
-                    <li>Administrador</li>
-                </a>
-                <a href="listar_perfiles.html">
-                    <li>Usuarios</li>
-                </a>
-                </li>
-                <a href="tipos_de_evento.html">
-                    <li>Categorías</li>
-                </a>
-                <a>
-                    <li>Recintos</a>
-                <ul>
-                    <a href="registro_recintos.html">
-                        <li>Registrar recinto</li>
-                    </a>
-                    <a href="listar_recintos.html">
-                        <li>Listar recintos</li>
-                    </a>
-                </ul>
-                </li>
-                <a>
-                    <li>Impuestos
-                </a>
-                <ul>
-                    <a href="registrar_impuestos.html">
-                        <li>Registar</li>
-                    </a>
-                    <a href="listar_impuestos.html">
-                        <li>Listar</li>
-                    </a>
-                </ul>
-                </li>
-                <a href="registro-encargado-recintos.html">
-                    <li>Encargado de recintos</li>
-                </a>
-                <a>
-                    <li>Descuentos</a>
-                <ul>
-                    <a href="registrar_descuento.html">
-                        <li>Nuevo descuento</li>
-                    </a>
-                    <a href="listar_descuento.html">
-                        <li>Listar descuentos</li>
-                    </a>
-                </ul>
-                </li>
-                <a href="mantenimiento_avatar.html">
-                    <li>Avatares</li>
-                </a>
-
-            </ul>
-        </aside>
+        <div id="xaside"></div>
         <!-- MAIN-->
         <section>
             <div class="formulario">
 
-                <h1>Editar información de la plataforma</h1>
+                <h1><i class="fas fa-user-cog"></i> Editar información de la plataforma</h1>
                 <button type="button" id="modificar">Modificar</button>
 
                 <div class="spacer_h1"></div>
@@ -121,22 +66,22 @@
                         <label for="direccion">Dirección exacta:</label>
 
                         <label for="experiencia">Años de experiencia:</label>
-                        <label for="comision">Cargo de comisión:</label>
+                        <label for="comision">Cargo de comisión (¢):</label>
                         <label for="txt_latitud">Latitud:</label>
                         <label for="txt_longitud">Longitud:</label>
 
 
                     </div>
                     <div class="item2">
-                        <input type="text" id="nombre"></input>
+                        <output type="text" id="nombre"></output>
                         <input type="text" id="razon"></input>
                         <input type="text" id="cedula"></input>
                         <input type="text" id="direccion"></input>
 
                         <input type="text" id="experiencia"></input>
-                        <input type="text" id="comision"></input>
-                        <input type="text" id="txt_latitud"></input>
-                        <input type="text" id="txt_longitud"></input>
+                        <input type="number" id="comision"></input>
+                        <input type="number" id="txt_latitud"></input>
+                        <input type="number" id="txt_longitud"></input>
 
                     </div>
                     <div id="imagenes">
@@ -210,11 +155,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js"></script>
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-
-
+    <script src="js/controlador_x.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/controlador_general.js"></script>
+
     <script src="js/plataforma_servicios.js"></script>
     <script src="js/controlador_editar_plataforma.js"></script>
 

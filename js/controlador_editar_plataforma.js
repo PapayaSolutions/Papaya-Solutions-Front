@@ -15,6 +15,9 @@ const label_provincia = document.querySelector('#provincia');
 const label_canton = document.querySelector('#canton');
 const label_distrito = document.querySelector('#distrito');
 
+const input_latitud = document.querySelector('#txt_latitud');
+const input_longitud = document.querySelector('#txt_longitud');
+const btn_modificar = document.querySelector('#modificar');
 
 const telefonos = document.querySelector('#telefonos tbody');
 
@@ -570,6 +573,88 @@ function popular_distritos(pprovincia, pcanton, pdistritos) {
         distrito.options.add(newOption);
     }
 }
+// Validación de datos
+let validar = () => {
+    let error = false;
+
+    if (nombre.value == '') {
+        error = true;
+        nombre.classList.add('error');
+    } else {
+        nombre.classList.remove('error');
+    }
+    if (razon.value == '') {
+        error = true;
+        razon.classList.add('error');
+    } else {
+        razon.classList.remove('error');
+    }
+    if (cedula.value == '') {
+        error = true;
+        cedula.classList.add('error');
+    } else {
+        cedula.classList.remove('error');
+    }
+    if (direccion.value == '') {
+        error = true;
+        direccion.classList.add('error');
+    } else {
+        direccion.classList.remove('error');
+    }
+    if (experiencia.value == '') {
+        error = true;
+        experiencia.classList.add('error');
+    } else {
+        experiencia.classList.remove('error');
+    }
+    if ((comision.value == '') || (comision.value == 'e')) {
+        error = true;
+        comision.classList.add('error');
+    } else {
+        comision.classList.remove('error');
+    }
+    if (input_latitud.value == '') {
+        error = true;
+        input_latitud.classList.add('error');
+    } else {
+        input_latitud.classList.remove('error');
+    }
+    if (input_longitud.value == '') {
+        error = true;
+        input_longitud.classList.add('error');
+    } else {
+        input_longitud.classList.remove('error');
+    }
+
+
+    if ((input_provincia.value != "") && (((input_canton.value === "") || (input_canton.value === "-")) || ((input_distrito.value === "") || (input_distrito.value === "-")))) {
+        error = true;
+        if ((input_canton.value === "") || (input_canton.value === "-")) {
+            input_canton.classList.add('error');
+        } else {
+            input_canton.classList.remove('error');
+        }
+
+        if ((input_distrito.value === "") || (input_distrito.value === "-")) {
+            input_distrito.classList.add('error');
+        } else {
+            input_distrito.classList.remove('error');
+        }
+
+    } else {
+        if ((input_canton.value != "") && (input_canton.value != "-")) {
+            input_canton.classList.remove('error');
+        }
+        if ((input_distrito.value != "") && (input_distrito.value != "-")) {
+            input_distrito.classList.remove('error');
+        }
+    }
+
+
+
+
+    return error;
+}
 
 let llenar_perfil = async() => {
 
@@ -579,12 +664,13 @@ let llenar_perfil = async() => {
     cedula.value = datos_perfil[0]['cedula'];
     direccion.value = datos_perfil[0]['direccion'];
     experiencia.value = datos_perfil[0]['experiencia'];
-    comision.value = ('¢' + datos_perfil[0]['comision']);
+    comision.value = datos_perfil[0]['comision'];
 
     label_provincia.innerHTML = datos_perfil[0]['provincia'];
     label_canton.innerHTML = datos_perfil[0]['canton'];
     label_distrito.innerHTML = datos_perfil[0]['distrito'];
-
+    input_latitud.value = datos_perfil[0]['latitud'];
+    input_longitud.value = datos_perfil[0]['longitud'];
 
     localStorage.setItem('latitud', datos_perfil[0]['latitud']);
     localStorage.setItem('longitud', datos_perfil[0]['longitud']);
@@ -601,15 +687,14 @@ let llenar_perfil = async() => {
 
     }
 
-
-
-
 };
 
 llenar_perfil();
 
 latitud = parseFloat(localStorage.getItem('latitud'));
 longitud = parseFloat(localStorage.getItem('longitud'));
+
+
 
 var map;
 const actualizar_ubicacion = position => {
@@ -659,6 +744,95 @@ function initMap() {
     map.addListener('click', function(e) {
         placeMarkerAndPanTo(e.latLng, map);
     });
-
-
 }
+
+let modificar_datos = async() => {
+    let pnombre = nombre.value;
+    let prazon = razon.value;
+    let pcedula = cedula.value;
+    let pdireccion = direccion.value;
+    let pexperiencia = experiencia.value;
+    let pcomision = comision.value;
+    let platitud = input_latitud.value;
+    let plongitud = input_longitud.value;
+    let plogo = logo.src;
+    let pprovincia;
+    let pcanton;
+    let pdistrito;
+
+    if (input_provincia.value === "" || input_provincia.value === "-") {
+        pprovincia = label_provincia.innerHTML;
+    } else {
+        pprovincia = input_provincia.value;
+    }
+
+    if (input_canton.value === "" || input_canton.value === "-") {
+        pcanton = label_canton.innerHTML;
+    } else {
+        pcanton = input_canton.value;
+    }
+
+    if (input_distrito.value === "" || input_distrito.value === "-") {
+        pdistrito = label_distrito.innerHTML;
+    } else {
+        pdistrito = input_distrito.value;
+    }
+
+    if (validar()) {
+        Swal.fire({
+            type: 'warning',
+            title: '¡Atencion!',
+            animation: true,
+            text: 'Hay espacios que deben ser modificados',
+            confirmButtonText: 'Entendido',
+            customClass: {
+                popup: 'animated tada'
+            }
+        })
+    } else {
+        modificar_plataforma(
+            pnombre,
+            prazon,
+            pcedula,
+            pdireccion,
+            pprovincia,
+            pcanton,
+            pdistrito,
+            pexperiencia,
+            plogo,
+            plongitud,
+            platitud,
+            pcomision,
+
+        );
+        Swal.fire({
+            type: 'success',
+            title: 'Registro realizado con exito',
+            text: 'La información ha sido actualizada',
+            confirmButtonText: 'Entendido'
+        }).then(function() {
+            window.location.href = 'info_plataforma.html';
+        });
+
+
+    }
+
+};
+var myWidget1 = cloudinary.createUploadWidget({
+    cloudName: 'pypsolutionscr',
+    uploadPreset: 'psolutions'
+}, (error, result) => {
+    if (!error && result && result.event === "success") {
+        console.log('Done! Here is the image info: ', result.info);
+        document.querySelector('#logo').src = result.info.secure_url;
+
+    }
+
+});
+
+let botn = document.querySelector('#btn_agregar_imagen');
+
+botn.addEventListener('click', function() {
+    myWidget1.open();
+}, false);
+btn_modificar.addEventListener('click', modificar_datos);

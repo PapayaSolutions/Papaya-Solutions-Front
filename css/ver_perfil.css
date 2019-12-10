@@ -9,7 +9,6 @@
 .fondo {
     display: grid;
     column-gap: 25px;
-    height: 400px;
     top: 80px;
 }
 
@@ -135,4 +134,11 @@ output {
 
 #cards div span {
     margin-left: 10px;
+}
+
+.card img {
+    display: grid;
+    grid-template-columns: repeat(500px);
+    width: 180px;
+    height: 130px;
 }

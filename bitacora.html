@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-
-    <title>Impuestos</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/impuestos.css">
-    <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/configuracion.css">
-
-
+    <link rel="stylesheet" href="css/bitacora.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>Bitácora</title>
 </head>
 
 <body>
@@ -49,53 +49,52 @@
             </div>
         </nav>
     </header>
-    <main id="main">
+    <Main id="main">
         <div id="xaside"></div>
-        <!-- Main Form -->
+        <section>
+            <div class="formulario" id="main_form">
 
-        <div class="formulario" id="main_registro">
-            <h1><i class="fas fa-dollar-sign"></i> Registrar un nuevo impuesto</h1>
-            <div class="spacer_h1"></div>
-            <form>
-                <div>
-                    <div>
-                        <label for="txt_nombre">Nombre del nuevo impuesto</label>
-                        <input type="text" id="txt_nombre">
-                    </div>
-                    <div>
-                        <label for="num_porcentaje">Porcentaje del nuevo impuesto (1-100%)</label>
-                        <input type="number" id="num_porcentaje" min="1" max="100">
-                    </div>
+                <h1><i class="fas fa-book-open"></i> Bitácora de acciones</h1>
 
+                <div id="search">
+                    <i class="fas fa-search" id="search_icon"></i>
+                    <input type="text" id="bnr_input" placeholder="Buscar por tipo">
                 </div>
 
-                <label for="txt_descripcion">Descripción del nuevo impuesto</label>
-                <textarea id="txt_descripcion" cols="30" rows="10"></textarea>
+                <div class="spacer_h1"></div>
 
-                <div class="btn_container">
-                    <button type="button" class="btn" id="btn_registro">Registrar</button>
+                <table id="tbl_bitacora">
+                    <thead>
+                        <tr>
+                            <th>Tipo de acción</th>
+                            <th>Descripción</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Rol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
 
-                    <a href="listar_impuestos.html">
+            </div>
 
-                        <button type="button" class="btn"> Listar impuestos</button>
-                    </a>
-                </div>
-
-            </form>
-        </div>
-
-        <!-- Main Form -->
-    </main>
+        </section>
 
 
+
+    </Main>
+
+
+    <!--Scripting-->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
     <script src="js/controlador_x.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/controlador_general.js"></script>
-    <script src="js/impuestos_servicios.js"></script>
-    <script src="js/controlador_registrar_impuestos.js"></script>
     <script src="js/bitacora_servicios.js"></script>
+    <script src="js/controlador_bitacora.js"></script>
 
 </body>
 

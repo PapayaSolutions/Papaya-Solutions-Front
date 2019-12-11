@@ -17,6 +17,7 @@ const ticketes = document.querySelector('#cant_ticks');
 const link_recinto = document.querySelector('#link_recinto');
 const ver_recinto = document.querySelector('#ver_recinto');
 const body = document.querySelector('#body');
+const calificacion = document.querySelector('#estrellas');
 
 const item5 = document.querySelector('#item5');
 const item7 = document.querySelector('#item7');
@@ -32,9 +33,8 @@ let datos_mapa;
 let lugar;
 let latitud;
 let longitud;
-/*const map = document.querySelector('#map');*/
 let marker;
-
+let cliente_id = sessionStorage.getItem('usuario_id');
 
 let llenar_perfil = async() => {
 
@@ -222,6 +222,51 @@ let qrcode1 = new QRCode("qr_output", {
     colorLight: "#ececec",
     correctLevel: QRCode.CorrectLevel.H
 });
+
+//initial setup stars
+document.addEventListener('DOMContentLoaded', function() {
+    let stars = document.querySelectorAll('.star');
+    stars.forEach(function(star) {
+        star.addEventListener('click', setRating);
+    });
+
+    let rating = parseInt(document.querySelector('.stars').getAttribute('data-rating'));
+    let target = stars[rating - 1];
+    target.dispatchEvent(new MouseEvent('click'));
+});
+
+let calificar = async(num) => {
+
+    datos_evento = await obtener_evento_id(id);
+    for (let i = 0; i < datos_evento[0]['calificaciones'].length; i++) {
+        if (cliente_id === datos_evento[0]['calificaciones'][i]['usuario']) {
+            console.log(cliente_id, num);
+        }
+    }
+
+}
+
+function setRating(ev) {
+    let span = ev.currentTarget;
+    let stars = document.querySelectorAll('.star');
+    let match = false;
+    let num = 0;
+    stars.forEach(function(star, index) {
+        if (match) {
+            star.classList.remove('rated');
+        } else {
+            star.classList.add('rated');
+        }
+        //are we currently looking at the span that was clicked
+        if (star === span) {
+            match = true;
+            num = index + 1;
+        }
+    });
+    document.querySelector('.stars').setAttribute('data-rating', num);
+    calificar(num);
+}
+
 
 
 

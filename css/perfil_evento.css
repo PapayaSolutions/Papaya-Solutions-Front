@@ -204,7 +204,7 @@ output {
 }
 
 .item7 {
-    grid-column-start: 3;
+    grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 3;
     grid-row-end: 3;
@@ -213,6 +213,7 @@ output {
     display: inline-block;
     position: relative;
     margin: auto;
+    margin-left: 0px;
     bottom: 110px;
 }
 
@@ -294,11 +295,11 @@ input[type=number]::-webkit-outer-spin-button {
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 4;
-    width: 300px;
+    width: 550px;
     height: 100px;
     margin: auto;
     position: relative;
-    right: 250px;
+    margin-left: 0px;
     border-radius: 10px;
     margin-top: 20px;
 }
@@ -313,36 +314,6 @@ input[type=number]::-webkit-outer-spin-button {
     left: 15px;
     margin: auto;
 }
-
-
-/*sección de las estrellas*/
-
-.rating {
-    unicode-bidi: bidi-override;
-    direction: rtl;
-    font-size: 40px;
-    color: #292c2a;
-    position: relative;
-    top: 50px;
-    left: 200px;
-    width: 220px;
-}
-
-.rating>span {
-    display: inline-block;
-    position: relative;
-    width: 1.1em;
-}
-
-.rating>span:hover:before,
-.rating>span:hover~span:before {
-    content: "\2605";
-    position: absolute;
-    color: #f7c331;
-}
-
-
-/*sección de comentarios*/
 
 #sct_coment {
     width: 550px;
@@ -517,3 +488,46 @@ input[type=number]::-webkit-outer-spin-button {
     bottom: 0%;
     left: -200px;
 }
+
+
+/*********************************************************************/
+
+.star {
+    color: goldenrod;
+    font-size: 2.7rem;
+    padding: 0 5px;
+    /* space out the stars */
+}
+
+.star::before {
+    content: '\2606';
+    /* star outline */
+    cursor: pointer;
+}
+
+.star.rated::before {
+    /* the style for a selected star */
+    content: '\2605';
+    /* filled star */
+}
+
+.stars {
+    counter-reset: rateme 0;
+    font-size: 2.0rem;
+    font-weight: 900;
+    position: relative;
+    top: 45px;
+    left: 200px;
+}
+
+.star.rated {
+    counter-increment: rateme 1;
+}
+
+.stars::after {
+    content: counter(rateme) '/5';
+    color: #f7882f;
+}
+
+
+/************************************************************************/

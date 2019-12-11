@@ -805,6 +805,8 @@ let modificar_datos = async() => {
             pcomision,
 
         );
+
+        crear_bitacora('Editar', 'Editar información de la plataforma');
         Swal.fire({
             type: 'success',
             title: 'Registro realizado con exito',

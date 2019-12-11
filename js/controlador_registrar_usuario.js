@@ -31,15 +31,15 @@ let llenar_avatares = async() => {
     vacio.innerText = '-';
     xbody.appendChild(vacio);
     for (let i = 0; i < lista_avatares.length; i++) {
+        if (lista_avatares[i]['estado'] != 'false') {
+            let selecionar = document.createElement('option');
 
-        let selecionar = document.createElement('option');
 
+            selecionar.value = lista_avatares[i]['URL'];
+            selecionar.innerText = lista_avatares[i]['nombre'];
 
-        selecionar.value = lista_avatares[i]['URL'];
-        selecionar.innerText = lista_avatares[i]['nombre'];
-
-        xbody.appendChild(selecionar);
-
+            xbody.appendChild(selecionar);
+        }
     }
     localStorage.setItem('nombre', input_p_nombre);
 };
@@ -773,7 +773,7 @@ let obtener_datos = () => {
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: '¡Espera!',
+            title: '¡Atencion!',
             animation: true,
             text: 'Hay espacios que deben ser llenados',
             confirmButtonText: 'Entendido',

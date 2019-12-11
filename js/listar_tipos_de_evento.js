@@ -51,15 +51,8 @@ let validar_modificar3 = async(id, nombre, URL, estado) => {
             confirmButtonText: 'Entendido',
         })
     } else {
-        Swal.fire({
-            type: 'success',
-            title: 'Registro realizado con éxito',
-            text: 'El Tipo de evento ha sido almacenado',
-            confirmButtonText: 'Entendido',
-        }).then(function() {
-            llenar_tabla();
-        });
-    }
+        llenar_tabla();
+    };
 };
 let obtener_datos2 = (id, nombre, URL, estado) => {
 
@@ -74,14 +67,6 @@ let obtener_datos2 = (id, nombre, URL, estado) => {
         validar_modificar3(id, nombre, URL, estado);
     }
 };
-
-
-
-
-
-
-
-
 let llenar_tabla = async() => {
     let filtro = input_filtro.value.toLowerCase();
     let lista_tipo_de_evento = [];
@@ -140,15 +125,12 @@ let llenar_tabla = async() => {
                 estado2.appendChild(opcion);
             });
 
-
             let boton2 = document.createElement('button');
             boton2.classList.add('btn_guardar2');
             boton2.classList.add('btn-mas');
             boton2.classList.add('invi')
             boton2.innerText = 'Guardar';
             boton2.setAttribute('id', `guardar-${lista_tipo_de_evento[i]['_id']}`);
-
-
 
             let boton = document.createElement('button')
             boton.classList.add('btn-mas')

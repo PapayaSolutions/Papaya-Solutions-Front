@@ -141,15 +141,15 @@ let llenar_tabla = async() => {
 
     tbody.appendChild(vacio);
     for (let i = 0; i < lista_tipo_de_evento.length; i++) {
+        if (lista_tipo_de_evento[i]['estado'] == 'Habilitado') {
 
+            let selecionar = document.createElement('option');
+            selecionar.value = lista_tipo_de_evento[i]['nombre'];
+            selecionar.innerText = lista_tipo_de_evento[i]['nombre'];
 
-        let selecionar = document.createElement('option');
-        selecionar.value = lista_tipo_de_evento[i]['nombre'];
-        selecionar.innerText = lista_tipo_de_evento[i]['nombre'];
-
-        tbody.appendChild(selecionar);
-    }
-
+            tbody.appendChild(selecionar);
+        }
+    };
 };
 
 llenar_tabla();

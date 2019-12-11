@@ -95,7 +95,7 @@
 }
 
 .descripcion {
-    text-align: justify;
+    text-align: left;
 }
 
 .nombre {
@@ -104,4 +104,21 @@
 
 .formulario label {
     font-size: 100%;
+}
+
+#btn_regresar {
+    margin-top: 10px;
+}
+
+input {
+    height: 20px;
+    width: 100%;
+}
+
+textarea {
+    height: 150px;
+}
+
+.error {
+    border: solid red 1px;
 }

@@ -20,12 +20,30 @@ let llenar_tabla = async() => {
             name.innerHTML = lista_impuestos[i]['nombre'];
             name.classList = 'nombre';
 
-            fila.insertCell().innerHTML = (lista_impuestos[i]['porcentaje']) + '%';
+            let porcentaje = fila.insertCell();
+            porcentaje.innerHTML = (lista_impuestos[i]['porcentaje']) + '%';
+
             let desc = fila.insertCell();
             desc.innerHTML = lista_impuestos[i]['descripcion'];
             desc.classList = 'descripcion';
 
-            fila.insertCell().innerHTML = lista_impuestos[i]['estado'];
+            let estado = fila.insertCell();
+            estado.innerHTML = lista_impuestos[i]['estado'];
+
+            let boton2 = fila.insertCell();
+
+            let boton = document.createElement('button');
+            boton.innerText = 'Editar ';
+            boton.classList.add('btn_editar');
+            boton.classList.add('btn-mas');
+
+            boton.dataset._id = lista_impuestos[i]['_id'];
+            boton.addEventListener('click', function() {
+                localStorage.setItem('id_impuesto', this.dataset._id);
+                window.location.href = 'editar_impuestos.html'
+            });
+
+            boton2.appendChild(boton);
 
         }
     };
@@ -33,5 +51,4 @@ let llenar_tabla = async() => {
 };
 
 llenar_tabla();
-
 input_filtro.addEventListener('keyup', llenar_tabla);

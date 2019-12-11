@@ -129,9 +129,7 @@ output {
 
 #cards {
     display: grid;
-    grid-template-columns: repeat(4, 200px);
-    padding-top: 20px;
-    margin-left: 18%;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 220px));
 }
 
 #cards div span {
@@ -139,7 +137,6 @@ output {
 }
 
 .card img {
-    border-radius: 15px;
     width: 180px;
     height: 130px;
 }

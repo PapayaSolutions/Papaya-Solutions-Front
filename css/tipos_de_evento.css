@@ -8,15 +8,20 @@
 #tipos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 220px));
+    width: 94%;
+    margin: 0 auto;
 }
 
 #main h1 {
     color: #292c2a;
     font-size: 30px;
+    padding-left: 34px;
 }
 
 hr {
     border: #f7882f solid 1px;
+    width: 92%;
+    margin: 0 auto;
 }
 
 h3 {
@@ -25,10 +30,11 @@ h3 {
     letter-spacing: 3px;
     color: #292c2a;
     margin: 30px;
+    padding-left: 10px;
 }
 
 form {
-    width: 90%;
+    width: 83%;
     margin: auto;
     padding-top: 74px;
 }

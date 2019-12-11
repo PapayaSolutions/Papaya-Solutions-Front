@@ -41,7 +41,7 @@
         min-width: 900px;
         width: 90%;
         margin: auto;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 40px;
         grid-gap: 10px 10px;
         position: relative;
@@ -55,13 +55,12 @@
     }
     
     .item1 {
-        grid-column-start: 1;
-        grid-column-end: 6;
+        grid-column-start: 2;
+        grid-column-end: 3;
         grid-row-start: 1;
         grid-row-end: 3;
-        min-width: 300px;
+        min-width: 400px;
         border-radius: 10px;
-        padding: 20px;
         padding-bottom: 10px;
         margin: auto;
         z-index: 1;
@@ -88,14 +87,15 @@
         color: #292c2a;
         font-size: 18px;
         position: relative;
-        left: 250px;
+        left: 210px;
         bottom: 17px;
+        width: 190px;
     }
     /*descripción del evento*/
     
     .item2 {
         grid-column-start: 1;
-        grid-column-end: 6;
+        grid-column-end: 5;
         grid-row-start: 3;
         grid-row-end: 3;
         margin: auto;
@@ -107,8 +107,8 @@
     /*geolocalización mapa de google*/
     
     .item3 {
-        grid-column-start: 4;
-        grid-column-end: 5;
+        grid-column-start: 3;
+        grid-column-end: 4;
         grid-row-start: 1;
         grid-row-end: 3;
         border-radius: 5px;

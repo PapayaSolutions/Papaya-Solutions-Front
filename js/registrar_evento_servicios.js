@@ -22,6 +22,7 @@ let registrar_evento = async(
                 recinto: recinto,
                 precio_entrada: precio_entrada,
                 cantidad_maxima_usuario: cantidad_maxima_usuario,
+                cantidad_entradas_restante: asistentes_esperados,
                 descripcion: descripcion,
                 URL_imagen: URL_imagen,
                 estado: estado

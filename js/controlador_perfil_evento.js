@@ -57,7 +57,21 @@ let llenar_perfil = async() => {
     entradas.value = datos_evento[0]['asistentes_esperados'];
     disponibles.value = datos_evento[0]['cantidad_entradas_restante'];
     estado = datos_evento[0]['estado'];
+    if (datos_evento[0]['calificaciones'].length >= 1) {
+        for (let i = 0; i < datos_evento[0]['calificaciones'].length; i++) {
+            if (datos_evento[0]['calificaciones'][i]['usuario'] === cliente_id) {
+                if ((datos_evento[0]['calificaciones'][i]['calificacion']) === '') {
+                    calificacion.setAttribute('data-rating', 1)
+                } else {
+                    calificacion.setAttribute('data-rating', parseInt(datos_evento[0]['calificaciones'][i]['calificacion']));
+                }
+            }
+        }
+    } else {
 
+        calificacion.setAttribute('data-rating', 1);
+
+    }
     if (datos_evento[0]['descuentos'] != '') {
 
         let cabeza = tabla_desc_head.insertRow();
@@ -224,7 +238,7 @@ let qrcode1 = new QRCode("qr_output", {
 });
 
 //initial setup stars
-document.addEventListener('DOMContentLoaded', function() {
+function setStars() {
     let stars = document.querySelectorAll('.star');
     stars.forEach(function(star) {
         star.addEventListener('click', setRating);
@@ -232,19 +246,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let rating = parseInt(document.querySelector('.stars').getAttribute('data-rating'));
     let target = stars[rating - 1];
+
     target.dispatchEvent(new MouseEvent('click'));
-});
+};
 
-let calificar = async(num) => {
-
-    datos_evento = await obtener_evento_id(id);
-    for (let i = 0; i < datos_evento[0]['calificaciones'].length; i++) {
-        if (cliente_id === datos_evento[0]['calificaciones'][i]['usuario']) {
-            console.log(cliente_id, num);
-        }
-    }
-
-}
 
 function setRating(ev) {
     let span = ev.currentTarget;
@@ -264,17 +269,15 @@ function setRating(ev) {
         }
     });
     document.querySelector('.stars').setAttribute('data-rating', num);
-    calificar(num);
+    calificar_evento(id, cliente_id, num);
 }
-
-
-
 
 body.onload = function() {
     activar();
     $.get("xfooter.html", function(data) {
         $("#xfooter").html(data);
     })
+    setStars();
 }
 
 

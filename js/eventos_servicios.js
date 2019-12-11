@@ -33,3 +33,24 @@ let obtener_evento_id = async(_id) => {
         });
     return lista_evento;
 };
+
+let calificar_evento = async(_id, cliente_id, num) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/calificar',
+            responseType: 'json',
+            //body
+            data: {
+                _id,
+                cliente_id,
+                num
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};

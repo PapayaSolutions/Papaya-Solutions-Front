@@ -22,7 +22,6 @@ let lista_tipo_de_evento;
 let llenar_tabla = async() => {
 
     lista_clientes = await obtener_cliente_id(id);
-    console.log(lista_clientes);
 
     let fila = tbody.insertRow();
 

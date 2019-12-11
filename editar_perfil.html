@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Editar perfil</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/editar_perfil.css">
+
+</head>
+
+<body>
+    <header>
+        <nav id="nav_principal">
+            <div>
+                <ul class="navegador_izquierda">
+                    <div>
+                        <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
+                    </div>
+                    <li><a href="listar_eventos.html">Eventos</a></li>
+                    <li><a>Registrarse</a>
+                        <ul>
+                            <li><a href="registrar_usuario.html">Cliente</a></li>
+                            <li><a href="#">Organizador de eventos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="registrar_evento.html">Crear evento</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navegador_derecha">
+                    <li><a href="visualizar_perfil.html"><i class="far fa-user"></i></a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="far fa-bell"></i></a></li>
+                    <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
+                    <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
+                    <li> <a href="index.html" id="btn_cerrar_sesion">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div id="volver">
+        <a href="visualizar_perfil.html"><i class="fas fa-arrow-left"></i></a>
+    </div>
+
+    <main>
+
+        <div id="spacer"></div>
+
+        <center>
+            <h1>Editar perfil</h1>
+        </center>
+
+        <div class="acomodo">
+
+            <div id="mini_spacer"></div>
+
+            <div class="cliente">
+
+                <div class="informacion_cliente">
+
+                    <div id="spacer"></div>
+
+                    <div id="info_clientes">
+
+                        <div id="datos_cliente">
+                            <img id="avat" src="img/avatar.jpg" alt="avatar" , height="140px" , width="140x" ;>
+                            <div id="icono_img">
+                                <a href=""><i class="far fa-image"></i></a>
+                            </div>
+                        </div>
+
+                        <div id="info_cliente">
+
+                            <label>Nombre completo 
+                            <input type="text" id="nombre"></input></label>
+
+                            <label>Identificación 
+                            <input type="number" id="identificacion"></input></label>
+
+                            <label>Género 
+                            <select id="genero_cliente">
+                                <option option value="" disabled selected hidden>-</option>
+                                <option value="Femenino">Femenino</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Otro">Otro</option>
+                                <option value="Prefiero no indicar">Prefiero no indicar</option>
+                            </select></label>
+
+                            <label>Fecha de nacimiento 
+                            <input id="fecha_nac_cliente" type="date" onchange="mostrar_anos('fecha_nac_cliente.value')"></label>
+
+                        </div>
+
+                    </div>
+
+                    <div id="spacer"></div>
+                    <hr>
+                    <div id="spacer"></div>
+
+                    <div id="direccion_clientes">
+
+                        <div id="direccion_cliente">
+                            <label for="txt_provincia_cliente">Provincia
+                            <select id="provincia_cliente" onchange="popular_cantones('provincia_cliente', 'canton_cliente')">
+                                <option value="" disabled selected hidden>-</option>
+                                <option value="San José">San José</option>
+                                <option value="Alajuela">Alajuela</option>
+                                <option value="Cartago">Cartago</option>
+                                <option value="Heredia">Heredia</option>
+                                <option value="Guanacaste">Guanacaste</option>
+                                <option value="Puntarenas">Puntarenas</option>
+                                <option value="Limón">Limón</option></label>
+                            </select>
+
+                            <div id="spacer"></div>
+
+                            <label>Dirección exacta 
+                            <input type="text" id="direccion"></input></label>
+
+                            <div id="spacer"></div>
+
+                            <label>Correo electrónico
+                            <input type="text" id="correo"></input></label>
+
+                            <div id="spacer"></div>
+
+                            <label>Contraseña
+                            <input type="number" id="contrasena"></input></label>
+
+                        </div>
+
+                        <div id="direccion_cliente">
+                            <label for="txt_canton_cliente">Cantón
+                            <select id="canton_cliente" onchange="popular_distritos('provincia_cliente', 'canton_cliente', 'distrito_cliente')">
+                            </select></label>
+                        </div>
+
+                        <div id="direccion_cliente">
+                            <label for="txt_distrito_cliente">Distrito
+                            <select id="distrito_cliente">
+                            </select></label>
+                        </div>
+
+                        <div id="direccion_cliente">
+                            <img src="img/arte.jpg" alt="Descanso visual" , height="265px" , width="230px">
+                        </div>
+
+                        <div id="spacer"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="spacer"></div>
+            <hr>
+            <div id="spacer"></div>
+
+            <center>
+                <h2>Método de pago</h2>
+            </center>
+            <div id="spacer"></div>
+
+            <div>
+                <table id="tbl_perfil">
+                    <thead>
+                        <tr>
+                            <th>Propietario</th>
+                            <th>Tipo</th>
+                            <th>Número de tarjeta</th>
+                            <th>CMV</th>
+                            <th>Código postal</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </main>
+
+    <div id="xfooter"></div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/controlador_x.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/controlador_general.js "></script>
+    <script src="js/clientes_servicio.js "></script>
+    <script src="js/controlador_editar_perfil.js"></script>
+
+</body>
+
+</html>

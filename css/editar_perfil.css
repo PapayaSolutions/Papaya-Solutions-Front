@@ -7,7 +7,7 @@
 }
 
 hr {
-    border: 1px solid #f7c331;
+    border: 1px solid #f7882f;
 }
 
 .acomodo {
@@ -15,22 +15,29 @@ hr {
     width: 70%;
 }
 
-img {
+#datos_cliente img {
     border-radius: 20px;
 }
 
 #info_clientes {
     display: grid;
     grid-template-columns: 300px 450px 100px;
-    padding-top: 25px;
 }
 
 #info_cliente {
     display: grid;
-    grid-template-columns: 185px 300px;
+    grid-template-columns: 300px 300px;
 }
 
-#info_cliente p {
+#info_cliente select {
+    width: 220px;
+}
+
+#info_cliente input {
+    width: 220px;
+}
+
+#info_cliente label {
     color: #636e72;
 }
 
@@ -40,33 +47,28 @@ img {
     margin: auto;
 }
 
-#datos_clientes {
+#direccion_clientes {
     display: grid;
-    grid-template-columns: 485px 250px;
+    grid-template-columns: 200px 200px 220px 200px;
     margin: auto;
 }
 
-#datos_cliente p {
+#datos_cliente label {
     color: #636e72;
 }
 
-#icono i {
-    position: absolute;
-    padding-top: 5px;
-    margin-top: 85px;
-    text-align: center;
-    color: #ececec;
-    background: #f7882f;
-    border-radius: 50px;
-    height: 25px;
-    width: 30px;
+#datos_cliente input {
+    color: #636e72;
+    width: 552px;
 }
 
-#icono i:hover {
-    background: transparent;
-    color: #f7882f;
-    border: 1px solid #f7882f;
-    border-radius: 10rem;
+#direccion_cliente label {
+    color: #636e72;
+}
+
+#direccion_cliente input {
+    color: #636e72;
+    width: 552px;
 }
 
 #icono_img i {
@@ -86,4 +88,23 @@ img {
     color: #f7882f;
     border: 1px solid #f7882f;
     border-radius: 10rem;
+}
+
+output[type="text"] {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+input[type="number"] {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+#direccion_cliente select {
+    width: 150px;
 }

@@ -56,22 +56,24 @@ let llenar_tabla = async() => {
     tbody.innerHTML = '';
 
     for (let i = 0; i < lista_tipo_de_evento.length; i++) {
-
-        let labe = document.createElement('label');
-        let selecionar = document.createElement('input');
-
-        selecionar.type = "checkbox";
-        selecionar.name = lista_tipo_de_evento[i]['nombre'];
-        selecionar.value = lista_tipo_de_evento[i]['nombre'];
-
-        labe.for = lista_tipo_de_evento[i]['nombre'];
-        labe.innerText = lista_tipo_de_evento[i]['nombre'];
-
-        tbody.appendChild(labe);
-        tbody.appendChild(selecionar);
+        if (lista_tipo_de_evento[i]['estado'] == 'Habilitado') {
 
 
-    }
+            let labe = document.createElement('label');
+            let selecionar = document.createElement('input');
+
+            selecionar.type = "checkbox";
+            selecionar.name = lista_tipo_de_evento[i]['nombre'];
+            selecionar.value = lista_tipo_de_evento[i]['nombre'];
+
+            labe.for = lista_tipo_de_evento[i]['nombre'];
+            labe.innerText = lista_tipo_de_evento[i]['nombre'];
+
+            tbody.appendChild(labe);
+            tbody.appendChild(selecionar);
+
+        }
+    };
 };
 llenar_tabla();
 const contenedor_img = document.querySelector('#poner_avatar');

@@ -3,25 +3,33 @@
 let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo, pidentificacion,
     pf_nacimiento, pgenero, pprovincia, pcanton, pdistrito, pdireccion, url_avatar) => {
     await axios({
-            method: 'post',
-            url: 'http://localhost:3000/api/registrar-cliente',
-            responseType: 'json',
-            //body 
-            data: {
-                p_nombre: pp_nombre,
-                s_nombre: ps_nombre,
-                p_apellido: pp_apellido,
-                s_apellido: ps_apellido,
-                correo_cliente: pcorreo,
-                identificacion: pidentificacion,
-                f_nacimiento: pf_nacimiento,
-                genero: pgenero,
-                provincia: pprovincia,
-                canton: pcanton,
-                distrito: pdistrito,
-                direccion: pdireccion,
-                url_avatar: url_avatar,
+        method: 'post',
+        url: 'http://localhost:3000/api/registrar-cliente',
+        responseType: 'json',
+        //body 
+        data: {
+            p_nombre: pp_nombre,
+            s_nombre: ps_nombre,
+            p_apellido: pp_apellido,
+            s_apellido: ps_apellido,
+            correo_cliente: pcorreo,
+            identificacion: pidentificacion,
+            f_nacimiento: pf_nacimiento,
+            genero: pgenero,
+            provincia: pprovincia,
+            canton: pcanton,
+            distrito: pdistrito,
+            direccion: pdireccion,
+            url_avatar: url_avatar,
 
+        }
+    })
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-user-cli',
+            responseType: 'json',
+            data: {
+                correo: pcorreo,
             }
         })
         .then(function(res) {
@@ -100,6 +108,23 @@ let obtener_cliente_id = async(_id) => {
     await axios({
             method: 'get',
             url: `http://localhost:3000/api/listar_cliente_id/${_id}`,
+            responseType: 'json',
+
+        }).then(function(res) {
+            lista_cliente = res.data.clientes;
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    return lista_cliente;
+};
+
+let obtener_cliente_mail = async(mail) => {
+    let lista_cliente;
+    await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/listar_cliente_mail/${mail}`,
             responseType: 'json',
 
         }).then(function(res) {

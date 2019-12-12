@@ -56,22 +56,24 @@ let llenar_tabla = async() => {
     tbody.innerHTML = '';
 
     for (let i = 0; i < lista_tipo_de_evento.length; i++) {
-
-        let labe = document.createElement('label');
-        let selecionar = document.createElement('input');
-
-        selecionar.type = "checkbox";
-        selecionar.name = lista_tipo_de_evento[i]['nombre'];
-        selecionar.value = lista_tipo_de_evento[i]['nombre'];
-
-        labe.for = lista_tipo_de_evento[i]['nombre'];
-        labe.innerText = lista_tipo_de_evento[i]['nombre'];
-
-        tbody.appendChild(labe);
-        tbody.appendChild(selecionar);
+        if (lista_tipo_de_evento[i]['estado'] == 'Habilitado') {
 
 
-    }
+            let labe = document.createElement('label');
+            let selecionar = document.createElement('input');
+
+            selecionar.type = "checkbox";
+            selecionar.name = lista_tipo_de_evento[i]['nombre'];
+            selecionar.value = lista_tipo_de_evento[i]['nombre'];
+
+            labe.for = lista_tipo_de_evento[i]['nombre'];
+            labe.innerText = lista_tipo_de_evento[i]['nombre'];
+
+            tbody.appendChild(labe);
+            tbody.appendChild(selecionar);
+
+        }
+    };
 };
 llenar_tabla();
 const contenedor_img = document.querySelector('#poner_avatar');
@@ -761,12 +763,14 @@ let obtener_datos = () => {
     let correo = input_correo.value;
     let identificacion = input_identificacion.value;
     let f_nacimiento = input_f_nacimiento.value;
+    let edad_cliente = input_edad.value
     let provincia = input_provincia.value;
     let canton = input_canton.value;
     let genero = input_genero.value;
     let distrito = input_distrito.value;
     let direccion = input_direccion.value;
     let url_avatar = input_url_avatar.src;
+    let prefere
 
 
     //si hay error, entra al if. Si no hay error entra al else
@@ -790,9 +794,8 @@ let obtener_datos = () => {
         })
 
     } else {
-        console.log(f_nacimiento)
         registrar_usuario(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,
-            f_nacimiento, genero, provincia, canton, distrito, direccion, url_avatar);
+            f_nacimiento, edad_cliente, genero, provincia, canton, distrito, direccion, url_avatar);
 
         Swal.fire({
             type: 'success',

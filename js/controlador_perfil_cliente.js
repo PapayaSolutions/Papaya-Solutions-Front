@@ -14,15 +14,23 @@ const editar_perfil = document.querySelector('#tbl_editar tbody');
 const contenedor = document.querySelector('#cards');
 const tarjeta = document.querySelector('#cards_tarjeta');
 
+let id;
+let email;
 let lista_clientes;
 let usuario = sessionStorage.getItem('tipo_usuario');
-
-let id = localStorage.getItem('destino_id');
 let lista_tipo_de_evento;
 
 let llenar_tabla = async() => {
+    if (usuario === 'Cliente') {
+        email = sessionStorage.getItem('correo');
+        lista_clientes = await obtener_cliente_mail(email);
+    } else {
+        if (usuario === 'Admin') {
+            id = localStorage.getItem('destino_id');
+            lista_clientes = await obtener_cliente_id(id);
+        }
+    }
 
-    lista_clientes = await obtener_cliente_id(id);
 
     let fila = tbody.insertRow();
 
@@ -34,28 +42,36 @@ let llenar_tabla = async() => {
     correo_cliente.innerHTML = lista_clientes[0]['correo_cliente'];
     imagen_avatar.src = lista_clientes[0]['url_avatar'];
 
-    for (let i = 0; i < lista_clientes[0]['f_nacimiento'].length; i++) {
-        let date = new Date((lista_clientes[0]['f_nacimiento']));
-        nacimiento.innerHTML = (date.getDate() + '/ ' + date.getMonth() + '/ ' + date.getFullYear());
+    for (let i = 0; i < lista_clientes[0]['metodos_pago'].length; i++) {
 
-        let editar = editar_perfil.insertRow();
-        let perfil = editar.insertCell();
+        let tarjeta = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
+        tipo_tarjeta.innerHTML = "Master Card";
+        p_tarjeta.innerHTML = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
 
-        let boton = document.createElement('button');
-        boton.dataset.destino = lista_clientes[i]['_id'];
-        boton.innerText = 'Editar';
-        boton.classList.add('btn');
+    }
 
-        boton.addEventListener('click', function() {
-            localStorage.setItem("destino_id", this.dataset.destino);
-            localStorage.setItem('previo', window.location.href);
-            window.location.href = 'editar_perfil_cliente.html';
 
-        });
+    let date = new Date((lista_clientes[0]['f_nacimiento']));
+    nacimiento.innerHTML = (date.getDate() + '/ ' + date.getMonth() + '/ ' + date.getFullYear());
 
-        perfil.appendChild(boton);
+    let editar = editar_perfil.insertRow();
+    let perfil = editar.insertCell();
 
-    };
+    let boton = document.createElement('button');
+    boton.dataset.destino = lista_clientes[0]['_id'];
+    boton.innerText = 'Editar';
+    boton.classList.add('btn');
+
+    boton.addEventListener('click', function() {
+        localStorage.setItem("destino_id", this.dataset.destino);
+        localStorage.setItem('previo', window.location.href);
+        window.location.href = 'editar_perfil_cliente.html';
+
+    });
+
+    perfil.appendChild(boton);
+
+
 
     localStorage.setItem('id_tarjeta', JSON.stringify(lista_clientes));
     JSON.parse(localStorage.getItem('id_tarjeta'));

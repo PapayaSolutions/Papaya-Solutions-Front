@@ -2,14 +2,15 @@
 
 let validar_credenciales = async(correo, contrasena) => {
     await axios.post('http://localhost:3000/api/validar_credenciales', {
-            correo_cliente: correo,
+            correo: correo,
             contrasena: contrasena
         })
         .then(function(res) {
             console.log(res.data);
             sessionStorage.setItem('conectado', res.success);
-            sessionStorage.setItem('correo', res.data.clienteBD.correo_cliente);
-            sessionStorage.setItem('tipo_usuario', res.data.clienteBD.tipo);
+            sessionStorage.setItem('correo', res.data.userBD.correo);
+            sessionStorage.setItem('tipo_usuario', res.data.userBD.tipo);
+            sessionStorage.setItem('usuario_id', res.data.userBD._id);
             console.log('guardó');
             window.location.href = 'listar_eventos.html';
         })

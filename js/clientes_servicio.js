@@ -72,6 +72,9 @@ let listar_clientes = async() => {
         });
     return lista_clientes;
 }
+
+
+
 let listar_tipos_de_evento = async() => {
     let resultado;
 

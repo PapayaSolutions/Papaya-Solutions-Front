@@ -8,14 +8,15 @@ const direccion = document.querySelector('#direccion');
 const identificacion = document.querySelector('#identificacion');
 const correo_cliente = document.querySelector('#correo');
 const imagen_avatar = document.querySelector('#avat');
-const p_tarjeta = document.querySelector('#tarjeta_informacion');
 const tipo_tarjeta = document.querySelector('#tipo_tarjeta');
 const div_i = document.querySelectorAll('#volver a i');
 const editar_perfil = document.querySelector('#tbl_editar tbody');
 const contenedor = document.querySelector('#cards');
+const tarjeta = document.querySelector('#cards_tarjeta');
 
 let lista_clientes;
 let usuario = sessionStorage.getItem('tipo_usuario');
+
 let id = localStorage.getItem('destino_id');
 let lista_tipo_de_evento;
 
@@ -32,14 +33,6 @@ let llenar_tabla = async() => {
     identificacion.innerHTML = lista_clientes[0]['identificacion'];
     correo_cliente.innerHTML = lista_clientes[0]['correo_cliente'];
     imagen_avatar.src = lista_clientes[0]['url_avatar'];
-
-    for (let i = 0; i < lista_clientes[0]['metodos_pago'].length; i++) {
-
-        let tarjeta = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
-        tipo_tarjeta.innerHTML = "Master Card";
-        p_tarjeta.innerHTML = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
-
-    }
 
     for (let i = 0; i < lista_clientes[0]['f_nacimiento'].length; i++) {
         let date = new Date((lista_clientes[0]['f_nacimiento']));
@@ -70,6 +63,25 @@ let llenar_tabla = async() => {
 };
 llenar_tabla();
 
+let ver_tarjeta = async() => {
+
+    lista_clientes = await obtener_cliente_id(id);
+
+    for (let i = 0; i < lista_clientes[0]['metodos_pago'].length; i++) {
+        let div_card_tarjeta = document.createElement('div');
+        div_card_tarjeta.classList.add('card_tarjeta');
+
+        let numero_tarjeta = document.createElement('span');
+
+        numero_tarjeta.innerHTML = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
+
+        tarjeta.appendChild(div_card_tarjeta);
+        div_card_tarjeta.appendChild(numero_tarjeta);
+
+    };
+};
+ver_tarjeta();
+
 let mostrar_cards = async() => {
 
     lista_tipo_de_evento = await listar_tipos_de_evento();
@@ -96,8 +108,9 @@ let mostrar_cards = async() => {
 
     };
 };
-
 mostrar_cards();
+
+
 
 if (conectado) {
     switch (tipo_usuario) {

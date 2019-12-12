@@ -116,3 +116,20 @@ let obtener_cliente_id = async(_id) => {
         });
     return lista_cliente;
 };
+
+let obtener_cliente_mail = async(mail) => {
+    let lista_cliente;
+    await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/listar_cliente_mail/${mail}`,
+            responseType: 'json',
+
+        }).then(function(res) {
+            lista_cliente = res.data.clientes;
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    return lista_cliente;
+};

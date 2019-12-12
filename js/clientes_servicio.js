@@ -3,25 +3,33 @@
 let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo, pidentificacion,
     pf_nacimiento, pgenero, pprovincia, pcanton, pdistrito, pdireccion, url_avatar) => {
     await axios({
-            method: 'post',
-            url: 'http://localhost:3000/api/registrar-cliente',
-            responseType: 'json',
-            //body 
-            data: {
-                p_nombre: pp_nombre,
-                s_nombre: ps_nombre,
-                p_apellido: pp_apellido,
-                s_apellido: ps_apellido,
-                correo_cliente: pcorreo,
-                identificacion: pidentificacion,
-                f_nacimiento: pf_nacimiento,
-                genero: pgenero,
-                provincia: pprovincia,
-                canton: pcanton,
-                distrito: pdistrito,
-                direccion: pdireccion,
-                url_avatar: url_avatar,
+        method: 'post',
+        url: 'http://localhost:3000/api/registrar-cliente',
+        responseType: 'json',
+        //body 
+        data: {
+            p_nombre: pp_nombre,
+            s_nombre: ps_nombre,
+            p_apellido: pp_apellido,
+            s_apellido: ps_apellido,
+            correo_cliente: pcorreo,
+            identificacion: pidentificacion,
+            f_nacimiento: pf_nacimiento,
+            genero: pgenero,
+            provincia: pprovincia,
+            canton: pcanton,
+            distrito: pdistrito,
+            direccion: pdireccion,
+            url_avatar: url_avatar,
 
+        }
+    })
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-user-cli',
+            responseType: 'json',
+            data: {
+                correo: pcorreo,
             }
         })
         .then(function(res) {

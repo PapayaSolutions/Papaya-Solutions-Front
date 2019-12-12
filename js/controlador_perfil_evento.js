@@ -57,6 +57,7 @@ let llenar_perfil = async() => {
     entradas.value = datos_evento[0]['asistentes_esperados'];
     disponibles.value = datos_evento[0]['cantidad_entradas_restante'];
     estado = datos_evento[0]['estado'];
+
     if (datos_evento[0]['calificaciones'].length >= 1) {
         for (let i = 0; i < datos_evento[0]['calificaciones'].length; i++) {
             if (datos_evento[0]['calificaciones'][i]['usuario'] === cliente_id) {
@@ -157,15 +158,15 @@ let mostrar = () => {
     item5.classList.remove('hidden');
     item7.classList.add('hidden');
 
-    finalizado.classList.add('hidden');
-
     comentarios.classList.add('hidden');
 
     comentarios.style.position = 'absolute';
+
+    finalizado.classList.add('hidden');
 };
 
 
-let activar = () => {
+let activar = async() => {
 
 
     if (usuario === 'Organizador') {
@@ -176,14 +177,30 @@ let activar = () => {
         editar.style.position = 'absolute';
     };
 
-    if ('Activo' === estado) {
-        mostrar();
-    } else {
+    datos_evento = await obtener_evento_id(id);
 
-        if ('Finalizado' === estado) {
-            esconder();
+    if ((datos_evento[0]['calificaciones'].length >= 1) && ('Finalizado' === estado)) {
+        for (let i = 0; i < datos_evento[0]['calificaciones'].length; i++) {
+            if ((datos_evento[0]['calificaciones'][i]['usuario'] === cliente_id) && ('Finalizado' === estado)) {
+                esconder();
+            } else {
+                finalizado.classList.remove('hidden');
+            }
         }
-    };
+    } else {
+        if ('Activo' === estado) {
+            mostrar();
+        } else {
+
+            if ('Finalizado' === estado) {
+                esconder();
+
+            }
+        };
+    }
+
+
+
 };
 
 activar();

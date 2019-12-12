@@ -61,25 +61,39 @@
 
                 </div>
                 <div class="two_collumn">
-                    <div> <i class="fas fa-calendar-alt"></i>
-                        <input type="number" class="txt-filtro" id="filtro_mes" placeholder="Mes"></div>
-                    <div> <i class="fas fa-calendar-alt"></i>
-                        <input type="number" class="txt-filtro" id="filtro_anno" placeholder="Año"></div>
+                    <div><label>Ingresa el mes y año para generar el reporte</label></div>
+                    <input type="number" class="txt-filtro" id="filtro_mes" placeholder="Mes">
+                    <input type="number" class="txt-filtro" id="filtro_anno" placeholder="Año">
+                    <button id="btn_generar">Generar</button>
+                </div>
+
+
+                <div id="tabla_contenido">
+
+                    <table id="tbl_evento">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Porcentaje</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
                 </div>
 
             </div>
 
-            <!-- <div class="contenedor_tabla">
-                <table id="tbl-recintos">
+            <div class="contenedor_tabla">
+                <table id="tbl_evento">
                     <thead>
                         <tr>
                             <th>Nombre</th>
-                            <th>Provincia</th>
-                            <th>Cantón</th>
-
-
-
-                            <th>Capacidad total</th>
+                            <th>Categoría</th>
+                            <th>Recinto</th>
                             <th>Estado</th>
                         </tr>
                     </thead>
@@ -89,7 +103,7 @@
                     </tbody>
                 </table>
 
-            </div> -->
+            </div>
 
         </section>
 
@@ -102,8 +116,8 @@
     <script src="js/controlador_x.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/controlador_general.js"></script>
-    <script src="js/impuestos_servicios.js"></script>
-    <script src="js/controlador_registrar_impuestos.js"></script>
+    <script src="js/reportes_servicio.js"></script>
+    <script src="js/controlador_reporte_eventos.js"></script>
 
 </body>
 

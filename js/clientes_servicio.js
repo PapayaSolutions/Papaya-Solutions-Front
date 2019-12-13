@@ -136,3 +136,28 @@ let obtener_cliente_mail = async(mail) => {
         });
     return lista_cliente;
 };
+
+let registrar_tarjeta = async(email, tarjeta, nombre, codigo, vencimiento, apellido, postal) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar_tarjeta',
+            responseType: 'json',
+            //body 
+            data: {
+                email,
+                tarjeta: tarjeta,
+                nombre: nombre,
+                codigo: codigo,
+                vencimiento: vencimiento,
+                apellido: apellido,
+                postal: postal,
+
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};

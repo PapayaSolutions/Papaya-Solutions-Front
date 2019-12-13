@@ -21,19 +21,20 @@ let llenar_tabla = async() => {
             fila.insertCell().innerHTML = lista_descuentos[i]['porcentaje'] + ['%'];
             fila.insertCell().innerHTML = lista_descuentos[i]['estado'];
 
-            let editar = fila.insertCell();
+            let boton2 = fila.insertCell();
+
             let boton = document.createElement('button');
+            boton.innerText = 'Editar ';
+            boton.classList.add('btn_editar');
+            boton.classList.add('btn-mas');
 
-            boton.dataset.destino = lista_descuentos[i];
-            boton.innerText = 'Editar';
-            boton.classList.add('btn');
-
+            boton.dataset._id = lista_descuentos[i]['_id'];
             boton.addEventListener('click', function() {
-                window.location.href = 'editar_descuento.html';
+                localStorage.setItem('id_descuento', this.dataset._id);
+                window.location.href = 'editar_descuento.html'
+            });
 
-            })
-
-            editar.appendChild(boton);
+            boton2.appendChild(boton);
         };
 
     };

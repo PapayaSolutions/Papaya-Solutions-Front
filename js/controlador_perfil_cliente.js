@@ -65,7 +65,7 @@ let llenar_tabla = async() => {
     boton.addEventListener('click', function() {
         localStorage.setItem("destino_id", this.dataset.destino);
         localStorage.setItem('previo', window.location.href);
-        window.location.href = 'editar_perfil_cliente.html';
+        window.location.href = 'editar_perfil.html';
 
     });
 

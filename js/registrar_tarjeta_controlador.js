@@ -170,12 +170,8 @@ let obtener_datos = () => {
             }
         })
     } else {
-        console.log('tarjeta', tarjeta);
-        console.log('nombre', nombre);
-        console.log('codigo', codigo);
-        console.log('vencimiento', vencimiento);
-        console.log('apellido', apellido);
-        console.log('postal', postal);
+
+        registrar_tarjeta(tarjeta, nombre, codigo, vencimiento, apellido, postal);
 
         Swal.fire({
             type: 'success',
@@ -186,8 +182,9 @@ let obtener_datos = () => {
             customClass: {
                 popup: 'animated tada'
             }
-        })
-        window.location.href = 'visualizar_perfil.html';
+        }).then(function() {
+            window.location.href = 'visualizar_perfil.html';
+        });
     }
 };
 

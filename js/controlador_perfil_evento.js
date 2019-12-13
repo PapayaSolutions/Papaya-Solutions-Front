@@ -18,7 +18,8 @@ const link_recinto = document.querySelector('#link_recinto');
 const ver_recinto = document.querySelector('#ver_recinto');
 const body = document.querySelector('#body');
 const calificacion = document.querySelector('#estrellas');
-
+const input_coment = document.querySelector('#txt_coment');
+const btn_registro = document.querySelector('#btn_coment');
 const item5 = document.querySelector('#item5');
 const item7 = document.querySelector('#item7');
 const editar = document.querySelector('#editar');
@@ -304,3 +305,57 @@ ver_recinto.addEventListener('click', function() {
     localStorage.setItem('previo', window.location.href);
     window.location.href = 'perfil_recinto.html'
 });
+
+
+
+input_coment.value = '';
+
+
+// Validación de datos
+let validar = () => {
+    let error = false;
+    if (input_coment.value == '') {
+        error = true;
+        input_coment.classList.add('error');
+        console.log('falta el nombre')
+    } else {
+        input_coment.classList.remove('error');
+    }
+
+    return error;
+
+}; //validar datos
+
+
+let obtener_datos = () => {
+    let comentario = input_coment.value;
+
+    //si hay error, entra al if. Si no hay error entra al else
+    if (validar()) {
+        Swal.fire({
+                type: 'warning',
+                title: 'Porfavor ingresar un comentario.',
+                animation: true,
+                text: 'Llenar el espacio en rojo',
+                confirmButtonText: 'Entendido',
+                customClass: {
+                    popup: 'animated tada'
+                }
+            }) //  let registrar_impuesto = async(nombre, porcentaje, descripcion, estado) => {
+    } else {
+
+        comentar_evento(id, cliente_id, comentario);
+        Swal.fire({
+            type: 'success',
+            title: 'Comentario realizado con exito',
+            text: 'El evento ha sido comentado',
+            confirmButtonText: 'Entendido'
+        })
+    }
+
+};
+
+
+// Eventos asociados a los botones o inputs
+
+btn_registro.addEventListener('click', obtener_datos);

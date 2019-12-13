@@ -184,21 +184,35 @@ let activar = async() => {
             if ((datos_evento[0]['calificaciones'][i]['usuario'] === cliente_id) && ('Finalizado' === estado)) {
                 esconder();
             } else {
+
                 finalizado.classList.remove('hidden');
             }
         }
     } else {
-        if ('Activo' === estado) {
+        if (('Activo' === estado) && ((usuario === "Admin") || (usuario === "Organizador") || (usuario === "Encargado"))) {
             mostrar();
+            item5.classList.add('hidden');
         } else {
+            if ('Activo' === estado) {
+                mostrar();
 
-            if ('Finalizado' === estado) {
-                esconder();
+            } else {
+                if ((datos_evento[0]['calificaciones'].length === 0) && ('Finalizado' === estado)) {
+                    item5.classList.add('hidden');
+                    item7.classList.add('hidden');
+                    comentarios.classList.add('hidden');
+                    comentarios.style.position = 'absolute';
+                    finalizado.classList.remove('hidden');
+                } else {
+                    if ('Finalizado' === estado) {
+                        esconder();
+
+                    }
+                }
 
             }
-        };
+        }
     }
-
 
 
 };

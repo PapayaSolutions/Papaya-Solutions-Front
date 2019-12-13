@@ -15,7 +15,7 @@
 }
 
 hr {
-    width: 80%;
+    width: 36%;
     margin-top: 5%;
     margin-left: 5%;
     border: 1px solid #f7882f;
@@ -46,5 +46,14 @@ hr {
 }
 
 .btn {
-    bottom: 10px;
+    position: absolute;
+    margin-left: 460px;
+    margin-top: 35px;
+}
+
+#separar hr {
+    position: absolute;
+    width: 35%;
+    margin-left: 565px;
+    margin-top: 53px;
 }

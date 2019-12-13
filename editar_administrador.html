@@ -4,12 +4,13 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Administrador</title>
+    <title>Editar administrador</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/configuracion.css">
+    <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/administrador.css">
 </head>
 
@@ -52,52 +53,40 @@
 
             <form id="formulario_prin">
 
-                <h1 id="admin">Correo electrónico del administrador</h1>
+                <h1 id="admin">Cambio de credenciales</h1>
 
                 <div class="administrador">
 
                     <div class="info_admin">
 
                         <div class="correo_admin">
-                            <p>Correo electrónico: </p>
-                            <output id="correo"></output>
-                            <button type="button" class="btn" id="btn_registro">Modificar</button>
+                            <label for="label_correo">Correo electrónico
+                            <input type="text" id="ccorreo"></label>
                         </div>
 
                         <div id="spacer"></div>
 
                         <div class="contrasena_admin">
-                            <p>Contraseña: </p>
-                            <output id="contrasena"></output>
-                            <button type="button" class="btn" id="btn_registro">Modificar</button>
+                            <label for="label_contrasena">Contraseña
+                            <input type="text" id="ccontrasena"></label>
                         </div>
-
-                        <hr>
 
                         <div id="spacer"></div>
-                        <h1 id="empresa">Correo electrónico de la plataforma</h1>
 
-                        <div>
-
-                            <div id="spacer"></div>
-
-                            <output id="nombre_emp"></output>
-
-                            <div class="correo_admin">
-                                <p>Correo electrónico: </p>
-                                <output id="correo_emp"></output>
-                                <button type="button" class="btn" id="btn_registro">Modificar</button>
-                            </div>
-
-                            <div id="spacer"></div>
-
-                            <div class="contrasena_admin">
-                                <p>Contraseña: </p>
-                                <output id="contrasena_emp"></output>
-                                <button type="button" class="btn" id="btn_registro">Modificar</button>
-                            </div>
-
+                        <div class="correo_admin">
+                            <label for="label_correo1">Correo electrónico
+                            <input type="text" id="ccorreo1"></label>
                         </div>
+
+                        <div id="spacer"></div>
+
+                        <div class="contrasena_admin">
+                            <label for="label_contrasena1">Contraseña
+                            <input type="text" id="ccontrasena1">
+                            </label>
+                        </div>
+
+                        <button id="guardar">Guardar</button>
 
                     </div>
 
@@ -108,10 +97,12 @@
     </main>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/controlador_x.js"></script>
-
+    <script src="js/controlador_general.js"></script>
+    <script src="js/admin_servicio.js"></script>
+    <script src="js/controlador_editar_admin.js"></script>
 
 
 </body>

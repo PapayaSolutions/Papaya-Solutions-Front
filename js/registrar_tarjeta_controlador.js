@@ -137,7 +137,7 @@ let validar = () => {
 };
 
 // function obtener_datos(){}
-let obtener_datos = () => {
+let obtener_datos = (tarjeta, nombre, codigo, vencimiento, apellido, postal) => {
 
     let tarjeta = input_tarjeta.value;
     let nombre = input_nombre.value;

@@ -170,7 +170,7 @@ let obtener_datos = () => {
             }
         })
     } else {
-        console.log('tarjeta', codigo);
+        console.log('tarjeta', tarjeta);
         console.log('nombre', nombre);
         console.log('codigo', codigo);
         console.log('vencimiento', vencimiento);

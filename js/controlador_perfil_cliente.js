@@ -82,7 +82,6 @@ llenar_tabla();
 let ver_tarjeta = async() => {
 
     lista_clientes = await obtener_cliente_id(id);
-
     for (let i = 0; i < lista_clientes[0]['metodos_pago'].length; i++) {
         let div_card_tarjeta = document.createElement('div');
         div_card_tarjeta.classList.add('card_tarjeta');

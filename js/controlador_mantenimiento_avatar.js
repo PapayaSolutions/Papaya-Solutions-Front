@@ -30,10 +30,6 @@ let mostrar_cards = async() => {
             let botones = document.createElement('div');
             botones.classList.add('botones');
 
-            /*   let edit_btn = document.createElement('button');
-               edit_btn.innerText = 'Edit';
-               edit_btn.classList.add('edit');*/
-
             let habit_btn = document.createElement('button');
             habit_btn.classList.add('habit');
             habit_btn.innerText = 'Habilitar';
@@ -54,9 +50,6 @@ let mostrar_cards = async() => {
                 habit_btn.classList.add('hidden');
             }
 
-            /*   edit_btn.addEventListener('click', function() {
-                   botones.classList.toggle('hidden');
-               });*/
             habit_btn.addEventListener('click', function() {
                 habilitar_avatar(habit_btn.dataset.id);
                 crear_bitacora('Habilitar', 'Habilitar avatar');
@@ -91,7 +84,7 @@ let mostrar_cards = async() => {
             div_card.appendChild(div_figure);
             div_figure.appendChild(imagen);
             div_card.appendChild(botones);
-            /*  div_card.appendChild(edit_btn);*/
+
 
             botones.appendChild(habit_btn);
             botones.appendChild(deshabit_btn);

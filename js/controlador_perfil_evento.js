@@ -25,6 +25,7 @@ const item7 = document.querySelector('#item7');
 const editar = document.querySelector('#editar');
 const comentarios = document.querySelector('#calificar');
 const finalizado = document.querySelector('#item8');
+const btn_carrito = document.querySelector('#btn_carrito');
 
 let estado;
 let usuario = sessionStorage.getItem('tipo_usuario');
@@ -370,6 +371,22 @@ let obtener_datos = () => {
 };
 
 
+let llenar_carrito = async() => {
+
+
+    if (obtener_carrito_usuario(cliente_id)) {
+
+
+    } else {
+        crear_carrito(cliente_id);
+        llenar_carrito();
+    }
+
+
+
+}
+
 // Eventos asociados a los botones o inputs
 
 btn_registro.addEventListener('click', obtener_datos);
+btn_carrito.addEventListener('click', llenar_carrito);

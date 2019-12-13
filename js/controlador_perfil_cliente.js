@@ -21,6 +21,8 @@ let usuario = sessionStorage.getItem('tipo_usuario');
 let lista_tipo_de_evento;
 
 let llenar_tabla = async() => {
+    tbody.innerHTML = '';
+    tarjeta.innerHTML = '';
     if (usuario === 'Cliente') {
         email = sessionStorage.getItem('correo');
         lista_clientes = await obtener_cliente_mail(email);
@@ -45,15 +47,67 @@ let llenar_tabla = async() => {
 
 
     for (let i = 0; i < lista_clientes[0]['metodos_pago'].length; i++) {
+        let div_info_tarjeta = document.createElement('div');
         let div_card_tarjeta = document.createElement('div');
         div_card_tarjeta.classList.add('card_tarjeta');
 
         let numero_tarjeta = document.createElement('span');
-
         numero_tarjeta.innerHTML = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
+        numero_tarjeta.classList.add('num_tar');
+        numero_tarjeta.classList.add('infocard');
+
+        let vencimiento = document.createElement('span');
+        vencimiento.innerHTML = lista_clientes[0]['metodos_pago'][i]['vencimiento'];
+        vencimiento.classList.add('vencimiento');
+        vencimiento.classList.add('infocard');
+
+        let estado = document.createElement('span');
+        estado.innerHTML = lista_clientes[0]['metodos_pago'][i]['estado'];
+        estado.classList.add('estado');
+        estado.classList.add('infocard');
+
+        let botones = document.createElement('div');
+        botones.classList.add('botones');
+
+        let habit_btn = document.createElement('button');
+        habit_btn.classList.add('habit');
+        habit_btn.innerText = 'Habilitar';
+        habit_btn.dataset.id = lista_clientes[0]['metodos_pago'][i]['_id'];
+
+        let deshabit_btn = document.createElement('button');
+        deshabit_btn.classList.add('deshabit');
+        deshabit_btn.innerText = 'Deshabilitar';
+        deshabit_btn.dataset.id = lista_clientes[0]['metodos_pago'][i]['_id'];
+
+        if (lista_clientes[0]['metodos_pago'][i]['estado'] === 'Inactivo') {
+            div_info_tarjeta.classList.add('deshabilitada');
+            deshabit_btn.classList.add('hidden');
+            habit_btn.classList.remove('hidden');
+        } else {
+            div_info_tarjeta.classList.remove('deshabilitada');
+            deshabit_btn.classList.remove('hidden');
+            habit_btn.classList.add('hidden');
+        }
+        id = lista_clientes[0]['_id'];
+
+        habit_btn.addEventListener('click', function() {
+            habilitar_tarjeta(id, this.dataset.id);
+            crear_bitacora('Habilitar', 'Habilitar tarjeta');
+        });
+        deshabit_btn.addEventListener('click', function() {
+            deshabilitar_tarjeta(id, this.dataset.id);
+            crear_bitacora('Deshabilitar', 'Deshabilitar tarjeta');
+        });
+
 
         tarjeta.appendChild(div_card_tarjeta);
-        div_card_tarjeta.appendChild(numero_tarjeta);
+        div_card_tarjeta.appendChild(div_info_tarjeta);
+        div_info_tarjeta.appendChild(numero_tarjeta);
+        div_info_tarjeta.appendChild(vencimiento);
+        div_info_tarjeta.appendChild(estado);
+        div_card_tarjeta.appendChild(botones);
+        botones.appendChild(habit_btn);
+        botones.appendChild(deshabit_btn);
 
     };
 
@@ -80,7 +134,6 @@ let llenar_tabla = async() => {
     });
 
     perfil.appendChild(boton);
-
 
 
     localStorage.setItem('id_tarjeta', JSON.stringify(lista_clientes));

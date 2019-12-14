@@ -142,6 +142,50 @@ output {
     height: 100px;
     width: 190px;
     margin-left: 200px;
+    margin-bottom: 20px;
     border-radius: 20px;
     border: 1px solid #f7882f;
+    position: relative;
+}
+
+.infocard {
+    display: inline-block;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: -27px;
+    width: 100%;
+}
+
+.botones button {
+    flex: 1;
+    border-radius: 30px;
+    height: 0px;
+    padding-top: 5% !important;
+}
+
+.botones button:hover {
+    background: rgba(121, 120, 120, 0.795);
+    color: #ececec;
+    transition: 0.2s;
+}
+
+.deshabilitada {
+    background: rgba(78, 67, 67, 0.657);
+    border-radius: 20px;
+    padding-top: 10px;
+}
+
+.deshabilitada .estado {
+    background: white;
+    border-radius: 10px;
+    height: 0px;
+    padding-top: 0% !important;
+}
+
+.hidden {
+    display: none;
 }

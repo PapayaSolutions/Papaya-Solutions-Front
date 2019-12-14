@@ -194,18 +194,6 @@
         margin-top: 5px;
     }
     
-    .edit {
-        position: absolute;
-        left: 25px;
-        top: 25px;
-        border-radius: 0px 30px 30px 00px;
-    }
-    
-    .edit:hover {
-        border-radius: 0px 30px 30px 00px;
-        background: rgba(233, 201, 141, 0.253);
-    }
-    
     .botones {
         display: flex;
         flex-direction: column;

@@ -1,191 +1,212 @@
-#spacer {
-    height: 25px;
-}
-
-#mini_spacer {
-    height: 10px;
-}
-
-.fondo {
-    display: grid;
-    column-gap: 25px;
-    top: 80px;
-}
-
-.perfil {
-    display: grid;
-    grid-template-columns: 200px 500px 1fr;
-    column-gap: 25px;
-    padding-top: 30px;
-    height: 300px;
-    margin: 0 auto;
-}
-
-.imagen {
-    display: grid;
-    height: 130px;
-    grid-template-columns: 225px 515px;
-}
-
-.imagen_avatar {
-    display: grid;
-    height: 130px;
-}
-
-#info_general {
-    display: grid;
-    grid-template-columns: 570px 200px;
-    height: 100px;
-    padding-top: 20px;
-}
-
-.info_tarjeta {
-    height: 100px;
-    width: 170px;
-}
-
-.info_tarjeta a {
-    color: #f7882f;
-    padding-top: 5px;
-}
-
-#avat {
-    border-radius: 20px;
-}
-
-#visual {
-    height: 40px;
-    width: 515px;
-    background: black;
-}
-
-#nac_gen {
-    display: grid;
-    grid-template-columns: 270px 500px;
-}
-
-#nombre {
-    color: #f7882f;
-    font-size: 22px;
-    padding-top: 3px;
-}
-
-#correo {
-    color: #000;
-    padding-top: 2px;
-}
-
-.visualizar {
-    display: grid;
-    grid-template-columns: 350px;
-}
-
-hr {
-    border: 1px solid #f7c331;
-}
-
-#preferencia {
-    width: 65%;
-}
-
-.btn {
-    position: absolute;
-    margin-left: 32%;
-    top: 120px;
-}
-
-p {
-    color: #f7882f;
-    margin-right: 5%;
-}
-
-output {
-    color: #000;
-}
-
-.espacio_info {
-    padding-top: 7px;
-    padding-bottom: 7px;
-}
-
-#tbl_perfil tbody {
-    color: #000;
-}
-
-#cards {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 220px));
-    margin-left: 190px;
-    margin-top: 10px;
-}
-
-#cards div span {
-    margin-left: 100px;
-}
-
-.card img {
-    width: 180px;
-    height: 130px;
-}
-
-#cards_tarjeta {
-    display: grid;
-    grid-template-columns: repeat(4, 200px);
-}
-
-#cards_tarjeta span {
-    color: #f7882f;
-    padding: 15px;
-}
-
-.card_tarjeta {
-    height: 100px;
-    width: 190px;
-    margin-left: 200px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    border: 1px solid #f7882f;
-    position: relative;
-}
-
-.infocard {
-    display: inline-block;
-}
-
-.botones {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    bottom: -27px;
-    width: 100%;
-}
-
-.botones button {
-    flex: 1;
-    border-radius: 30px;
-    height: 0px;
-    padding-top: 5% !important;
-}
-
-.botones button:hover {
-    background: rgba(121, 120, 120, 0.795);
-    color: #ececec;
-    transition: 0.2s;
-}
-
-.deshabilitada {
-    background: rgba(78, 67, 67, 0.657);
-    border-radius: 20px;
-    padding-top: 10px;
-}
-
-.deshabilitada .estado {
-    background: white;
-    border-radius: 10px;
-    height: 0px;
-    padding-top: 0% !important;
-}
-
-.hidden {
-    display: none;
-}
+    #spacer {
+        height: 25px;
+    }
+    
+    #mini_spacer {
+        height: 10px;
+    }
+    
+    .fondo {
+        display: grid;
+        column-gap: 25px;
+        top: 80px;
+    }
+    
+    .perfil {
+        display: grid;
+        grid-template-columns: 200px 500px 1fr;
+        column-gap: 25px;
+        padding-top: 30px;
+        height: 300px;
+        margin: 0 auto;
+    }
+    
+    .imagen {
+        display: grid;
+        height: 130px;
+        grid-template-columns: 225px 515px;
+    }
+    
+    .imagen_avatar {
+        display: grid;
+        height: 130px;
+    }
+    
+    #info_general {
+        display: grid;
+        grid-template-columns: 550px 100px;
+        height: 100px;
+        padding-top: 10px;
+    }
+    
+    .info_tarjeta {
+        height: 100px;
+        width: 170px;
+    }
+    
+    .info_tarjeta a {
+        color: #f7882f;
+        padding-top: 5px;
+    }
+    
+    #avat {
+        border-radius: 20px;
+    }
+    
+    #visual {
+        height: 40px;
+        width: 515px;
+        background: black;
+    }
+    
+    #nac_gen {
+        display: grid;
+        grid-template-columns: 270px 500px;
+    }
+    
+    #nombre {
+        color: #f7882f;
+        font-size: 22px;
+        padding-top: 3px;
+    }
+    
+    #correo {
+        color: #000;
+        padding-top: 2px;
+    }
+    
+    .visualizar {
+        display: grid;
+        grid-template-columns: 350px;
+    }
+    
+    hr {
+        border: 1px solid #f7c331;
+    }
+    
+    #preferencia {
+        width: 65%;
+    }
+    
+    .btn {
+        position: absolute;
+        margin-left: 32%;
+        top: 120px;
+    }
+    
+    p {
+        color: #f7882f;
+        margin-right: 5%;
+    }
+    
+    output {
+        color: #000;
+    }
+    
+    .espacio_info {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+    
+    #tbl_perfil tbody {
+        color: #000;
+    }
+    
+    #cards {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(100px, 220px));
+        margin-left: 190px;
+        margin-top: 10px;
+    }
+    
+    #cards div span {
+        margin-left: 100px;
+    }
+    
+    .card img {
+        width: 180px;
+        height: 130px;
+    }
+    
+    #agregar_info_tarjeta {
+        height: 80px;
+        width: 190px;
+    }
+    
+    #agregar_info_tarjeta a {
+        text-decoration: none;
+    }
+    
+    #cards_tarjeta {
+        display: grid;
+        grid-template-columns: repeat(4, 200px);
+    }
+    
+    #cards_tarjeta span {
+        color: #f7882f;
+        padding: 15px;
+    }
+    
+    .card_tarjeta {
+        height: 100px;
+        width: 190px;
+        margin-left: 200px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        border: 1px solid #f7882f;
+        position: relative;
+        background-image: url(/Papaya-Solutions-Front/img/candado.PNG);
+        background-size: cover;
+    }
+    
+    .card_tarjeta .estado {
+        background: white;
+        border-radius: 10px;
+        font-size: 14px;
+        height: 0px;
+        padding-top: 0% !important;
+    }
+    
+    .infocard {
+        display: inline-block;
+    }
+    
+    .botones {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: -27px;
+        width: 100%;
+    }
+    
+    .botones button {
+        flex: 1;
+        border-radius: 30px;
+        height: 0px;
+        padding-top: 5% !important;
+    }
+    
+    .botones button:hover {
+        background: rgba(121, 120, 120, 0.795);
+        color: #ececec;
+        transition: 0.2s;
+    }
+    
+    .deshabilitada {
+        background-image: url(/Papaya-Solutions-Front/img/candado_abierto1.PNG);
+        background-size: cover;
+        border-radius: 20px;
+        padding-top: 10px;
+    }
+    
+    .deshabilitada .estado {
+        background: white;
+        border-radius: 10px;
+        font-size: 14px;
+        height: 0px;
+        padding-top: 0% !important;
+    }
+    
+    .hidden {
+        display: none;
+    }

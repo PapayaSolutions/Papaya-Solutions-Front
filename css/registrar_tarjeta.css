@@ -6,6 +6,10 @@
     padding-top: 50px;
 }
 
+#spacer {
+    height: 25px;
+}
+
 .ilustracion {
     background: #ececec;
     height: auto;
@@ -34,32 +38,6 @@ textarea {
     color: #292c2a;
 }
 
-#btn_registro {
-    display: inline-block;
-    margin-top: 2%;
-    margin-left: 0px;
-    position: relative;
-    background: #f7882f;
-    font-size: 14px;
-    letter-spacing: 3px;
-    padding: 10px 25px;
-    border-radius: 10rem;
-    color: #ececec;
-    overflow: hidden;
-}
-
-#btn_retiro {
-    display: inline-block;
-    margin-top: 2%;
-    margin-left: 0px;
-    background: #f7882f;
-    font-size: 14px;
-    letter-spacing: 3px;
-    padding: 10px 25px;
-    border-radius: 10rem;
-    overflow: hidden;
-}
-
 #type1 {
     color: #f7882f;
     position: absolute;
@@ -73,26 +51,17 @@ textarea {
     padding-left: 200px;
 }
 
-#btn_retiro a {
+#botones {
+    display: grid;
+    grid-template-columns: 200px 200px;
+}
+
+#botones a {
     text-decoration: none;
     color: #ececec;
 }
 
-#btn_retiro:hover {
-    background: transparent;
-    color: #f7882f;
-    border: 1px solid #f7882f;
-    box-sizing: border-box;
-}
-
-#btn_retiro a:hover {
+#botones a:hover {
     text-decoration: none;
     color: #f7882f;
-}
-
-#btn_registro:hover {
-    background: transparent;
-    color: #f7882f;
-    border: 1px solid #f7882f;
-    box-sizing: border-box;
 }

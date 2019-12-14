@@ -89,3 +89,52 @@ let obtener_recinto_id = async(_id) => {
         });
     return lista_recinto;
 };
+
+let obtenerun_recinto_id = async(_id) => {
+
+    try {
+
+        const response = await axios({
+            method: 'get',
+            params: { _id: _id },
+            url: `http://localhost:3000/api/listar_un_recinto`,
+            responseType: 'json'
+        });
+
+        return response.data.recinto;
+    } catch (error) {
+
+        console.log(error)
+    }
+}
+
+let editar_recinto = async(direccion, provincia, capacidad, asientos_tradicionales, asientos_accesibilidad, latitud, longitud, estado) => {
+
+    await axios({
+
+                method: 'post',
+                url: 'http://localhost:3000/api/modificar-recinto',
+                responseType: 'json',
+                data: {
+
+                    // Validar con route
+                    direccion: direccion,
+                    provincia: provincia,
+                    capacidad: capacidad,
+                    asientos_tradicionales: asientos_tradicionales,
+                    asientos_accesibilidad: asientos_accesibilidad,
+                    latitud: latitud,
+                    longitud: longitud,
+                    estado: estado
+                }
+            }
+
+        )
+        .then(function(res) {
+
+            console.log(res.data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};

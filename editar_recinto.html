@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Registrar recinto</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/registrar_usuario.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/geolozalizacion.css">
+    <link rel="stylesheet" href="css/configuracion.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <header>
+        <div class="header_landing">
+            <nav id="nav_principal">
+                <div>
+                    <ul class="navegador_izquierda">
+                        <div>
+                            <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
+                        </div>
+                        <li><a href="listar_eventos.html">Eventos</a></li>
+                        <li><a>Registrarse</a>
+                            <ul>
+                                <li><a href="registrar_usuario.html">Cliente</a></li>
+                                <li><a href="#">Organizador de eventos</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="registrar_evento.html">Crear evento</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="navegador_derecha">
+                        <li><a href="visualizar_perfil.html"><i class="far fa-user"></i></a></li>
+                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                        <li><a href="#"><i class="far fa-bell"></i></a></li>
+                        <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
+                        <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
+                        <li> <a href="index.html" id="btn_cerrar_sesion">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <div id="xaside"></div>
+        <section>
+            <div>
+                <div class="formulario">
+
+                </div>
+            </div>
+            <div class="formulario_registro">
+                <div class="formulario">
+                    <h1><i class="fas fa-map-marker-alt"></i> Editar recinto</h1>
+                    <div class="spacer_h1"></div>
+                    <form id="form_rec">
+
+                        <div class="two_collumn_form">
+
+                            <!-- Primera columna -->
+                            <div>
+
+
+                                <div>
+                                    <label for="txt_nombre_recinto">Nombre</label>
+                                    <input id="txt_nombre_recinto" type="text" placeholder="Nombre del recinto">
+                                </div>
+
+                                <div class="two_collumn_form">
+
+                                    <div>
+                                        <label for="txt_asientos_accesibilidad">Asientos accesibilidad</label>
+                                        <input id="txt_asientos_accesibilidad" type="number" placeholder="Asientos de ley 7600">
+                                    </div>
+
+                                    <div>
+                                        <label for="txt_asientos_tradicionales">Asientos tradicionales</label>
+                                        <input id="txt_asientos_tradicionales" type="number" placeholder="Asientos tradicionales">
+                                    </div>
+
+                                </div>
+
+
+                                <div class="three_collumn_form">
+
+                                    <div>
+                                        <label for="txt_provincia">Provincia</label>
+                                        <select id="txt_provincia" onchange="popular_cantones('txt_provincia', 'txt_canton')">
+                                                            <option value="" disabled selected hidden>-</option>
+                                                            <option value="San José">San José</option>
+                                                            <option value="Alajuela">Alajuela</option>
+                                                            <option value="Cartago">Cartago</option>
+                                                            <option value="Heredia">Heredia</option>
+                                                            <option value="Guanacaste">Guanacaste</option>
+                                                            <option value="Puntarenas">Puntarenas</option>
+                                                            <option value="Limón">Limón</option>
+                                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="txt_canton">Cantón</label>
+                                        <select id="txt_canton" onchange="popular_distritos('txt_provincia', 'txt_canton', 'txt_distrito')">
+                                                    </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="txt_distrito">Distrito</label>
+                                        <select id="txt_distrito">
+                                                        </select>
+                                    </div>
+
+                                </div>
+
+
+                                <div>
+                                    <label for="txt_direccion">Dirección exacta</label>
+                                    <textarea id="txt_direccion" placeholder="Dirección exacta del recinto"></textarea>
+                                </div>
+                            </div>
+
+
+                            <!-- Segunda columna -->
+                            <div>
+
+
+                                <div id="map"></div>
+
+                                <div class="two_collumn_form">
+
+                                    <div>
+                                        <label for="txt_latitud">Latitud</label>
+                                        <input id="txt_latitud" type="text">
+                                    </div>
+
+                                    <div>
+                                        <label for="txt_longitud">Latitud</label>
+                                        <input id="txt_longitud" type="text">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div>
+
+                                <label for="txt_estado">Estado</label>
+                                <select id="txt_estado" ">
+                                    <option value="Activo ">Activo</option>
+                                    <option value="Desactivo ">Desactivo</option>
+                                </select>
+
+                            </div>
+
+                            <!-- Fin del las 2 columnas-->
+                        </div>
+
+
+
+                </div>
+
+                <div class="btn_container ">
+                    <button type="button " class="btn " id="btn_actualizar ">Actualizar</button>
+
+
+                    <a href="listar_recintos.html ">
+
+                        <button type="button " class="btn "> Listar recintos</button>
+                    </a>
+                </div>
+
+
+                <!-- <div class="ilustracion ">
+                        <div class="avatar "></div>
+
+                        <div class="btn_container ">
+                            <button type="button " class="btn_imagen " id="avatar ">Cargar imagen</button>
+                        </div>
+                        <img src=" " class="ilustracion ">
+                </div> -->
+
+                </form>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8 "></script>
+    <script src="js/controlador_x.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <script src="js/controlador_general.js "></script>
+    <script src="js/recintos_servicio.js "></script>
+    <script src="js/editar_recinto_controlador.js "></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDQnZ4l9vPokKOvdI5hv1CnCkp-9fi3QE&callback=initMap " async defer></script>
+</body>
+
+</html>

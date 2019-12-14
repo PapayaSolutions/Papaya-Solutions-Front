@@ -373,14 +373,10 @@ let obtener_datos = () => {
 
 let llenar_carrito = async() => {
 
-
-    if (obtener_carrito_usuario(cliente_id)) {
-
-
-    } else {
-        crear_carrito(cliente_id);
-        llenar_carrito();
-    }
+    crear_carrito(cliente_id);
+    agregar_evento(cliente_id, id, ticketes.value);
+    localStorage.setItem('previo', window.location.href);
+    window.location.href = "carrito.html"
 
 
 

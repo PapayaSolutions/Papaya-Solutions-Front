@@ -34,3 +34,24 @@ let obtener_carrito_usuario = async(usuario) => {
         });
     return lista_carrito;
 };
+
+let agregar_evento = async(usuario, evento, cantidad) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/agregar_evento',
+            responseType: 'json',
+            //body
+            data: {
+                usuario,
+                evento,
+                cantidad
+
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};

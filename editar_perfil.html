@@ -79,24 +79,44 @@
                         </div>
 
                         <div id="info_cliente">
+                            <div>
+                                <label>Nombre completo </label>
+                                <input type="text" id="nombre"></input>
+                            </div>
 
-                            <label>Nombre completo 
-                            <input type="text" id="nombre"></input></label>
+                            <div>
+                                <label>Identificación </label>
+                                <input type="number" id="identificacion"></input>
+                            </div>
 
-                            <label>Identificación 
-                            <input type="number" id="identificacion"></input></label>
 
-                            <label>Género 
-                            <select id="genero_cliente">
-                                <option option value="" disabled selected hidden>-</option>
-                                <option value="Femenino">Femenino</option>
-                                <option value="Masculino">Masculino</option>
-                                <option value="Otro">Otro</option>
-                                <option value="Prefiero no indicar">Prefiero no indicar</option>
-                            </select></label>
 
-                            <label>Fecha de nacimiento 
-                            <input id="fecha_nac_cliente" type="date" onchange="mostrar_anos('fecha_nac_cliente.value')"></label>
+                            <div>
+
+                                <p>Nuevo género</p>
+                                <select id="genero_cliente">
+                                    <option option value="" disabled selected hidden>-</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Otro">Otro</option>
+                                    <option value="Prefiero no indicar">Prefiero no indicar</option>
+                                </select>
+                                <div id="label_color">
+                                    <label>Género actual: </label>
+                                    <label id="genero"></label>
+                                </div>
+                            </div>
+
+                            <div>
+
+                                <p>Nueva fecha de nacimiento</p>
+                                <input id="fecha_nac_cliente" type="date" onchange="mostrar_anos('fecha_nac_cliente.value')">
+                                <div id="label_color">
+                                    <label>Nacimiento actual: </label>
+                                    <label id="fecha_nac"></label>
+                                </div>
+                            </div>
+
 
                         </div>
 
@@ -109,7 +129,8 @@
                     <div id="direccion_clientes">
 
                         <div id="direccion_cliente">
-                            <label for="txt_provincia_cliente">Provincia
+
+                            <p>Nueva provincia</p>
                             <select id="provincia_cliente" onchange="popular_cantones('provincia_cliente', 'canton_cliente')">
                                 <option value="" disabled selected hidden>-</option>
                                 <option value="San José">San José</option>
@@ -118,36 +139,48 @@
                                 <option value="Heredia">Heredia</option>
                                 <option value="Guanacaste">Guanacaste</option>
                                 <option value="Puntarenas">Puntarenas</option>
-                                <option value="Limón">Limón</option></label>
+                                <option value="Limón">Limón</option>
                             </select>
+                            <div id="label_color">
+                                <label for="txt_provincia_cliente">Provincia actual: </label>
+                                <label id="provincia"></label>
+                            </div>
+                            <div id="spacer"></div>
+
+                            <label>Dirección exacta </label>
+                            <input type="text" id="direccion"></input>
 
                             <div id="spacer"></div>
 
-                            <label>Dirección exacta 
-                            <input type="text" id="direccion"></input></label>
+                            <label>Correo electrónico</label>
+                            <input type="text" id="correo"></input>
 
                             <div id="spacer"></div>
 
-                            <label>Correo electrónico
-                            <input type="text" id="correo"></input></label>
-
-                            <div id="spacer"></div>
-
-                            <label>Contraseña
-                            <input type="number" id="contrasena"></input></label>
+                            <label>Contraseña</label>
+                            <input type="number" id="contrasena"></input>
 
                         </div>
 
                         <div id="direccion_cliente">
-                            <label for="txt_canton_cliente">Cantón
+                            <p>Nuevo cantón</p>
                             <select id="canton_cliente" onchange="popular_distritos('provincia_cliente', 'canton_cliente', 'distrito_cliente')">
-                            </select></label>
+                            </select>
+                            <div id="label_color">
+                                <label for="txt_canton_cliente">Cantón actual: </label>
+                                <label id="canton"></label>
+                            </div>
+
                         </div>
 
                         <div id="direccion_cliente">
-                            <label for="txt_distrito_cliente">Distrito
+                            <p>Nuevo distrito</p>
                             <select id="distrito_cliente">
-                            </select></label>
+                            </select>
+                            <div id="label_color">
+                                <label for="txt_distrito_cliente">Distrito actual: </label>
+                                <label id="distrito"></label>
+                            </div>
                         </div>
 
                         <div id="direccion_cliente">
@@ -161,6 +194,10 @@
                 </div>
 
             </div>
+
+            <center>
+                <button type="button" id="guardar">Guardar</button>
+            </center>
 
             <div id="spacer"></div>
             <hr>
@@ -196,10 +233,12 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js "></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/controlador_x.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/controlador_general.js "></script>
-    <script src="js/clientes_servicio.js "></script>
+    <script src="js/clientes_servicio.js"></script>
+    <script src="js/editar_perfil_servicios.js"></script>
     <script src="js/controlador_editar_perfil.js"></script>
 
 </body>

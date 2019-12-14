@@ -1,0 +1,82 @@
+/*  #e7d1b3 beige
+    #f7c331 amarillo
+    #f7882f anaranjado
+    #292c2a  verde muy oscuro
+    #ececec gris
+     
+    AGREGAR ESTO QUE SIGUE EN TODOS LOS HTML, OBLIGADO
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    */
+
+main {
+    position: relative;
+}
+
+#cart_container {
+    display: flex;
+}
+
+#item_list {
+    flex: 3;
+    margin: 0px auto;
+}
+
+#checkout button {
+    flex: 1;
+    margin: 0px auto;
+}
+
+#lista_eventos {
+    width: 90%;
+    margin: 10px auto;
+}
+
+#lista_eventos thead {
+    height: 25px;
+    font-size: 20px;
+    color: #f7882f;
+    border-bottom: #f7c331 1px solid;
+    text-align: left;
+}
+
+#lista_eventos thead th {
+    min-width: 50px;
+    padding-left: 10px;
+}
+
+#tbl_hora {
+    width: 50px;
+}
+
+#lista_eventos tbody {
+    height: 18px;
+    border-bottom: #f7c331 1px solid;
+    line-height: 18px;
+    font-size: 16;
+    color: #292c2a;
+}
+
+#lista_eventos tbody td {
+    min-width: 50px;
+    padding: 10px;
+}
+
+#lista_eventos tbody tr {
+    border-bottom: 1px dotted #f7c331;
+}
+
+.img_container {
+    width: 200px;
+    height: 100px;
+    background: rgb(138, 136, 136);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.img_container img {
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Editar administrador</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/configuracion.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/administrador.css">
+</head>
+
+<body>
+    <header>
+        <nav id="nav_principal">
+            <div>
+                <ul class="navegador_izquierda">
+                    <div>
+                        <a href="index.html"><img src="img/imagotipo_n.png" alt=""></a>
+                    </div>
+                    <li><a href="listar_eventos.html">Eventos</a></li>
+                    <li><a>Registrarse</a>
+                        <ul>
+                            <li><a href="registrar_usuario.html">Cliente</a></li>
+                            <li><a href="#">Organizador de eventos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="registrar_evento.html">Crear evento</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navegador_derecha">
+                    <li><a href="visualizar_perfil.html"><i class="far fa-user"></i></a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="#"><i class="far fa-bell"></i></a></li>
+                    <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
+                    <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
+                    <li> <a href="index.html" id="btn_cerrar_sesion">Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+
+        <div id="xaside"></div>
+        <section>
+
+            <form id="formulario_prin">
+
+                <h1 id="admin">Cambio de credenciales</h1>
+
+                <div class="administrador">
+
+                    <div class="info_admin">
+
+                        <div class="correo_admin">
+                            <label for="label_correo">Correo electrónico
+                            <input type="text" id="ccorreo"></label>
+                        </div>
+
+                        <div id="spacer"></div>
+
+                        <div class="contrasena_admin">
+                            <label for="label_contrasena">Contraseña
+                            <input type="text" id="ccontrasena"></label>
+                        </div>
+
+                        <div id="spacer"></div>
+
+                        <div class="correo_admin">
+                            <label for="label_correo1">Correo electrónico
+                            <input type="text" id="ccorreo1"></label>
+                        </div>
+
+                        <div id="spacer"></div>
+
+                        <div class="contrasena_admin">
+                            <label for="label_contrasena1">Contraseña
+                            <input type="text" id="ccontrasena1">
+                            </label>
+                        </div>
+
+                        <button id="guardar">Guardar</button>
+
+                    </div>
+
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/controlador_x.js"></script>
+    <script src="js/controlador_general.js"></script>
+    <script src="js/admin_servicio.js"></script>
+    <script src="js/controlador_editar_admin.js"></script>
+
+
+</body>
+
+</html>

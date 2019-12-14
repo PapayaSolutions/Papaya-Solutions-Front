@@ -67,7 +67,6 @@ hr {
 }
 
 #direccion_cliente input {
-    color: #636e72;
     width: 552px;
 }
 
@@ -107,4 +106,13 @@ input[type="number"] {
 
 #direccion_cliente select {
     width: 150px;
+}
+
+p {
+    color: #636e72;
+}
+
+#label_color label {
+    color: #f7882f;
+    font-size: 14px;
 }

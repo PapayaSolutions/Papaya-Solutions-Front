@@ -60,6 +60,7 @@ let habilitar_avatar = async(_id) => {
             console.log(error);
         });
 };
+
 let deshabilitar_avatar = async(_id) => {
     await axios({
             method: 'post',

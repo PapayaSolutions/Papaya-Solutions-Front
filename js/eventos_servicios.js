@@ -54,3 +54,23 @@ let calificar_evento = async(_id, cliente_id, num) => {
             console.log(error);
         });
 };
+let comentar_evento = async(_id, cliente_id, comentario) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/comentar',
+            responseType: 'json',
+            //body
+            data: {
+                _id,
+                cliente_id,
+                comentario
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};

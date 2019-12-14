@@ -5,6 +5,8 @@ const nombre_emp = document.querySelector('#nombre_emp')
 const correo_emp = document.querySelector('#correo_emp');
 const contrasena_emp = document.querySelector('#contrasena_emp');
 
+
+const editar = document.querySelector('#tbl_editar tbody');
 const contenedor = document.querySelector('#contenedor');
 
 let lista_admin;
@@ -24,6 +26,23 @@ let llenar_tabla = async() => {
         contrasena_emp.innerHTML = lista_admin[1]['contrasena'];
 
     };
+
+    let editar_datos = editar.insertRow();
+    let perfil = editar_datos.insertCell();
+
+    let boton = document.createElement('button');
+    boton.dataset.destino = lista_admin[0]['_id'];
+    boton.innerText = 'Editar';
+    boton.classList.add('btn');
+
+    boton.addEventListener('click', function() {
+        localStorage.setItem("destino_id", this.dataset.destino);
+        localStorage.setItem('previo', window.location.href);
+        window.location.href = 'editar_administrador.html';
+
+    });
+
+    perfil.appendChild(boton);
 
 };
 

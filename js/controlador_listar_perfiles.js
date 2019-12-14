@@ -21,13 +21,26 @@ let llenar_encargados = async() => {
             let fila = tbody.insertRow();
 
             fila.insertCell().innerHTML = lista_encargados[i]['nombre'];
-
             fila.insertCell().innerHTML = lista_encargados[i]['correo'];
-
             fila.insertCell().innerHTML = lista_encargados[i]['genero'];
-
             fila.insertCell().innerHTML = lista_encargados[i]['tipo'];
-            fila.insertCell().innerHTML = lista_encargados[i]['estado'];
+
+
+            let estado = fila.insertCell();
+
+            let opcions = ['Habilitado', 'Desabilitado'];
+            let estado2 = document.createElement('select');
+            estado2.placeholder = lista_encargados[i]['estado'];
+            estado2.value = lista_encargados[i]['estado'];
+            estado2.id = 'estado';
+            opcions.forEach(element => {
+                let opcion = document.createElement('option');
+                opcion.value = element;
+                opcion.text = element;
+                opcion.setAttribute(!(lista_encargados[i]['estado'] == element) ? 'name' : 'selected', (lista_encargados[i]['estado'] == element) ? 'selected' : ' ');
+                estado2.appendChild(opcion);
+            });
+
 
             let perfil = fila.insertCell();
 
@@ -43,6 +56,7 @@ let llenar_encargados = async() => {
             })
 
             perfil.appendChild(boton);
+            estado.appendChild(estado2);
 
         }
     }
@@ -63,7 +77,22 @@ let llenar_clientes = async() => {
             fila.insertCell().innerHTML = lista_clientes[i]['correo_cliente'];
             fila.insertCell().innerHTML = lista_clientes[i]['genero'];
             fila.insertCell().innerHTML = lista_clientes[i]['tipo'];
-            fila.insertCell().innerHTML = lista_clientes[i]['estado'];
+
+
+            let estado = fila.insertCell();
+
+            let opcions = ['Habilitado', 'Desabilitado'];
+            let estado2 = document.createElement('select');
+            estado2.placeholder = lista_clientes[i]['estado'];
+            estado2.value = lista_clientes[i]['estado'];
+            estado2.id = 'estado';
+            opcions.forEach(element => {
+                let opcion = document.createElement('option');
+                opcion.value = element;
+                opcion.text = element;
+                opcion.setAttribute(!(lista_clientes[i]['estado'] == element) ? 'name' : 'selected', (lista_clientes[i]['estado'] == element) ? 'selected' : ' ');
+                estado2.appendChild(opcion);
+            });
 
             let perfil = fila.insertCell();
 
@@ -79,7 +108,7 @@ let llenar_clientes = async() => {
             });
 
             perfil.appendChild(boton);
-
+            estado.appendChild(estado2);
         }
     };
 
@@ -99,8 +128,23 @@ let llenar_organizadores = async() => {
             fila.insertCell().innerHTML = lista_organizadores[i]['nombre'];
             fila.insertCell().innerHTML = lista_organizadores[i]['correo'];
             fila.insertCell().innerHTML = lista_organizadores[i]['genero'];
-            fila.insertCell().innerHTML = 'Organizador de Eventos';
-            fila.insertCell().innerHTML = lista_organizadores[i]['estado'];
+            fila.insertCell().innerHTML = lista_organizadores[i]['tipo'];
+
+
+            let estado = fila.insertCell();
+
+            let opcions = ['Habilitado', 'Desabilitado'];
+            let estado2 = document.createElement('select');
+            estado2.placeholder = lista_organizadores[i]['estado'];
+            estado2.value = lista_organizadores[i]['estado'];
+            estado2.id = 'estado';
+            opcions.forEach(element => {
+                let opcion = document.createElement('option');
+                opcion.value = element;
+                opcion.text = element;
+                opcion.setAttribute(!(lista_organizadores[i]['estado'] == element) ? 'name' : 'selected', (lista_organizadores[i]['estado'] == element) ? 'selected' : ' ');
+                estado2.appendChild(opcion);
+            });
 
             let perfil = fila.insertCell();
 
@@ -117,7 +161,7 @@ let llenar_organizadores = async() => {
             });
 
             perfil.appendChild(boton);
-
+            estado.appendChild(estado2);
         }
     };
 

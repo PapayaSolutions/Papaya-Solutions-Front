@@ -8,11 +8,11 @@ const direccion = document.querySelector('#direccion');
 const identificacion = document.querySelector('#identificacion');
 const correo_cliente = document.querySelector('#correo');
 const imagen_avatar = document.querySelector('#avat');
-const p_tarjeta = document.querySelector('#tarjeta_informacion');
-const tipo_tarjeta = document.querySelector('#tipo_tarjeta');
+
 const div_i = document.querySelectorAll('#volver a i');
 const editar_perfil = document.querySelector('#tbl_editar tbody');
 const contenedor = document.querySelector('#cards');
+const tarjeta = document.querySelector('#cards_tarjeta');
 
 let id;
 let email;
@@ -21,6 +21,8 @@ let usuario = sessionStorage.getItem('tipo_usuario');
 let lista_tipo_de_evento;
 
 let llenar_tabla = async() => {
+    tbody.innerHTML = '';
+    tarjeta.innerHTML = '';
     if (usuario === 'Cliente') {
         email = sessionStorage.getItem('correo');
         lista_clientes = await obtener_cliente_mail(email);
@@ -42,13 +44,75 @@ let llenar_tabla = async() => {
     correo_cliente.innerHTML = lista_clientes[0]['correo_cliente'];
     imagen_avatar.src = lista_clientes[0]['url_avatar'];
 
+
+
     for (let i = 0; i < lista_clientes[0]['metodos_pago'].length; i++) {
+        let div_info_tarjeta = document.createElement('div');
+        let div_card_tarjeta = document.createElement('div');
+        div_card_tarjeta.classList.add('card_tarjeta');
 
-        let tarjeta = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
-        tipo_tarjeta.innerHTML = "Master Card";
-        p_tarjeta.innerHTML = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
+        let numero_tarjeta = document.createElement('span');
+        numero_tarjeta.innerHTML = lista_clientes[0]['metodos_pago'][i]['tarjeta'];
+        numero_tarjeta.classList.add('num_tar');
+        numero_tarjeta.classList.add('infocard');
 
-    }
+        let vencimiento = document.createElement('span');
+        vencimiento.innerHTML = lista_clientes[0]['metodos_pago'][i]['vencimiento'];
+        vencimiento.classList.add('vencimiento');
+        vencimiento.classList.add('infocard');
+
+        let estado = document.createElement('span');
+        estado.innerHTML = lista_clientes[0]['metodos_pago'][i]['estado'];
+        estado.classList.add('estado');
+        estado.classList.add('infocard');
+
+        let botones = document.createElement('div');
+        botones.classList.add('botones');
+
+        let habit_btn = document.createElement('button');
+        habit_btn.classList.add('habit');
+        habit_btn.innerText = 'Habilitar';
+        habit_btn.dataset.id = lista_clientes[0]['metodos_pago'][i]['_id'];
+
+        let deshabit_btn = document.createElement('button');
+        deshabit_btn.classList.add('deshabit');
+        deshabit_btn.innerText = 'Deshabilitar';
+        deshabit_btn.dataset.id = lista_clientes[0]['metodos_pago'][i]['_id'];
+
+        if (lista_clientes[0]['metodos_pago'][i]['estado'] === 'Inactivo') {
+            div_info_tarjeta.classList.add('deshabilitada');
+            deshabit_btn.classList.add('hidden');
+            habit_btn.classList.remove('hidden');
+        } else {
+            div_info_tarjeta.classList.remove('deshabilitada');
+            deshabit_btn.classList.remove('hidden');
+            habit_btn.classList.add('hidden');
+        }
+        id = lista_clientes[0]['_id'];
+
+        habit_btn.addEventListener('click', function() {
+            habilitar_tarjeta(id, this.dataset.id);
+            crear_bitacora('Habilitar', 'Habilitar tarjeta');
+        });
+        deshabit_btn.addEventListener('click', function() {
+            deshabilitar_tarjeta(id, this.dataset.id);
+            crear_bitacora('Deshabilitar', 'Deshabilitar tarjeta');
+        });
+
+
+        tarjeta.appendChild(div_card_tarjeta);
+        div_card_tarjeta.appendChild(div_info_tarjeta);
+        div_info_tarjeta.appendChild(numero_tarjeta);
+        div_info_tarjeta.appendChild(vencimiento);
+        div_info_tarjeta.appendChild(estado);
+        div_card_tarjeta.appendChild(botones);
+        botones.appendChild(habit_btn);
+        botones.appendChild(deshabit_btn);
+
+    };
+
+
+
 
 
     let date = new Date((lista_clientes[0]['f_nacimiento']));
@@ -65,12 +129,11 @@ let llenar_tabla = async() => {
     boton.addEventListener('click', function() {
         localStorage.setItem("destino_id", this.dataset.destino);
         localStorage.setItem('previo', window.location.href);
-        window.location.href = 'editar_perfil_cliente.html';
+        window.location.href = 'editar_perfil.html';
 
     });
 
     perfil.appendChild(boton);
-
 
 
     localStorage.setItem('id_tarjeta', JSON.stringify(lista_clientes));
@@ -105,8 +168,9 @@ let mostrar_cards = async() => {
 
     };
 };
-
 mostrar_cards();
+
+
 
 if (conectado) {
     switch (tipo_usuario) {

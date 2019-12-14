@@ -28,7 +28,7 @@ let llenar_tabla = async() => {
 
     let estado = fila.insertCell();
 
-    let opcions = ['Habilitado', 'Desabilitado'];
+    let opcions = ['Habilitado', 'Deshabilitado'];
     let estado2 = document.createElement('select');
     estado2.placeholder = lista_impuestos['estado'];
     estado2.value = lista_impuestos['estado'];

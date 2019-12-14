@@ -8,7 +8,7 @@ const input_apellido = document.querySelector('#apellido');
 const input_postal = document.querySelector('#postal');
 const tipo_tarjeta = document.querySelector('#type1')
 const btn_registro = document.querySelector('#btn_registro');
-
+let email = sessionStorage.getItem('correo');
 var tarjeta_invalida = false;
 
 $("#tarjeta").keyup(function(e) {
@@ -170,12 +170,8 @@ let obtener_datos = () => {
             }
         })
     } else {
-        console.log('tarjeta', codigo);
-        console.log('nombre', nombre);
-        console.log('codigo', codigo);
-        console.log('vencimiento', vencimiento);
-        console.log('apellido', apellido);
-        console.log('postal', postal);
+
+        registrar_tarjeta(email, tarjeta, nombre, codigo, vencimiento, apellido, postal);
 
         Swal.fire({
             type: 'success',
@@ -186,8 +182,9 @@ let obtener_datos = () => {
             customClass: {
                 popup: 'animated tada'
             }
-        })
-        window.location.href = 'visualizar_perfil.html';
+        }).then(function() {
+            window.location.href = 'visualizar_perfil.html';
+        });
     }
 };
 

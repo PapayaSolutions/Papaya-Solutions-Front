@@ -55,3 +55,24 @@ let agregar_evento = async(usuario, evento, cantidad) => {
             console.log(error);
         });
 };
+
+let borrar_evento = async(_id, evento_id) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/borrar',
+            responseType: 'json',
+            //body
+            data: {
+                _id,
+                evento_id
+
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};

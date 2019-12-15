@@ -770,7 +770,7 @@ let obtener_datos = () => {
     let distrito = input_distrito.value;
     let direccion = input_direccion.value;
     let url_avatar = input_url_avatar.src;
-    let prefere
+    let codigov = codigoVer(3, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
 
     //si hay error, entra al if. Si no hay error entra al else
@@ -795,7 +795,7 @@ let obtener_datos = () => {
 
     } else {
         registrar_usuario(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,
-            f_nacimiento, edad_cliente, genero, provincia, canton, distrito, direccion, url_avatar);
+            f_nacimiento, edad_cliente, genero, provincia, canton, distrito, direccion, url_avatar, codigov);
 
         Swal.fire({
             type: 'success',

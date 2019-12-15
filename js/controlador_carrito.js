@@ -12,60 +12,62 @@ let correo = sessionStorage.getItem('correo');
 let total_pago = 0;
 
 let llenar_carrito = async() => {
-
+    tbody.innerHTML = '';
+    checkout.innerHTML = '';
     lista_carrito = await obtener_carrito_usuario(usuario);
 
     for (let i = 0; i < lista_carrito[0]['compras'].length; i++) {
+        if (lista_carrito[0]['compras'][i].evento != 'BORRADO') {
+            let evento_id = lista_carrito[0]['compras'][i]['evento'];
+            let evento = await obtener_evento_id(evento_id);
+            let id_destino = lista_carrito[0]['compras'][i]['_id'];
+            let id_carrito = lista_carrito[0]['_id'];
+            let fila = tbody.insertRow();
+            fila.dataset.precio = evento[0].precio_entrada;
+            fila.classList.add('evento');
+            let imgdiv = document.createElement('div');
+            let imagen = document.createElement('img');
+            imgdiv.classList.add('img_container');
+            imagen.src = evento[0].URL_imagen;
 
-        let evento_id = lista_carrito[0]['compras'][i]['evento'];
-        let evento = await obtener_evento_id(evento_id);
+            let lbl_precio = document.createElement('label');
+            lbl_precio.innerHTML = ('Precio por entrada: ¢' + evento[0].precio_entrada);
+            lbl_precio.classList.add('lbl_precio');
+
+            let tiquetes = document.createElement('span');
+            tiquetes.classList.add('contenedor');
+            let tiquet_cont = document.createElement('span');
+            tiquet_cont.setAttribute('id', 'nmbr_mask')
+            let count = document.createElement('input');
+            count.classList.add('input_count');
+            count.setAttribute('type', 'number');
+            count.setAttribute('min', 1);
+            count.setAttribute('onkeydown', 'return false');
+
+            count.onchange = function() { update_total(); };
+
+            count.setAttribute('max', evento[0].cantidad_maxima_usuario);
+            count.value = parseInt(lista_carrito[0]['compras'][i]['cantidad']);
+
+            let btn_eliminar = document.createElement('button');
+            btn_eliminar.dataset.destino = id_destino;
+            btn_eliminar.innerText = 'Eliminar';
+            btn_eliminar.classList.add('btn');
+            btn_eliminar.addEventListener('click', function() { borrar(id_carrito, id_destino) });
+
+            fila.appendChild(imgdiv);
+            imgdiv.appendChild(imagen);
+            fila.appendChild(lbl_precio);
 
 
-        let fila = tbody.insertRow();
-        fila.dataset.precio = evento[0].precio_entrada;
-        fila.classList.add('evento');
-        let imgdiv = document.createElement('div');
-        let imagen = document.createElement('img');
-        imgdiv.classList.add('img_container');
-        imagen.src = evento[0].URL_imagen;
+            fila.insertCell().innerHTML = (evento[0].nombre);
+            fila.appendChild(tiquetes);
+            tiquetes.appendChild(tiquet_cont);
+            tiquet_cont.appendChild(count);
+            fila.appendChild(btn_eliminar);
 
-        let lbl_precio = document.createElement('label');
-        lbl_precio.innerHTML = ('Precio por entrada: ¢' + evento[0].precio_entrada);
-        lbl_precio.classList.add('lbl_precio');
-
-        let tiquetes = document.createElement('span');
-        tiquetes.classList.add('contenedor');
-        let tiquet_cont = document.createElement('span');
-        tiquet_cont.setAttribute('id', 'nmbr_mask')
-        let count = document.createElement('input');
-        count.classList.add('input_count');
-        count.setAttribute('type', 'number');
-        count.setAttribute('min', 1);
-        count.setAttribute('onkeydown', 'return false');
-
-        count.onchange = function() { update_total(); };
-
-        count.setAttribute('max', evento[0].cantidad_maxima_usuario);
-        count.value = parseInt(lista_carrito[0]['compras'][i]['cantidad']);
-
-        let btn_eliminar = document.createElement('button');
-        btn_eliminar.dataset.destino = evento_id;
-        btn_eliminar.innerText = 'Eliminar';
-        btn_eliminar.classList.add('btn');
-        btn_eliminar.addEventListener('click', function() {});
-
-        fila.appendChild(imgdiv);
-        imgdiv.appendChild(imagen);
-        fila.appendChild(lbl_precio);
-
-
-        fila.insertCell().innerHTML = (evento[0].nombre);
-        fila.appendChild(tiquetes);
-        tiquetes.appendChild(tiquet_cont);
-        tiquet_cont.appendChild(count);
-        fila.appendChild(btn_eliminar);
-
-        total_pago = total_pago + (evento[0].precio_entrada * count.value);
+            total_pago = total_pago + (evento[0].precio_entrada * count.value);
+        }
     } //items cart for
     // checkout div
 
@@ -112,6 +114,7 @@ let llenar_carrito = async() => {
 llenar_carrito();
 
 let update_total = async() => {
+
     total_pago = 0;
     let eventos = document.querySelectorAll('.evento');
     let tiquete_count = document.querySelectorAll('.input_count');
@@ -121,7 +124,11 @@ let update_total = async() => {
     cart_total.value = ('$ ' + total_pago);
 
 }
-
+let borrar = async(id_carrito, id_destino) => {
+    borrar_evento(id_carrito, id_destino);
+    llenar_carrito();
+    update_total();
+}
 
 
 volver.addEventListener('click', function() {

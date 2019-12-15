@@ -55,8 +55,8 @@ let obtener_datos = () => {
 
         Swal.fire({
             type: 'warning',
-            title: 'Verifique los campos!',
-            text: 'Hay espacios que deben ser llenados!',
+            title: 'Porfavor ingrese todos los datos requeridos.',
+            text: 'Los espacios en rojo deben ser llenados.',
             confirmButtonText: 'Entendido'
 
         })
@@ -67,9 +67,8 @@ let obtener_datos = () => {
 
         Swal.fire({
             type: 'success',
-            title: '¡Registro realizado!',
-            animation: true,
-            text: 'Impuesto registrado con exito',
+            title: 'Registro realizado con éxito.',
+            text: 'El impuesto ha sido almacenado.',
             confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'

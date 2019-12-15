@@ -710,8 +710,8 @@ let obtener_datos = () => {
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: 'Faltan datos',
-            text: 'Verifique los campos!',
+            title: 'Porfavor ingrese todos los datos requeridos.',
+            text: 'Los espacios en rojo deben ser llenados.',
         })
 
     } else {
@@ -721,8 +721,8 @@ let obtener_datos = () => {
 
         Swal.fire({
             type: 'success',
-            title: 'Registro realizado con exito!',
-            text: 'Encargado registrado!',
+            title: 'Registro realizado con éxito.',
+            text: 'El recinto ha sido almacenado.',
         })
 
         document.getElementById("form_rec").reset();

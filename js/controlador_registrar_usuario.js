@@ -777,9 +777,9 @@ let obtener_datos = () => {
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: '¡Atencion!',
+            title: '¡Atención!',
             animation: true,
-            text: 'Hay espacios que deben ser llenados',
+            text: 'Hay datos que deben ser ingresados',
             confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'
@@ -806,10 +806,11 @@ let obtener_datos = () => {
             customClass: {
                 popup: 'animated tada'
             }
-        })
+        }).then(function() {
+            window.location.href = 'ingresar_codigo.html'
+        });
 
         document.getElementById("formulario_principal").reset();
-        window.location.href = 'ingresar_codigo.html';
     }
 };
 

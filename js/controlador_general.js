@@ -54,7 +54,7 @@ if (conectado) {
 
 function cerrar_sesion() {
     sessionStorage.clear();
-    window.location.href = "index.html";
+    window.location.href = 'listar_eventos.html';
 }
 
 

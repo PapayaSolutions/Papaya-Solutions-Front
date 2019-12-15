@@ -51,8 +51,8 @@ let validar3 = async() => {
     } else {
         Swal.fire({
             type: 'success',
-            title: 'Registro realizado con éxito',
-            text: 'El Tipo de evento ha sido almacenado',
+            title: 'Registro realizado con éxito.',
+            text: 'El Tipo de evento ha sido almacenado.',
             confirmButtonText: 'Entendido',
         }).then(function() {
             llenar_tabla();
@@ -66,8 +66,8 @@ let obtener_datos = () => {
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: 'Ingrese todos los datos requeridos',
-            text: 'Por favor verificar.',
+            title: 'Porfavor ingrese todos los datos requeridos.',
+            text: 'Los espacios en rojo deben ser llenados.',
             confirmButtonText: 'Entendido',
         })
     } else {

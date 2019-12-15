@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/configuracion.css">
     <link rel="stylesheet" href="css/mantenimiento_avatar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <title>Editar descuento</title>
+    <title>Listar descuento</title>
     <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/listar_descuento.css">
 
@@ -45,7 +45,7 @@
             <div>
                 <ul class="navegador_derecha">
                     <li><a href="visualizar_perfil.html"><i class="far fa-user"></i></a></li>
-                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="#"><i class="far fa-bell"></i></a></li>
                     <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
                     <li><a href="listar_descuentoO.html"><i class="fas fa-cogs"></i></a> </li>
@@ -62,8 +62,14 @@
         <section>
 
             <div class="formulario" id="main_form">
-                <h1><i class="fas fa-percentage"></i> Descuento</h1>
+                <h1><i class="fas fa-percentage"></i> Descuentos</h1>
                 <div id="spacer"></div>
+                <div id="search">
+                    <i class="fas fa-search" id="search_icon"></i>
+                    <input type="text" id="bnr_input" placeholder="Buscar por nombre">
+
+
+                </div>
                 <div class="spacer_h1"></div>
 
                 <table id="tbl_descuento">
@@ -89,8 +95,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/controlador_general.js"></script>
     <script src="js/descuento_servicio.js"></script>
-    <script src="js/controlador_editar_descuento.js"></script>
-
+    <script src="js/controlador_listar_descuentoO.js"></script>
 </body>
 
 </html>

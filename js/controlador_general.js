@@ -22,6 +22,7 @@ if (conectado) {
             nav[1].classList.add('ocultar');
             nav[4].classList.add('ocultar');
             no_li[5].classList.add('ocultar')
+            no_li[4].classList.add('ocultar')
             no_li[3].classList.add('ocultar')
             preferencias[0].classList.remove('ocultar')
 

@@ -192,7 +192,7 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         }).then(function() {
-            window.location.href = 'visualizar_perfil.html';
+            //  window.location.href = 'visualizar_perfil.html';
         });
     }
 };

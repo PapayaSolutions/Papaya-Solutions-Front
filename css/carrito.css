@@ -45,10 +45,6 @@ main {
     padding-left: 10px;
 }
 
-#tbl_hora {
-    width: 50px;
-}
-
 #lista_eventos tbody {
     height: 18px;
     border-bottom: #f7c331 1px solid;
@@ -60,10 +56,13 @@ main {
 #lista_eventos tbody td {
     min-width: 50px;
     padding: 10px;
+    flex: 1;
+    margin: auto;
 }
 
 #lista_eventos tbody tr {
     border-bottom: 1px dotted #f7c331;
+    display: flex;
 }
 
 .img_container {
@@ -72,6 +71,7 @@ main {
     background: rgb(138, 136, 136);
     overflow: hidden;
     border-radius: 10px;
+    margin: 10px;
 }
 
 .img_container img {
@@ -79,4 +79,69 @@ main {
     height: 100px;
     object-fit: cover;
     border-radius: 10px;
+}
+
+.lbl_precio {
+    flex: 1;
+    margin: auto;
+}
+
+#checkout {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    margin: auto;
+}
+
+#checkout button {
+    margin: auto;
+    flex: 1;
+}
+
+.check_info {
+    margin: auto;
+    margin-top: 10px;
+    flex: 1;
+    width: 300px;
+}
+
+.contenedor {
+    margin: auto;
+    width: 50px;
+}
+
+input {
+    border: none;
+    display: inline-block;
+    background: #ecececb0;
+    border-radius: 10px;
+    width: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #f7882f;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    margin-left: 50px;
+    height: 30px;
+    text-align: center;
+    margin: auto;
+}
+
+#nmbr_mask {
+    position: relative;
+    margin-right: -5px;
+}
+
+#nmbr_mask:after {
+    content: "";
+    width: 70%;
+    height: 35px;
+    left: 0;
+    position: absolute;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
 }

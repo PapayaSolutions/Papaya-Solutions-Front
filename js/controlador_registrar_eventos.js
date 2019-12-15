@@ -152,7 +152,7 @@ let validar = () => {
     } else {
         input_nombre_evento.classList.remove('error');
     }
-    if (input_categoria_evento.value == '') {
+    if (input_categoria_evento.value == '-') {
         error = true;
         input_categoria_evento.classList.add('error');
         console.log('revisar el porcentaje')
@@ -167,7 +167,7 @@ let validar = () => {
         input_asistentes_evento.classList.remove('error');
     }
 
-    if (input_recinto_evento.value == '') {
+    if (input_recinto_evento.value == '-') {
         error = true;
         input_recinto_evento.classList.add('error');
         console.log('revisar el porcentaje')
@@ -203,7 +203,6 @@ let validar = () => {
             console.log('falta la fecha')
         }
     }
-
     if (input_horas.length == 0) {
         error = true;
         console.log('falta la hora')
@@ -266,8 +265,8 @@ let obtener_datos = async() => {
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: 'Faltan datos',
-            text: 'Verifique los campos!',
+            title: 'Porfavor ingrese todos los datos requeridos.',
+            text: 'Los espacios en rojo deben ser llenados.',
         })
     } else {
 
@@ -286,8 +285,8 @@ let obtener_datos = async() => {
 
         Swal.fire({
             type: 'success',
-            title: 'Registro realizado con exito',
-            text: 'El evento ha sido registrado',
+            title: 'Registro realizado con éxito.',
+            text: 'El evento ha sido almacenado.',
             confirmButtonText: 'Entendido'
         });
     }

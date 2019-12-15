@@ -137,7 +137,7 @@ let obtener_cliente_mail = async(mail) => {
     return lista_cliente;
 };
 
-let registrar_tarjeta = async(email, tarjeta, nombre, codigo, vencimiento, apellido, postal, tipo) => {
+let registrar_tarjeta = async(email, tarjeta, nombre, codigo, vencimiento, apellido, postal) => {
     await axios({
             method: 'post',
             url: 'http://localhost:3000/api/registrar_tarjeta',
@@ -151,7 +151,6 @@ let registrar_tarjeta = async(email, tarjeta, nombre, codigo, vencimiento, apell
                 vencimiento: vencimiento,
                 apellido: apellido,
                 postal: postal,
-                tipo: tipo
 
             }
         })

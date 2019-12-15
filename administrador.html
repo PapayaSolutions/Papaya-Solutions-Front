@@ -3,14 +3,28 @@
 
 <head>
     <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/configuracion.css">
+    <link rel="stylesheet" href="css/mantenimiento_avatar.css">
+    <link rel="stylesheet" href="css/footer.css">
     <title>Administrador</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/configuracion.css">
-    <link rel="stylesheet" href="css/administrador.css">
+
+
+
+
 </head>
 
 <body>
@@ -45,79 +59,39 @@
             </div>
         </nav>
     </header>
-    <main id="main">
 
+    <Main id="main">
         <div id="xaside"></div>
+
         <section>
 
-            <form id="formulario_prin">
+            <div class="formulario" id="main_form">
+                <h1><i class="fas fa-user-cog"></i> Gestión de credenciales - Administrador</h1>
+                <div id="spacer"></div>
 
-                <h1 id="admin">Correo electrónico del administrador</h1>
+                <div class="spacer_h1"></div>
 
-                <div class="administrador">
+                <table id="tbl_admin">
+                    <thead>
+                        <tr>
+                            <th>Correo electrónico</th>
+                            <th>Contraseña</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                    <div class="info_admin">
+                    </tbody>
+                </table>
+            </div>
 
-                        <div class="correo_admin">
-                            <p>Correo electrónico: </p>
-                            <output id="correo"></output>
-
-                        </div>
-
-                        <div id="spacer"></div>
-
-                        <div class="contrasena_admin">
-                            <p>Contraseña: </p>
-                            <output id="contrasena"></output>
-
-                        </div>
-                        <div id="separar">
-                            <button class="btn"><a href="editar_administrador.html">Editar</a></button>
-                            <hr>
-                        </div>
-
-                        <hr>
-
-                        <div id="spacer"></div>
-                        <h1 id="empresa">Correo electrónico de la plataforma</h1>
-
-                        <div>
-
-                            <div id="spacer"></div>
-
-                            <output id="nombre_emp"></output>
-
-                            <div class="correo_admin">
-                                <p>Correo electrónico: </p>
-                                <output id="correo_emp"></output>
-
-                            </div>
-
-                            <div id="spacer"></div>
-
-                            <div class="contrasena_admin">
-                                <p>Contraseña: </p>
-                                <output id="contrasena_emp"></output>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </form>
         </section>
     </main>
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/controlador_x.js"></script>
-    <script src="js/controlador_general.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/admin_servicio.js"></script>
+    <script src="js/controlador_general.js"></script>
     <script src="js/controlador_admin.js"></script>
 
 </body>

@@ -7,6 +7,7 @@ const direccion = document.querySelector('#direccion');
 const ubicacion = document.querySelector('#ubicacion');
 const experiencia = document.querySelector('#experiencia');
 const comision = document.querySelector('#comision');
+const reserva = document.querySelector('#reserva');
 const telefonos = document.querySelector('#telefonos tbody');
 const btn_editar = document.querySelector('#editar');
 const logo = document.querySelector('#logo');
@@ -27,7 +28,7 @@ let llenar_perfil = async() => {
     ubicacion.innerHTML = ((datos_perfil[0]['distrito']) + ', ' + (datos_perfil[0]['canton']) + ', ' + (datos_perfil[0]['provincia']));
     experiencia.innerHTML = datos_perfil[0]['experiencia'];
     comision.innerHTML = ('¢' + datos_perfil[0]['comision']);
-
+    reserva.innerHTML = datos_perfil[0]['reserva'];
 
     localStorage.setItem('latitud', datos_perfil[0]['latitud']);
     localStorage.setItem('longitud', datos_perfil[0]['longitud']);

@@ -2,12 +2,17 @@
 
 const input_tarjeta = document.querySelector('#tarjeta');
 const input_nombre = document.querySelector('#nombre');
+
 const input_codigo = document.querySelector('#codigo');
 const input_vencimiento = document.querySelector('#vencimiento');
+
 const input_apellido = document.querySelector('#apellido');
 const input_postal = document.querySelector('#postal');
-const tipo_tarjeta = document.querySelector('#type1')
+
+const tipo_tarjeta = document.querySelector('#type1');
+const marca_tarjeta = document.querySelector('#marca_tarjeta');
 const btn_registro = document.querySelector('#btn_registro');
+
 let email = sessionStorage.getItem('correo');
 var tarjeta_invalida = false;
 
@@ -18,12 +23,14 @@ $("#tarjeta").keyup(function(e) {
     /* VALIDACION DE TIPO */
     if (charCount == 1) {
         if (num == "4") {
-            $("#type1").html("VISA");
+            $("#type1").html("Visa");
+            marca_tarjeta = document.getElementById("Visa").value;
         }
     }
     if (charCount == 2) {
         if (num == "51" || num == "55" || num == "53") {
-            $("#type1").html("MASTER CARD");
+            $("#type1").html("Master Card");
+            marca_tarjeta = document.getElementById("Master Card").value;
         }
     }
 
@@ -36,6 +43,7 @@ $("#tarjeta").keyup(function(e) {
             $("#type2").html("Valida");
             $("input").attr("name", "numero_tarjeta").attr("class", "valid-card");
             tarjeta_invalida = true;
+
         } else {
             $("#type2").html("Invalida");
             $("input").attr("name", "numero_tarjeta").attr("class", "invalid-card");
@@ -145,6 +153,7 @@ let obtener_datos = () => {
     let vencimiento = input_vencimiento.value;
     let apellido = input_apellido.value;
     let postal = input_postal.value;
+    let tipo = marca_tarjeta.value;
 
     //si hay error, entra al if. Si no hay error entra al else
     if (tarjeta_invalida == false) {
@@ -171,7 +180,7 @@ let obtener_datos = () => {
         })
     } else {
 
-        registrar_tarjeta(email, tarjeta, nombre, codigo, vencimiento, apellido, postal);
+        registrar_tarjeta(email, tarjeta, nombre, codigo, vencimiento, apellido, postal, tipo);
 
         Swal.fire({
             type: 'success',

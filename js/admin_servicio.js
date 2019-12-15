@@ -31,19 +31,17 @@ let obtener_admin_id = async(_id) => {
     }
 };
 
-let modificar_admin = async(id, nombre, correo, contrasena, estado) => {
+let modificar_admin = async(id, correo, contrasena) => {
     let respuesta = false;
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/modificar_descuento',
+            url: 'http://localhost:3000/api/modificar_admin',
             responseType: 'json',
             //body
             data: {
                 _id: id,
-                nombre: nombre,
                 correo: correo,
-                contrasena: contrasena,
-                estado: estado
+                contrasena: contrasena
             }
         })
         .then(function(res) {

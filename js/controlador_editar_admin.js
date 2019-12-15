@@ -1,81 +1,75 @@
 'use strict';
 
-const ccorreo = document.querySelector('#ccorreo');
-const ccontrasena = document.querySelector('#ccontrasena');
-const ccorreo1 = document.querySelector('#ccorreo1');
-const ccontrasena1 = document.querySelector('#ccontrasena1');
+const administrador = document.querySelector('#tbl_admin tbody');
 
-const btn_guardar = document.querySelector('#guardar');
+let lista_administrador;
+const _id = localStorage.getItem('destino_id');
+
+let llenar_administrador = async() => {
+
+    lista_administrador = await obtener_admin_id(_id);
+
+    let fila = administrador.insertRow();
+
+    let correo_admin2 = fila.insertCell();
+    let correo = document.createElement('input');
+    correo.value = lista_administrador['correo'];
+    correo.id = 'correo';
+
+    let pass_admin2 = fila.insertCell();
+    let pass = document.createElement('input');
+    pass.value = lista_administrador['contrasena'];
+    pass.id = 'contrasena';
+
+    let boton2 = fila.insertCell();
+    let boton = document.createElement('button');
+    boton.innerText = 'Guardar';
+    boton.classList.add('btn_guardar');
+    boton.classList.add('btn-mas');
+    boton.id = ('btn_guardar')
+
+    boton.addEventListener('click', () => { guardar_datos(correo, pass) });
 
 
-let lista_admin;
-
-
-let llenar_tabla = async() => {
-
-    lista_admin = await listar_admin();
-
-    ccorreo.value = lista_admin[0]['correo'];
-    ccontrasena.value = lista_admin[0]['contrasena'];
-
-    ccorreo1.value = lista_admin[1]['correo'];
-    ccontrasena1.value = lista_admin[1]['contrasena'];
-
+    correo_admin2.appendChild(correo);
+    pass_admin2.appendChild(pass);
+    boton2.appendChild(boton);
 };
 
-llenar_tabla();
 
 // Validación de datos
-let validar = () => {
+let validar = (correo, pass) => {
     let error = false;
 
-    if (ccorreo.value == '') {
+    if (correo.value == '') {
         error = true;
-        ccorreo.classList.add('error');
-        console.log('Falta nombre del propietario')
+        correo.classList.add('error');
+
     } else {
-        ccorreo.classList.remove('error');
+        correo.classList.remove('error');
     }
 
-    if (ccontrasena.value == '') {
+    if (pass.value == '') {
         error = true;
-        ccontrasena.classList.add('error');
-        console.log('Falta código de tarjeta')
-    } else {
-        ccontrasena.classList.remove('error');
-    }
+        pass.classList.add('error');
 
-    if (ccorreo1.value == '') {
-        error = true;
-        ccorreo1.classList.add('error');
-        console.log('Falta fecha de vencimiento')
     } else {
-        ccorreo1.classList.remove('error');
-    }
-
-    if (ccontrasena1.value == '') {
-        error = true;
-        ccontrasena1.classList.add('error');
-    } else {
-        ccontrasena1.classList.remove('error');
+        pass.classList.remove('error');
     }
 
     return error;
 
 };
 
-
-let modificar_datos = async() => {
+function guardar_datos(correo, pass) {
     // strict 5
     // funtion obtener_datos(){}
     /// strict 6
 
-    let p_correo = ccorreo.value;
-    let p_contrasena = ccontrasena.value;
-    let p_correo1 = ccorreo1.value;
-    let p_contrasena1 = ccontrasena1.value;
+    let p_correo = correo.value;
+    let p_contrasena = pass.value;
 
-    if (validar(ccorreo, ccontrasena, ccorreo1, ccontrasena1)) {
+    if (validar(correo, pass)) {
         Swal.fire({
             type: 'warning',
             title: 'Algunos de los campos se encuentran incorrectos.',
@@ -84,15 +78,21 @@ let modificar_datos = async() => {
         })
     } else {
 
-        modificar_admin(p_correo, p_contrasena, p_correo1, p_contrasena1);
+        modificar_admin(_id, p_correo, p_contrasena);
 
         Swal.fire({
             type: 'success',
             title: 'Modificación realizada con éxito',
             text: 'El impuesto ha sido almacenado',
             confirmButtonText: 'Entendido',
-        })
+        }).then(function() {
+            window.location.href = 'administrador.html';
+        });
     }
 };
 
-btn_guardar.addEventListener('click', modificar_datos);
+if (_id) {
+    llenar_administrador();
+} else {
+    console.log('Selecione un correo antes de editarlo')
+};

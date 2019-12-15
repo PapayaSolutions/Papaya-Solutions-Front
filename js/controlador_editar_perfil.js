@@ -1,7 +1,11 @@
 'use strict';
 
+const nombre1 = document.querySelector('#nombre1');
+const nombre2 = document.querySelector('#nombre2');
+const apellido1 = document.querySelector('#apellido1');
+const apellido2 = document.querySelector('#apellido2');
+
 const imagen_avatar = document.querySelector('#avat');
-const nombre = document.querySelector('#nombre');
 const input_identificacion = document.querySelector('#identificacion');
 
 const input_genero = document.querySelector('#genero_cliente');
@@ -25,12 +29,12 @@ const input_distrito = document.querySelector('#txt_distrito_cliente');
 const label_distrito = document.querySelector('#distrito');
 
 const input_direccion = document.querySelector('#direccion');
-
-const btn_guardar = document.querySelector('#guardar');
+const tbody = document.querySelector('#tbl_perfil tbody');
+const bguardar = document.querySelector('#tbl_guardar tbody');
 
 let datos_perfil;
 let usuario = sessionStorage.getItem('tipo_usuario');
-let id = localStorage.getItem('destino_id');
+let _id = localStorage.getItem('destino_id');
 
 //Pupular dropdown de cantones
 function popular_cantones(pprovincia, pcantones) {
@@ -579,18 +583,22 @@ function popular_distritos(pprovincia, pcanton, pdistritos) {
 }
 
 // Validación de datos
-let validar = () => {
+let validar = (nombre1, nombre2, apellido1, apellido2) => {
     let error = false;
+
     return error;
 }
 
 let llenar_perfil = async() => {
 
-    datos_perfil = await obtener_cliente_id(id);
+    datos_perfil = await obtener_cliente_id(_id);
 
-    nombre.value = (datos_perfil[0]['p_nombre'] + ' ' + datos_perfil[0]['s_nombre'] + ' ' + datos_perfil[0]['p_apellido'] + ' ' + datos_perfil[0]['s_apellido']);
-    identificacion.value = datos_perfil[0]['identificacion'];
-    direccion.value = datos_perfil[0]['direccion'];
+    nombre1.value = datos_perfil[0]['p_nombre'];
+    nombre2.value = datos_perfil[0]['s_nombre'];
+    apellido1.value = datos_perfil[0]['p_apellido'];
+    apellido2.value = datos_perfil[0]['s_apellido'];
+    input_identificacion.value = datos_perfil[0]['identificacion'];
+    input_direccion.value = datos_perfil[0]['direccion'];
     correo.value = datos_perfil[0]['correo_cliente'];
     imagen_avatar.src = datos_perfil[0]['url_avatar'];
 
@@ -603,12 +611,42 @@ let llenar_perfil = async() => {
     label_canton.innerHTML = datos_perfil[0]['canton'];
     label_distrito.innerHTML = datos_perfil[0]['distrito'];
 
+    tbody.innerHTML = '';
+    for (let i = 0; i < datos_perfil[0]['metodos_pago'].length; i++) {
+
+        let fila = tbody.insertRow();
+
+        fila.insertCell().innerHTML = datos_perfil[0]['metodos_pago'][i]['nombre'];
+        fila.insertCell().innerHTML = 'tipo';
+        fila.insertCell().innerHTML = datos_perfil[0]['metodos_pago'][i]['tarjeta'];
+        fila.insertCell().innerHTML = datos_perfil[0]['metodos_pago'][i]['codigo'];
+        fila.insertCell().innerHTML = datos_perfil[0]['metodos_pago'][i]['vencimiento'];
+        fila.insertCell().innerHTML = datos_perfil[0]['metodos_pago'][i]['postal'];
+        fila.insertCell().innerHTML = datos_perfil[0]['metodos_pago'][i]['estado'];
+
+    };
+
+    let guardar = bguardar.insertRow();
+
+    let boton2 = guardar.insertCell();
+    let boton = document.createElement('button');
+    boton.innerText = 'Guardar';
+    boton.classList.add('btn_guardar');
+    boton.classList.add('btn-mas');
+    boton.id = ('btn_guardar')
+
+    boton.addEventListener('click', () => { guardar_datos(nombre1, nombre2, apellido1, apellido2, input_identificacion, input_direccion, input_correo, imagen_avatar, label_genero, label_provincia, label_canton, label_distrito) });
+    boton2.appendChild(boton);
+
 };
 
-llenar_perfil();
 
-let modificar_datos = async() => {
-    let p_nombre = nombre.value;
+function guardar_datos(nombre1, nombre2, apellido1, apellido2, input_identificacion, input_direccion, input_correo, imagen_avatar, label_genero, label_provincia, label_canton, label_distrito) {
+
+    let p_nombre = nombre1.value;
+    let s_nombre = nombre2.value;
+    let p_apellido = apellido1.value;
+    let s_apellido = apellido2.value;
     let identificacion = input_identificacion.value;
     let direccion = input_direccion.value;
     let genero = label_genero.value;
@@ -616,10 +654,9 @@ let modificar_datos = async() => {
     let correo_cliente = input_correo.value;
     let url_avatar = imagen_avatar.src;
 
-    let provincia;
-    let canton;
-    let distrito;
-
+    let provincia = label_provincia;
+    let canton = label_canton;
+    let distrito = label_distrito;
 
     if (validar()) {
         Swal.fire({
@@ -633,18 +670,7 @@ let modificar_datos = async() => {
             }
         })
     } else {
-        editar_cliente(
-            p_nombre,
-            correo_cliente,
-            identificacion,
-            f_nacimiento,
-            genero,
-            provincia,
-            canton,
-            distrito,
-            direccion,
-            url_avatar,
-        );
+        editar_cliente(_id, p_nombre, s_nombre, p_apellido, s_apellido, correo_cliente, identificacion, f_nacimiento, genero, provincia, canton, distrito, direccion, url_avatar);
 
         Swal.fire({
             type: 'success',
@@ -659,4 +685,8 @@ let modificar_datos = async() => {
 
 };
 
-btn_guardar.addEventListener('click', modificar_datos);
+if (_id) {
+    llenar_perfil();
+} else {
+    console.log('No se pudo editar')
+};

@@ -92,7 +92,7 @@ let validar = (nombre, descripcion, porcentaje, estado) => {
     return error;
 }
 
-function guardar_datos(name, desc, porcentaje, estado2) {
+function guardar_datos(nombre, desc, porcentaje, estado2) {
     // strict 5
     // funtion obtener_datos(){}
     /// strict 6

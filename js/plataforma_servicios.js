@@ -29,7 +29,8 @@ let registrar_plataforma = async(
     logo,
     longitud,
     latitud,
-    comision
+    comision,
+    reserva
 ) => {
     await axios({
             method: 'post',
@@ -49,7 +50,8 @@ let registrar_plataforma = async(
                 logo,
                 longitud,
                 latitud,
-                comision
+                comision,
+                reserva
 
             }
         })
@@ -73,7 +75,8 @@ let modificar_plataforma = async(
     logo,
     longitud,
     latitud,
-    comision
+    comision,
+    reserva
 ) => {
     await axios({
             method: 'post',
@@ -92,7 +95,8 @@ let modificar_plataforma = async(
                 logo,
                 longitud,
                 latitud,
-                comision
+                comision,
+                reserva
 
             }
         })

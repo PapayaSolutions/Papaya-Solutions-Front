@@ -1,49 +1,34 @@
-const correo = document.querySelector('#correo');
-const contrasena = document.querySelector('#contrasena');
+'use strict';
 
-const nombre_emp = document.querySelector('#nombre_emp')
-const correo_emp = document.querySelector('#correo_emp');
-const contrasena_emp = document.querySelector('#contrasena_emp');
-
-
-const editar = document.querySelector('#tbl_editar tbody');
-const contenedor = document.querySelector('#contenedor');
+const admin = document.querySelector('#tbl_admin tbody');
 
 let lista_admin;
 
-let llenar_tabla = async() => {
-
+let llenar_admin = async() => {
 
     lista_admin = await listar_admin();
-    console.log(lista_admin)
+
     for (let i = 0; i < lista_admin.length; i++) {
 
-        correo.innerHTML = lista_admin[0]['correo'];
-        contrasena.innerHTML = lista_admin[0]['contrasena'];
+        let fila = admin.insertRow();
 
-        nombre_emp.innerHTML = lista_admin[1]['nombre'];
-        correo_emp.innerHTML = lista_admin[1]['correo'];
-        contrasena_emp.innerHTML = lista_admin[1]['contrasena'];
+        fila.insertCell().innerHTML = lista_admin[i]['correo'];
+        fila.insertCell().innerHTML = lista_admin[i]['contrasena'];
 
-    };
+        let perfil = fila.insertCell();
 
-    let editar_datos = editar.insertRow();
-    let perfil = editar_datos.insertCell();
+        let boton = document.createElement('button');
+        boton.dataset.admin = lista_admin[i]['_id'];
+        boton.innerText = 'Editar';
+        boton.classList.add('btn_edit');
 
-    let boton = document.createElement('button');
-    boton.dataset.destino = lista_admin[0]['_id'];
-    boton.innerText = 'Editar';
-    boton.classList.add('btn');
+        boton.addEventListener('click', function() {
+            localStorage.setItem("destino_id", this.dataset.admin);
+            window.location.href = 'editar_admi.html';
 
-    boton.addEventListener('click', function() {
-        localStorage.setItem("destino_id", this.dataset.destino);
-        localStorage.setItem('previo', window.location.href);
-        window.location.href = 'editar_administrador.html';
+        })
 
-    });
-
-    perfil.appendChild(boton);
-
+        perfil.appendChild(boton);
+    }
 };
-
-llenar_tabla();
+llenar_admin();

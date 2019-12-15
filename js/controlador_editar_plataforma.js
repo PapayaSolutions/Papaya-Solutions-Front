@@ -7,6 +7,7 @@ const direccion = document.querySelector('#direccion');
 const ubicacion = document.querySelector('#ubicacion');
 const experiencia = document.querySelector('#experiencia');
 const comision = document.querySelector('#comision');
+const reserva = document.querySelector('#reserva');
 
 const input_provincia = document.querySelector('#txt_provincia');
 const input_canton = document.querySelector('#txt_canton');
@@ -613,6 +614,12 @@ let validar = () => {
     } else {
         comision.classList.remove('error');
     }
+    if ((reserva.value == '') || (reserva.value == 'e')) {
+        error = true;
+        reserva.classList.add('error');
+    } else {
+        reserva.classList.remove('error');
+    }
     if (input_latitud.value == '') {
         error = true;
         input_latitud.classList.add('error');
@@ -665,6 +672,7 @@ let llenar_perfil = async() => {
     direccion.value = datos_perfil[0]['direccion'];
     experiencia.value = datos_perfil[0]['experiencia'];
     comision.value = datos_perfil[0]['comision'];
+    reserva.value = datos_perfil[0]['reserva'];
 
     label_provincia.innerHTML = datos_perfil[0]['provincia'];
     label_canton.innerHTML = datos_perfil[0]['canton'];
@@ -753,6 +761,7 @@ let modificar_datos = async() => {
     let pdireccion = direccion.value;
     let pexperiencia = experiencia.value;
     let pcomision = comision.value;
+    let preserva = reserva.value;
     let platitud = input_latitud.value;
     let plongitud = input_longitud.value;
     let plogo = logo.src;
@@ -803,6 +812,7 @@ let modificar_datos = async() => {
             plongitud,
             platitud,
             pcomision,
+            preserva,
 
         );
 
@@ -815,7 +825,6 @@ let modificar_datos = async() => {
         }).then(function() {
             window.location.href = 'info_plataforma.html';
         });
-
 
     }
 

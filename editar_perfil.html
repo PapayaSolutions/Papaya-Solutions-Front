@@ -80,44 +80,61 @@
 
                         <div id="info_cliente">
                             <div>
-                                <label>Nombre completo </label>
-                                <input type="text" id="nombre"></input>
+                                <label>Primer nombre </label>
+                                <input type="text" id="nombre1"></input>
                             </div>
 
                             <div>
-                                <label>Identificación </label>
-                                <input type="number" id="identificacion"></input>
+                                <label>Segundo nombre </label>
+                                <input type="text" id="nombre2"></input>
                             </div>
 
-
+                            <div>
+                                <label>Primer apellido </label>
+                                <input type="text" id="apellido1"></input>
+                            </div>
 
                             <div>
+                                <label>Segundo apellido </label>
+                                <input type="text" id="apellido2"></input>
+                            </div>
 
-                                <p>Nuevo género</p>
-                                <select id="genero_cliente">
+                        </div>
+
+                    </div>
+
+                    <div id="spacer"></div>
+
+                    <div id="info_cliente1">
+
+                        <div>
+                            <label>Identificación </label>
+                            <input type="number" id="identificacion"></input>
+                        </div>
+
+                        <div>
+
+                            <p>Nueva fecha de nacimiento</p>
+                            <input id="fecha_nac_cliente" type="date" onchange="mostrar_anos('fecha_nac_cliente.value')">
+                            <div id="label_color">
+                                <label>Nacimiento actual: </label>
+                                <label id="fecha_nac"></label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p>Nuevo género</p>
+                            <select id="genero_cliente">
                                     <option option value="" disabled selected hidden>-</option>
                                     <option value="Femenino">Femenino</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Otro">Otro</option>
                                     <option value="Prefiero no indicar">Prefiero no indicar</option>
                                 </select>
-                                <div id="label_color">
-                                    <label>Género actual: </label>
-                                    <label id="genero"></label>
-                                </div>
+                            <div id="label_color">
+                                <label>Género actual: </label>
+                                <label id="genero"></label>
                             </div>
-
-                            <div>
-
-                                <p>Nueva fecha de nacimiento</p>
-                                <input id="fecha_nac_cliente" type="date" onchange="mostrar_anos('fecha_nac_cliente.value')">
-                                <div id="label_color">
-                                    <label>Nacimiento actual: </label>
-                                    <label id="fecha_nac"></label>
-                                </div>
-                            </div>
-
-
                         </div>
 
                     </div>
@@ -196,7 +213,12 @@
             </div>
 
             <center>
-                <button type="button" id="guardar">Guardar</button>
+                <table id="tbl_guardar">
+                    <thead>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </center>
 
             <div id="spacer"></div>
@@ -209,6 +231,7 @@
             <div id="spacer"></div>
 
             <div>
+
                 <table id="tbl_perfil">
                     <thead>
                         <tr>
@@ -216,13 +239,16 @@
                             <th>Tipo</th>
                             <th>Número de tarjeta</th>
                             <th>CMV</th>
+                            <th>Vencimiento</th>
                             <th>Código postal</th>
+                            <th>Estado</th>
 
                         </tr>
                     </thead>
                     <tbody>
                     </tbody>
                 </table>
+
             </div>
 
         </div>

@@ -41,6 +41,23 @@ hr {
     color: #636e72;
 }
 
+#info_cliente1 {
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+}
+
+#info_cliente1 select {
+    width: 220px;
+}
+
+#info_cliente1 input {
+    width: 220px;
+}
+
+#info_cliente1 label {
+    color: #636e72;
+}
+
 #datos_cliente {
     display: grid;
     grid-template-columns: 185px 250px;

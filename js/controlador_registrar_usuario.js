@@ -158,7 +158,7 @@ let validar = () => {
     } else {
         input_direccion.classList.remove('error');
     }
-    if (input_url_avatar.src == 'img/default-avatar.png') {
+    if (input_url_avatar.src === 'img/default-avatar.png') {
         error = true;
         input_url_avatar.classList.add('error');
     } else {
@@ -770,7 +770,7 @@ let obtener_datos = () => {
     let distrito = input_distrito.value;
     let direccion = input_direccion.value;
     let url_avatar = input_url_avatar.src;
-    let prefere
+    let prefere;
 
 
     //si hay error, entra al if. Si no hay error entra al else
@@ -794,22 +794,24 @@ let obtener_datos = () => {
         })
 
     } else {
-        registrar_usuario(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,
+        registrar_cliente(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,
             f_nacimiento, edad_cliente, genero, provincia, canton, distrito, direccion, url_avatar);
-
+        registrar_usuario(correo);
         Swal.fire({
             type: 'success',
-            title: '¡Registrado!',
+            title: '¡Usuario registrado!',
             animation: true,
             text: 'Te enviaremos un correo electrónico con tus datos de acceso',
             confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'
             }
+        }).then(function(res) {
+            document.getElementById("formulario_principal").reset();
+            window.location.href = 'ingresar_codigo.html';
         })
 
-        document.getElementById("formulario_principal").reset();
-        window.location.href = 'ingresar_codigo.html';
+
     }
 };
 

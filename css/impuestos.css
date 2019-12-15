@@ -122,3 +122,7 @@ textarea {
 .error {
     border: solid red 1px;
 }
+
+.ocultar {
+    display: none;
+}

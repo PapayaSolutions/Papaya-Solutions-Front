@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/configuracion.css">
     <link rel="stylesheet" href="css/impuestos.css">
-
+    <link rel="icon" href="img/imagotipo_n.png" type="image/png">
 </head>
 
 <body>
@@ -42,6 +42,7 @@
                     <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="#"><i class="far fa-bell"></i></a></li>
                     <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
+                    <li><a href="listar_descuentoO.html"><i class="fas fa-cogs"></i></a> </li>
                     <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
                     <li> <a href="index.html" id="btn_cerrar_sesion">Cerrar sesión</a></li>
                 </ul>
@@ -61,7 +62,6 @@
             <div class="spacer_h1"></div>
 
             <table id="tbl_impuestos">
-
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -71,8 +71,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
-
+                <tbody class="llenar">
                 </tbody>
             </table>
         </div>
@@ -85,9 +84,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/controlador_x.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/controlador_general.js"></script>
+
     <script src="js/impuestos_servicios.js"></script>
     <script src="js/controlador_listar_impuestos.js"></script>
+    <script src="js/controlador_general.js"></script>
 
 </body>
 

@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="css/configuracion.css">
     <link rel="stylesheet" href="css/mantenimiento_avatar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <title>Registrar descuento</title>
-    <link rel="icon" href="img/imagotipo_n.png" type="image/png">
+    <title>Listar descuento</title>
     <link rel="stylesheet" href="css/formularios.css">
-    <link rel="stylesheet" href="css/descuento.css">
+    <link rel="stylesheet" href="css/listar_descuento.css">
+
 
 </head>
 
@@ -60,50 +60,42 @@
         <div id="xaside"></div>
 
         <section>
-            <h1><i class="fas fa-percentage"></i> Registro de descuentos</h1>
 
-            <form id="formulario_prin">
+            <div class="formulario" id="main_form">
+                <h1><i class="fas fa-percentage"></i> Descuentos</h1>
+                <div id="spacer"></div>
+                <div id="search">
+                    <i class="fas fa-search" id="search_icon"></i>
+                    <input type="text" id="bnr_input" placeholder="Buscar por nombre">
 
-                <div class="registrar_descuento">
 
-                    <div id="descuento">
-                        <div id="datos">
-
-                            <label for="datos">Nombre del descuento</label>
-                            <input type="string" id="nombre" />
-                        </div>
-                        <div id="datos">
-                            <label for="datos">Descripción</label>
-                            <textarea name="" id="descripcion" cols="30" rows="10"></textarea>
-                        </div>
-                        <div id="datos">
-                            <label for="datos">Porcentaje de descuento</label>
-                            <input type="number" id="porcentaje" />
-                        </div>
-                        <div class="btn_container">
-                            <button type="button" class="btn" id="btn_registro">Registrar</button>
-                            <a href="listar_descuento.html">
-
-                                <button type="button" class="btn"> Listar descuentos</button>
-                            </a>
-                        </div>
-                    </div>
                 </div>
+                <div class="spacer_h1"></div>
 
-            </form>
+                <table id="tbl_descuento">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Porcentaje</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
 
         </section>
     </main>
-
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/controlador_x.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/controlador_general.js"></script>
     <script src="js/descuento_servicio.js"></script>
-    <script src="js/registrar_descuento_controlador.js"></script>
-
+    <script src="js/controlador_listar_descuentoO.js"></script>
 </body>
 
 </html>

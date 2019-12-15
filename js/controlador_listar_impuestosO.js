@@ -30,22 +30,8 @@ let llenar_tabla = async() => {
             let estado = fila.insertCell();
             estado.innerHTML = lista_impuestos[i]['estado'];
 
-            let boton2 = fila.insertCell();
-            boton2.classList = 'boton_imp ';
 
 
-            let boton = document.createElement('button');
-            boton.innerText = 'Editar ';
-            boton.classList.add('btn_editar');
-            boton.classList.add('btn-mas');
-
-            boton.dataset._id = lista_impuestos[i]['_id'];
-            boton.addEventListener('click', function() {
-                localStorage.setItem('id_impuesto', this.dataset._id);
-                window.location.href = 'editar_impuestos.html'
-            });
-
-            boton2.appendChild(boton);
 
         }
     };

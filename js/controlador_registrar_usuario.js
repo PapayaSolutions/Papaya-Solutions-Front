@@ -770,15 +770,16 @@ let obtener_datos = () => {
     let distrito = input_distrito.value;
     let direccion = input_direccion.value;
     let url_avatar = input_url_avatar.src;
-    let prefere;
+    let codigov = codigoVer(3, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
 
     //si hay error, entra al if. Si no hay error entra al else
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: 'Porfavor ingrese todos los datos requeridos.',
-            text: 'Los espacios en rojo deben ser llenados.',
+            title: '¡Atención!',
+            animation: true,
+            text: 'Hay datos que deben ser ingresados',
             confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'
@@ -793,9 +794,9 @@ let obtener_datos = () => {
         })
 
     } else {
-        registrar_cliente(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,
-            f_nacimiento, edad_cliente, genero, provincia, canton, distrito, direccion, url_avatar);
-        registrar_usuario(correo);
+        registrar_usuario(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,
+            f_nacimiento, edad_cliente, genero, provincia, canton, distrito, direccion, url_avatar, codigov);
+
         Swal.fire({
             type: 'success',
             title: '¡Usuario registrado!',

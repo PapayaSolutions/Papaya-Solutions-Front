@@ -3,23 +3,17 @@
 
 <head>
     <meta charset="utf-8">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
+
+    <title>Impuestos</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="icon" href="img/imagotipo_n.png" type="image/png">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/configuracion.css">
-    <link rel="stylesheet" href="css/mantenimiento_avatar.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <title>Registrar descuento</title>
+    <link rel="stylesheet" href="css/impuestos.css">
     <link rel="icon" href="img/imagotipo_n.png" type="image/png">
-    <link rel="stylesheet" href="css/formularios.css">
-    <link rel="stylesheet" href="css/descuento.css">
-
 </head>
 
 <body>
@@ -55,44 +49,33 @@
             </div>
         </nav>
     </header>
-
-    <Main id="main">
+    <main id="main">
         <div id="xaside"></div>
+        <!-- Main Form -->
 
-        <section>
-            <h1><i class="fas fa-percentage"></i> Registro de descuentos</h1>
+        <div class="formulario" id="main_form">
+            <h1><i class="fas fa-dollar-sign"></i> Listado de impuestos</h1>
+            <div id="search">
+                <i class="fas fa-search" id="search_icon"></i>
+                <input type="text" id="bnr_input" placeholder="Buscar">
+            </div>
+            <div class="spacer_h1"></div>
 
-            <form id="formulario_prin">
+            <table id="tbl_impuestos">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Porcentaje</th>
+                        <th>Descripción</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody class="llenar">
+                </tbody>
+            </table>
+        </div>
 
-                <div class="registrar_descuento">
-
-                    <div id="descuento">
-                        <div id="datos">
-
-                            <label for="datos">Nombre del descuento</label>
-                            <input type="string" id="nombre" />
-                        </div>
-                        <div id="datos">
-                            <label for="datos">Descripción</label>
-                            <textarea name="" id="descripcion" cols="30" rows="10"></textarea>
-                        </div>
-                        <div id="datos">
-                            <label for="datos">Porcentaje de descuento</label>
-                            <input type="number" id="porcentaje" />
-                        </div>
-                        <div class="btn_container">
-                            <button type="button" class="btn" id="btn_registro">Registrar</button>
-                            <a href="listar_descuento.html">
-
-                                <button type="button" class="btn"> Listar descuentos</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </form>
-
-        </section>
+        <!-- Main Form -->
     </main>
 
 
@@ -100,9 +83,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/controlador_x.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/impuestos_servicios.js"></script>
+    <script src="js/controlador_listar_impuestosO.js"></script>
     <script src="js/controlador_general.js"></script>
-    <script src="js/descuento_servicio.js"></script>
-    <script src="js/registrar_descuento_controlador.js"></script>
 
 </body>
 

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/iniciar_sesion.css">
+    <link rel="icon" href="img/imagotipo_n.png" type="image/png">
 </head>
 
 <body>
@@ -27,7 +28,7 @@
                     <li><a>Registrarse</a>
                         <ul>
                             <li><a href="registrar_usuario.html">Cliente</a></li>
-                            <li><a href="#">Organizador de eventos</a></li>
+                            <li><a href="registrar_organizador.html">Organizador de eventos</a></li>
                         </ul>
                     </li>
                     <li>
@@ -41,6 +42,7 @@
                     <li><a href="carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
                     <li><a href="#"><i class="far fa-bell"></i></a></li>
                     <li><a href="listar_perfiles.html"><i class="fas fa-cog"></i></a> </li>
+                    <li><a href="listar_descuentoO.html"><i class="fas fa-cogs"></i></a> </li>
                     <li> <a href="iniciar_sesion.html">Iniciar sesión</a></li>
                     <li> <a href="index.html" id="btn_cerrar_sesion">Cerrar sesión</a></li>
                 </ul>
@@ -71,7 +73,7 @@
                             <input id="codigo" type="text">
                         </div>
                         <div class="btn_container">
-                            <button type="button" class="btn" id="btn_iniciar">Iniciar</button>
+                            <button type="button" class="btn" id="btn_verificar">Verificar</button>
                         </div>
                     </div>
                 </form>
@@ -88,8 +90,8 @@
     <script src="js/controlador_x.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/controlador_general.js"></script>
-    <script src="js/inicio_sesion_servicio.js"></script>
-    <script src="js/controlador_iniciar_sesion.js"></script>
+    <script src="js/ingresar_codigo_servicio.js"></script>
+    <script src="js/controlador_ingresar_codigo.js"></script>
 </body>
 
 </html>

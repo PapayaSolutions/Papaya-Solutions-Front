@@ -27,16 +27,16 @@ let llenar_tabla = async() => {
         email = sessionStorage.getItem('correo');
         lista_clientes = await obtener_cliente_mail(email);
     } else {
-        if (usuario === 'Admin') {
+        if (usuario === 'Admin')
             id = localStorage.getItem('destino_id');
-            lista_clientes = await obtener_cliente_id(id);
-        }
+        lista_clientes = await obtener_cliente_id(id);
+
     }
 
 
     let fila = tbody.insertRow();
-
     nombre.innerHTML = (lista_clientes[0]['p_nombre'] + ' ' + lista_clientes[0]['s_nombre'] + ' ' + lista_clientes[0]['p_apellido'] + ' ' + lista_clientes[0]['s_apellido']);
+
     genero.innerHTML = lista_clientes[0]['genero'];
     fila.insertCell().innerHTML = (lista_clientes[0]['provincia'] + ', ' + lista_clientes[0]['canton'] + ', ' + lista_clientes[0]['distrito'] + '.');
     direccion.innerHTML = lista_clientes[0]['direccion'];
@@ -111,10 +111,6 @@ let llenar_tabla = async() => {
 
     };
 
-
-
-
-
     let date = new Date((lista_clientes[0]['f_nacimiento']));
     nacimiento.innerHTML = (date.getDate() + '/ ' + date.getMonth() + '/ ' + date.getFullYear());
 
@@ -135,11 +131,11 @@ let llenar_tabla = async() => {
 
     perfil.appendChild(boton);
 
-
     localStorage.setItem('id_tarjeta', JSON.stringify(lista_clientes));
     JSON.parse(localStorage.getItem('id_tarjeta'));
 
 };
+
 llenar_tabla();
 
 let mostrar_cards = async() => {
@@ -168,6 +164,7 @@ let mostrar_cards = async() => {
 
     };
 };
+
 mostrar_cards();
 
 

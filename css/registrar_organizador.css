@@ -8,10 +8,14 @@
     #ececec gris 
     */
 
+#spacer {
+    height: 7px;
+}
+
 .registrar_wrapper {
     width: 80%;
     display: grid;
-    grid-template-columns: 500px 1fr;
+    grid-template-columns: 1fr 500px;
     column-gap: 25px;
     padding-top: 50px;
 }
@@ -40,6 +44,10 @@
     height: 200px;
     width: 200px;
     margin: auto;
+}
+
+#acom_genero {
+    margin-top: 2%;
 }
 
 .btn_imagen {

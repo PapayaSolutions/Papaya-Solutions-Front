@@ -30,6 +30,24 @@ let llenar_tabla = async() => {
             fila.insertCell().innerHTML = lista_recintos[i]['capacidad'];
             fila.insertCell().innerHTML = lista_recintos[i]['estado'];
 
+            let celda_editar = fila.insertCell();
+            let boton_editar = document.createElement('button');
+
+            boton_editar.innerText = 'Editar';
+            celda_editar.appendChild(boton_editar);
+
+            boton_editar.dataset._id = lista_recintos[i]['_id'];
+            boton_editar.addEventListener('click', function() {
+
+                sessionStorage.setItem('_idEvento', this.dataset._id)
+                window.location.href = 'editar_recinto.html'
+            })
+
+
+
+
+
+
             let perfil = fila.insertCell();
 
             let boton = document.createElement('button');

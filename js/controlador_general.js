@@ -2,7 +2,7 @@
 
 const nav = document.querySelectorAll('.navegador_izquierda li');
 const no_li = document.querySelectorAll('.navegador_derecha li');
-const preferencias = document.querySelectorAll('.alinear_nav');
+
 
 const btn_cerrar_sesion = document.querySelector('#btn_cerrar_sesion');
 let conectado = sessionStorage.getItem('conectado');
@@ -24,7 +24,7 @@ if (conectado) {
             no_li[5].classList.add('ocultar')
             no_li[4].classList.add('ocultar')
             no_li[3].classList.add('ocultar')
-            preferencias[0].classList.remove('ocultar')
+
 
             break;
         case 'Encargado':
@@ -68,7 +68,7 @@ if (conectado) {
 
 function cerrar_sesion() {
     sessionStorage.clear();
-    window.location.href = 'listar_eventos.html';
+
 }
 
 

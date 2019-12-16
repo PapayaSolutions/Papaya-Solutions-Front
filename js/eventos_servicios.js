@@ -120,11 +120,8 @@ let registrar_compra = async(_id, usuario) => {
             responseType: 'json',
             //body
             data: {
-                nombre: nombre,
-                fecha: fecha,
-                hora: hora,
-                hora_salida: hora_salida,
-
+                _id,
+                usuario
             }
         })
         .then(function(res) {

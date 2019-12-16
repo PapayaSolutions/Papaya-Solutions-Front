@@ -6,7 +6,7 @@ const checkout = document.querySelector('#checkout');
 
 let cart_total;
 let usuario = sessionStorage.getItem('usuario_id');
-let lista_carrito;
+
 let tarjetas_cliente;
 let correo = sessionStorage.getItem('correo');
 let total_pago = 0;
@@ -14,14 +14,15 @@ let total_pago = 0;
 let llenar_carrito = async() => {
     tbody.innerHTML = '';
     checkout.innerHTML = '';
-    lista_carrito = await obtener_carrito_usuario(usuario);
 
-    for (let i = 0; i < lista_carrito[0]['compras'].length; i++) {
-        if (lista_carrito[0]['compras'][i].evento != 'BORRADO') {
-            let evento_id = lista_carrito[0]['compras'][i]['evento'];
+    let carrito = await obtener_carrito_usuario(usuario);
+
+    for (let i = 0; i < carrito[0]['compras'].length; i++) {
+        if (carrito[0]['compras'][i].evento != 'BORRADO') {
+            let evento_id = carrito[0]['compras'][i]['evento'];
             let evento = await obtener_evento_id(evento_id);
-            let id_destino = lista_carrito[0]['compras'][i]['_id'];
-            let id_carrito = lista_carrito[0]['_id'];
+            let id_destino = carrito[0]['compras'][i]['_id'];
+            let id_carrito = carrito[0]['_id'];
             let fila = tbody.insertRow();
             fila.dataset.precio = evento[0].precio_entrada;
             fila.classList.add('evento');
@@ -47,7 +48,7 @@ let llenar_carrito = async() => {
             count.onchange = function() { update_total(); };
 
             count.setAttribute('max', evento[0].cantidad_maxima_usuario);
-            count.value = parseInt(lista_carrito[0]['compras'][i]['cantidad']);
+            count.value = parseInt(carrito[0]['compras'][i]['cantidad']);
 
             let btn_eliminar = document.createElement('button');
             btn_eliminar.dataset.destino = id_destino;
@@ -132,14 +133,15 @@ let update_total = async() => {
     cart_total.value = ('$ ' + total_pago);
 
 }
+
 let update_eventos = async() => {
 
-    lista_carrito = await obtener_carrito_usuario(usuario);
+    let carrito = await obtener_carrito_usuario(usuario);
 
-    for (let i = 0; i < lista_carrito[0]['compras'].length; i++) {
-        if (lista_carrito[0]['compras'][i].evento != 'BORRADO') {
-            let evento_id = lista_carrito[0]['compras'][i]['evento'];
-            let evento_cantidad = lista_carrito[0]['compras'][i]['cantidad'];
+    for (let i = 0; i < carrito[0]['compras'].length; i++) {
+        if (carrito[0]['compras'][i].evento != 'BORRADO') {
+            let evento_id = carrito[0]['compras'][i]['evento'];
+            let evento_cantidad = carrito[0]['compras'][i]['cantidad'];
             let evento_por_id = await obtener_evento_id(evento_id);
             let num = evento_por_id[0].cantidad_entradas_restante;
             if (num < evento_cantidad) {
@@ -151,8 +153,8 @@ let update_eventos = async() => {
                 })
             } else {
                 num = num - evento_cantidad;
-                restar_entradas(evento_id, num);
-
+                await restar_entradas(evento_id, num);
+                await registrar_compra(evento_id, usuario);
 
             }
 
@@ -172,10 +174,18 @@ let borrar = async(id_carrito, id_destino) => {
 let comprar = async() => {
     if (tarjetas.value != '-') {
         update_eventos();
+        borrar_carrito_usuario(usuario);
+        Swal.fire({
+            type: 'success',
+            title: 'Gracias por su compra',
+            text: 'Su compra ha sido registrada, ¡Nosotros te llevamos!',
+            confirmButtonText: 'Entendido',
+        })
+
     } else {
         Swal.fire({
             type: 'warning',
-            title: 'Error!',
+            title: 'Error',
             text: 'Por favor seleccione un método de pago',
             confirmButtonText: 'Entendido',
         })

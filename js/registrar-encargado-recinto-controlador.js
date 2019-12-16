@@ -672,22 +672,22 @@ let obtener_datos = () => {
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: 'Faltan datos',
-            text: 'Verifique los campos!',
+            title: 'Porfavor ingrese todos los datos requeridos.',
+            text: 'Los espacios en rojo deben ser llenados.',
         })
 
     } else if (validar_numero(numero)) {
         Swal.fire({
             type: 'warning',
-            title: 'Verifique el campo número',
-            text: 'Mínimo debe de tener 8 dígitos! No se aceptan letras! No se aceptan símbolos!!',
+            title: 'Porfavor verifique el campo número.',
+            text: '!Mínimo debe de tener 8 dígitos! No se aceptan letras! No se aceptan símbolos!',
         })
 
     } else if (calcular_edad(fecha_nacimiento)) {
         Swal.fire({
             type: 'warning',
-            title: 'Verifique la edad',
-            text: 'Debe de ser mayor de edad!',
+            title: ' Porfavor verifique la edad.',
+            text: '!Debe de ser mayor de edad!',
         })
 
     } else {
@@ -697,8 +697,8 @@ let obtener_datos = () => {
 
         Swal.fire({
             type: 'success',
-            title: 'Registro realizado con exito',
-            text: 'Encargado registrado!',
+            title: 'Registro realizado con éxito.',
+            text: 'El Encargado de recintos ha sido almacenado.',
         })
 
         registrar_encrgado_recinto(nombre, numero, correo, fecha_nacimiento, genero, contrasena, codigov, tipo, estado)

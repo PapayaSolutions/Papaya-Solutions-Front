@@ -6,7 +6,7 @@ const checkout = document.querySelector('#checkout');
 
 let cart_total;
 let usuario = sessionStorage.getItem('usuario_id');
-
+let carrito;
 let tarjetas_cliente;
 let correo = sessionStorage.getItem('correo');
 let total_pago = 0;
@@ -15,7 +15,15 @@ let llenar_carrito = async() => {
     tbody.innerHTML = '';
     checkout.innerHTML = '';
 
-    let carrito = await obtener_carrito_usuario(usuario);
+    carrito = await obtener_carrito_usuario(usuario);
+
+    if ((carrito[0]['compras'].length === 0) || (carrito[0].length === 0)) {
+        let fila = tbody.insertRow();
+        let mensaje = document.createElement('h2');
+        mensaje.innerHTML = 'El carrito se encuentra vacío';
+        tbody.appendChild(fila);
+        fila.appendChild(mensaje);
+    }
 
     for (let i = 0; i < carrito[0]['compras'].length; i++) {
         if (carrito[0]['compras'][i].evento != 'BORRADO') {
@@ -71,52 +79,54 @@ let llenar_carrito = async() => {
         }
     } //items cart for
     // checkout div
+    let eventos = document.querySelectorAll('.evento');
 
-    let checkout_btn = document.createElement('button');
-    checkout_btn.setAttribute('type', 'button');
-    checkout_btn.innerHTML = 'Comprar!';
-    checkout_btn.addEventListener('click', function() {
+    if (eventos.length != 0) {
+        let checkout_btn = document.createElement('button');
+        checkout_btn.setAttribute('type', 'button');
+        checkout_btn.innerHTML = 'Comprar!';
+        checkout_btn.addEventListener('click', function() {
 
-        comprar();
-    });
+            comprar();
+        });
 
-    let total_lbl = document.createElement('label');
-    total_lbl.innerHTML = 'Total: ';
+        let total_lbl = document.createElement('label');
+        total_lbl.innerHTML = 'Total: ';
 
-    let total = document.createElement('output');
-    total.setAttribute('id', 'precio_total')
-    total.value = ('$ ' + total_pago);
-    let check_info = document.createElement('div');
-    check_info.classList.add('check_info');
-    let tarjeta_lbl = document.createElement('label');
-    tarjeta_lbl.innerHTML = 'Tarjeta de crédito: ';
-    let tarjetas = document.createElement('select');
-    let option;
+        let total = document.createElement('output');
+        total.setAttribute('id', 'precio_total')
+        total.value = ('$ ' + total_pago);
+        let check_info = document.createElement('div');
+        check_info.classList.add('check_info');
+        let tarjeta_lbl = document.createElement('label');
+        tarjeta_lbl.innerHTML = 'Tarjeta de crédito: ';
+        let tarjetas = document.createElement('select');
+        let option;
 
-    tarjetas_cliente = await obtener_cliente_mail(correo);
-    option = document.createElement('option');
-    option.setAttribute('value', '-');
-    option.appendChild(document.createTextNode('-'));
-    tarjetas.appendChild(option);
-    tarjetas.setAttribute('id', 'tarjetas');
+        tarjetas_cliente = await obtener_cliente_mail(correo);
+        option = document.createElement('option');
+        option.setAttribute('value', '-');
+        option.appendChild(document.createTextNode('-'));
+        tarjetas.appendChild(option);
+        tarjetas.setAttribute('id', 'tarjetas');
 
-    for (let i = 0; i < tarjetas_cliente[0]['metodos_pago'].length; i++) {
-        if (tarjetas_cliente[0]['metodos_pago'][i].estado != 'Inactivo') {
-            option = document.createElement('option');
-            option.setAttribute('value', tarjetas_cliente[0]['metodos_pago'][i].tarjeta);
-            option.appendChild(document.createTextNode(tarjetas_cliente[0]['metodos_pago'][i].tarjeta));
-            tarjetas.appendChild(option);
+        for (let i = 0; i < tarjetas_cliente[0]['metodos_pago'].length; i++) {
+            if (tarjetas_cliente[0]['metodos_pago'][i].estado != 'Inactivo') {
+                option = document.createElement('option');
+                option.setAttribute('value', tarjetas_cliente[0]['metodos_pago'][i].tarjeta);
+                option.appendChild(document.createTextNode(tarjetas_cliente[0]['metodos_pago'][i].tarjeta));
+                tarjetas.appendChild(option);
+            }
         }
+        checkout.appendChild(total_lbl);
+        checkout.appendChild(total);
+        cart_total = document.querySelector('#precio_total');
+        checkout.appendChild(checkout_btn);
+        checkout.appendChild(check_info);
+
+        check_info.appendChild(tarjeta_lbl);
+        check_info.appendChild(tarjetas);
     }
-    checkout.appendChild(total_lbl);
-    checkout.appendChild(total);
-    cart_total = document.querySelector('#precio_total');
-    checkout.appendChild(checkout_btn);
-    checkout.appendChild(check_info);
-
-    check_info.appendChild(tarjeta_lbl);
-    check_info.appendChild(tarjetas);
-
 
 }
 
@@ -136,7 +146,7 @@ let update_total = async() => {
 
 let update_eventos = async() => {
 
-    let carrito = await obtener_carrito_usuario(usuario);
+    carrito = await obtener_carrito_usuario(usuario);
 
     for (let i = 0; i < carrito[0]['compras'].length; i++) {
         if (carrito[0]['compras'][i].evento != 'BORRADO') {
@@ -180,7 +190,10 @@ let comprar = async() => {
             title: 'Gracias por su compra',
             text: 'Su compra ha sido registrada, ¡Nosotros te llevamos!',
             confirmButtonText: 'Entendido',
-        })
+        }).then(function() {
+            crear_bitacora('Compra', `Compra de tiquete usuario:${correo}`);
+            location.reload();
+        });
 
     } else {
         Swal.fire({

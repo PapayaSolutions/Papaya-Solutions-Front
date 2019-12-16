@@ -74,3 +74,19 @@ let comentar_evento = async(_id, cliente_id, comentario) => {
             console.log(error);
         });
 };
+let obtener_cliente_id = async(_id) => {
+    let lista_cliente;
+    await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/listar_cliente_id/${_id}`,
+            responseType: 'json',
+
+        }).then(function(res) {
+            lista_cliente = res.data.clientes;
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    return lista_cliente;
+};

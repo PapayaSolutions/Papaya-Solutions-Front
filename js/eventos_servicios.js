@@ -91,3 +91,46 @@ let buscar_cliente_id = async(_id) => {
         });
     return lista_cliente;
 };
+
+let restar_entradas = async(_id, num) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/restar_entradas',
+            responseType: 'json',
+            //body
+            data: {
+                _id,
+                num,
+
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};
+
+let registrar_compra = async(_id, usuario) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/agregar_compra',
+            responseType: 'json',
+            //body
+            data: {
+                nombre: nombre,
+                fecha: fecha,
+                hora: hora,
+                hora_salida: hora_salida,
+
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};

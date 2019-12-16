@@ -74,6 +74,10 @@ let llenar_carrito = async() => {
     let checkout_btn = document.createElement('button');
     checkout_btn.setAttribute('type', 'button');
     checkout_btn.innerHTML = 'Comprar!';
+    checkout_btn.addEventListener('click', function() {
+
+        comprar();
+    });
 
     let total_lbl = document.createElement('label');
     total_lbl.innerHTML = 'Total: ';
@@ -89,6 +93,11 @@ let llenar_carrito = async() => {
     let option;
 
     tarjetas_cliente = await obtener_cliente_mail(correo);
+    option = document.createElement('option');
+    option.setAttribute('value', '-');
+    option.appendChild(document.createTextNode('-'));
+    tarjetas.appendChild(option);
+    tarjetas.setAttribute('id', 'tarjetas');
 
     for (let i = 0; i < tarjetas_cliente[0]['metodos_pago'].length; i++) {
         if (tarjetas_cliente[0]['metodos_pago'][i].estado != 'Inactivo') {
@@ -123,6 +132,36 @@ let update_total = async() => {
     cart_total.value = ('$ ' + total_pago);
 
 }
+let update_eventos = async() => {
+
+    lista_carrito = await obtener_carrito_usuario(usuario);
+
+    for (let i = 0; i < lista_carrito[0]['compras'].length; i++) {
+        if (lista_carrito[0]['compras'][i].evento != 'BORRADO') {
+            let evento_id = lista_carrito[0]['compras'][i]['evento'];
+            let evento_cantidad = lista_carrito[0]['compras'][i]['cantidad'];
+            let evento_por_id = await obtener_evento_id(evento_id);
+            let num = evento_por_id[0].cantidad_entradas_restante;
+            if (num < evento_cantidad) {
+                Swal.fire({
+                    type: 'warning',
+                    title: 'Disculpe',
+                    text: `En este momento no hay suficientes entradas para el evento: ${evento_por_id[0].nombre}`,
+                    confirmButtonText: 'Entendido',
+                })
+            } else {
+                num = num - evento_cantidad;
+                restar_entradas(evento_id, num);
+
+
+            }
+
+        }
+    }
+
+}
+
+
 let borrar = async(id_carrito, id_destino) => {
     await borrar_evento(id_carrito, id_destino);
     await llenar_carrito();
@@ -131,7 +170,16 @@ let borrar = async(id_carrito, id_destino) => {
 
 
 let comprar = async() => {
-
+    if (tarjetas.value != '-') {
+        update_eventos();
+    } else {
+        Swal.fire({
+            type: 'warning',
+            title: 'Error!',
+            text: 'Por favor seleccione un método de pago',
+            confirmButtonText: 'Entendido',
+        })
+    };
 
 };
 

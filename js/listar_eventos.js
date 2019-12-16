@@ -273,3 +273,31 @@ function titulo_categoria(evento) {
     };
     mostrar_cards();
 }
+
+
+let preferencias = document.querySelectorAll('.alinear_nav');
+let conectado2 = sessionStorage.getItem('conectado');
+let tipo_usuario2 = sessionStorage.getItem('tipo_usuario');
+// no li numeros : 0 - perfil, 1 carrito, 2 campana, 3 configurar, 4- confi2, 5 iniciar, - 6 cerrar. 4- confi2
+if (conectado2) {
+    switch (tipo_usuario2) {
+
+        case 'Cliente':
+
+            preferencias[0].classList.remove('ocultar')
+
+            break;
+        case 'Encargado':
+
+
+
+            break;
+
+        default:
+
+            break;
+    }
+} else {
+
+
+}

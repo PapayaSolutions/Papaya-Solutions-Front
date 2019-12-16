@@ -1,87 +1,97 @@
 'use strict';
 
-const input_p_nombre = document.querySelector('#p_nombre_cliente');
-const input_p_apellido = document.querySelector('#p_apellido_cliente');
-const input_correo = document.querySelector('#correo');
-const input_s_nombre = document.querySelector('#s_nombre_cliente');
-const input_s_apellido = document.querySelector('#s_apellido_cliente');
-const input_identificacion = document.querySelector('#n_identif_cliente');
-const input_genero = document.querySelector('#genero_cliente');
-const input_provincia = document.querySelector('#provincia_cliente');
-const input_f_nacimiento = document.querySelector('#fecha_nac_cliente');
-const input_canton = document.querySelector('#canton_cliente');
-const input_edad = document.querySelector('#edad_cliente');
-const input_distrito = document.querySelector('#distrito_cliente');
-const input_direccion = document.querySelector('#direccion_cliente');
-const btn_registro = document.querySelector('#btn_registro');
+const input_nombre1 = document.querySelector('#nombre_organizador');
+const input_nombre2 = document.querySelector('#s_nombre_organizador');
+const input_apellido1 = document.querySelector('#apellido_organizador');
+const input_apellido2 = document.querySelector('#s_apellido_organizador');
+const input_correo = document.querySelector('#correo_organizador');
+const input_gen = document.querySelector('#genero_organizador');
+const input_idt = document.querySelector('#idt_organizador');
+const sel_nacimiento = document.querySelector('#nacimiento_organizador');
+const sel_provincia = document.querySelector('#provincia_organizador');
+const sel_canton = document.querySelector('#canton_organizador');
+const sel_distrito = document.querySelector('#distrito_organizador');
+const input_direccion = document.querySelector('#direccion_organizador');
+const input_exp = document.querySelector('#exp_organizador');
+
+const registrar = document.querySelector('#btn_registro');
 
 // Validación de datos
 let validar = () => {
     let error = false;
 
-    if (input_p_nombre.value == '') {
+    if (input_nombre1.value == '') {
         error = true;
-        input_p_nombre.classList.add('error');
+        input_nombre1.classList.add('error');
     } else {
-        input_p_nombre.classList.remove('error');
+        input_nombre1.classList.remove('error');
     }
-
-    if (input_p_apellido.value == '') {
+    if (input_apellido1.value == '') {
         error = true;
-        input_p_apellido.classList.add('error');
+        input_apellido1.classList.add('error');
     } else {
-        input_p_apellido.classList.remove('error');
+        input_apellido1.classList.remove('error');
     }
-
     if (input_correo.value == '') {
         error = true;
         input_correo.classList.add('error');
     } else {
         input_correo.classList.remove('error');
     }
-
-    if (input_identificacion.value == '') {
+    if (input_nombre2.value == '') {
         error = true;
-        input_identificacion.classList.add('error');
+        input_nombre2.classList.add('error');
     } else {
-        input_identificacion.classList.remove('error');
+        input_nombre2.classList.remove('error');
     }
-
-    if (input_f_nacimiento.value == '') {
+    if (input_apellido2.value == '') {
         error = true;
-        input_f_nacimiento.classList.add('error');
+        input_apellido2.classList.add('error');
     } else {
-        input_f_nacimiento.classList.remove('error');
+        input_apellido2.classList.remove('error');
     }
-
-    if (input_provincia.value == '') {
+    if (input_idt.value == '') {
         error = true;
-        input_provincia.classList.add('error');
+        input_idt.classList.add('error');
     } else {
-        input_provincia.classList.remove('error');
+        input_idt.classList.remove('error');
     }
-
-    if (input_canton.value == '') {
+    if (input_gen.value == '') {
         error = true;
-        input_canton.classList.add('error');
+        input_gen.classList.add('error');
     } else {
-        input_canton.classList.remove('error');
+        input_gen.classList.remove('error');
     }
-
-    if (input_genero.value == '') {
+    if (sel_provincia.value == '') {
         error = true;
-        input_genero.classList.add('error');
+        sel_provincia.classList.add('error');
     } else {
-        input_genero.classList.remove('error');
+        sel_provincia.classList.remove('error');
     }
-
-    if (input_distrito.value == '') {
+    if (sel_nacimiento.value == '') {
         error = true;
-        input_distrito.classList.add('error');
+        sel_nacimiento.classList.add('error');
     } else {
-        input_distrito.classList.remove('error');
+        sel_nacimiento.classList.remove('error');
     }
-
+    if (sel_canton.value == '') {
+        error = true;
+        sel_canton.classList.add('error');
+    } else {
+        sel_canton.classList.remove('error');
+    }
+    if (input_exp.value == '') {
+        error = true;
+        input_exp.classList.add('error');
+    } else {
+        input_exp.classList.remove('error');
+    }
+    if (sel_distrito.value == '') {
+        error = true;
+        sel_distrito.classList.add('error');
+    } else {
+        sel_distrito.classList.remove('error');
+    }
     if (input_direccion.value == '') {
         error = true;
         input_direccion.classList.add('error');
@@ -123,10 +133,10 @@ const calcular_edad = (fecha) => {
 //años
 const mostrar_anos = (fecha) => {
     var Q4A = "";
-    var Bdate = document.getElementById('fecha_nac_cliente').value;
+    var Bdate = document.getElementById('nacimiento_organizador').value;
     var Bday = +new Date(Bdate);
     Q4A = ~~((Date.now() - Bday) / (31557600000));
-    var edad_cliente = document.getElementById('edad_cliente');
+    var edad_cliente = document.getElementById('edad_organizador');
     edad_cliente.innerHTML = Q4A;
     return Q4A
 }
@@ -678,34 +688,36 @@ function popular_distritos(pprovincia, pcanton, pdistritos) {
 
 // function obtener_datos(){}
 let obtener_datos = () => {
-    let p_nombre = input_p_nombre.value;
-    let s_nombre = input_s_nombre.value;
-    let p_correo = input_correo.value;
-    let p_apellido = input_p_apellido.value;
-    let s_apellido = input_s_apellido.value;
-    let identificacion = input_identificacion.value;
-    let f_nacimiento = input_f_nacimiento.value;
-    let edad_cliente = input_edad.value
-    let provincia = input_provincia.value;
-    let canton = input_canton.value;
-    let genero = input_genero.value;
-    let distrito = input_distrito.value;
+    let p_nombre = input_nombre1.value;
+    let s_nombre = input_nombre2.value;
+    let p_apellido = input_apellido1.value;
+    let s_apellido = input_apellido2.value;
+    let correo = input_correo.value;
+    let genero = input_gen.value;
+    let identificacion = input_idt.value;
+    let nacimiento = sel_nacimiento.value;
+    let provincia = sel_provincia.value;
+    let canton = sel_canton.value;
+    let distrito = sel_distrito.value;
     let direccion = input_direccion.value;
+    let experencia = input_exp.value;
+    let estado = 'Activo';
+    let tipo = 'Organizador de eventos';
 
 
     //si hay error, entra al if. Si no hay error entra al else
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: '¡Atencion!',
+            title: '¡Atención!',
             animation: true,
-            text: 'Hay espacios que deben ser llenados',
+            text: 'Hay datos que deben ser ingresados',
             confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'
             }
         })
-    } else if (calcular_edad(f_nacimiento)) {
+    } else if (calcular_edad(nacimiento)) {
         Swal.fire({
             type: 'warning',
             title: 'Verifique la edad',
@@ -714,8 +726,25 @@ let obtener_datos = () => {
         })
 
     } else {
-        registrar_usuario(p_nombre, s_nombre, p_correo, p_apellido, s_apellido, identificacion,
-            f_nacimiento, edad_cliente, genero, provincia, canton, distrito, direccion);
+        registrar_organizador(
+            p_nombre,
+            s_nombre,
+            p_apellido,
+            s_apellido,
+            correo,
+            genero,
+            identificacion,
+            nacimiento,
+            provincia,
+            canton,
+            distrito,
+            direccion,
+            experencia,
+            estado,
+            tipo
+
+
+        );
 
         Swal.fire({
             type: 'success',
@@ -726,13 +755,15 @@ let obtener_datos = () => {
             customClass: {
                 popup: 'animated tada'
             }
-        })
 
-        document.getElementById("formulario_principal").reset();
-        window.location.href = 'ingresar_codigo.html';
+        }).then(function() {
+            window.location.href = 'ingresar_codigo.html';
+            document.getElementById("formulario_principal").reset();
+        });
+
     }
 };
 
 // Eventos asociados a los botones o inputs
 
-btn_registro.addEventListener('click', obtener_datos);
+registrar.addEventListener('click', obtener_datos);

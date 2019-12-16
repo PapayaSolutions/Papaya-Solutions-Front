@@ -120,12 +120,12 @@ let llenar_organizadores = async() => {
     lista_organizadores = await listar_organizadores();
 
     for (let i = 0; i < lista_organizadores.length; i++) {
-        let nombre = (lista_organizadores[i]['nombre']).toLowerCase();
+        let nombre = (lista_organizadores[i]['p_nombre']).toLowerCase();
         if (nombre.includes(filtro)) {
 
             let fila = tbody.insertRow();
 
-            fila.insertCell().innerHTML = lista_organizadores[i]['nombre'];
+            fila.insertCell().innerHTML = (lista_organizadores[i]['p_nombre'] + ' ' + lista_organizadores[i]['p_apellido'] + ' ' + lista_organizadores[i]['s_apellido']);
             fila.insertCell().innerHTML = lista_organizadores[i]['correo'];
             fila.insertCell().innerHTML = lista_organizadores[i]['genero'];
             fila.insertCell().innerHTML = lista_organizadores[i]['tipo'];
@@ -156,7 +156,7 @@ let llenar_organizadores = async() => {
             boton.addEventListener('click', function() {
                 localStorage.setItem("destino_id", this.dataset.destino);
                 localStorage.setItem('previo', window.location.href);
-                window.location.href = 'visualizar_perfil.html';
+                window.location.href = 'perfil_organizador_recintos.html';
 
             });
 

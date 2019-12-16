@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Registrar usuario</title>
+    <title>Registro de organizador</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/reset.css">
@@ -62,32 +62,32 @@
                         <div>
 
                             <div>
-                                <label for="p_nombre_cliente">Primer nombre</label>
-                                <input id="p_nombre_cliente" type="text">
+                                <label for="nombre_organizador">Primer nombre</label>
+                                <input id="nombre_organizador" type="text">
                             </div>
                             <div>
-                                <label for="p_apellido_cliente">Primer apellido</label>
-                                <input id="p_apellido_cliente" type="text">
+                                <label for="apellido_organizador">Primer apellido</label>
+                                <input id="apellido_organizador" type="text">
                             </div>
                             <div>
-                                <label for="correo_cliente">Correo electrónico</label>
-                                <input id="correo_cliente" type="email" placeholder="me@example.com">
+                                <label for="correo_organizador">Correo electrónico</label>
+                                <input id="correo_organizador" type="email" placeholder="me@example.com">
                             </div>
 
                         </div>
                         <div>
 
                             <div>
-                                <label for="s_nombre_cliente">Segundo nombre</label>
-                                <input id="s_nombre_cliente" type="text">
+                                <label for="s_nombre_organizador">Segundo nombre</label>
+                                <input id="s_nombre_organizador" type="text">
                             </div>
                             <div>
-                                <label for="s_apellido_cliente">Segundo apellido</label>
-                                <input id="s_apellido_cliente" type="text">
+                                <label for="s_apellido_organizador">Segundo apellido</label>
+                                <input id="s_apellido_organizador" type="text">
                             </div>
                             <div>
-                                <label for="n_identif_cliente">Número de identificación</label>
-                                <input id="n_identif_cliente" type="number">
+                                <label for="idt_organizador">Número de identificación</label>
+                                <input id="idt_organizador" type="number">
                             </div>
 
                         </div>
@@ -96,19 +96,19 @@
                     <div class="three_collumn_form">
                         <div>
                             <div id="acom_genero">
-                                <label for="genero_cliente">Género</label>
-                                <select id="genero_cliente">
+                                <label for="genero_organizador">Género</label>
+                                <select id="genero_organizador">
                                     <option option value="" disabled selected hidden>-</option>
-                                        <option value="F">Femenino</option>
-                                        <option value="M">Masculino</option>
-                                        <option value="O">Otro</option>
-                                        <option value="N">Prefiero no indicar</option>
+                                        <option value="Femenino">Femenino</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Otro">Otro</option>
+                                        <option value="Prefiero no indicar">Prefiero no indicar</option>
                                 </select>
                             </div>
 
                             <div id="acom_provincia">
-                                <label for="provincia_cliente">Provincia</label>
-                                <select id="provincia_cliente" onchange="popular_cantones('provincia_cliente', 'canton_cliente')">
+                                <label for="provincia_organizador">Provincia</label>
+                                <select id="provincia_organizador" onchange="popular_cantones('provincia_organizador', 'canton_organizador')">
                                         <option value="" disabled selected hidden>-</option>
                                         <option value="San José">San José</option>
                                         <option value="Alajuela">Alajuela</option>
@@ -122,37 +122,37 @@
                         </div>
                         <div>
                             <div>
-                                <label for="fecha_nac_cliente">Fecha de nacimiento</label>
-                                <input id="fecha_nac_cliente" type="date" onclick="calcular_edad('fecha_nac_cliente')">
+                                <label for="nacimiento_organizador">Fecha de nacimiento</label>
+                                <input id="nacimiento_organizador" type="date" onclick="calcular_edad('nacimiento_organizador')">
                             </div>
 
                             <div id="spacer"></div>
 
                             <div>
-                                <label for="canton_cliente">Cantón</label>
-                                <select id="canton_cliente" onchange="popular_distritos('provincia_cliente', 'canton_cliente', 'distrito_cliente')">
+                                <label for="canton_organizador">Cantón</label>
+                                <select id="canton_organizador" onchange="popular_distritos('provincia_organizador', 'canton_organizador', 'distrito_organizador')">
                                 </select>
                             </div>
                         </div>
                         <div>
 
                             <div>
-                                <label for="edad_cliente">Edad</label>
-                                <input id="edad_cliente" type="number">
+                                <label for="exp_organizador">Experiencia (Años)</label>
+                                <input id="exp_organizador" type="number">
                             </div>
 
                             <div id="spacer"></div>
 
                             <div>
-                                <label for="distrito_cliente">Distrito</label>
-                                <select id="distrito_cliente">
+                                <label for="distrito_organizador">Distrito</label>
+                                <select id="distrito_organizador">
                                     </select>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <label for="direccion_cliente">Dirección exacta</label>
-                        <textarea id="direccion_cliente"></textarea>
+                        <label for="direccion_organizador">Dirección exacta</label>
+                        <textarea id="direccion_organizador"></textarea>
                     </div>
                     <div class="btn_container">
                         <button type="button" class="btn" id="btn_registro">Registrarse</button>
@@ -176,11 +176,14 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/controlador_x.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/clientes_servicio.js"></script>
-    <script src="js/controlador_registrar_usuario.js"></script>
+
+    <script src="js/controlador_x.js"></script>
     <script src="js/controlador_general.js"></script>
+
+    <script src="js/organizadores_servicios.js"></script>
+    <script src="js/controlador_organizador.js"></script>
+
 </body>
 
 </html>

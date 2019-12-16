@@ -155,7 +155,7 @@
         border-radius: 20px;
         border: 1px solid #f7882f;
         position: relative;
-        background-image: url(/Papaya-Solutions-Front/img/candado.PNG);
+        background-image: url(../img/candado.PNG);
         background-size: cover;
     }
     
@@ -193,7 +193,7 @@
     }
     
     .deshabilitada {
-        background-image: url(/Papaya-Solutions-Front/img/candado_abierto1.PNG);
+        background-image: url(../img/candado_abierto1.PNG);
         background-size: cover;
         border-radius: 20px;
         padding-top: 10px;

@@ -159,9 +159,7 @@ let obtener_datos = () => {
             animation: true,
             text: '',
             confirmButtonText: 'Entendido',
-            customClass: {
-                popup: 'animated tada'
-            }
+
         })
     } else if (validar()) {
         Swal.fire({
@@ -170,9 +168,7 @@ let obtener_datos = () => {
             animation: true,
             text: '¡Hay espacios que deben ser llenados!',
             confirmButtonText: 'Entendido',
-            customClass: {
-                popup: 'animated tada'
-            }
+
         })
     } else {
 
@@ -184,11 +180,9 @@ let obtener_datos = () => {
             animation: true,
             text: '¡Se han guardado los datos de la tarjeta con éxito!',
             confirmButtonText: 'Entendido',
-            customClass: {
-                popup: 'animated tada'
-            }
+
         }).then(function() {
-            window.location.href = 'visualizar_perfil.html';
+            // window.location.href = 'visualizar_perfil.html';
         });
     }
 };

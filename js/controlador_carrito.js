@@ -71,8 +71,6 @@ let llenar_carrito = async() => {
     } //items cart for
     // checkout div
 
-
-
     let checkout_btn = document.createElement('button');
     checkout_btn.setAttribute('type', 'button');
     checkout_btn.innerHTML = 'Comprar!';
@@ -89,6 +87,7 @@ let llenar_carrito = async() => {
     tarjeta_lbl.innerHTML = 'Tarjeta de crédito: ';
     let tarjetas = document.createElement('select');
     let option;
+
     tarjetas_cliente = await obtener_cliente_mail(correo);
 
     for (let i = 0; i < tarjetas_cliente[0]['metodos_pago'].length; i++) {
@@ -125,11 +124,16 @@ let update_total = async() => {
 
 }
 let borrar = async(id_carrito, id_destino) => {
-    borrar_evento(id_carrito, id_destino);
-    llenar_carrito();
+    await borrar_evento(id_carrito, id_destino);
+    await llenar_carrito();
     update_total();
 }
 
+
+let comprar = async() => {
+
+
+};
 
 volver.addEventListener('click', function() {
 

@@ -76,3 +76,20 @@ let borrar_evento = async(_id, evento_id) => {
             console.log(error);
         });
 };
+
+let borrar_carrito_usuario = async(usuario) => {
+    let lista_carrito;
+    await axios({
+            method: 'post',
+            url: `http://localhost:3000/api/borrar_carrito_usuario/${usuario}`,
+            responseType: 'json',
+
+        }).then(function(res) {
+            lista_carrito = res.data.carritos;
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    return lista_carrito;
+};

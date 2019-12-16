@@ -74,7 +74,8 @@ let comentar_evento = async(_id, cliente_id, comentario) => {
             console.log(error);
         });
 };
-let obtener_cliente_id = async(_id) => {
+
+let buscar_cliente_id = async(_id) => {
     let lista_cliente;
     await axios({
             method: 'get',

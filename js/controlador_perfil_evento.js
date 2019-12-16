@@ -140,7 +140,7 @@ let llenar_perfil = async() => {
 
         let usuario_comt = datos_evento[0]['calificaciones'][i]['usuario'];
 
-        let usuario_id = await obtener_cliente_id(usuario_comt);
+        let usuario_id = await buscar_cliente_id(usuario_comt);
 
         let div_contenedor = document.createElement('div');
         div_contenedor.classList.add('contenedor');
@@ -413,8 +413,8 @@ let obtener_datos = () => {
 
 let llenar_carrito = async() => {
 
-    crear_carrito(cliente_id);
-    agregar_evento(cliente_id, id, ticketes.value);
+    await crear_carrito(cliente_id);
+    await agregar_evento(cliente_id, id, ticketes.value);
     localStorage.setItem('previo', window.location.href);
     window.location.href = "carrito.html"
 

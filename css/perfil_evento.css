@@ -538,7 +538,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .contenedor {
     display: grid;
-    grid-template-columns: 12% 82%;
+    grid-template-columns: 12% 84%;
     margin: 5px;
 }
 

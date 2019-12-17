@@ -1,6 +1,18 @@
 'use strict';
 
-let registrar_recinto = async(nombre, direccion, canton, provincia, distrito, capacidad, asientos_tradicionales, asientos_accesibilidad, latitud, longitud, estado) => {
+let registrar_recinto = async(
+    nombre,
+    direccion,
+    canton,
+    provincia,
+    distrito,
+    capacidad,
+    asientos_tradicionales,
+    asientos_accesibilidad,
+    latitud,
+    longitud,
+    url_imagen,
+    estado) => {
 
     await axios({
 
@@ -20,6 +32,7 @@ let registrar_recinto = async(nombre, direccion, canton, provincia, distrito, ca
                     asientos_accesibilidad: asientos_accesibilidad,
                     latitud: latitud,
                     longitud: longitud,
+                    url_imagen: url_imagen,
                     estado: estado
                 }
             }
@@ -138,3 +151,21 @@ let editar_recinto = async(direccion, provincia, capacidad, asientos_tradicional
             console.log(error);
         });
 };
+
+//--------------------------- CLOUDINARY WIDGET --------------------------------------------------------
+var myWidget1 = cloudinary.createUploadWidget({
+    cloudName: 'pypsolutionscr',
+    uploadPreset: 'psolutions'
+}, (error, result) => {
+    if (!error && result && result.event === "success") {
+        console.log('Done! Here is the image info: ', result.info);
+        document.querySelector('#imagen_preview').src = result.info.secure_url;
+    }
+
+});
+
+let botn = document.querySelector('#boton_agregar_imagen');
+
+botn.addEventListener('click', function() {
+    myWidget1.open();
+}, false);

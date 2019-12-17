@@ -68,7 +68,7 @@ if (conectado) {
 
 function cerrar_sesion() {
     sessionStorage.clear();
-
+    localStorage.clear();
 }
 
 

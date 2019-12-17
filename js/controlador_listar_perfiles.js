@@ -2,6 +2,7 @@
 
 const tbody = document.querySelector('#tbl_clientes tbody');
 const input_filtro = document.querySelector('#bnr_input');
+const btn_estado = document.querySelector('btn_estado');
 
 
 let lista_encargados;
@@ -28,7 +29,7 @@ let llenar_encargados = async() => {
 
             let estado = fila.insertCell();
 
-            let opcions = ['Habilitado', 'Desabilitado'];
+            let opcions = ['Habilitado', 'Desabilitado', 'Baneado'];
             let estado2 = document.createElement('select');
             estado2.placeholder = lista_encargados[i]['estado'];
             estado2.value = lista_encargados[i]['estado'];
@@ -133,7 +134,7 @@ let llenar_organizadores = async() => {
 
             let estado = fila.insertCell();
 
-            let opcions = ['Habilitado', 'Desabilitado'];
+            let opcions = ['Habilitado', 'Desabilitado', 'Baneado'];
             let estado2 = document.createElement('select');
             estado2.placeholder = lista_organizadores[i]['estado'];
             estado2.value = lista_organizadores[i]['estado'];
@@ -176,5 +177,14 @@ let llenar_tabla = async() => {
 
 };
 
+let obtener_estado = () => {
+    let input_id = localStorage.setItem("destino_id", this.dataset.destino);
+    let input_estado = option.value;
+
+    cambiar_estado(input_id, input_estado)
+}
+
+
 llenar_tabla();
 input_filtro.addEventListener('keyup', llenar_tabla);
+btn_estado.addEventListener('click', obtener_estado);

@@ -133,3 +133,9 @@ p {
     color: #f7882f;
     font-size: 14px;
 }
+
+#volver {
+    position: relative;
+    left: 50px;
+    top: 25px;
+}

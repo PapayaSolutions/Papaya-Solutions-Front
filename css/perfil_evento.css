@@ -535,3 +535,39 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /************************************************************************/
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 12% 84%;
+    margin: 5px;
+}
+
+#comentarios {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#comentarios img {
+    height: 100px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#comentarios span a {
+    text-decoration: none;
+    color: #f7c331;
+}
+
+.contenedor_coment {
+    border: 1px solid #f7882f;
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px;
+}
+
+#comentarios p {
+    margin-top: 5px;
+}
+
+#comentarios_titulo {
+    color: #f7882f;
+    margin: 5px;
+}

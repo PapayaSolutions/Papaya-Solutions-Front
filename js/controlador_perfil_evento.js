@@ -4,6 +4,7 @@ const nombre = document.querySelector('#bnr_nombre');
 const recinto = document.querySelector('#recinto_evento');
 const tabla_fechas = document.querySelector('#fecha_evento tbody');
 const tabla_descuentos = document.querySelector('#descuentos_evento tbody');
+const contenedor = document.querySelector('#comentarios');
 const tabla_desc_head = document.querySelector('#descuentos_evento thead');
 const precio = document.querySelector('#precio_evento');
 const categoria = document.querySelector('#categoria_evento');
@@ -26,7 +27,6 @@ const editar = document.querySelector('#editar');
 const comentarios = document.querySelector('#calificar');
 const finalizado = document.querySelector('#item8');
 const btn_carrito = document.querySelector('#btn_carrito');
-
 let estado;
 let usuario = sessionStorage.getItem('tipo_usuario');
 let id = localStorage.getItem('id_evento');
@@ -136,9 +136,49 @@ let llenar_perfil = async() => {
         fila.insertCell().innerHTML = tiempo2;
 
     }
+    for (let i = 0; i < datos_evento[0]['calificaciones'].length; i++) {
 
+        let usuario_comt = datos_evento[0]['calificaciones'][i]['usuario'];
 
+        let usuario_id = await buscar_cliente_id(usuario_comt);
 
+        let div_contenedor = document.createElement('div');
+        div_contenedor.classList.add('contenedor');
+        let foto_contenedor = document.createElement('div');
+
+        let comentario_contenedor = document.createElement('div');
+        comentario_contenedor.classList.add('contenedor_coment');
+
+        let contenedor_coment = document.createElement('p');
+        contenedor_coment.innerText = datos_evento[0]['calificaciones'][i]['comentario'];
+
+        let contenedor_link = document.createElement('a');
+        contenedor_link.href = '#';
+
+        let contenedor_user = document.createElement('span');
+
+        contenedor_link.innerText = usuario_id[0]['p_nombre'];
+
+        let imagen_cont = document.createElement('img');
+        imagen_cont.src = usuario_id[0]['url_avatar'];
+
+        contenedor_link.dataset.destino = usuario_id[0]['_id'];
+        contenedor_link.addEventListener('click', function() {
+            localStorage.setItem("destino_id", this.dataset.destino);
+            localStorage.setItem('previo', window.location.href);
+            window.location.href = 'visualizar_perfil.html';
+
+        });
+
+        contenedor.appendChild(div_contenedor);
+        div_contenedor.appendChild(foto_contenedor);
+        div_contenedor.appendChild(comentario_contenedor);
+        foto_contenedor.appendChild(imagen_cont);
+        comentario_contenedor.appendChild(contenedor_user);
+        contenedor_user.appendChild(contenedor_link);
+        comentario_contenedor.appendChild(contenedor_coment);
+
+    }
 };
 llenar_perfil();
 
@@ -373,15 +413,35 @@ let obtener_datos = () => {
 
 let llenar_carrito = async() => {
 
-    crear_carrito(cliente_id);
-    agregar_evento(cliente_id, id, ticketes.value);
+    await crear_carrito(cliente_id);
+    await agregar_evento(cliente_id, id, ticketes.value);
     localStorage.setItem('previo', window.location.href);
     window.location.href = "carrito.html"
 
-
-
 }
+let comentarioss = document.querySelectorAll('#comentarios');
+let conectado3 = sessionStorage.getItem('conectado');
+let tipo_usuario3 = sessionStorage.getItem('tipo_usuario');
+// no li numeros : 0 - perfil, 1 carrito, 2 campana, 3 configurar, 4- confi2, 5 iniciar, - 6 cerrar. 4- confi2
+if (conectado3) {
+    switch (tipo_usuario3) {
 
+        case 'Admin':
+            comentarioss[0].classList.remove('ocultar')
+            break;
+        case 'Cliente':
+
+            break;
+        case 'Encargado':
+
+
+            break;
+        case 'Organizador':
+            comentarioss[0].classList.remove('ocultar')
+        default:
+            break;
+    }
+}
 // Eventos asociados a los botones o inputs
 
 btn_registro.addEventListener('click', obtener_datos);

@@ -6,7 +6,7 @@ const checkout = document.querySelector('#checkout');
 
 let cart_total;
 let usuario = sessionStorage.getItem('usuario_id');
-let lista_carrito;
+let carrito;
 let tarjetas_cliente;
 let correo = sessionStorage.getItem('correo');
 let total_pago = 0;
@@ -14,14 +14,23 @@ let total_pago = 0;
 let llenar_carrito = async() => {
     tbody.innerHTML = '';
     checkout.innerHTML = '';
-    lista_carrito = await obtener_carrito_usuario(usuario);
 
-    for (let i = 0; i < lista_carrito[0]['compras'].length; i++) {
-        if (lista_carrito[0]['compras'][i].evento != 'BORRADO') {
-            let evento_id = lista_carrito[0]['compras'][i]['evento'];
+    carrito = await obtener_carrito_usuario(usuario);
+
+    if ((carrito[0]['compras'].length === 0) || (carrito[0].length === 0)) {
+        let fila = tbody.insertRow();
+        let mensaje = document.createElement('h2');
+        mensaje.innerHTML = 'El carrito se encuentra vacío';
+        tbody.appendChild(fila);
+        fila.appendChild(mensaje);
+    }
+
+    for (let i = 0; i < carrito[0]['compras'].length; i++) {
+        if (carrito[0]['compras'][i].evento != 'BORRADO') {
+            let evento_id = carrito[0]['compras'][i]['evento'];
             let evento = await obtener_evento_id(evento_id);
-            let id_destino = lista_carrito[0]['compras'][i]['_id'];
-            let id_carrito = lista_carrito[0]['_id'];
+            let id_destino = carrito[0]['compras'][i]['_id'];
+            let id_carrito = carrito[0]['_id'];
             let fila = tbody.insertRow();
             fila.dataset.precio = evento[0].precio_entrada;
             fila.classList.add('evento');
@@ -47,7 +56,7 @@ let llenar_carrito = async() => {
             count.onchange = function() { update_total(); };
 
             count.setAttribute('max', evento[0].cantidad_maxima_usuario);
-            count.value = parseInt(lista_carrito[0]['compras'][i]['cantidad']);
+            count.value = parseInt(carrito[0]['compras'][i]['cantidad']);
 
             let btn_eliminar = document.createElement('button');
             btn_eliminar.dataset.destino = id_destino;
@@ -70,44 +79,54 @@ let llenar_carrito = async() => {
         }
     } //items cart for
     // checkout div
+    let eventos = document.querySelectorAll('.evento');
 
+    if (eventos.length != 0) {
+        let checkout_btn = document.createElement('button');
+        checkout_btn.setAttribute('type', 'button');
+        checkout_btn.innerHTML = 'Comprar!';
+        checkout_btn.addEventListener('click', function() {
 
+            comprar();
+        });
 
-    let checkout_btn = document.createElement('button');
-    checkout_btn.setAttribute('type', 'button');
-    checkout_btn.innerHTML = 'Comprar!';
+        let total_lbl = document.createElement('label');
+        total_lbl.innerHTML = 'Total: ';
 
-    let total_lbl = document.createElement('label');
-    total_lbl.innerHTML = 'Total: ';
+        let total = document.createElement('output');
+        total.setAttribute('id', 'precio_total')
+        total.value = ('$ ' + total_pago);
+        let check_info = document.createElement('div');
+        check_info.classList.add('check_info');
+        let tarjeta_lbl = document.createElement('label');
+        tarjeta_lbl.innerHTML = 'Tarjeta de crédito: ';
+        let tarjetas = document.createElement('select');
+        let option;
 
-    let total = document.createElement('output');
-    total.setAttribute('id', 'precio_total')
-    total.value = ('$ ' + total_pago);
-    let check_info = document.createElement('div');
-    check_info.classList.add('check_info');
-    let tarjeta_lbl = document.createElement('label');
-    tarjeta_lbl.innerHTML = 'Tarjeta de crédito: ';
-    let tarjetas = document.createElement('select');
-    let option;
-    tarjetas_cliente = await obtener_cliente_mail(correo);
+        tarjetas_cliente = await obtener_cliente_mail(correo);
+        option = document.createElement('option');
+        option.setAttribute('value', '-');
+        option.appendChild(document.createTextNode('-'));
+        tarjetas.appendChild(option);
+        tarjetas.setAttribute('id', 'tarjetas');
 
-    for (let i = 0; i < tarjetas_cliente[0]['metodos_pago'].length; i++) {
-        if (tarjetas_cliente[0]['metodos_pago'][i].estado != 'Inactivo') {
-            option = document.createElement('option');
-            option.setAttribute('value', tarjetas_cliente[0]['metodos_pago'][i].tarjeta);
-            option.appendChild(document.createTextNode(tarjetas_cliente[0]['metodos_pago'][i].tarjeta));
-            tarjetas.appendChild(option);
+        for (let i = 0; i < tarjetas_cliente[0]['metodos_pago'].length; i++) {
+            if (tarjetas_cliente[0]['metodos_pago'][i].estado != 'Inactivo') {
+                option = document.createElement('option');
+                option.setAttribute('value', tarjetas_cliente[0]['metodos_pago'][i].tarjeta);
+                option.appendChild(document.createTextNode(tarjetas_cliente[0]['metodos_pago'][i].tarjeta));
+                tarjetas.appendChild(option);
+            }
         }
+        checkout.appendChild(total_lbl);
+        checkout.appendChild(total);
+        cart_total = document.querySelector('#precio_total');
+        checkout.appendChild(checkout_btn);
+        checkout.appendChild(check_info);
+
+        check_info.appendChild(tarjeta_lbl);
+        check_info.appendChild(tarjetas);
     }
-    checkout.appendChild(total_lbl);
-    checkout.appendChild(total);
-    cart_total = document.querySelector('#precio_total');
-    checkout.appendChild(checkout_btn);
-    checkout.appendChild(check_info);
-
-    check_info.appendChild(tarjeta_lbl);
-    check_info.appendChild(tarjetas);
-
 
 }
 
@@ -124,12 +143,68 @@ let update_total = async() => {
     cart_total.value = ('$ ' + total_pago);
 
 }
+
+let update_eventos = async() => {
+
+    carrito = await obtener_carrito_usuario(usuario);
+
+    for (let i = 0; i < carrito[0]['compras'].length; i++) {
+        if (carrito[0]['compras'][i].evento != 'BORRADO') {
+            let evento_id = carrito[0]['compras'][i]['evento'];
+            let evento_cantidad = carrito[0]['compras'][i]['cantidad'];
+            let evento_por_id = await obtener_evento_id(evento_id);
+            let num = evento_por_id[0].cantidad_entradas_restante;
+            if (num < evento_cantidad) {
+                Swal.fire({
+                    type: 'warning',
+                    title: 'Disculpe',
+                    text: `En este momento no hay suficientes entradas para el evento: ${evento_por_id[0].nombre}`,
+                    confirmButtonText: 'Entendido',
+                })
+            } else {
+                num = num - evento_cantidad;
+                await restar_entradas(evento_id, num);
+                await registrar_compra(evento_id, usuario);
+
+            }
+
+        }
+    }
+
+}
+
+
 let borrar = async(id_carrito, id_destino) => {
-    borrar_evento(id_carrito, id_destino);
-    llenar_carrito();
+    await borrar_evento(id_carrito, id_destino);
+    await llenar_carrito();
     update_total();
 }
 
+
+let comprar = async() => {
+    if (tarjetas.value != '-') {
+        update_eventos();
+        borrar_carrito_usuario(usuario);
+        Swal.fire({
+            type: 'success',
+            title: 'Gracias por su compra',
+            text: 'Su compra ha sido registrada, ¡Nosotros te llevamos!',
+            confirmButtonText: 'Entendido',
+        }).then(function() {
+            crear_bitacora('Compra', `Compra de tiquete usuario:${correo}`);
+            location.reload();
+        });
+
+    } else {
+        Swal.fire({
+            type: 'warning',
+            title: 'Error',
+            text: 'Por favor seleccione un método de pago',
+            confirmButtonText: 'Entendido',
+        })
+    };
+
+};
 
 volver.addEventListener('click', function() {
 

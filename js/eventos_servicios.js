@@ -74,3 +74,60 @@ let comentar_evento = async(_id, cliente_id, comentario) => {
             console.log(error);
         });
 };
+
+let buscar_cliente_id = async(_id) => {
+    let lista_cliente;
+    await axios({
+            method: 'get',
+            url: `http://localhost:3000/api/listar_cliente_id/${_id}`,
+            responseType: 'json',
+
+        }).then(function(res) {
+            lista_cliente = res.data.clientes;
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    return lista_cliente;
+};
+
+let restar_entradas = async(_id, num) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/restar_entradas',
+            responseType: 'json',
+            //body
+            data: {
+                _id,
+                num,
+
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};
+
+let registrar_compra = async(_id, usuario) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/agregar_compra',
+            responseType: 'json',
+            //body
+            data: {
+                _id,
+                usuario
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};

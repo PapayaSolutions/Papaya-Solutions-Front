@@ -16,7 +16,7 @@ const label_nacimiento = document.querySelector('#fecha_nac');
 
 const input_correo = document.querySelector('#correo');
 const contrasena = document.querySelector('#contrasena');
-
+const volver = document.querySelector('#volver');
 
 
 const input_provincia = document.querySelector('#txt_provincia_cliente');
@@ -690,3 +690,8 @@ if (_id) {
 } else {
     console.log('No se pudo editar')
 };
+
+volver.addEventListener('click', function() {
+
+    window.location.href = localStorage.getItem('previo');
+});

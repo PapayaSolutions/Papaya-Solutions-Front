@@ -2,7 +2,7 @@
 
 const tbody = document.querySelector('#tbl_clientes tbody');
 const input_filtro = document.querySelector('#bnr_input');
-const btn_estado = document.querySelector('btn_estado');
+const btn_estado = document.querySelector('#btn_estado');
 
 
 let lista_encargados;

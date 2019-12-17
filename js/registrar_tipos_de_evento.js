@@ -4,6 +4,8 @@ const input_nombre = document.querySelector("#categoria");
 const img_container = document.querySelector('.img_container').parentElement;
 let botn = document.querySelector('#btn_agregar_imagen');
 let input_imagen = '';
+const formulario = document.querySelector('#categoria');
+const imagen = document.querySelector('#imagen_preview');
 //--------------------------- CLOUDINARY WIDGET --------------------------------------------------------
 var myWidget1 = cloudinary.createUploadWidget({
     cloudName: 'pypsolutionscr',
@@ -12,12 +14,20 @@ var myWidget1 = cloudinary.createUploadWidget({
 }, (error, result) => {
     if (!error && result && result.event === "success") {
         console.log('Done! Here is the image info: ', result.info);
-        document.querySelector('#imagen_preview').src = result.info.secure_url;
+        imagen.src = result.info.secure_url;
         input_imagen = result.info.secure_url;
     }
 });
 let validar = () => {
     let error = false;
+    if (imagen.src == 'img/placeholder.png') {
+        error = true;
+        img_container.classList.add('error')
+
+    } else {
+        img_container.classList.remove('error')
+
+    }
     if (input_imagen == '') {
         error = true;
         img_container.classList.add('error')
@@ -56,6 +66,8 @@ let validar3 = async() => {
             confirmButtonText: 'Entendido',
         }).then(function() {
             llenar_tabla();
+            formulario.innerHTML = '';
+            imagen.src = 'img/placeholder.png';
         });
     }
 };

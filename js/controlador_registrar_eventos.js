@@ -292,6 +292,10 @@ let obtener_datos = async() => {
             title: 'Registro realizado con éxito.',
             text: 'El evento ha sido almacenado.',
             confirmButtonText: 'Entendido'
+        }).then(function() {
+            crear_bitacora('Registro', `Registro de nuevo evento: ${nombre}.`);
+
+            window.location.href = 'listar_eventos.html';
         });
     }
 };

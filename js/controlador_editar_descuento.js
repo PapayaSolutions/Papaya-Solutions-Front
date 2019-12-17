@@ -115,10 +115,11 @@ function guardar_datos(nombre, desc, porcentaje, estado2) {
 
         Swal.fire({
             type: 'success',
-            title: 'Modificación realizada con éxito',
-            text: 'El impuesto ha sido almacenado',
-            confirmButtonText: 'Entendido',
+            title: 'Modificación realizada con exito',
+            text: 'El descuento ha sido modificado',
+            confirmButtonText: 'Entendido'
         }).then(function() {
+            crear_bitacora('Modificación', `Edición de descuento: ${p_nombre}.`);
             window.location.href = 'listar_descuento.html';
         });
     }
@@ -130,5 +131,5 @@ function guardar_datos(nombre, desc, porcentaje, estado2) {
 if (id_descuento) {
     llenar_tabla();
 } else {
-    console.log('Selecione un porducto antes de editarlo')
+    console.log('Selecione un descuento antes de editarlo')
 };

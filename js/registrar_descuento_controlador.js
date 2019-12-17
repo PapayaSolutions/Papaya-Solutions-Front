@@ -67,15 +67,16 @@ let obtener_datos = () => {
 
         Swal.fire({
             type: 'success',
-            title: 'Registro realizado con éxito.',
-            text: 'El impuesto ha sido almacenado.',
-            confirmButtonText: 'Entendido',
-            customClass: {
-                popup: 'animated tada'
-            }
+            title: 'Registro realizado con exito',
+            text: 'El descuento ha sido almacenado',
+            confirmButtonText: 'Entendido'
+        }).then(function() {
+            crear_bitacora('Registro', `Registro de nuevo descuento: ${nombre}.`);
+            document.getElementById("formulario_prin").reset();
+            window.location.href = 'listar_descuento.html';
         });
 
-        document.getElementById("formulario_prin").reset();
+
     }
 };
 

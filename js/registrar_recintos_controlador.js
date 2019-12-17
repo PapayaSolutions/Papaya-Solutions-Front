@@ -10,7 +10,7 @@ const input_asientos_accesibilidad = document.querySelector('#txt_asientos_acces
 const input_latitud = document.querySelector('#txt_latitud');
 const input_longitud = document.querySelector('#txt_longitud');
 const btn_registrar = document.querySelector('#btn_registrar');
-
+const imagen = document.querySelector('#imagen_preview')
 
 // function para validar que hayan datos
 const validar = () => {
@@ -88,7 +88,13 @@ const validar = () => {
         input_longitud.classList.remove('error');
     }
 
-
+    if (imagen.src == 'img/default-avatar.png') {
+        error = true;
+        input_longitud.classList.add('error');
+    } else {
+        error = false;
+        input_longitud.classList.remove('error');
+    }
 
     return error;
 };
@@ -700,6 +706,7 @@ let obtener_datos = () => {
     let latitud = input_latitud.value;
     let longitud = input_longitud.value;
     let estado = 'Activo';
+    let url_imagen = imagen.src;
 
     let capacidad = (parseInt(asientos_accesibilidad, 10) + parseInt(asientos_tradicionales, 10))
     console.log(nombre)
@@ -717,15 +724,35 @@ let obtener_datos = () => {
     } else {
 
 
-        registrar_recinto(nombre, direccion, canton, provincia, distrito, capacidad, asientos_tradicionales, asientos_accesibilidad, latitud, longitud, estado)
+        registrar_recinto(
+            nombre,
+            direccion,
+            canton,
+            provincia,
+            distrito,
+            capacidad,
+            asientos_tradicionales,
+            asientos_accesibilidad,
+            latitud,
+            longitud,
+            url_imagen,
+            estado);
 
         Swal.fire({
             type: 'success',
-            title: 'Registro realizado con éxito.',
-            text: 'El recinto ha sido almacenado.',
-        })
+            title: 'Registro realizado con exito',
+            text: 'El recinto ha sido almacenado',
+            confirmButtonText: 'Entendido'
+        }).then(function() {
+            crear_bitacora('Registro', `Registro de nuevo recinto: ${nombre}.`);
+            document.getElementById("form_rec").reset();
+            window.location.href = 'listar_recintos.html';
+        });
 
-        document.getElementById("form_rec").reset();
+
+
+
+
     };
 };
 

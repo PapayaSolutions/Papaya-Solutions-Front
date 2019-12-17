@@ -755,7 +755,7 @@ function popular_distritos(pprovincia, pcanton, pdistritos) {
 }
 
 // function obtener_datos(){}
-let obtener_datos = () => {
+let obtener_datos = async() => {
     let p_nombre = input_p_nombre.value;
     let s_nombre = input_s_nombre.value;
     let p_apellido = input_p_apellido.value;
@@ -794,8 +794,9 @@ let obtener_datos = () => {
         })
 
     } else {
-        registrar_usuario(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,
+        await registrar_cliente(p_nombre, s_nombre, p_apellido, s_apellido, correo, identificacion,
             f_nacimiento, edad_cliente, genero, provincia, canton, distrito, direccion, url_avatar, codigov);
+        await registrar_usuario(correo, codigov);
 
         Swal.fire({
             type: 'success',

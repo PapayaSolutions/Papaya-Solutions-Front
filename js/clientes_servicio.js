@@ -1,29 +1,45 @@
 'use strict';
 
-let registrar_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo, pidentificacion,
-    pf_nacimiento, pgenero, pprovincia, pcanton, pdistrito, pdireccion, url_avatar, codigov) => {
+let registrar_cliente = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo, pidentificacion,
+    pf_nacimiento, pedad_cliente, pgenero, pprovincia, pcanton, pdistrito, pdireccion, url_avatar, codigov) => {
     await axios({
-        method: 'post',
-        url: 'http://localhost:3000/api/registrar-cliente',
-        responseType: 'json',
-        //body 
-        data: {
-            p_nombre: pp_nombre,
-            s_nombre: ps_nombre,
-            p_apellido: pp_apellido,
-            s_apellido: ps_apellido,
-            correo_cliente: pcorreo,
-            identificacion: pidentificacion,
-            f_nacimiento: pf_nacimiento,
-            genero: pgenero,
-            provincia: pprovincia,
-            canton: pcanton,
-            distrito: pdistrito,
-            direccion: pdireccion,
-            url_avatar: url_avatar,
-            codigov: codigov,
-        }
-    })
+            method: 'post',
+            url: 'http://localhost:3000/api/registrar-cliente',
+            responseType: 'json',
+            //body 
+            data: {
+                p_nombre: pp_nombre,
+                s_nombre: ps_nombre,
+                p_apellido: pp_apellido,
+                s_apellido: ps_apellido,
+                correo_cliente: pcorreo,
+                identificacion: pidentificacion,
+                f_nacimiento: pf_nacimiento,
+                edad: pedad_cliente,
+                genero: pgenero,
+                provincia: pprovincia,
+                canton: pcanton,
+                distrito: pdistrito,
+                direccion: pdireccion,
+                url_avatar: url_avatar,
+                codigov: codigov,
+            }
+        }).then(function(res) {
+            console.log(res.data);
+
+        })
+        .catch(function(error) {
+            console.log(error);
+            Swal.fire({
+                type: 'warning',
+                title: 'Error!',
+                text: 'No se pudo registrar el nuevo cliente',
+                confirmButtonText: 'Entendido',
+            })
+        });
+}
+
+let registrar_usuario = async(pcorreo, codigov) => {
     await axios({
             method: 'post',
             url: 'http://localhost:3000/api/registrar-user-cli',

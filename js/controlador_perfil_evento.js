@@ -33,14 +33,18 @@ let id = localStorage.getItem('id_evento');
 let datos_evento;
 let datos_mapa;
 let lugar;
+let usuario_id;
 let latitud;
 let longitud;
 let marker;
+let clientes;
 let cliente_id = sessionStorage.getItem('usuario_id');
+
 
 let llenar_perfil = async() => {
 
     datos_evento = await obtener_evento_id(id);
+
     lugar = datos_evento[0]['recinto'];
     datos_mapa = await obtener_recinto_nombre(lugar);
 
@@ -138,38 +142,41 @@ let llenar_perfil = async() => {
     }
     for (let i = 0; i < datos_evento[0]['calificaciones'].length; i++) {
 
-        let usuario_comt = datos_evento[0]['calificaciones'][i]['usuario'];
+        let usuario_id = datos_evento[0]['calificaciones'][i]['usuario'];
+        let comentario = datos_evento[0]['calificaciones'][i]['comentario'];
+        let cliente = await obtener_cliente_mail(datos_evento[0]['calificaciones'][i]['correo']);
 
-        let usuario_id = await buscar_cliente_id(usuario_comt);
+
 
         let div_contenedor = document.createElement('div');
         div_contenedor.classList.add('contenedor');
+
         let foto_contenedor = document.createElement('div');
+        foto_contenedor.classList.add('contenedor_img');
 
         let comentario_contenedor = document.createElement('div');
         comentario_contenedor.classList.add('contenedor_coment');
 
         let contenedor_coment = document.createElement('p');
-        contenedor_coment.innerText = datos_evento[0]['calificaciones'][i]['comentario'];
+        contenedor_coment.innerText = comentario;
 
         let contenedor_link = document.createElement('a');
         contenedor_link.href = '#';
+        contenedor_link.innerText = cliente[0]['p_nombre'];
 
         let contenedor_user = document.createElement('span');
 
-        contenedor_link.innerText = usuario_id[0]['p_nombre'];
-
         let imagen_cont = document.createElement('img');
-        imagen_cont.src = usuario_id[0]['url_avatar'];
+        imagen_cont.src = cliente[0]['url_avatar'];
 
-        contenedor_link.dataset.destino = usuario_id[0]['_id'];
+
+        contenedor_link.dataset.destino = cliente[0]['_id'];
         contenedor_link.addEventListener('click', function() {
             localStorage.setItem("destino_id", this.dataset.destino);
             localStorage.setItem('previo', window.location.href);
             window.location.href = 'visualizar_perfil.html';
 
         });
-
         contenedor.appendChild(div_contenedor);
         div_contenedor.appendChild(foto_contenedor);
         div_contenedor.appendChild(comentario_contenedor);
@@ -399,7 +406,7 @@ let obtener_datos = () => {
             }) //  let registrar_impuesto = async(nombre, porcentaje, descripcion, estado) => {
     } else {
 
-        comentar_evento(id, cliente_id, comentario);
+        comentar_evento(id, cliente_id, comentario, sessionStorage.getItem('correo'));
         Swal.fire({
             type: 'success',
             title: 'Comentario realizado con exito',

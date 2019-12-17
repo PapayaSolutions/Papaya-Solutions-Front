@@ -635,13 +635,40 @@ let llenar_perfil = async() => {
     boton.classList.add('btn-mas');
     boton.id = ('btn_guardar')
 
-    boton.addEventListener('click', () => { guardar_datos(nombre1, nombre2, apellido1, apellido2, input_identificacion, input_direccion, input_correo, imagen_avatar, label_genero, label_provincia, label_canton, label_distrito) });
+    boton.addEventListener('click', () => {
+        guardar_datos(
+            nombre1,
+            nombre2,
+            apellido1,
+            apellido2,
+            input_identificacion,
+            input_direccion,
+            input_correo,
+            imagen_avatar,
+            label_genero,
+            label_provincia,
+            label_canton,
+            label_distrito
+        )
+    });
     boton2.appendChild(boton);
 
 };
 
 
-function guardar_datos(nombre1, nombre2, apellido1, apellido2, input_identificacion, input_direccion, input_correo, imagen_avatar, label_genero, label_provincia, label_canton, label_distrito) {
+function guardar_datos(
+    nombre1,
+    nombre2,
+    apellido1,
+    apellido2,
+    input_identificacion,
+    input_direccion,
+    input_correo,
+    imagen_avatar,
+    label_genero,
+    label_provincia,
+    label_canton,
+    label_distrito) {
 
     let p_nombre = nombre1.value;
     let s_nombre = nombre2.value;
@@ -670,7 +697,21 @@ function guardar_datos(nombre1, nombre2, apellido1, apellido2, input_identificac
             }
         })
     } else {
-        editar_cliente(_id, p_nombre, s_nombre, p_apellido, s_apellido, correo_cliente, identificacion, f_nacimiento, genero, provincia, canton, distrito, direccion, url_avatar);
+        editar_cliente(
+            _id,
+            p_nombre,
+            s_nombre,
+            p_apellido,
+            s_apellido,
+            correo_cliente,
+            identificacion,
+            f_nacimiento,
+            genero,
+            provincia,
+            canton,
+            distrito,
+            direccion,
+            url_avatar);
 
         Swal.fire({
             type: 'success',

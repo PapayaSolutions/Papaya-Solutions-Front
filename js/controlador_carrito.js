@@ -82,12 +82,20 @@ let llenar_carrito = async() => {
     let eventos = document.querySelectorAll('.evento');
 
     if (eventos.length != 0) {
+        let btn_container = document.createElement('div');
+        btn_container.classList.add('container');
         let checkout_btn = document.createElement('button');
         checkout_btn.setAttribute('type', 'button');
         checkout_btn.innerHTML = 'Comprar!';
         checkout_btn.addEventListener('click', function() {
-
             comprar();
+        });
+
+        let reservar_btn = document.createElement('button');
+        reservar_btn.setAttribute('type', 'button');
+        reservar_btn.innerHTML = 'Reservar!';
+        reservar_btn.addEventListener('click', function() {
+            reservar();
         });
 
         let total_lbl = document.createElement('label');
@@ -95,7 +103,7 @@ let llenar_carrito = async() => {
 
         let total = document.createElement('output');
         total.setAttribute('id', 'precio_total')
-        total.value = ('$ ' + total_pago);
+        total.value = ('¢ ' + total_pago);
         let check_info = document.createElement('div');
         check_info.classList.add('check_info');
         let tarjeta_lbl = document.createElement('label');
@@ -121,11 +129,14 @@ let llenar_carrito = async() => {
         checkout.appendChild(total_lbl);
         checkout.appendChild(total);
         cart_total = document.querySelector('#precio_total');
-        checkout.appendChild(checkout_btn);
+
         checkout.appendChild(check_info);
 
         check_info.appendChild(tarjeta_lbl);
         check_info.appendChild(tarjetas);
+        checkout.appendChild(btn_container);
+        btn_container.appendChild(checkout_btn);
+        btn_container.appendChild(reservar_btn);
     }
 
 }
@@ -163,8 +174,10 @@ let update_eventos = async() => {
                 })
             } else {
                 num = num - evento_cantidad;
-                await restar_entradas(evento_id, num);
+
                 await registrar_compra(evento_id, usuario);
+
+                await restar_entradas(evento_id, num);
 
             }
 
@@ -203,6 +216,53 @@ let comprar = async() => {
             confirmButtonText: 'Entendido',
         })
     };
+
+};
+let reservar_eventos = async() => {
+
+    carrito = await obtener_carrito_usuario(usuario);
+
+    for (let i = 0; i < carrito[0]['compras'].length; i++) {
+        if (carrito[0]['compras'][i].evento != 'BORRADO') {
+            let evento_id = carrito[0]['compras'][i]['evento'];
+            let evento_cantidad = carrito[0]['compras'][i]['cantidad'];
+            let evento_por_id = await obtener_evento_id(evento_id);
+            let num = evento_por_id[0].cantidad_entradas_restante;
+            if (num < evento_cantidad) {
+                Swal.fire({
+                    type: 'warning',
+                    title: 'Disculpe',
+                    text: `En este momento no hay suficientes entradas para el evento: ${evento_por_id[0].nombre}`,
+                    confirmButtonText: 'Entendido',
+                })
+            } else {
+                num = num - evento_cantidad;
+
+                await registrar_reserva(evento_id, usuario, evento_cantidad);
+
+                await restar_entradas(evento_id, num);
+
+            }
+
+        }
+    }
+
+}
+let reservar = async() => {
+
+    reservar_eventos();
+    borrar_carrito_usuario(usuario);
+    Swal.fire({
+        type: 'success',
+        title: 'Gracias por su reserva',
+        text: 'Su reserva ha sido registrada, ¡Nosotros te llevamos!',
+        confirmButtonText: 'Entendido',
+    }).then(function() {
+        crear_bitacora('Reserva', `Reserva de tiquete usuario:${correo}`);
+        location.reload();
+    });
+
+
 
 };
 

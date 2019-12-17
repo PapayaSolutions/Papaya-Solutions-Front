@@ -81,7 +81,7 @@ let llenar_clientes = async() => {
 
             let estado = fila.insertCell();
 
-            let opcions = ['Habilitado', 'Desabilitado'];
+            let opcions = ['Habilitado', 'Desabilitado', 'Baneado'];
             let estado2 = document.createElement('select');
             estado2.placeholder = lista_clientes[i]['estado'];
             estado2.value = lista_clientes[i]['estado'];

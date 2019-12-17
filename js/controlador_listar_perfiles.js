@@ -181,7 +181,7 @@ let obtener_estado = () => {
     let input_id = localStorage.setItem("destino_id", this.dataset.destino);
     let input_estado = option.value;
 
-    cambiar_estado(input_id, input_estado)
+    cambiar_estado(input_id, input_estado);
 }
 
 

@@ -259,6 +259,9 @@ let obtener_datos = async() => {
     let cantidad_maxima_usuario = input_c_maxima_evento.value;
     let descripcion = input_descripcion_evento.value;
     let URL_imagen = input_URL_imagen_evento.src;
+
+    let organizador = sessionStorage.getItem('usuario_id')
+
     let estado = 'Activo';
 
     //si hay error, entra al if. Si no hay error entra al else
@@ -278,6 +281,7 @@ let obtener_datos = async() => {
             precio_entrada,
             cantidad_maxima_usuario,
             descripcion,
+            organizador,
             URL_imagen,
             estado);
 

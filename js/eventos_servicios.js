@@ -116,3 +116,23 @@ let registrar_compra = async(_id, usuario) => {
             console.log(error);
         });
 };
+
+let registrar_reserva = async(_id, usuario, cantidad) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/agregar_reserva',
+            responseType: 'json',
+            //body
+            data: {
+                _id,
+                usuario,
+                cantidad
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};

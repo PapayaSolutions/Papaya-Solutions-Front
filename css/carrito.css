@@ -17,6 +17,11 @@ main {
     display: flex;
 }
 
+.container {
+    display: flex;
+    margin: auto;
+}
+
 #item_list {
     flex: 3;
     margin: 0px auto;
@@ -94,8 +99,14 @@ main {
     margin: auto;
 }
 
-#checkout button {
+#checkout output {
+    color: #f7882f;
+    font-size: 25px;
     margin: auto;
+}
+
+#checkout button {
+    margin: 10px;
     flex: 1;
 }
 

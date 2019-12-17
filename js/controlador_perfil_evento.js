@@ -38,6 +38,7 @@ let longitud;
 let marker;
 let cliente_id = sessionStorage.getItem('usuario_id');
 
+
 let llenar_perfil = async() => {
 
     datos_evento = await obtener_evento_id(id);
@@ -210,16 +211,17 @@ let mostrar = () => {
 
 let activar = async() => {
 
+    datos_evento = await obtener_evento_id(id);
 
-    if (usuario === 'Organizador') {
+    let dueno = datos_evento[0].organizador;
+
+    if ((usuario === 'Organizador') && (cliente_id === dueno)) {
         editar.classList.remove('hidden');
         editar.style.position = 'relative';
     } else {
         editar.classList.add('hidden');
         editar.style.position = 'absolute';
     };
-
-    datos_evento = await obtener_evento_id(id);
 
     if ((datos_evento[0]['calificaciones'].length >= 1) && ('Finalizado' === estado)) {
         for (let i = 0; i < datos_evento[0]['calificaciones'].length; i++) {

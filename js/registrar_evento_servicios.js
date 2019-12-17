@@ -8,6 +8,7 @@ let registrar_evento = async(
     precio_entrada,
     cantidad_maxima_usuario,
     descripcion,
+    organizador,
     URL_imagen,
     estado) => {
     await axios({
@@ -24,6 +25,7 @@ let registrar_evento = async(
                 cantidad_maxima_usuario: cantidad_maxima_usuario,
                 cantidad_entradas_restante: asistentes_esperados,
                 descripcion: descripcion,
+                organizador: organizador,
                 URL_imagen: URL_imagen,
                 estado: estado
             }

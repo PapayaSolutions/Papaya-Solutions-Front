@@ -705,7 +705,7 @@ let obtener_datos = () => {
     let asientos_accesibilidad = input_asientos_accesibilidad.value;
     let latitud = input_latitud.value;
     let longitud = input_longitud.value;
-    let estado = 'Activo';
+    let estado = 'Habilitado';
     let url_imagen = imagen.src;
 
     let capacidad = (parseInt(asientos_accesibilidad, 10) + parseInt(asientos_tradicionales, 10))

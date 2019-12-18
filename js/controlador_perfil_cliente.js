@@ -8,8 +8,11 @@ const direccion = document.querySelector('#direccion');
 const identificacion = document.querySelector('#identificacion');
 const correo_cliente = document.querySelector('#correo');
 const imagen_avatar = document.querySelector('#avat');
-
 const div_i = document.querySelectorAll('#volver a i');
+const div_atarjeta = document.querySelectorAll('#agregar_info_tarjeta a button');
+const h1_preferencias = document.querySelectorAll('#preferencias h1');
+const cards_prefer = document.querySelectorAll('#cont_cartas div');
+
 const editar_perfil = document.querySelector('#tbl_editar tbody');
 const contenedor = document.querySelector('#cards');
 const tarjeta = document.querySelector('#cards_tarjeta');
@@ -17,6 +20,7 @@ const tarjeta = document.querySelector('#cards_tarjeta');
 let id;
 let email;
 let lista_clientes;
+let lista_org;
 let usuario = sessionStorage.getItem('tipo_usuario');
 let lista_tipo_de_evento;
 
@@ -134,44 +138,45 @@ let llenar_tabla = async() => {
     localStorage.setItem('id_tarjeta', JSON.stringify(lista_clientes));
     JSON.parse(localStorage.getItem('id_tarjeta'));
 
+    let mostrar_cards = async() => {
+
+        lista_tipo_de_evento = await listar_tipos_de_evento();
+
+        contenedor.innerHTML = '';
+        for (let i = 0; i < lista_tipo_de_evento.length; i++) {
+            let div_card = document.createElement('div');
+            div_card.classList.add('card');
+
+            let header = document.createElement('header');
+
+            let nombre = document.createElement('span');
+            nombre.innerText = lista_tipo_de_evento[i]['nombre'];
+
+            let imagen = document.createElement('img');
+            imagen.src = lista_tipo_de_evento[i]['URL']
+            imagen.id = `img_${lista_tipo_de_evento[i]['_id']}`;
+
+            contenedor.appendChild(div_card);
+
+            div_card.appendChild(header);
+            div_card.appendChild(nombre);
+            div_card.appendChild(imagen);
+
+        };
+    };
+
+    mostrar_cards();
+
 };
 
 llenar_tabla();
 
-let mostrar_cards = async() => {
-
-    lista_tipo_de_evento = await listar_tipos_de_evento();
-
-    contenedor.innerHTML = '';
-    for (let i = 0; i < lista_tipo_de_evento.length; i++) {
-        let div_card = document.createElement('div');
-        div_card.classList.add('card');
-
-        let header = document.createElement('header');
-
-        let nombre = document.createElement('span');
-        nombre.innerText = lista_tipo_de_evento[i]['nombre'];
-
-        let imagen = document.createElement('img');
-        imagen.src = lista_tipo_de_evento[i]['URL']
-        imagen.id = `img_${lista_tipo_de_evento[i]['_id']}`;
-
-        contenedor.appendChild(div_card);
-
-        div_card.appendChild(header);
-        div_card.appendChild(nombre);
-        div_card.appendChild(imagen);
-
-    };
-};
-
-mostrar_cards();
-
-
 
 if (conectado) {
     switch (tipo_usuario) {
+        case 'Admin':
 
+            break;
         case 'Cliente':
             div_i[0].classList.add('ocultar');
             break;
@@ -181,7 +186,8 @@ if (conectado) {
             break;
         case 'Organizador':
             div_i[0].classList.add('ocultar');
-
+            div_atarjeta[0].classList.add('ocultar');
+            h1_preferencias[0].classList.add('ocultar');
             break;
         default:
 

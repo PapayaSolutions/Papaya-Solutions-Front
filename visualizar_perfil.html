@@ -70,7 +70,8 @@
 
                                 <div class="espacio_info">
                                     <p>Identificación:
-                                        <output id="identificacion"></output></p>
+                                        <output id="identificacion"></output>
+                                        <output id="identificacion_org"></output></p>
                                 </div>
 
                                 <table id="tbl_perfil">
@@ -84,6 +85,7 @@
 
                                 <div class="espacio_info">
                                     <output id="direccion"></output>
+                                    <output id="direccion_org"></output>
                                 </div>
 
                             </div>
@@ -113,10 +115,12 @@
                             </thead>
                             <tbody>
                                 <div id="nombre"></div>
+                                <div id="nombre_org"></div>
                             </tbody>
                         </table>
 
                         <div id="correo"></div>
+                        <div id="correo_org"></div>
 
                         <div id="mini_spacer"></div>
 
@@ -128,12 +132,14 @@
 
                             <div class="espacio_info">
                                 <p>Fecha de nacimiento:
-                                    <output id="nacimiento"></output></p>
+                                    <output id="nacimiento"></output>
+                                    <output id="nacimiento_org"></output></p>
                             </div>
 
                             <div class="espacio_info">
                                 <p>Género:
-                                    <output id="genero"></output></p>
+                                    <output id="genero"></output>
+                                    <output id="genero_org"></output></p>
                             </div>
 
                         </div>
@@ -153,10 +159,14 @@
         <div id="spacer"></div>
         <hr id="preferencia">
         <center>
-            <h1>Preferencias</h1>
+            <div id="preferencias">
+                <h1>Preferencias</h1>
+            </div>
         </center>
 
-        <div id="cards"></div>
+        <div id="cont_cartas">
+            <div id="cards"></div>
+        </div>
 
     </main>
 
@@ -174,8 +184,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/controlador_general.js "></script>
     <script src="js/clientes_servicio.js "></script>
+    <script src="js/organizadores_servicios.js"></script>
     <script src="js/bitacora_servicios.js"></script>
     <script src="js/controlador_perfil_cliente.js "></script>
+    <script src="js/controlador_perfil_organizador.js"></script>
 
 </body>
 

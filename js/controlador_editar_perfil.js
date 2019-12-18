@@ -30,7 +30,7 @@ const label_distrito = document.querySelector('#distrito');
 
 const input_direccion = document.querySelector('#direccion');
 const tbody = document.querySelector('#tbl_perfil tbody');
-const bguardar = document.querySelector('#tbl_guardar tbody');
+const bguardar = document.querySelector('#editar_b');
 
 let datos_perfil;
 let usuario = sessionStorage.getItem('tipo_usuario');
@@ -582,9 +582,53 @@ function popular_distritos(pprovincia, pcanton, pdistritos) {
     }
 }
 
+document.getElementById("contrasena").disabled = true;
+
 // Validación de datos
-let validar = (nombre1, nombre2, apellido1, apellido2) => {
+let validar = () => {
     let error = false;
+
+    if (nombre1.value == '') {
+        error = true;
+        nombre1.classList.add('error');
+    } else {
+        nombre1.classList.remove('error');
+    }
+
+    if (nombre2.value == '') {
+        error = true;
+        nombre2.classList.add('error');
+    } else {
+        nombre2.classList.remove('error');
+    }
+
+    if (apellido1.value == '') {
+        error = true;
+        apellido1.classList.add('error');
+    } else {
+        apellido1.classList.remove('error');
+    }
+
+    if (apellido2.value == '') {
+        error = true;
+        apellido2.classList.add('error');
+    } else {
+        apellido2.classList.remove('error');
+    }
+
+    if (input_identificacion.value == '') {
+        error = true;
+        input_identificacion.classList.add('error');
+    } else {
+        input_identificacion.classList.remove('error');
+    }
+
+    if (input_correo.value == '') {
+        error = true;
+        input_correo.classList.add('error');
+    } else {
+        input_correo.classList.remove('error');
+    }
 
     return error;
 }
@@ -617,7 +661,6 @@ let llenar_perfil = async() => {
         let fila = tbody.insertRow();
 
         fila.insertCell().innerHTML = datos_perfil[0]['metodos_pago'][i]['nombre'];
-        fila.insertCell().innerHTML = 'tipo';
         fila.insertCell().innerHTML = datos_perfil[0]['metodos_pago'][i]['tarjeta'];
         fila.insertCell().innerHTML = datos_perfil[0]['metodos_pago'][i]['codigo'];
         fila.insertCell().innerHTML = datos_perfil[0]['metodos_pago'][i]['vencimiento'];
@@ -626,49 +669,10 @@ let llenar_perfil = async() => {
 
     };
 
-    let guardar = bguardar.insertRow();
-
-    let boton2 = guardar.insertCell();
-    let boton = document.createElement('button');
-    boton.innerText = 'Guardar';
-    boton.classList.add('btn_guardar');
-    boton.classList.add('btn-mas');
-    boton.id = ('btn_guardar')
-
-    boton.addEventListener('click', () => {
-        guardar_datos(
-            nombre1,
-            nombre2,
-            apellido1,
-            apellido2,
-            input_identificacion,
-            input_direccion,
-            input_correo,
-            imagen_avatar,
-            label_genero,
-            label_provincia,
-            label_canton,
-            label_distrito
-        )
-    });
-    boton2.appendChild(boton);
-
 };
+llenar_perfil();
 
-
-function guardar_datos(
-    nombre1,
-    nombre2,
-    apellido1,
-    apellido2,
-    input_identificacion,
-    input_direccion,
-    input_correo,
-    imagen_avatar,
-    label_genero,
-    label_provincia,
-    label_canton,
-    label_distrito) {
+let modificar_datos = async() => {
 
     let p_nombre = nombre1.value;
     let s_nombre = nombre2.value;
@@ -698,7 +702,6 @@ function guardar_datos(
         })
     } else {
         editar_cliente(
-            _id,
             p_nombre,
             s_nombre,
             p_apellido,
@@ -711,7 +714,9 @@ function guardar_datos(
             canton,
             distrito,
             direccion,
-            url_avatar);
+        );
+
+        crear_bitacora('Editar', 'Editar información del cliente');
 
         Swal.fire({
             type: 'success',
@@ -726,13 +731,9 @@ function guardar_datos(
 
 };
 
-if (_id) {
-    llenar_perfil();
-} else {
-    console.log('No se pudo editar')
-};
-
 volver.addEventListener('click', function() {
 
     window.location.href = localStorage.getItem('previo');
 });
+
+bguardar.addEventListener('click', modificar_datos);

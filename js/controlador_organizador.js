@@ -744,6 +744,7 @@ let obtener_datos = () => {
             experencia,
             estado,
             tipo,
+            codigov,
         );
 
         registrar_organizador_user(correo, codigov)

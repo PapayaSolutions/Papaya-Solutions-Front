@@ -181,7 +181,7 @@ let obtener_datos = () => {
             confirmButtonText: 'Entendido',
 
         }).then(function() {
-            // window.location.href = 'visualizar_perfil.html';
+            window.location.href = 'visualizar_perfil.html';
         });
     }
 };

@@ -1,6 +1,6 @@
 'use strict';
 
-let registrar_organizador = async(p_nombre, s_nombre, p_apellido, s_apellido, correo, genero, identificacion, nacimiento, provincia, canton, distrito, direccion, experiencia, estado, tipo) => {
+let registrar_organizador = async(p_nombre, s_nombre, p_apellido, s_apellido, correo, genero, identificacion, nacimiento, provincia, canton, distrito, direccion, experiencia, estado, tipo, codigov) => {
 
     await axios({
                 method: 'post',
@@ -23,7 +23,8 @@ let registrar_organizador = async(p_nombre, s_nombre, p_apellido, s_apellido, co
                     direccion: direccion,
                     experiencia: experiencia,
                     estado: estado,
-                    tipo: tipo
+                    tipo: tipo,
+                    codigov: codigov,
 
                 }
             }

@@ -127,7 +127,8 @@ const input_precio_evento = document.querySelector('#precio_evento');
 const input_c_maxima_evento = document.querySelector('#c_maxima_evento');
 const input_descripcion_evento = document.querySelector('#descripcion_evento');
 const input_URL_imagen_evento = document.querySelector('#imagen_preview');
-
+let today;
+let fechacomp;
 const btn_registro = document.querySelector('#btn_registro');
 
 input_nombre_evento.innerHTML = '';
@@ -194,32 +195,70 @@ let validar = () => {
         console.log('revisar la imagen')
     }
 
-    if (input_fechas.length == 0) {
-        error = true;
-        console.log('falta la fecha')
-    } else {
-        if (input_fechas[0].value == '') {
+    input_fechas = document.querySelectorAll('.input_date');
+    input_horas = document.querySelectorAll('.input_time');
+    input_horas2 = document.querySelectorAll('.input_time2');
+    today = new Date();
+    for (let i = 0; i < input_horas.length; i++) {
+
+        if (input_fechas[i].length == 0) {
             error = true;
             console.log('falta la fecha')
+            input_fechas[i].classList.add('error');
+        } else {
+            if (input_fechas[i].value == '') {
+                error = true;
+                console.log('falta la fecha')
+                input_fechas[i].classList.add('error');
+            } else {
+
+            }
         }
-    }
-    if (input_horas.length == 0) {
-        error = true;
-        console.log('falta la hora')
-    } else {
-        if (input_horas[0].value == '') {
+        fechacomp = new Date(input_fechas[i].value);
+        if (today > fechacomp) {
+            input_fechas[i].classList.add('error');
+            console.log('hoy es despues');
+        } else {
+            input_fechas[i].classList.remove('error');
+            console.log('hoy es antes');
+        }
+
+
+        if (input_horas[i].length == 0) {
             error = true;
             console.log('falta la hora')
+            input_horas[i].classList.add('error');
+        } else {
+            if (input_horas[i].value == '') {
+                error = true;
+                console.log('falta la hora')
+                input_horas[i].classList.add('error');
+            } else {
+                input_horas[i].classList.remove('error');
+            }
         }
-    }
-    if (input_horas2.length == 0) {
-        error = true;
-        console.log('falta la hora 2')
-    } else {
-        if (input_horas2[0].value == '') {
+        if (input_horas2[i].length == 0) {
             error = true;
             console.log('falta la hora 2')
+            input_horas2[i].classList.add('error');
+        } else {
+            if (input_horas2[i].value == '') {
+                error = true;
+                input_horas2[i].classList.add('error');
+                console.log('falta la hora 2')
+            } else {
+                input_horas2[i].classList.remove('error');
+            }
         }
+
+        if (validate(input_horas[i].value, input_horas2[i].value)) {
+            error = true;
+            console.log('1 es mayor')
+            input_horas[i].classList.add('error');
+        } else {
+            input_horas[i].classList.remove('error');
+        }
+
     }
 
     return error;
@@ -300,6 +339,29 @@ let obtener_datos = async() => {
     }
 };
 
+function validate(dt1, dt2) {
+
+    var jdt1 = Date.parse('20 Aug 2000 ' + dt1);
+    var jdt2 = Date.parse('20 Aug 2000 ' + dt2);
+
+    if (isNaN(jdt1)) {
+        console.log('invalid start time');
+        return false;
+    }
+    if (isNaN(jdt2)) {
+        console.log('invalid end time');
+        return false;
+    }
+    if (jdt1 > jdt2) {
+        console.log('start is greater');
+        return true;
+    } else {
+        console.log('start is less equal');
+        return false;
+    }
+
+
+}
 
 // Eventos asociados a los botones o inputs
 

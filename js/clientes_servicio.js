@@ -142,6 +142,40 @@ let obtener_cliente_id = async(_id) => {
     return lista_cliente;
 };
 
+let edit_usuario = async(id, pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo, pidentificacion,
+    pf_nacimiento, pgenero, pprovincia, pcanton, pdistrito, pdireccion) => {
+    let respuesta = false;
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/edit_usuario',
+            responseType: 'json',
+            //body
+            data: {
+                _id: id,
+                p_nombre: pp_nombre,
+                s_nombre: ps_nombre,
+                p_apellido: pp_apellido,
+                s_apellido: ps_apellido,
+                correo_cliente: pcorreo,
+                identificacion: pidentificacion,
+                f_nacimiento: pf_nacimiento,
+                genero: pgenero,
+                provincia: pprovincia,
+                canton: pcanton,
+                distrito: pdistrito,
+                direccion: pdireccion,
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+            respuesta = res;
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    return respuesta;
+};
+
 let obtener_cliente_mail = async(mail) => {
     let lista_cliente;
     await axios({

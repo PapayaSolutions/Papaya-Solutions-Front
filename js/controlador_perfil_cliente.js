@@ -92,11 +92,11 @@ let llenar_tabla = async() => {
 
         habit_btn.addEventListener('click', function() {
             habilitar_tarjeta(id, this.dataset.id);
-            crear_bitacora('Habilitar', 'Habilitar tarjeta');
+            crear_bitacora('Habilitar', `Habilitar tarjeta: ${email}`);
         });
         deshabit_btn.addEventListener('click', function() {
             deshabilitar_tarjeta(id, this.dataset.id);
-            crear_bitacora('Deshabilitar', 'Deshabilitar tarjeta');
+            crear_bitacora('Deshabilitar', `Deshabilitar tarjeta: ${email}`);
         });
 
 

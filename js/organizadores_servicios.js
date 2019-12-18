@@ -71,7 +71,7 @@ let obtener_organizador_id = async(_id) => {
     }
 };
 
-let registrar_organizador_user = async(correo, contrasena, codigov, tipo, estado) => {
+let registrar_organizador_user = async(correo, codigov) => {
 
     await axios({
                 method: 'post',
@@ -81,12 +81,10 @@ let registrar_organizador_user = async(correo, contrasena, codigov, tipo, estado
 
                     // Validar con route
                     correo: correo,
-                    contrasena: contrasena,
                     codigov: codigov,
-                    tipo: tipo,
-                    estado: estado,
 
                 }
+
             }
 
         )

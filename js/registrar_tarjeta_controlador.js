@@ -164,9 +164,8 @@ let obtener_datos = () => {
     } else if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: 'Verifique los campos',
-            animation: true,
-            text: '¡Hay espacios que deben ser llenados!',
+            title: 'Algunos de los campos se encuentran incorrectos.',
+            text: 'Por favor revise los campos en rojo.',
             confirmButtonText: 'Entendido',
 
         })

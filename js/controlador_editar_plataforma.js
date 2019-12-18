@@ -790,9 +790,8 @@ let modificar_datos = async() => {
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: '¡Atencion!',
-            animation: true,
-            text: 'Hay espacios que deben ser modificados',
+            title: 'Algunos de los campos se encuentran incorrectos.',
+            text: 'Por favor revise los campos en rojo',
             confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'

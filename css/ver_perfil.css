@@ -210,3 +210,29 @@
     .hidden {
         display: none;
     }
+    
+    .btn_container {
+        padding-top: 0px;
+        margin: auto;
+        text-align: center;
+    }
+    
+    .btn_c {
+        display: inline-block;
+        margin: auto;
+        position: relative;
+        background: #f7882f;
+        font-size: 16px;
+        letter-spacing: 3px;
+        padding: 12px 35px;
+        border-radius: 10rem;
+        color: #ececec;
+        overflow: hidden;
+    }
+    
+    .btn:hover {
+        background: transparent;
+        color: #f7882f;
+        border: 1px solid #f7882f;
+        border-radius: 10rem;
+    }

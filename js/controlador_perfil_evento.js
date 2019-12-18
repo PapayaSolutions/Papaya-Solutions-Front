@@ -145,6 +145,7 @@ let llenar_perfil = async() => {
 
         let usuario_id = datos_evento[0]['calificaciones'][i]['usuario'];
         let comentario = datos_evento[0]['calificaciones'][i]['comentario'];
+        let correo = datos_evento[0]['calificaciones'][i]['correo'];
         let cliente = await obtener_cliente_mail(correo);
 
         let div_contenedor = document.createElement('div');

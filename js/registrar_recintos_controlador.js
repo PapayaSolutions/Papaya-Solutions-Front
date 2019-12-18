@@ -705,7 +705,7 @@ let obtener_datos = () => {
     let asientos_accesibilidad = input_asientos_accesibilidad.value;
     let latitud = input_latitud.value;
     let longitud = input_longitud.value;
-    let estado = 'Activo';
+    let estado = 'Habilitado';
     let url_imagen = imagen.src;
 
     let capacidad = (parseInt(asientos_accesibilidad, 10) + parseInt(asientos_tradicionales, 10))
@@ -717,8 +717,8 @@ let obtener_datos = () => {
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: 'Porfavor ingrese todos los datos requeridos.',
-            text: 'Los espacios en rojo deben ser llenados.',
+            title: 'Algunos de los campos se encuentran incorrectos.',
+            text: 'Por favor revise los campos en rojo.',
         })
 
     } else {

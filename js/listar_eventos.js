@@ -278,6 +278,8 @@ function titulo_categoria(evento) {
 let preferencias = document.querySelectorAll('.alinear_nav');
 let conectado2 = sessionStorage.getItem('conectado');
 let tipo_usuario2 = sessionStorage.getItem('tipo_usuario');
+let usuario_id = sessionStorage.getItem('usuario_id');
+console.log(usuario_id);
 // no li numeros : 0 - perfil, 1 carrito, 2 campana, 3 configurar, 4- confi2, 5 iniciar, - 6 cerrar. 4- confi2
 if (conectado2) {
     switch (tipo_usuario2) {

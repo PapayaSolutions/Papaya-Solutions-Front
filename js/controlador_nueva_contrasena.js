@@ -3,7 +3,7 @@
 const input_correo = document.querySelector('#correo');
 const input_contrasena = document.querySelector('#contrasena');
 const input_btn_verificar = document.querySelector('#btn_verificar');
-
+input_correo.value = '';
 // function obtener_datos
 let obtener_datos = () => {
     let correo = input_correo.value;

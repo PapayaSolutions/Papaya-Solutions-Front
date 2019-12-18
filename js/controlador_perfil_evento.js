@@ -220,7 +220,7 @@ let activar = async() => {
 
     let dueno = datos_evento[0].organizador;
 
-    if ((usuario === 'Organizador') && (cliente_id === dueno)) {
+    if (((usuario === 'Organizador') || (usuario === 'Admin')) && (cliente_id === dueno)) {
         editar.classList.remove('hidden');
         editar.style.position = 'relative';
     } else {

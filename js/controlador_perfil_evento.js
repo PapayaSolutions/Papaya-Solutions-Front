@@ -27,6 +27,7 @@ const editar = document.querySelector('#editar');
 const comentarios = document.querySelector('#calificar');
 const finalizado = document.querySelector('#item8');
 const btn_carrito = document.querySelector('#btn_carrito');
+let correo = sessionStorage.getItem('correo');
 let estado;
 let usuario = sessionStorage.getItem('tipo_usuario');
 let id = localStorage.getItem('id_evento');
@@ -113,7 +114,7 @@ let llenar_perfil = async() => {
         }
 
     } else {
-        descuentos.value = '¡Regístrate para obtener un descuento del 15% en todas tus compras con Míshka!';
+        descuentos.value = '¡El evento no tiene descuentos disponibles!';
 
     }
 
@@ -144,9 +145,7 @@ let llenar_perfil = async() => {
 
         let usuario_id = datos_evento[0]['calificaciones'][i]['usuario'];
         let comentario = datos_evento[0]['calificaciones'][i]['comentario'];
-        let cliente = await obtener_cliente_mail(datos_evento[0]['calificaciones'][i]['correo']);
-
-
+        let cliente = await obtener_cliente_mail(correo);
 
         let div_contenedor = document.createElement('div');
         div_contenedor.classList.add('contenedor');

@@ -7,6 +7,7 @@ const checkout = document.querySelector('#checkout');
 let cart_total;
 let usuario = sessionStorage.getItem('usuario_id');
 let carrito;
+let evento;
 let tarjetas_cliente;
 let correo = sessionStorage.getItem('correo');
 let total_pago = 0;
@@ -193,11 +194,37 @@ let borrar = async(id_carrito, id_destino) => {
     update_total();
 }
 
-
+/***************************************************************************************** */
 let comprar = async() => {
     if (tarjetas.value != '-') {
         update_eventos();
+        let nombre_evento;
+        let imagen;
+        let precio;
+        let count;
+        let total;
+        let cliente = await obtener_cliente_mail(correo);
+        let nombre = (cliente[0].p_nombre + '' + cliente[0].p_apellido);
+        carrito = await obtener_carrito_usuario(usuario);
+
+        for (let i = 0; i < carrito[0]['compras'].length; i++) {
+            if (carrito[0]['compras'][i].evento != 'BORRADO') {
+                let evento_id = carrito[0]['compras'][i]['evento'];
+
+                evento = await obtener_evento_id(evento_id);
+                nombre_evento = evento[0].nombre;
+                imagen = evento[0].URL_imagen;
+                precio = ('Precio por entrada: ¢' + evento[0].precio_entrada);
+                count = parseInt(carrito[0]['compras'][i]['cantidad']);
+                total = count * evento[0].precio_entrada;
+            }
+            enviar_entrada(correo, nombre, nombre_evento, imagen, precio, count, total);
+        }
+
         borrar_carrito_usuario(usuario);
+
+
+        /******************************************************************************************* */
         Swal.fire({
             type: 'success',
             title: 'Gracias por su compra',

@@ -709,9 +709,8 @@ let obtener_datos = () => {
     if (validar()) {
         Swal.fire({
             type: 'warning',
-            title: '¡Atención!',
-            animation: true,
-            text: 'Hay datos que deben ser ingresados',
+            title: 'Algunos de los campos se encuentran incorrectos.',
+            text: 'Por favor revise los campos en rojo.',
             confirmButtonText: 'Entendido',
             customClass: {
                 popup: 'animated tada'

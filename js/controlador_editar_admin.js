@@ -72,8 +72,8 @@ function guardar_datos(correo, pass) {
     if (validar(correo, pass)) {
         Swal.fire({
             type: 'warning',
-            title: 'Algunos de los campos se encuentran incorrectos.',
-            text: 'Por favor revise los campos en rojo',
+            title: 'Por favor ingrese todos los datos requeridos.',
+            text: 'Los espacios en rojo deben ser llenados.',
             confirmButtonText: 'Entendido',
         })
     } else {

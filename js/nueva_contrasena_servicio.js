@@ -1,9 +1,9 @@
 'use strict';
 
-let validar_codigo = async(correo, codigov) => {
-    await axios.post('http://localhost:3000/api/validar_codigo', {
+let cambiar_contrasena = async(correo, contrasena) => {
+    await axios.post('http://localhost:3000/api/modificar_contrasena', {
             correo: correo,
-            codigov: codigov
+            contrasena: contrasena
         })
         .then(function(res) {
             console.log(res.data);

@@ -70,3 +70,29 @@ let obtener_organizador_id = async(_id) => {
 
     }
 };
+
+let registrar_organizador_user = async(correo, codigov) => {
+
+    await axios({
+                method: 'post',
+                url: 'http://localhost:3000/api/registrar-user-org',
+                responseType: 'json',
+                data: {
+
+                    // Validar con route
+                    correo: correo,
+                    codigov: codigov,
+
+                }
+
+            }
+
+        )
+        .then(function(res) {
+
+            console.log(res.data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};

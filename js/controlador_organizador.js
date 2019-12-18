@@ -703,6 +703,8 @@ let obtener_datos = () => {
     let experencia = input_exp.value;
     let estado = 'Activo';
     let tipo = 'Organizador de eventos';
+    let contrasena = 'pass123';
+    let codigov = codigoVer(3, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
 
     //si hay error, entra al if. Si no hay error entra al else
@@ -717,7 +719,8 @@ let obtener_datos = () => {
                 popup: 'animated tada'
             }
         })
-    } else if (calcular_edad(nacimiento)) {
+    } else
+    if (calcular_edad(nacimiento)) {
         Swal.fire({
             type: 'warning',
             title: 'Verifique la edad',
@@ -741,10 +744,10 @@ let obtener_datos = () => {
             direccion,
             experencia,
             estado,
-            tipo
-
-
+            tipo,
         );
+
+        registrar_organizador_user(correo, codigov)
 
         Swal.fire({
             type: 'success',

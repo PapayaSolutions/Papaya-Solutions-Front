@@ -1,22 +1,22 @@
 'use strict';
 
 const input_correo = document.querySelector('#correo');
-const input_codigov = document.querySelector('#codigo');
+const input_contrasena = document.querySelector('#contrasena');
 const input_btn_verificar = document.querySelector('#btn_verificar');
 
 // function obtener_datos
 let obtener_datos = () => {
     let correo = input_correo.value;
-    let codigov = input_codigov.value;
+    let contrasena = input_contrasena.value;
 
 
-    let errorBlancos = validar(correo, codigov);
+    let errorBlancos = validar(correo, contrasena);
     let usuarioAceptado = false;
 
     if (!errorBlancos) {
-        usuarioAceptado = validar_codigo(correo, codigov);
+        usuarioAceptado = cambiar_contrasena(correo, contrasena);
         if (usuarioAceptado) {
-            window.location.href = 'nueva_contrasena.html';
+            window.location.href = 'iniciar_sesion.html';
         }
         // else {
         //     Swal.fire({
@@ -52,11 +52,11 @@ let validar = () => {
     } else {
         input_correo.classList.remove('error');
     }
-    if (input_codigov.value == '') {
+    if (input_contrasena.value == '') {
         error = true;
-        input_codigov.classList.add('error');
+        input_contrasena.classList.add('error');
     } else {
-        input_codigov.classList.remove('error');
+        input_contrasena.classList.remove('error');
     }
     return error;
 }

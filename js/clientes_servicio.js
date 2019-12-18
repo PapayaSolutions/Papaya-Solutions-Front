@@ -226,3 +226,28 @@ let deshabilitar_tarjeta = async(_id, tarjeta_id) => {
             console.log(error);
         });
 };
+
+let enviar_entrada = async(correo, nombre, nombre_evento, imagen, precio, count, total) => {
+    await axios({
+            method: 'post',
+            url: 'http://localhost:3000/api/enviar_entrada',
+            responseType: 'json',
+            //body
+            data: {
+                correo,
+                nombre,
+                nombre_evento,
+                imagen,
+                precio,
+                count,
+                total
+            }
+        })
+        .then(function(res) {
+            console.log(res.data);
+
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+};

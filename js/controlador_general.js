@@ -37,6 +37,7 @@ if (conectado) {
 
             break;
         case 'Organizador':
+            no_li[0].classList.add('ocultar')
             nav[1].classList.add('ocultar');
             no_li[5].classList.add('ocultar')
             no_li[3].classList.add('ocultar')

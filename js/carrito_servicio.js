@@ -3,7 +3,7 @@
 let crear_carrito = async(_id) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar_carrito',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar_carrito',
             responseType: 'json',
 
             data: {
@@ -22,7 +22,7 @@ let obtener_carrito_usuario = async(usuario) => {
     let lista_carrito;
     await axios({
             method: 'get',
-            url: `http://localhost:3000/api/buscar_carrito_usuario/${usuario}`,
+            url: `https://proyecto1-mishka-backend-produ.herokuapp.com/api/buscar_carrito_usuario/${usuario}`,
             responseType: 'json',
 
         }).then(function(res) {
@@ -38,7 +38,7 @@ let obtener_carrito_usuario = async(usuario) => {
 let agregar_evento = async(usuario, evento, cantidad) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/agregar_evento',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/agregar_evento',
             responseType: 'json',
             //body
             data: {
@@ -59,7 +59,7 @@ let agregar_evento = async(usuario, evento, cantidad) => {
 let borrar_evento = async(_id, evento_id) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/borrar',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/borrar',
             responseType: 'json',
             //body
             data: {
@@ -81,7 +81,7 @@ let borrar_carrito_usuario = async(usuario) => {
     let lista_carrito;
     await axios({
             method: 'post',
-            url: `http://localhost:3000/api/borrar_carrito_usuario/${usuario}`,
+            url: `https://proyecto1-mishka-backend-produ.herokuapp.com/api/borrar_carrito_usuario/${usuario}`,
             responseType: 'json',
 
         }).then(function(res) {

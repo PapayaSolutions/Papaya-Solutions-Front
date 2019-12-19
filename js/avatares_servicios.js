@@ -3,7 +3,7 @@
 let registrar_avatar = async(nombre, URL, estado) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar_avatar',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar_avatar',
             responseType: 'json',
             //body
             data: {
@@ -26,7 +26,7 @@ let listar_avatares = async() => {
     let lista_avatar;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar_avatar',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_avatar',
             /* SETEAR LA RUTA!! */
             responseType: 'json',
 
@@ -43,7 +43,7 @@ let listar_avatares = async() => {
 let habilitar_avatar = async(_id) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/habilitar_avatar',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/habilitar_avatar',
             responseType: 'json',
             //body
             data: {
@@ -64,7 +64,7 @@ let habilitar_avatar = async(_id) => {
 let deshabilitar_avatar = async(_id) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/deshabilitar_avatar',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/deshabilitar_avatar',
             responseType: 'json',
             //body
             data: {

@@ -4,7 +4,7 @@ let registrar_organizador = async(p_nombre, s_nombre, p_apellido, s_apellido, co
 
     await axios({
                 method: 'post',
-                url: 'http://localhost:3000/api/registrar_organizador',
+                url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar_organizador',
                 responseType: 'json',
                 data: {
 
@@ -43,7 +43,7 @@ let listar_organizadores = async() => {
     let lista_organizadores;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar_organizador',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_organizador',
             responseType: 'json',
         })
         .then(function(res) {
@@ -61,7 +61,7 @@ let obtener_organizador_id = async(_id) => {
         const response = await axios({
             method: 'get',
             params: { _id: _id },
-            url: `http://localhost:3000/api/listar_organizador_id`,
+            url: `https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_organizador_id`,
             responseType: 'json',
 
         });
@@ -76,7 +76,7 @@ let registrar_organizador_user = async(correo, codigov) => {
 
     await axios({
                 method: 'post',
-                url: 'http://localhost:3000/api/registrar-user-org',
+                url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar-user-org',
                 responseType: 'json',
                 data: {
 

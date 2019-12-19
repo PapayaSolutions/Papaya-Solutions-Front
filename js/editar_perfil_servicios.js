@@ -17,7 +17,7 @@ let editar_cliente = async(
 ) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/editar_cliente',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/editar_cliente',
             responseType: 'json',
             //body
             data: {

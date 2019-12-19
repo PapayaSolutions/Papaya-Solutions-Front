@@ -1,7 +1,7 @@
 'use strict';
 
 let validar_credenciales = async(correo, contrasena) => {
-    await axios.post('http://localhost:3000/api/validar_credenciales', {
+    await axios.post('https://proyecto1-mishka-backend-produ.herokuapp.com/api/validar_credenciales', {
             correo: correo,
             contrasena: contrasena
         })

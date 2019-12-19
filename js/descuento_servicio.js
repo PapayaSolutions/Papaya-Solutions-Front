@@ -1,7 +1,7 @@
 let registrar_descuento = async(nombre, descripcion, porcentaje, estado) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/descuentos',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/descuentos',
             responseType: 'json',
             //body
             data: {
@@ -23,7 +23,7 @@ let listar_descuento = async() => {
     let lista_descuento;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar_descuentos',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_descuentos',
             responseType: 'json'
         })
         .then(function(res) {
@@ -41,7 +41,7 @@ let obtener_descuento_id = async(_id) => {
         const response = await axios({
             method: 'get',
             params: { _id: _id },
-            url: `http://localhost:3000/api/listar_descuento_id`,
+            url: `https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_descuento_id`,
             responseType: 'json',
 
         });
@@ -56,7 +56,7 @@ let modificar_descuento = async(id, nombre, descripcion, porcentaje, estado) => 
     let respuesta = false;
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/modificar_descuento',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/modificar_descuento',
             responseType: 'json',
             //body
             data: {

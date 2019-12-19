@@ -4,7 +4,7 @@ let listar_plataforma = async() => {
     let lista_plataforma;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar_plataforma',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_plataforma',
             responseType: 'json',
 
         }).then(function(res) {
@@ -34,7 +34,7 @@ let registrar_plataforma = async(
 ) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar_plataforma',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar_plataforma',
             responseType: 'json',
             //body
             data: {
@@ -80,7 +80,7 @@ let modificar_plataforma = async(
 ) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/modificar_plataforma',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/modificar_plataforma',
             responseType: 'json',
             //body
             data: {

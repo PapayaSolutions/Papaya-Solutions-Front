@@ -4,7 +4,7 @@ let registrar_tipos_de_evento = async(nombre, URL, estado) => {
     let respuesta = false;
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar_tipos_de_evento',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar_tipos_de_evento',
             responseType: 'json',
             //body
             data: {
@@ -29,7 +29,7 @@ let listar_tipos_de_evento = async() => {
     await axios({
             method: 'get',
 
-            url: 'http://localhost:3000/api/listar_tipos_de_evento',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_tipos_de_evento',
             responseType: 'json'
         })
         .then(function(res) {
@@ -47,7 +47,7 @@ let modificar_tipos_de_evento = async(id, nombre, URL, estado) => {
     let respuesta = false;
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/modificar_tipo_de_evento',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/modificar_tipo_de_evento',
             responseType: 'json',
             //body
             data: {

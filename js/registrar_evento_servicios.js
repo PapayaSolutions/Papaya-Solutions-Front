@@ -13,7 +13,7 @@ let registrar_evento = async(
     estado) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar-evento',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar-evento',
             responseType: 'json',
             //body
             data: {
@@ -44,7 +44,7 @@ let listar_tipos_de_evento = async() => {
     await axios({
             method: 'get',
 
-            url: 'http://localhost:3000/api/listar_tipos_de_evento',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_tipos_de_evento',
             responseType: 'json'
         })
         .then(function(res) {
@@ -63,7 +63,7 @@ let listar_recintos = async() => {
 
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-recintos',
+        url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar-recintos',
         responseType: 'json'
 
     })
@@ -107,7 +107,7 @@ botn.addEventListener('click', function() {
 let registrar_fecha = async(nombre, fecha, hora, hora_salida) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/agregar-fecha',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/agregar-fecha',
             responseType: 'json',
             //body
             data: {

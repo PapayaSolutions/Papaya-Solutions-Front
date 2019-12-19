@@ -4,7 +4,7 @@ let registrar_cliente = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pc
     pf_nacimiento, pedad_cliente, pgenero, pprovincia, pcanton, pdistrito, pdireccion, url_avatar, codigov) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar-cliente',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar-cliente',
             responseType: 'json',
             //body 
             data: {
@@ -42,7 +42,7 @@ let registrar_cliente = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pc
 let registrar_usuario = async(pcorreo, codigov) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar-user-cli',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar-user-cli',
             responseType: 'json',
             data: {
                 correo: pcorreo,
@@ -68,7 +68,7 @@ let listar_avatares = async() => {
 
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar_avatar',
+        url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_avatar',
         responseType: 'json'
 
     })
@@ -89,7 +89,7 @@ let listar_clientes = async() => {
     let lista_clientes;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar_clientes',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_clientes',
             responseType: 'json'
 
         })
@@ -111,7 +111,7 @@ let listar_tipos_de_evento = async() => {
     await axios({
             method: 'get',
 
-            url: 'http://localhost:3000/api/listar_tipos_de_evento',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_tipos_de_evento',
             responseType: 'json'
         })
         .then(function(res) {
@@ -129,7 +129,7 @@ let obtener_cliente_id = async(_id) => {
     let lista_cliente;
     await axios({
             method: 'get',
-            url: `http://localhost:3000/api/listar_cliente_id/${_id}`,
+            url: `https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_cliente_id/${_id}`,
             responseType: 'json',
 
         }).then(function(res) {
@@ -146,7 +146,7 @@ let obtener_cliente_mail = async(mail) => {
     let lista_cliente;
     await axios({
             method: 'get',
-            url: `http://localhost:3000/api/listar_cliente_mail/${mail}`,
+            url: `https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_cliente_mail/${mail}`,
             responseType: 'json',
 
         }).then(function(res) {
@@ -162,7 +162,7 @@ let obtener_cliente_mail = async(mail) => {
 let registrar_tarjeta = async(email, tarjeta, nombre, codigo, vencimiento, apellido, postal) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar_tarjeta',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar_tarjeta',
             responseType: 'json',
             //body 
             data: {
@@ -188,7 +188,7 @@ let registrar_tarjeta = async(email, tarjeta, nombre, codigo, vencimiento, apell
 let habilitar_tarjeta = async(_id, tarjeta_id) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/habilitar_tarjeta',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/habilitar_tarjeta',
             responseType: 'json',
             //body
             data: {
@@ -209,7 +209,7 @@ let habilitar_tarjeta = async(_id, tarjeta_id) => {
 let deshabilitar_tarjeta = async(_id, tarjeta_id) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/deshabilitar_tarjeta',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/deshabilitar_tarjeta',
             responseType: 'json',
             //body
             data: {
@@ -230,7 +230,7 @@ let deshabilitar_tarjeta = async(_id, tarjeta_id) => {
 let enviar_entrada = async(correo, nombre, nombre_evento, imagen, precio, count, total) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/enviar_entrada',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/enviar_entrada',
             responseType: 'json',
             //body
             data: {

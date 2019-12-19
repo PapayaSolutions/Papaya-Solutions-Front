@@ -2,7 +2,7 @@ let listar_admin = async() => {
     let lista_admin;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar-admin',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar-admin',
             responseType: 'json'
         })
         .then(function(res) {
@@ -20,7 +20,7 @@ let obtener_admin_id = async(_id) => {
         const response = await axios({
             method: 'get',
             params: { _id: _id },
-            url: `http://localhost:3000/api/listar_admin_id`,
+            url: `https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_admin_id`,
             responseType: 'json',
 
         });
@@ -35,7 +35,7 @@ let modificar_admin = async(id, correo, contrasena) => {
     let respuesta = false;
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/modificar_admin',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/modificar_admin',
             responseType: 'json',
             //body
             data: {

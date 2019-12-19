@@ -4,7 +4,7 @@ let cambiar_estado = async((input_id, input_estado) => {
     let respuesta = false;
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/modificar-estado',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/modificar-estado',
             responseType: 'json',
             //body
             data: {

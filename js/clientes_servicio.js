@@ -142,7 +142,7 @@ let obtener_cliente_id = async(_id) => {
     return lista_cliente;
 };
 
-let edit_usuario = async(id, pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo, pidentificacion,
+let edit_usuario = async(pp_nombre, ps_nombre, pp_apellido, ps_apellido, pcorreo, pidentificacion,
     pf_nacimiento, pgenero, pprovincia, pcanton, pdistrito, pdireccion) => {
     let respuesta = false;
     await axios({
@@ -151,7 +151,7 @@ let edit_usuario = async(id, pp_nombre, ps_nombre, pp_apellido, ps_apellido, pco
             responseType: 'json',
             //body
             data: {
-                _id: id,
+
                 p_nombre: pp_nombre,
                 s_nombre: ps_nombre,
                 p_apellido: pp_apellido,

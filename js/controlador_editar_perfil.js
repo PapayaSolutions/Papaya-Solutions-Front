@@ -4,21 +4,11 @@ const nombre1 = document.querySelector('#nombre1');
 const nombre2 = document.querySelector('#nombre2');
 const apellido1 = document.querySelector('#apellido1');
 const apellido2 = document.querySelector('#apellido2');
-
-const imagen_avatar = document.querySelector('#avat');
+const input_correo = document.querySelector('#correo');
 const input_identificacion = document.querySelector('#identificacion');
 
-const input_genero = document.querySelector('#genero_cliente');
-const label_genero = document.querySelector('#genero');
-
 const input_nacimiento = document.querySelector('#fecha_nac_cliente');
-const label_nacimiento = document.querySelector('#fecha_nac');
-
-const input_correo = document.querySelector('#correo');
-const contrasena = document.querySelector('#contrasena');
-const volver = document.querySelector('#volver');
-
-
+const input_genero = document.querySelector('#genero_cliente');
 const input_provincia = document.querySelector('#txt_provincia_cliente');
 const label_provincia = document.querySelector('#provincia');
 
@@ -27,6 +17,20 @@ const label_canton = document.querySelector('#canton');
 
 const input_distrito = document.querySelector('#txt_distrito_cliente');
 const label_distrito = document.querySelector('#distrito');
+const imagen_avatar = document.querySelector('#avat');
+
+const label_genero = document.querySelector('#genero');
+
+
+
+const label_nacimiento = document.querySelector('#fecha_nac');
+
+
+const contrasena = document.querySelector('#contrasena');
+const volver = document.querySelector('#volver');
+
+
+
 
 const input_direccion = document.querySelector('#direccion');
 const tbody = document.querySelector('#tbl_perfil tbody');
@@ -641,19 +645,22 @@ let llenar_perfil = async() => {
     nombre2.value = datos_perfil[0]['s_nombre'];
     apellido1.value = datos_perfil[0]['p_apellido'];
     apellido2.value = datos_perfil[0]['s_apellido'];
-    input_identificacion.value = datos_perfil[0]['identificacion'];
-    input_direccion.value = datos_perfil[0]['direccion'];
     correo.value = datos_perfil[0]['correo_cliente'];
-    imagen_avatar.src = datos_perfil[0]['url_avatar'];
-
+    input_identificacion.value = datos_perfil[0]['identificacion'];
     let date = new Date((datos_perfil[0]['f_nacimiento']));
     label_nacimiento.innerHTML = (date.getDate() + '/ ' + date.getMonth() + '/ ' + date.getFullYear());
-
     label_genero.innerHTML = datos_perfil[0]['genero'];
 
     label_provincia.innerHTML = datos_perfil[0]['provincia'];
     label_canton.innerHTML = datos_perfil[0]['canton'];
     label_distrito.innerHTML = datos_perfil[0]['distrito'];
+    input_direccion.value = datos_perfil[0]['direccion'];
+
+    imagen_avatar.src = datos_perfil[0]['url_avatar'];
+
+
+
+
 
     tbody.innerHTML = '';
     for (let i = 0; i < datos_perfil[0]['metodos_pago'].length; i++) {
@@ -678,16 +685,17 @@ let modificar_datos = async() => {
     let s_nombre = nombre2.value;
     let p_apellido = apellido1.value;
     let s_apellido = apellido2.value;
-    let identificacion = input_identificacion.value;
-    let direccion = input_direccion.value;
-    let genero = label_genero.value;
-    let f_nacimiento = label_nacimiento.value;
     let correo_cliente = input_correo.value;
-    let url_avatar = imagen_avatar.src;
-
+    let identificacion = input_identificacion.value;
+    let f_nacimiento = label_nacimiento.value;
+    let genero = label_genero.value;
     let provincia = label_provincia;
     let canton = label_canton;
     let distrito = label_distrito;
+    let direccion = input_direccion.value;
+    let url_avatar = imagen_avatar.src;
+
+
 
     if (validar()) {
         Swal.fire({
@@ -700,7 +708,7 @@ let modificar_datos = async() => {
             }
         })
     } else {
-        editar_cliente(
+        edit_usuario(
             p_nombre,
             s_nombre,
             p_apellido,

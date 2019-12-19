@@ -4,7 +4,7 @@ let listar_evento = async() => {
     let lista_evento;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar_evento',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_evento',
             responseType: 'json',
 
         }).then(function(res) {
@@ -21,7 +21,7 @@ let obtener_evento_id = async(_id) => {
     let lista_evento;
     await axios({
             method: 'get',
-            url: `http://localhost:3000/api/listar_evento_id/${_id}`,
+            url: `https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_evento_id/${_id}`,
             responseType: 'json',
 
         }).then(function(res) {
@@ -37,7 +37,7 @@ let obtener_evento_id = async(_id) => {
 let calificar_evento = async(_id, cliente_id, num) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/calificar',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/calificar',
             responseType: 'json',
             //body
             data: {
@@ -57,7 +57,7 @@ let calificar_evento = async(_id, cliente_id, num) => {
 let comentar_evento = async(_id, cliente_id, comentario, correo) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/comentar',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/comentar',
             responseType: 'json',
             //body
             data: {
@@ -80,7 +80,7 @@ let comentar_evento = async(_id, cliente_id, comentario, correo) => {
 let restar_entradas = async(_id, num) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/restar_entradas',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/restar_entradas',
             responseType: 'json',
             //body
             data: {
@@ -101,7 +101,7 @@ let restar_entradas = async(_id, num) => {
 let registrar_compra = async(_id, usuario) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/agregar_compra',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/agregar_compra',
             responseType: 'json',
             //body
             data: {
@@ -120,7 +120,7 @@ let registrar_compra = async(_id, usuario) => {
 let registrar_reserva = async(_id, usuario, cantidad) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/agregar_reserva',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/agregar_reserva',
             responseType: 'json',
             //body
             data: {

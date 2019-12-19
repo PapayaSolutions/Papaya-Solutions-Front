@@ -17,7 +17,7 @@ let registrar_recinto = async(
     await axios({
 
                 method: 'post',
-                url: 'http://localhost:3000/api/registrar-recinto',
+                url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar-recinto',
                 responseType: 'json',
                 data: {
 
@@ -54,7 +54,7 @@ let listar_recintos = async() => {
 
     await axios({
         method: 'get',
-        url: 'http://localhost:3000/api/listar-recintos',
+        url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar-recintos',
         responseType: 'json'
 
     })
@@ -73,7 +73,7 @@ let obtener_recinto_nombre = async(nombre) => {
     let lista_recinto;
     await axios({
             method: 'get',
-            url: `http://localhost:3000/api/listar_recinto_nombre/${nombre}`,
+            url: `https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_recinto_nombre/${nombre}`,
             responseType: 'json',
 
         }).then(function(res) {
@@ -90,7 +90,7 @@ let obtener_recinto_id = async(_id) => {
     let lista_recinto;
     await axios({
             method: 'get',
-            url: `http://localhost:3000/api/listar_recinto_id/${_id}`,
+            url: `https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_recinto_id/${_id}`,
             responseType: 'json',
 
         }).then(function(res) {
@@ -110,7 +110,7 @@ let obtenerun_recinto_id = async(_id) => {
         const response = await axios({
             method: 'get',
             params: { _id: _id },
-            url: `http://localhost:3000/api/listar_un_recinto`,
+            url: `https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_un_recinto`,
             responseType: 'json'
         });
 
@@ -126,7 +126,7 @@ let editar_recinto = async(direccion, provincia, capacidad, asientos_tradicional
     await axios({
 
                 method: 'post',
-                url: 'http://localhost:3000/api/modificar-recinto',
+                url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/modificar-recinto',
                 responseType: 'json',
                 data: {
 

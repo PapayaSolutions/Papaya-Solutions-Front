@@ -3,7 +3,7 @@
 let registrar_bitacora = async(tipo, descripcion, fecha, hora, rol) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar_bitacora',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar_bitacora',
             responseType: 'json',
 
             data: {
@@ -26,7 +26,7 @@ let listar_bitacoras = async() => {
     let lista_bitacora;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar_bitacora',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_bitacora',
 
             responseType: 'json',
 

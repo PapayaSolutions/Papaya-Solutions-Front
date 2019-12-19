@@ -1,7 +1,7 @@
 'use strict';
 
 let validar_codigo = async(correo, codigov) => {
-    await axios.post('http://localhost:3000/api/validar_codigo', {
+    await axios.post('https://proyecto1-mishka-backend-produ.herokuapp.com/api/validar_codigo', {
             correo: correo,
             codigov: codigov
         })

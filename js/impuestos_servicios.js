@@ -3,7 +3,7 @@
 let registrar_impuesto = async(nombre, porcentaje, descripcion, estado) => {
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/registrar_impuesto',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar_impuesto',
             responseType: 'json',
             //body
             data: {
@@ -27,7 +27,7 @@ let listar_impuestos = async() => {
     let lista_impuesto;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar_impuesto',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_impuesto',
 
             responseType: 'json',
 
@@ -46,7 +46,7 @@ let obtener_impuesto_id = async(_id) => {
         const response = await axios({
             method: 'get',
             params: { _id: _id },
-            url: `http://localhost:3000/api/listar_impuesto_id`,
+            url: `https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar_impuesto_id`,
             responseType: 'json',
 
         });
@@ -60,7 +60,7 @@ let modificar_impuesto = async(id, nombre, porcentaje, descripcion, estado) => {
     let respuesta = false;
     await axios({
             method: 'post',
-            url: 'http://localhost:3000/api/modificar_impuesto',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/modificar_impuesto',
             responseType: 'json',
             //body
             data: {

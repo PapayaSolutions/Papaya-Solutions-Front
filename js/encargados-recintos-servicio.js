@@ -5,7 +5,7 @@ let registrar_encrgado_recinto = async(nombre, numero, correo, fecha_nacimiento,
     await axios({
 
                 method: 'post',
-                url: 'http://localhost:3000/api/registrar-encargado-recinto',
+                url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/registrar-encargado-recinto',
                 responseType: 'json',
                 data: {
 
@@ -37,7 +37,7 @@ let listar_encargados = async() => {
     let lista_encargados;
     await axios({
             method: 'get',
-            url: 'http://localhost:3000/api/listar-encargados-recintos',
+            url: 'https://proyecto1-mishka-backend-produ.herokuapp.com/api/listar-encargados-recintos',
             responseType: 'json',
         })
         .then(function(res) {
